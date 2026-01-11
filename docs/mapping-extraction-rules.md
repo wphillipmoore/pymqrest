@@ -7,6 +7,7 @@ This document defines how to gather and analyze IBM MQ MQSC and PCF documentatio
 - [Inputs](#inputs)
 - [Output format](#output-format)
 - [Extraction process](#extraction-process)
+- [Type extraction](#type-extraction)
 - [Validation and iteration](#validation-and-iteration)
 - [Edge cases](#edge-cases)
 
@@ -29,6 +30,8 @@ qualifiers:
       - mqsc: <MQSC_ATTRIBUTE>
         pcf: <PCFAttributeName>
         snake: <snake_case_name>
+        type: <python_type>
+        pcf_type: <pcf_type>
         values:
           <MQSC_VALUE>: <snake_case_value>
 ```
@@ -37,6 +40,8 @@ Rules:
 - `mqsc` is the MQSC attribute token, in its canonical uppercase form.
 - `pcf` matches the PCF attribute name from IBM docs.
 - `snake` is the external name derived from `pcf`.
+- `type` is the target Python type derived from `pcf_type`.
+- `pcf_type` is the PCF C-structure type from IBM docs.
 - `values` is optional; include only when MQSC uses symbolic tokens.
 
 ## Extraction process
@@ -48,6 +53,19 @@ Rules:
 6. Map MQSC attribute values to snake_case when values are symbolic tokens; keep numeric values as-is.
 7. Assign mappings at the qualifier level by default; add command-specific overrides only when necessary.
 8. Record any ambiguity in a separate notes log and mark the mapping as provisional.
+
+## Type extraction
+Types are sourced from PCF command format and response pages. MQSC documentation is used only as a secondary reference when PCF does not define a type.
+
+Type mapping rules:
+- PCF `MQCFST` or string-valued fields -> `str`.
+- PCF `MQCFIN`/`MQCFIN64` numeric fields -> `int`.
+- PCF list or array fields -> `list[str]` or `list[int]` based on element type.
+- PCF boolean-style flags -> `bool` only when the docs define a true/false semantic; otherwise keep `int`.
+
+When MQSC documents numeric values with symbolic tokens:
+- Use `int` as the type and add a `values` mapping for the symbolic tokens.
+- If both numeric and string values are allowed by the API, treat the type as `str | int` and note it as provisional.
 
 ## Validation and iteration
 - Validate mappings against real command responses during integration tests.
