@@ -99,7 +99,8 @@ Steps:
 5. Map MQSC inputs to PCF request parameters and MQSC outputs to PCF response parameters.
 6. Record conflicts, ambiguities, and mixed-type responses in notes.
 7. Keep separate entries for input-only and response-only attributes when they differ.
-8. For `DISPLAY` commands, treat "Parameter descriptions" as input filters and "Requested parameters" (including syntax diagrams) as output attributes.
+8. For `DISPLAY` commands, treat "Parameter descriptions" as input filters and "Requested parameters" (including syntax diagrams and requested-parameter tables) as output attributes.
+9. Normalize MQSC abbreviations when matching to PCF (for example: `INT` -> `INTERVAL`, `HB` -> `HEARTBEAT`, `LIM` -> `LIMIT`, `SZ` -> `SIZE`).
 
 ## Validation and iteration
 - Validate mappings against real command responses during integration tests.

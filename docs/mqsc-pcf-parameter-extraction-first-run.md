@@ -25,7 +25,7 @@ Provide a first-pass extraction of MQSC command parameters, PCF request/response
 - MQSC commands parsed: 139
 - MQSC docs fetched: 139
 - MQSC commands with input parameters: 53
-- MQSC commands with output parameters: 4
+- MQSC commands with output parameters: 6
 - PCF commands referenced: 132
 - PCF request pages fetched: 106
 - PCF response topics found: 67
@@ -36,7 +36,7 @@ Provide a first-pass extraction of MQSC command parameters, PCF request/response
 ## Extraction output
 ```yaml
 version: 1
-generated_at: 2026-01-11T23:25:07Z
+generated_at: 2026-01-11T23:40:29Z
 commands:
   - mqsc:
       name: ALTER AUTHINFO
@@ -7227,7 +7227,81 @@ commands:
         - integer
         - qmgr-name
       input_parameters: []
-      output_parameters: []
+      output_parameters:
+        - AFFINITY
+        - ALTDATE
+        - ALTTIME
+        - AMQPKA
+        - AUTOSTART
+        - BATCHHB
+        - BATCHINT
+        - BATCHLIM
+        - BATCHSZ
+        - CERTLABL
+        - CHLTYPE
+        - CLNTWGHT
+        - CLUSNL
+        - CLUSTER
+        - CLWLPRTY
+        - CLWLRANK
+        - CLWLWGHT
+        - COMPHDR
+        - COMPMSG
+        - CONNAME
+        - CONVERT
+        - DEFCDISP
+        - DEFRECON
+        - DESCR
+        - DISCINT
+        - HBINT
+        - KAINT
+        - LOCLADDR
+        - LONGRTY
+        - LONGTMR
+        - MAXINST
+        - MAXINSTC
+        - MAXMSGL
+        - MCANAME
+        - MCATYPE
+        - MCAUSER
+        - MODENAME
+        - MONCHL
+        - MRDATA
+        - MREXIT
+        - MRRTY
+        - MRTMR
+        - MSGDATA
+        - MSGEXIT
+        - NETPRTY
+        - NPMSPEED
+        - PASSWORD
+        - PORT
+        - PROPCTL
+        - PUTAUT
+        - QMNAME
+        - RCVDATA
+        - RCVEXIT
+        - RESETSEQ
+        - SCYDATA
+        - SCYEXIT
+        - SENDDATA
+        - SENDEXIT
+        - SEQWRAP
+        - SHARECNV
+        - SHORTRTY
+        - SHORTTMR
+        - SPLPROT
+        - SSLCAUTH
+        - SSLCIPH
+        - SSLPEER
+        - STATCHL
+        - TPNAME
+        - TPROOT
+        - TRPTYPE
+        - USECLTID
+        - USEDLQ
+        - USERID
+        - XMITQ
       section_sources:
         {}
     pcf:
@@ -7613,17 +7687,89 @@ commands:
           - StringFilterCommand
       response:
         suggested:
-          {}
+          BATCHHB: BatchHeartbeat
+          BATCHINT: BatchInterval
+          BATCHSZ: BatchSize
+          DISCINT: DiscInterval
+          MCANAME: MCAName
+          MCATYPE: MCAType
+          MODENAME: ModeName
+          MSGEXIT: MsgExit
+          PASSWORD: Password
+          RESETSEQ: ResetSeq
+          SENDEXIT: SendExit
+          TPNAME: TpName
+          USEDLQ: UseDLQ
         ambiguous:
-          {}
-        unmapped: []
+          BATCHLIM:
+            - BatchDataLimit
+          MREXIT:
+            - MsgExit
+          QMNAME:
+            - QMgrName
+        unmapped:
+          - AFFINITY
+          - ALTDATE
+          - ALTTIME
+          - AMQPKA
+          - AUTOSTART
+          - CERTLABL
+          - CHLTYPE
+          - CLNTWGHT
+          - CLUSNL
+          - CLUSTER
+          - CLWLPRTY
+          - CLWLRANK
+          - CLWLWGHT
+          - COMPHDR
+          - COMPMSG
+          - CONNAME
+          - CONVERT
+          - DEFCDISP
+          - DEFRECON
+          - DESCR
+          - HBINT
+          - KAINT
+          - LOCLADDR
+          - LONGRTY
+          - LONGTMR
+          - MAXINST
+          - MAXINSTC
+          - MAXMSGL
+          - MCAUSER
+          - MONCHL
+          - MRDATA
+          - MRRTY
+          - MRTMR
+          - MSGDATA
+          - NETPRTY
+          - NPMSPEED
+          - PORT
+          - PROPCTL
+          - PUTAUT
+          - RCVDATA
+          - RCVEXIT
+          - SCYDATA
+          - SCYEXIT
+          - SENDDATA
+          - SEQWRAP
+          - SHARECNV
+          - SHORTRTY
+          - SHORTTMR
+          - SPLPROT
+          - SSLCAUTH
+          - SSLCIPH
+          - SSLPEER
+          - STATCHL
+          - TPROOT
+          - TRPTYPE
+          - USECLTID
+          - USERID
+          - XMITQ
         pcf_unmapped:
           - AlterationDate
           - AlterationTime
           - BatchDataLimit
-          - BatchHeartbeat
-          - BatchInterval
-          - BatchSize
           - CLWLChannelPriority
           - CLWLChannelRank
           - CLWLChannelWeight
@@ -7642,7 +7788,6 @@ commands:
           - DataConversion
           - DefReconnect
           - DefaultChannelDisposition
-          - DiscInterval
           - HeaderCompression
           - HeartbeatInterval
           - InDoubtInbound
@@ -7652,15 +7797,11 @@ commands:
           - LocalAddress
           - LongRetryCount
           - LongRetryInterval
-          - MCAName
-          - MCAType
           - MCAUserIdentifier
           - MaxInstances
           - MaxInstancesPerClient
           - MaxMsgLength
           - MessageCompression
-          - ModeName
-          - MsgExit
           - MsgRetryCount
           - MsgRetryExit
           - MsgRetryInterval
@@ -7670,14 +7811,12 @@ commands:
           - MsgsSent
           - NetworkPriority
           - NonPersistentMsgSpeed
-          - Password
           - PropertyControl
           - PutAuthority
           - QMgrName
           - QSGDisposition
           - ReceiveExit
           - ReceiveUserData
-          - ResetSeq
           - SPLProtection
           - SSLCipherSpec
           - SSLCipherSuite
@@ -7685,18 +7824,16 @@ commands:
           - SSLPeerName
           - SecurityExit
           - SecurityUserData
-          - SendExit
           - SendUserData
           - SeqNumberWrap
           - SharingConversations
           - ShortRetryCount
           - ShortRetryInterval
-          - TpName
           - TransportType
-          - UseDLQ
           - UserIdentifier
           - XmitQName
-    notes: []
+    notes:
+      - display-requested-parameters-table
   - mqsc:
       name: DISPLAY CHINIT
       href: SSFKSJ_9.4.0/refadmin/q086060_.html
@@ -11943,6 +12080,7 @@ commands:
         - BOQNAME
         - BOTHRESH
         - CAPEXPRY
+        - CFSTRUCT
         - CLCHNAME
         - CLUSDATE
         - CLUSNL
@@ -11986,6 +12124,7 @@ commands:
         - OTELTRAC
         - PROCESS
         - PROPCTL
+        - PSID
         - PUT
         - QALIAS
         - QDEPTHHI
@@ -11997,6 +12136,7 @@ commands:
         - QMGR
         - QMID
         - QREMOTE
+        - QSGDISP
         - QSVCIEV
         - QSVCINT
         - QTYPE
@@ -12630,10 +12770,14 @@ commands:
           BOQNAME:
             - QName
             - BaseQName
+          CFSTRUCT:
+            - CFStructure
           CLUSDATE:
             - ClusterDate
           CLUSTIME:
             - ClusterTime
+          QSVCINT:
+            - QServiceInterval
           RNAME:
             - QName
           RQMNAME:
@@ -12683,6 +12827,7 @@ commands:
           - OTELPCTL
           - PROCESS
           - PROPCTL
+          - PSID
           - PUT
           - QALIAS
           - QDEPTHHI
@@ -12694,8 +12839,8 @@ commands:
           - QMGR
           - QMID
           - QREMOTE
+          - QSGDISP
           - QSVCIEV
-          - QSVCINT
           - RETINTVL
           - SHARE
           - STATQ
@@ -12777,6 +12922,7 @@ commands:
           - XmitQName
     notes:
       - display-parameter-descriptions-treated-as-input
+      - display-requested-parameters-table
   - mqsc:
       name: DISPLAY SBSTATUS
       href: SSFKSJ_9.4.0/refadmin/q086280_.html
@@ -13897,7 +14043,37 @@ commands:
         - operator
         - qmgr-name
       input_parameters: []
-      output_parameters: []
+      output_parameters:
+        - ALTDATE
+        - ALTTIME
+        - CLROUTE
+        - CLSTATE
+        - CLUSDATE
+        - CLUSQMGR
+        - CLUSTER
+        - CLUSTIME
+        - COMMINFO
+        - CUSTOM
+        - DEFPRESP
+        - DEFPRTY
+        - DEFPSIST
+        - DESCR
+        - DURSUB
+        - MCAST
+        - MDURMDL
+        - MNDURMDL
+        - NPMSGDLV
+        - PMSGDLV
+        - PROXYSUB
+        - PUB
+        - PUBSCOPE
+        - QMID
+        - SUB
+        - SUBSCOPE
+        - TOPICSTR
+        - TYPE
+        - USEDLQ
+        - WILDCARD
       section_sources:
         {}
     pcf:
@@ -14141,10 +14317,39 @@ commands:
           - TopicType
       response:
         suggested:
-          {}
+          COMMINFO: CommInfo
+          CUSTOM: Custom
+          USEDLQ: UseDLQ
         ambiguous:
-          {}
-        unmapped: []
+          TOPICSTR:
+            - TopicString
+        unmapped:
+          - ALTDATE
+          - ALTTIME
+          - CLROUTE
+          - CLSTATE
+          - CLUSDATE
+          - CLUSQMGR
+          - CLUSTER
+          - CLUSTIME
+          - DEFPRESP
+          - DEFPRTY
+          - DEFPSIST
+          - DESCR
+          - DURSUB
+          - MCAST
+          - MDURMDL
+          - MNDURMDL
+          - NPMSGDLV
+          - PMSGDLV
+          - PROXYSUB
+          - PUB
+          - PUBSCOPE
+          - QMID
+          - SUB
+          - SUBSCOPE
+          - TYPE
+          - WILDCARD
         pcf_unmapped:
           - AlterationDate
           - AlterationTime
@@ -14152,8 +14357,6 @@ commands:
           - ClusterName
           - ClusterObjectState
           - ClusterPubRoute
-          - CommInfo
-          - Custom
           - DefPersistence
           - DefPriority
           - DefPutResponse
@@ -14173,9 +14376,9 @@ commands:
           - TopicName
           - TopicString
           - TopicType
-          - UseDLQ
           - WildcardOperation
-    notes: []
+    notes:
+      - display-requested-parameters-table
   - mqsc:
       name: DISPLAY TPSTATUS
       href: SSFKSJ_9.4.0/refadmin/q086390_.html
