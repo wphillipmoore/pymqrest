@@ -84,7 +84,7 @@ Rules:
 - Use the PCF command definitions as the source of the PCF list.
 - Match commands by intended operation and object type, not by wording alone.
 - When an MQSC command has no PCF equivalent, set `status: no-equivalent` and document why.
-- When a PCF command has no MQSC equivalent, record it separately for future review.
+- PCF-only commands are out of scope because the wrapper only uses the MQSC command namespace; note them only if they clarify naming or mapping decisions.
 
 ## Parameter extraction and mapping
 For each confirmed MQSC <-> PCF command pair, extract both request and response parameters, then map them.
