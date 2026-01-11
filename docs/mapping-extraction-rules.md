@@ -71,6 +71,7 @@ Type mapping rules:
 - PCF `MQCFIN`/`MQCFIN64` numeric fields -> `int`.
 - PCF list or array fields -> `list[str]` or `list[int]` based on element type.
 - PCF boolean-style flags -> `bool` only when the docs define a true/false semantic; otherwise keep `int`.
+- Ignore enumerated constants and section labels; only parameters with explicit `MQCF*` types are treated as typed attributes.
 
 When MQSC documents numeric values with symbolic tokens:
 - Use `int` as the type and add a `values` mapping for the symbolic tokens.
@@ -92,8 +93,8 @@ For each confirmed MQSC <-> PCF command pair, extract both request and response 
 Steps:
 1. MQSC inputs: list all MQSC keyword parameters and allowed values for the command.
 2. MQSC outputs: list response attributes returned by the MQSC display or inquiry.
-3. PCF request: list PCF input parameters from the command format page.
-4. PCF response: list PCF output parameters from the response page.
+3. PCF request: list PCF input parameters from the command format page (exclude response pages).
+4. PCF response: list PCF output parameters from the response page (explicit "Response" topic).
 5. Map MQSC inputs to PCF request parameters and MQSC outputs to PCF response parameters.
 6. Record conflicts, ambiguities, and mixed-type responses in notes.
 7. Keep separate entries for input-only and response-only attributes when they differ.
