@@ -14,7 +14,7 @@ This document defines how to gather and analyze IBM MQ MQSC and PCF documentatio
 - [Edge cases](#edge-cases)
 
 ## Purpose
-Create a repeatable process that converts IBM MQ documentation into consistent mapping tables between MQSC attributes, PCF attributes, and snake_case names.
+Create a repeatable process that converts IBM MQ documentation into consistent mapping tables between MQSC attributes, PCF attributes, and snake_case names. This process depends on the command metadata extraction baseline described in `docs/command-metadata-extraction.md`.
 
 ## Inputs
 - MQSC command reference pages for the target command.
@@ -54,14 +54,15 @@ Rules:
 - `values` is optional; include only when MQSC uses symbolic tokens.
 
 ## Extraction process
-1. Identify the MQSC command and the PCF command that represent the same operation.
-2. Extract MQSC attribute names and their allowed values from the MQSC command page.
-3. Extract PCF attribute names from both the command format and response pages.
-4. Pair attributes by meaning, not by spelling, using IBM’s wording and examples as the tie-breaker.
-5. Convert PCF attribute names to snake_case for external use.
-6. Map MQSC attribute values to snake_case when values are symbolic tokens; keep numeric values as-is.
-7. Assign mappings at the qualifier level by default; add command-specific overrides only when necessary.
-8. Record any ambiguity in a separate notes log and mark the mapping as provisional.
+1. Build the command metadata baseline for MQSC and PCF (see `docs/command-metadata-extraction.md`).
+2. Identify the MQSC command and the PCF command that represent the same operation.
+3. Extract MQSC attribute names and their allowed values from the MQSC command page.
+4. Extract PCF attribute names from both the command format and response pages.
+5. Pair attributes by meaning, not by spelling, using IBM’s wording and examples as the tie-breaker.
+6. Convert PCF attribute names to snake_case for external use.
+7. Map MQSC attribute values to snake_case when values are symbolic tokens; keep numeric values as-is.
+8. Assign mappings at the qualifier level by default; add command-specific overrides only when necessary.
+9. Record any ambiguity in a separate notes log and mark the mapping as provisional.
 
 ## Type extraction
 Types are sourced from PCF command format and response pages. MQSC documentation is used only as a secondary reference when PCF does not define a type.
