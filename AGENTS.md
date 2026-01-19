@@ -1,14 +1,4 @@
-# Agent Instructions for pymqrest
-
-This repository follows the shared standards and conventions located at:
-
-- `../standards-and-conventions/`
-
-The canonical instructions are maintained there. The content below mirrors
-`../standards-and-conventions/AGENTS.md` for convenience. There are no local
-overrides at this time.
-
-# Standards and Conventions - Agent Instructions
+# pymqrest Agent Instructions
 
 ## User Overrides (Optional)
 
@@ -16,21 +6,26 @@ If `~/AGENTS.md` exists and is readable, load it and apply it as a
 user-specific overlay for this session. If it cannot be read, say so
 briefly and continue.
 
-This repository is the canonical source of development standards and
-conventions. Treat the documents here as the default baseline for other
-repositories, with local overrides captured elsewhere when needed.
+## Canonical Standards
 
-## Working Rules
-- Read the relevant standards before editing or adding documentation.
-- Keep guidance generic; remove project-specific names, paths, or tooling.
-- Preserve intent and rationale when generalizing standards.
-- Update or create Tables of Contents per the Markdown standards.
-- Prefer small, focused edits that keep documents easy to scan.
+This repository follows the canonical standards and conventions in the
+`standards-and-conventions` repository.
 
-## Documentation First
-This repo is documentation-first. Do not add code unless it is an example
-explicitly required to explain a standard.
+Resolve the local path (preferred):
+- `../standards-and-conventions`
 
-## File Layout
-- Core standards live under `docs/`.
-- Follow `docs/foundation/markdown-standards.md` when adding documentation.
+If the local path is unavailable, use the canonical web source:
+- https://github.com/wphillipmoore/standards-and-conventions
+
+If the canonical standards cannot be retrieved, treat it as a fatal
+exception and stop.
+
+## Shared Skills
+
+Replace `<standards-repo-path>` with the resolved local path when available.
+- Load all skills from: `<standards-repo-path>/skills/**/SKILL.md`
+- Treat every skill found under that directory as available and active.
+
+## Local Overrides
+
+None.
