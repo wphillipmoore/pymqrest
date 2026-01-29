@@ -1,7 +1,7 @@
 # pymqrest Agent Instructions
 
-#include docs/standards-and-conventions.md
-#include ./docs/repository-standards.md
+<!-- include: docs/standards-and-conventions.md -->
+<!-- include: ./docs/repository-standards.md -->
 
 ## User Overrides (Optional)
 

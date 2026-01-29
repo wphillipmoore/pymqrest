@@ -8,7 +8,7 @@ https://github.com/wphillipmoore/standards-and-conventions
 - [Project-specific overlay](#project-specific-overlay)
 
 ## Canonical references
-#include ../standards-and-conventions/docs/standards-and-conventions.md
+<!-- include: ../standards-and-conventions/docs/standards-and-conventions.md -->
 
 ## Project-specific overlay
 Project-specific content lives in `docs/repository-standards.md` and is
