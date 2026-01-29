@@ -4,4 +4,4 @@
 - [Includes](#includes)
 
 ## Includes
-#include docs/standards-and-conventions.md
+<!-- include: docs/standards-and-conventions.md -->
