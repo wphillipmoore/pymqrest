@@ -21,6 +21,9 @@ class IntegrationConfig:
     verify_tls: bool
     queue_name: str
     channel_name: str
+    listener_name: str | None
+    topic_name: str | None
+    subscription_name: str | None
     map_attributes: bool
 
 
@@ -33,6 +36,9 @@ def load_integration_config() -> IntegrationConfig:
         verify_tls=_parse_bool(getenv("MQ_REST_VERIFY_TLS", "false")),
         queue_name=getenv("MQ_TEST_QUEUE", "PYMQREST.QLOCAL"),
         channel_name=getenv("MQ_TEST_CHANNEL", "PYMQREST.SVRCONN"),
+        listener_name=getenv("MQ_TEST_LISTENER"),
+        topic_name=getenv("MQ_TEST_TOPIC"),
+        subscription_name=getenv("MQ_TEST_SUBSCRIPTION"),
         map_attributes=_parse_bool(getenv("MQ_REST_MAP_ATTRIBUTES", "false")),
     )
 
@@ -62,12 +68,46 @@ def test_display_qmgr_returns_object() -> None:
 
 
 @pytest.mark.integration
+def test_display_qmstatus_returns_object_or_none() -> None:
+    _require_integration_enabled()
+    config = load_integration_config()
+    session = _build_session(config)
+
+    result = session.display_qmstatus()
+
+    assert result is None or isinstance(result, dict)
+
+
+@pytest.mark.integration
+def test_display_cmdserv_returns_object_or_none() -> None:
+    _require_integration_enabled()
+    config = load_integration_config()
+    session = _build_session(config)
+
+    result = session.display_cmdserv()
+
+    assert result is None or isinstance(result, dict)
+
+
+@pytest.mark.integration
 def test_display_queue_returns_object() -> None:
     _require_integration_enabled()
     config = load_integration_config()
     session = _build_session(config)
 
     results = session.display_queue(name=config.queue_name)
+
+    assert results
+    assert any(_contains_string_value(result, config.queue_name) for result in results)
+
+
+@pytest.mark.integration
+def test_display_qstatus_returns_object() -> None:
+    _require_integration_enabled()
+    config = load_integration_config()
+    session = _build_session(config)
+
+    results = session.display_qstatus(name=config.queue_name)
 
     assert results
     assert any(_contains_string_value(result, config.queue_name) for result in results)
@@ -83,6 +123,48 @@ def test_display_channel_returns_object() -> None:
 
     assert results
     assert any(_contains_string_value(result, config.channel_name) for result in results)
+
+
+@pytest.mark.integration
+def test_display_listener_returns_object_when_configured() -> None:
+    _require_integration_enabled()
+    config = load_integration_config()
+    if config.listener_name is None:
+        pytest.skip("Set MQ_TEST_LISTENER to enable listener integration checks.")
+    session = _build_session(config)
+
+    results = session.display_listener(name=config.listener_name)
+
+    assert results
+    assert any(_contains_string_value(result, config.listener_name) for result in results)
+
+
+@pytest.mark.integration
+def test_display_topic_returns_object_when_configured() -> None:
+    _require_integration_enabled()
+    config = load_integration_config()
+    if config.topic_name is None:
+        pytest.skip("Set MQ_TEST_TOPIC to enable topic integration checks.")
+    session = _build_session(config)
+
+    results = session.display_topic(name=config.topic_name)
+
+    assert results
+    assert any(_contains_string_value(result, config.topic_name) for result in results)
+
+
+@pytest.mark.integration
+def test_display_sub_returns_object_when_configured() -> None:
+    _require_integration_enabled()
+    config = load_integration_config()
+    if config.subscription_name is None:
+        pytest.skip("Set MQ_TEST_SUBSCRIPTION to enable subscription integration checks.")
+    session = _build_session(config)
+
+    results = session.display_sub(name=config.subscription_name)
+
+    assert results
+    assert any(_contains_string_value(result, config.subscription_name) for result in results)
 
 
 def _require_integration_enabled() -> None:
