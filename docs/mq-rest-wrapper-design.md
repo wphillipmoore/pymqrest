@@ -156,6 +156,18 @@ Conventions:
 - `display_qmstatus` and `display_cmdserv` return a single dict-like object.
 - Missing queue manager returns `None` without raising.
 
+### MQSC namespace coverage
+The session class includes method wrappers for every MQSC command listed in
+`docs/mqsc-pcf-command-mapping.md`. The method naming convention is
+`<verb>_<qualifier>` (lowercase, spaces to underscores). Generated methods
+accept optional `name`, `request_parameters`, and `response_parameters` and
+defer validation to the server.
+
+Return shape rules:
+- `DISPLAY` commands return a list of dict-like objects, except the queue
+  manager helpers that return a single object or `None`.
+- Non-`DISPLAY` commands return `None`.
+
 ## Mapping and typing
 - Attribute mapping pipeline: MQSC -> PCF -> snake_case.
 - Mapping is enabled by default, with opt-out at session init and per-method.

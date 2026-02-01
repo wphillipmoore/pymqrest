@@ -194,6 +194,25 @@ def delete_channel(
 `define_channel` expects `request_parameters` to include `channel_type`; the
 client does not validate required parameters yet.
 
+## MQSC namespace coverage
+`MQRESTSession` now exposes wrappers for every MQSC command listed in
+`docs/mqsc-pcf-command-mapping.md`. Method names follow the pattern
+`<verb>_<qualifier>` with tokens lowercased and spaces converted to underscores.
+
+All generated methods accept:
+- `name: str | None = None`
+- `request_parameters: RequestParametersType | None = None`
+- `response_parameters: ResponseParametersType | None = None`
+
+Return shapes follow these rules:
+- `DISPLAY` commands return a list of objects.
+- `display_qmgr`, `display_qmstatus`, and `display_cmdserv` return a single
+  object or `None`.
+- Non-`DISPLAY` commands return `None`.
+
+Queue/channel convenience methods keep their existing defaults (for example,
+`display_queue` and `display_channel` default `name` to `"*"`).
+
 ## Internal bridge to metadata
 Public methods are thin wrappers over an internal command executor. The
 internal executor accepts MQSC command data and uses collected metadata to
