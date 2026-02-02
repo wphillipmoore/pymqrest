@@ -913,7 +913,6 @@ commands:
         - CERTLABL
         - CHLTYPE
         - CLNTWGHT
-        - CLNTWGHT(0)
         - CLUSNL
         - CLUSTER
         - CLWLPRTY
@@ -1521,26 +1520,67 @@ commands:
         - q-name
       input_parameters: []
       output_parameters:
-        - ALL
-        - CHLDISP
+        - AMQPKA
+        - BATCHES
+        - BATCHSZ
+        - BUFSRCVD
+        - BUFSSENT
+        - BYTSRCVD
+        - BYTSSENT
         - CHLTYPE
-        - CMDSCOPE
+        - CHSTADA
+        - CHSTATI
+        - COMPHDR
+        - COMPMSG
         - COMPRATE
         - COMPTIME
-        - CONNAME
-        - CURRENT
+        - CURLUWID
+        - CURMSGS
+        - CURSEQNO
+        - CURSHCNV
         - EXITTIME
+        - HBINT
+        - INDOUBT
         - JOBNAME
+        - KAINT
+        - LOCLADDR
+        - LONGRTS
+        - LSTLUWID
+        - LSTMSGDA
+        - LSTMSGTI
+        - LSTSEQNO
+        - MAXMSGL
+        - MAXSHCNV
         - MCASTAT
+        - MCAUSER
         - MONCHL
         - MONITOR
+        - MSGS
         - NETTIME
         - NPMSPEED
-        - QSGDISP
-        - SAVED
-        - SHORT
+        - PORT
+        - QMNAME
+        - RAPPLTAG
+        - RPRODUCT
+        - RQMNAME
+        - RVERSION
+        - SECPROT
+        - SHARECNV
+        - SHORTRTS
+        - SSLCERTI
+        - SSLCERTU
+        - SSLCIPH
+        - SSLKEYDA
+        - SSLKEYTI
+        - SSLPEER
+        - SSLRKEYS
+        - STATCHL
+        - STATUS
+        - STOPREQ
+        - SUBSTATE
+        - TPROOT
+        - USECLTID
         - XBATCHSZ
-        - XMITQ
         - XQMSGSA
         - XQTIME
       section_sources:
@@ -9905,7 +9945,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_CHANNEL
       request_href: SSFKSJ_9.4.0/refadmin/q087120_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087130_.html
       request_parameters:
         - name: ChannelName
           pcf_type: MQCFST
@@ -9938,7 +9978,6 @@ commands:
       response_parameters:
         []
     notes:
-      - delete-channel-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -14583,7 +14622,7 @@ commands:
     pcf:
       command: MQCMD_PING_CHANNEL
       request_href: SSFKSJ_9.4.0/refadmin/q088190_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q088190_.html
       request_parameters:
         - name: ChannelName
           pcf_type: MQCFST
@@ -14624,7 +14663,7 @@ commands:
     pcf:
       command: MQCMD_RESET_CHANNEL
       request_href: SSFKSJ_9.4.0/refadmin/q088270_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q088270_.html
       request_parameters:
         - name: ChannelName
           pcf_type: MQCFST
@@ -14780,7 +14819,7 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY CHANNEL
     output_parameters:
@@ -14796,7 +14835,6 @@ commands:
       - CERTLABL
       - CHLTYPE
       - CLNTWGHT
-      - CLNTWGHT(0)
       - CLUSNL
       - CLUSTER
       - CLWLPRTY
@@ -14862,26 +14900,67 @@ commands:
       - XMITQ
   - name: DISPLAY CHSTATUS
     output_parameters:
-      - ALL
-      - CHLDISP
+      - AMQPKA
+      - BATCHES
+      - BATCHSZ
+      - BUFSRCVD
+      - BUFSSENT
+      - BYTSRCVD
+      - BYTSSENT
       - CHLTYPE
-      - CMDSCOPE
+      - CHSTADA
+      - CHSTATI
+      - COMPHDR
+      - COMPMSG
       - COMPRATE
       - COMPTIME
-      - CONNAME
-      - CURRENT
+      - CURLUWID
+      - CURMSGS
+      - CURSEQNO
+      - CURSHCNV
       - EXITTIME
+      - HBINT
+      - INDOUBT
       - JOBNAME
+      - KAINT
+      - LOCLADDR
+      - LONGRTS
+      - LSTLUWID
+      - LSTMSGDA
+      - LSTMSGTI
+      - LSTSEQNO
+      - MAXMSGL
+      - MAXSHCNV
       - MCASTAT
+      - MCAUSER
       - MONCHL
       - MONITOR
+      - MSGS
       - NETTIME
       - NPMSPEED
-      - QSGDISP
-      - SAVED
-      - SHORT
+      - PORT
+      - QMNAME
+      - RAPPLTAG
+      - RPRODUCT
+      - RQMNAME
+      - RVERSION
+      - SECPROT
+      - SHARECNV
+      - SHORTRTS
+      - SSLCERTI
+      - SSLCERTU
+      - SSLCIPH
+      - SSLKEYDA
+      - SSLKEYTI
+      - SSLPEER
+      - SSLRKEYS
+      - STATCHL
+      - STATUS
+      - STOPREQ
+      - SUBSTATE
+      - TPROOT
+      - USECLTID
       - XBATCHSZ
-      - XMITQ
       - XQMSGSA
       - XQTIME
 ```

@@ -29,9 +29,44 @@ commands:
         - topicstr)
       input_parameters: []
       output_parameters:
-        - CMDSCOPE
-        - TYPE
-        - WHERE
+        - ACTCONN
+        - ADMIN
+        - CAPEXPRY
+        - CLROUTE
+        - CLUSTER
+        - COMMEV
+        - COMMINFO
+        - CONNID
+        - DEFPRESP
+        - DEFPRTY
+        - DEFPSIST
+        - DURABLE
+        - DURSUB
+        - LMSGDATE
+        - LMSGTIME
+        - LPUBDATE
+        - LPUBTIME
+        - MCAST
+        - MCASTREL
+        - MDURMDL
+        - MNDURMDL
+        - NPMSGDLV
+        - NUMMSGS
+        - NUMPUBS
+        - PMSGDLV
+        - PUB
+        - PUBCOUNT
+        - PUBSCOPE
+        - RESMDATE
+        - RESMTIME
+        - RETAINED
+        - SUB
+        - SUBCOUNT
+        - SUBID
+        - SUBSCOPE
+        - SUBTYPE
+        - SUBUSER
+        - USEDLQ
       section_sources:
         {}
     pcf:
@@ -151,11 +186,46 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY TPSTATUS
     output_parameters:
-      - CMDSCOPE
-      - TYPE
-      - WHERE
+      - ACTCONN
+      - ADMIN
+      - CAPEXPRY
+      - CLROUTE
+      - CLUSTER
+      - COMMEV
+      - COMMINFO
+      - CONNID
+      - DEFPRESP
+      - DEFPRTY
+      - DEFPSIST
+      - DURABLE
+      - DURSUB
+      - LMSGDATE
+      - LMSGTIME
+      - LPUBDATE
+      - LPUBTIME
+      - MCAST
+      - MCASTREL
+      - MDURMDL
+      - MNDURMDL
+      - NPMSGDLV
+      - NUMMSGS
+      - NUMPUBS
+      - PMSGDLV
+      - PUB
+      - PUBCOUNT
+      - PUBSCOPE
+      - RESMDATE
+      - RESMTIME
+      - RETAINED
+      - SUB
+      - SUBCOUNT
+      - SUBID
+      - SUBSCOPE
+      - SUBTYPE
+      - SUBUSER
+      - USEDLQ
 ```

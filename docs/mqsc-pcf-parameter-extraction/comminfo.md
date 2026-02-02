@@ -414,6 +414,19 @@ commands:
       input_parameters: []
       output_parameters:
         - ALL
+        - ALTDATE
+        - ALTTIME
+        - BRIDGE
+        - CCSID
+        - COMMEV
+        - ENCODING
+        - GRPADDR
+        - MCHBINT
+        - MCPROP
+        - MONINT
+        - MSGHIST
+        - NSUBHIST
+        - PORT
         - TYPE
       section_sources:
         {}
@@ -563,10 +576,23 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY COMMINFO
     output_parameters:
       - ALL
+      - ALTDATE
+      - ALTTIME
+      - BRIDGE
+      - CCSID
+      - COMMEV
+      - ENCODING
+      - GRPADDR
+      - MCHBINT
+      - MCPROP
+      - MONINT
+      - MSGHIST
+      - NSUBHIST
+      - PORT
       - TYPE
 ```

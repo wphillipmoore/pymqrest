@@ -26,7 +26,67 @@ commands:
         - qmgr-name
       input_parameters: []
       output_parameters:
+        - ALTDATE
+        - ALTTIME
+        - BATCHHB
+        - BATCHINT
+        - BATCHLIM
+        - BATCHSZ
+        - CLUSDATE
+        - CLUSTIME
+        - CLWLPRTY
+        - CLWLRANK
+        - CLWLWGHT
+        - COMPHDR
+        - COMPMSG
+        - CONNAME
+        - CONVERT
+        - DEFTYPE
+        - DESCR
+        - DISCINT
+        - HBINT
+        - KAINT
+        - LOCLADDR
+        - LONGRTY
+        - LONGTMR
+        - MAXMSGL
+        - MCANAME
+        - MCATYPE
+        - MCAUSER
+        - MODENAME
+        - MRDATA
+        - MREXIT
+        - MRRTY
+        - MRTMR
+        - MSGDATA
+        - MSGEXIT
+        - NETPRTY
+        - NPMSPEED
+        - PASSWORD
+        - PROPCTL
+        - PUTAUT
+        - QMID
+        - QMTYPE
+        - RCVDATA
+        - RCVEXIT
+        - SCYDATA
+        - SCYEXIT
+        - SENDDATA
+        - SENDEXIT
+        - SEQWRAP
+        - SHORTRTY
+        - SHORTTMR
+        - SSLCAUTH
+        - SSLCIPH
+        - SSLPEER
+        - STATUS
         - SUSPEND
+        - TPNAME
+        - TRPTYPE
+        - USEDLQ
+        - USERID
+        - VERSION
+        - XMITQ
       section_sources:
         {}
     pcf:
@@ -465,9 +525,69 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY CLUSQMGR
     output_parameters:
+      - ALTDATE
+      - ALTTIME
+      - BATCHHB
+      - BATCHINT
+      - BATCHLIM
+      - BATCHSZ
+      - CLUSDATE
+      - CLUSTIME
+      - CLWLPRTY
+      - CLWLRANK
+      - CLWLWGHT
+      - COMPHDR
+      - COMPMSG
+      - CONNAME
+      - CONVERT
+      - DEFTYPE
+      - DESCR
+      - DISCINT
+      - HBINT
+      - KAINT
+      - LOCLADDR
+      - LONGRTY
+      - LONGTMR
+      - MAXMSGL
+      - MCANAME
+      - MCATYPE
+      - MCAUSER
+      - MODENAME
+      - MRDATA
+      - MREXIT
+      - MRRTY
+      - MRTMR
+      - MSGDATA
+      - MSGEXIT
+      - NETPRTY
+      - NPMSPEED
+      - PASSWORD
+      - PROPCTL
+      - PUTAUT
+      - QMID
+      - QMTYPE
+      - RCVDATA
+      - RCVEXIT
+      - SCYDATA
+      - SCYEXIT
+      - SENDDATA
+      - SENDEXIT
+      - SEQWRAP
+      - SHORTRTY
+      - SHORTTMR
+      - SSLCAUTH
+      - SSLCIPH
+      - SSLPEER
+      - STATUS
       - SUSPEND
+      - TPNAME
+      - TRPTYPE
+      - USEDLQ
+      - USERID
+      - VERSION
+      - XMITQ
 ```

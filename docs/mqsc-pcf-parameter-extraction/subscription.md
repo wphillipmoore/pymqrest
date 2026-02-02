@@ -261,7 +261,17 @@ commands:
         - string
       input_parameters: []
       output_parameters:
+        - ACTCONN
         - COMMEV
+        - DURABLE
+        - LMSGDATE
+        - LMSGTIME
+        - MCASTREL
+        - NUMMSGS
+        - RESMDATE
+        - RESMTIME
+        - SUBTYPE
+        - TOPICSTR
       section_sources:
         {}
     pcf:
@@ -406,6 +416,7 @@ commands:
         - VARUSER
         - WSCHEMA
       output_parameters:
+        - ALL
         - CLUSQT
         - CMDSCOPE
         - DESCR
@@ -413,6 +424,7 @@ commands:
         - DESTCLAS
         - DESTCORL
         - DISTYPE
+        - DURABLE
         - EXPIRY
         - HARDENBO
         - PSPROP
@@ -421,12 +433,14 @@ commands:
         - PUBPRTY
         - REQONLY
         - SELECTOR
+        - SELTYPE
         - SHARE
         - SUBID
         - SUBLEVEL
         - SUBSCOPE
         - SUBTYPE
         - SUBUSER
+        - SUMMARY
         - TOPICOBJ
         - TOPICSTR
         - TRIGGER
@@ -876,7 +890,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_SUBSCRIPTION
       request_href: SSFKSJ_9.4.0/refadmin/q087210_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087210_.html
       request_parameters:
         - name: SubName
           pcf_type: MQCFST
@@ -893,9 +907,23 @@ commands:
           enum_values:
             - MQIS_NO
             - MQIS_YES
-      response_parameters: []
+      response_parameters:
+        - name: SubName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: SubId
+          pcf_type: MQCFBS
+          type_hint: bytes
+        - name: CommandScope
+          pcf_type: MQCFST
+          type_hint: str
+        - name: IgnoreState
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQIS_YES
+            - MQIS_NO
     notes:
-      - delete-subscription-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -1182,13 +1210,24 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY SBSTATUS
     output_parameters:
+      - ACTCONN
       - COMMEV
+      - DURABLE
+      - LMSGDATE
+      - LMSGTIME
+      - MCASTREL
+      - NUMMSGS
+      - RESMDATE
+      - RESMTIME
+      - SUBTYPE
+      - TOPICSTR
   - name: DISPLAY SUB
     output_parameters:
+      - ALL
       - CLUSQT
       - CMDSCOPE
       - DESCR
@@ -1196,6 +1235,7 @@ commands:
       - DESTCLAS
       - DESTCORL
       - DISTYPE
+      - DURABLE
       - EXPIRY
       - HARDENBO
       - PSPROP
@@ -1204,12 +1244,14 @@ commands:
       - PUBPRTY
       - REQONLY
       - SELECTOR
+      - SELTYPE
       - SHARE
       - SUBID
       - SUBLEVEL
       - SUBSCOPE
       - SUBTYPE
       - SUBUSER
+      - SUMMARY
       - TOPICOBJ
       - TOPICSTR
       - TRIGGER

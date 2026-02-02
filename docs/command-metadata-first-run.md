@@ -20,11 +20,11 @@ Capture command-specific MQSC and PCF metadata without cross-namespace mapping.
 
 ## Summary
 
-- Output refresh updated: 2026-01-27T20:30:57Z
+- Output refresh updated: 2026-02-02T19:46:59Z
 - MQSC commands parsed: 139
 - MQSC docs fetched: 139
 - MQSC commands with input parameters: 133
-- MQSC commands with output parameters: 42
+- MQSC commands with output parameters: 40
 - PCF commands parsed: 105
 - PCF request pages fetched: 105
 - PCF response pages fetched: 105
@@ -1506,8 +1506,31 @@ mqsc_commands:
       - TYPE
       - WHERE
       - applicationnamestr
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - TYPE
+      - WHERE
+    output_only:
+      - ACTIVE
+      - BALANCED
+      - BALOPTS
+      - BALSTATE
+      - BALTMOUT
+      - BALTYPE
+      - CLUSTER
+      - CONNS
+      - CONNTAG
+      - COUNT
+      - IMMCOUNT
+      - IMMDATE
+      - IMMREASN
+      - IMMTIME
+      - LMSGDATE
+      - LMSGTIME
+      - MOVABLE
+      - MOVCOUNT
+      - QMID
+      - QMNAME
     notes:
   - name: DISPLAY ARCHIVE
     href: SSFKSJ_9.4.0/refadmin/q085980_.html
@@ -1595,8 +1618,17 @@ mqsc_commands:
       - PRINCIPAL(principal-name)
       - PROFILE(profile-name)
       - SERVCOMP(service-component)
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - GROUP
+      - MATCH
+      - OBJTYPE
+      - PRINCIPAL
+      - PROFILE
+    output_only:
+      - AUTHLIST
+      - ENTITY
+      - ENTTYPE
     notes:
   - name: DISPLAY AUTHSERV
     href: SSFKSJ_9.4.0/refadmin/q086010_.html
@@ -1605,7 +1637,6 @@ mqsc_commands:
       - ALL
     input_only: []
     output_only:
-      - ALL
       - IFVER
       - SERVCOMP
       - UIDSUPP
@@ -1627,8 +1658,19 @@ mqsc_commands:
       - SMDS
       - TYPE
       - WHERE
-    input_only: []
-    output_only: []
+    input_only:
+      - CFSTRUCT
+      - QMNAME
+      - WHERE
+    output_only:
+      - CFTYPE
+      - FAILDATE
+      - FAILTIME
+      - OFFLDUSE
+      - RCVDATE
+      - RCVTIME
+      - SIZEUSED
+      - TYPEPURGE
     notes:
   - name: DISPLAY CFSTRUCT
     href: SSFKSJ_9.4.0/refadmin/q086030_.html
@@ -1639,17 +1681,24 @@ mqsc_commands:
       - ALL
       - WHERE
     input_only:
-      - DESCR
-      - RECOVER
+      - WHERE
     output_only:
-      - ALL
+      - ALTDATE
+      - ALTTIME
+      - CFCONLOS
       - CFLEVEL
+      - DSBLOCK
+      - DSBUFS
+      - DSEXPAND
+      - DSGROUP
       - OFFLD1SZ
       - OFFLD1TH
       - OFFLD2SZ
       - OFFLD2TH
       - OFFLD3SZ
       - OFFLD3TH
+      - OFFLOAD
+      - RECAUTO
     notes:
   - name: DISPLAY CHANNEL
     href: SSFKSJ_9.4.0/refadmin/q086040_.html
@@ -1742,12 +1791,6 @@ mqsc_commands:
       - ALL
       - CMDSCOPE
       - QSGDISP
-      - QSGDISP(ALL)
-      - QSGDISP(COPY)
-      - QSGDISP(GROUP)
-      - QSGDISP(LIVE)
-      - QSGDISP(PRIVATE)
-      - QSGDISP(QMGR)
       - WHERE
     output_only:
       - AFFINITY
@@ -1761,7 +1804,6 @@ mqsc_commands:
       - BATCHSZ
       - CERTLABL
       - CLNTWGHT
-      - CLNTWGHT(0)
       - CLUSNL
       - CLUSTER
       - CLWLPRTY
@@ -1842,17 +1884,25 @@ mqsc_commands:
     input_only: []
     output_only:
       - ADDRESS
+      - ADDRLIST
+      - ALL
+      - ALTDATE
+      - ALTTIME
+      - CHCKCLNT
       - CLNTUSER
+      - CMDSCOPE
+      - CUSTOM
+      - DESCR
       - MATCH
-      - MATCH(EXACT)
-      - MATCH(GENERIC)
+      - MCAUSER
       - QMNAME
-      - REVDNS(ENABLED)
+      - REVDNS
       - SSLCERTI
       - SSLPEER
-      - TYPE(ALL)
-      - TYPE(USERMAP)
+      - TYPE
+      - USERLIST
       - WARN
+      - WHERE
     notes:
   - name: DISPLAY CHSTATUS
     href: SSFKSJ_9.4.0/refadmin/q086090_.html
@@ -1877,8 +1927,68 @@ mqsc_commands:
       - SHORT
       - WHERE
       - XMITQ( q-name )
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - CHLDISP
+      - CMDSCOPE
+      - CONNAME
+      - CURRENT
+      - QSGDISP
+      - SAVED
+      - SHORT
+      - WHERE
+      - XMITQ
+    output_only:
+      - AMQPKA
+      - BATCHES
+      - BATCHSZ
+      - BUFSRCVD
+      - BUFSSENT
+      - BYTSRCVD
+      - BYTSSENT
+      - CHSTADA
+      - CHSTATI
+      - COMPHDR
+      - COMPMSG
+      - CURLUWID
+      - CURMSGS
+      - CURSEQNO
+      - CURSHCNV
+      - HBINT
+      - INDOUBT
+      - KAINT
+      - LOCLADDR
+      - LONGRTS
+      - LSTLUWID
+      - LSTMSGDA
+      - LSTMSGTI
+      - LSTSEQNO
+      - MAXMSGL
+      - MAXSHCNV
+      - MCAUSER
+      - MSGS
+      - PORT
+      - QMNAME
+      - RAPPLTAG
+      - RPRODUCT
+      - RQMNAME
+      - RVERSION
+      - SECPROT
+      - SHARECNV
+      - SHORTRTS
+      - SSLCERTI
+      - SSLCERTU
+      - SSLCIPH
+      - SSLKEYDA
+      - SSLKEYTI
+      - SSLPEER
+      - SSLRKEYS
+      - STATCHL
+      - STATUS
+      - STOPREQ
+      - SUBSTATE
+      - TPROOT
+      - USECLTID
     notes:
   - name: DISPLAY CLUSQMGR
     href: SSFKSJ_9.4.0/refadmin/q086110_.html
@@ -1896,9 +2006,70 @@ mqsc_commands:
       - CMDSCOPE
       - WHERE
     input_only:
-      - STATUS
+      - ALL
+      - CMDSCOPE
+      - WHERE
     output_only:
+      - ALTDATE
+      - ALTTIME
+      - BATCHHB
+      - BATCHINT
+      - BATCHLIM
+      - BATCHSZ
+      - CLUSDATE
+      - CLUSTIME
+      - CLWLPRTY
+      - CLWLRANK
+      - CLWLWGHT
+      - COMPHDR
+      - COMPMSG
+      - CONNAME
+      - CONVERT
+      - DEFTYPE
+      - DESCR
+      - DISCINT
+      - HBINT
+      - KAINT
+      - LOCLADDR
+      - LONGRTY
+      - LONGTMR
+      - MAXMSGL
+      - MCANAME
+      - MCATYPE
+      - MCAUSER
+      - MODENAME
+      - MRDATA
+      - MREXIT
+      - MRRTY
+      - MRTMR
+      - MSGDATA
+      - MSGEXIT
+      - NETPRTY
+      - NPMSPEED
+      - PASSWORD
+      - PROPCTL
+      - PUTAUT
+      - QMID
+      - QMTYPE
+      - RCVDATA
+      - RCVEXIT
+      - SCYDATA
+      - SCYEXIT
+      - SENDDATA
+      - SENDEXIT
+      - SEQWRAP
+      - SHORTRTY
+      - SHORTTMR
+      - SSLCAUTH
+      - SSLCIPH
+      - SSLPEER
       - SUSPEND
+      - TPNAME
+      - TRPTYPE
+      - USEDLQ
+      - USERID
+      - VERSION
+      - XMITQ
     notes:
   - name: DISPLAY CMDSERV
     href: SSFKSJ_9.4.0/refadmin/q086120_.html
@@ -1923,10 +2094,20 @@ mqsc_commands:
       - TYPE
       - WHERE
     input_only:
-      - COMMEV
+      - WHERE
     output_only:
-      - ALL
-      - TYPE
+      - ALTDATE
+      - ALTTIME
+      - BRIDGE
+      - CCSID
+      - ENCODING
+      - GRPADDR
+      - MCHBINT
+      - MCPROP
+      - MONINT
+      - MSGHIST
+      - NSUBHIST
+      - PORT
     notes:
   - name: DISPLAY CONN
     href: SSFKSJ_9.4.0/refadmin/q086140_.html
@@ -1941,8 +2122,46 @@ mqsc_commands:
       - TYPE
       - URDISP
       - WHERE
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - CMDSCOPE
+      - EXTCONN
+      - URDISP
+    output_only:
+      - APPLDESC
+      - APPLTYPE
+      - ASID
+      - ASTATE
+      - CHANNEL
+      - CLIENTID
+      - CONNAME
+      - CONNTAG
+      - DEFREADA
+      - DEST
+      - DESTQMGR
+      - HSTATE
+      - NID
+      - OBJNAME
+      - OBJTYPE
+      - OPENOPTS
+      - PID
+      - PSBNAME
+      - PSTID
+      - QMURID
+      - READA
+      - SUBID
+      - SUBNAME
+      - TASKNO
+      - TID
+      - TOPICSTR
+      - TRANSID
+      - UOWLOG
+      - UOWLOGDA
+      - UOWLOGTI
+      - UOWSTDA
+      - UOWSTTI
+      - URTYPE
+      - USERID
     notes:
   - name: DISPLAY ENTAUTH
     href: SSFKSJ_9.4.0/refadmin/q086150_.html
@@ -1958,8 +2177,14 @@ mqsc_commands:
       - OBJTYPE
       - PRINCIPAL(principal-name)
       - SERVCOMP(service-component)
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - GROUP
+      - PRINCIPAL
+    output_only:
+      - AUTHLIST
+      - ENTITY
+      - ENTTYPE
     notes:
   - name: DISPLAY GROUP
     href: SSFKSJ_9.4.0/refadmin/q086160_.html
@@ -1967,8 +2192,7 @@ mqsc_commands:
     parameters:
       - OBSMSGS
     input_only: []
-    output_only:
-      - OBSMSGS
+    output_only: []
     notes:
   - name: DISPLAY LISTENER
     href: SSFKSJ_9.4.0/refadmin/q086170_.html
@@ -1982,8 +2206,25 @@ mqsc_commands:
       - ALL
       - TRPTYPE
       - WHERE
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - TRPTYPE
+      - WHERE
+    output_only:
+      - ADAPTER
+      - ALTDATE
+      - ALTTIME
+      - BACKLOG
+      - COMMANDS
+      - CONTROL
+      - DESCR
+      - IPADDR
+      - LOCLNAME
+      - NTBNAMES
+      - PORT
+      - SESSIONS
+      - SOCKET
+      - TPNAME
     notes:
   - name: DISPLAY LOG
     href: SSFKSJ_9.4.0/refadmin/q086180_.html
@@ -2005,7 +2246,9 @@ mqsc_commands:
       - ( generic-listener-name )
       - ALL
       - WHERE
-    input_only: []
+    input_only:
+      - ALL
+      - WHERE
     output_only:
       - ADAPTER
       - BACKLOG
@@ -2031,7 +2274,8 @@ mqsc_commands:
       - qmgr-name
     parameters:
       - CMDSCOPE
-    input_only: []
+    input_only:
+      - CMDSCOPE
     output_only:
       - MAXUMSGS
     notes:
@@ -2051,15 +2295,15 @@ mqsc_commands:
       - QSGDISP
       - WHERE
     input_only:
+      - ALL
       - CMDSCOPE
-      - QSGDISP(ALL)
-      - QSGDISP(COPY)
-      - QSGDISP(GROUP)
-      - QSGDISP(LIVE)
-      - QSGDISP(PRIVATE)
-      - QSGDISP(QMGR)
       - WHERE
-    output_only: []
+    output_only:
+      - ALTDATE
+      - ALTTIME
+      - DESCR
+      - NAMCOUNT
+      - NAMES
     notes:
   - name: DISPLAY POLICY
     href: SSFKSJ_9.4.0/refadmin/q120820_.html
@@ -2090,18 +2334,16 @@ mqsc_commands:
       - QSGDISP
       - WHERE
     input_only:
-      - APPLTYPE
       - CMDSCOPE
       - QSGDISP
-      - QSGDISP(ALL)
-      - QSGDISP(COPY)
-      - QSGDISP(GROUP)
-      - QSGDISP(LIVE)
-      - QSGDISP(PRIVATE)
-      - QSGDISP(QMGR)
       - WHERE
     output_only:
-      - ALL
+      - ALTDATE
+      - ALTTIME
+      - APPLICID
+      - DESCR
+      - ENVRDATA
+      - USERDATA
     notes:
   - name: DISPLAY PUBSUB
     href: SSFKSJ_9.4.0/refadmin/q086230_.html
@@ -2118,7 +2360,6 @@ mqsc_commands:
       - STATUS
       - SUBCOUNT
       - TPCOUNT
-      - TYPE
     notes:
   - name: DISPLAY QMGR
     href: SSFKSJ_9.4.0/refadmin/q086240_.html
@@ -2136,25 +2377,151 @@ mqsc_commands:
       - OTELTRAC
       - PUBSUB
       - SYSTEM
-    input_only: []
+    input_only:
+      - CHINIT
+      - CLUSTER
+      - CMDSCOPE
+      - EVENT
+      - PUBSUB
+      - SYSTEM
     output_only:
+      - ACCTCONO
+      - ACCTINT
+      - ACCTMQI
       - ACCTQ
       - ACCTQMQI
+      - ACTCHL
+      - ACTIVREC
+      - ACTVCONO
       - ACTVTRC
       - ADOPTCHK
+      - ADOPTMCA
       - ADVCAP
-      - ALL
+      - ALTDATE
+      - ALTTIME
+      - AMQPCAP
+      - AUTHEVSC
+      - AUTHOREV
+      - BRIDGEEV
+      - CCSID
+      - CERTLABL
+      - CERTQSGL
+      - CERTVPOL
       - CFCONLOS
+      - CHAD
+      - CHADEV
+      - CHADEXIT
+      - CHIADAPS
+      - CHIDISPS
+      - CHISERVP
+      - CHLAUTH
+      - CHLEV
+      - CLWLDATA
+      - CLWLEXIT
+      - CLWLLEN
+      - CLWLMRUC
       - CLWLUSEQ
+      - CMDEV
+      - CMDLEVEL
+      - COMMANDQ
+      - CONFIGEV
+      - CONNAUTH
+      - CPILEVEL
+      - CRDATE
+      - CRTIME
+      - CUSTOM
+      - DEADQ
       - DEFCLXQ
+      - DEFXMITQ
+      - DESCR
+      - DISTL
+      - DNSGROUP
+      - DNSWLM
+      - EXPRYINT
+      - GROUPUR
+      - IGQ
+      - IGQAUT
+      - IGQUSER
+      - IMGINTVL
+      - IMGLOGLN
+      - IMGRCOVO
+      - IMGRCOVQ
+      - IMGSCHED
+      - INHIBTEV
+      - INITKEY
+      - IPADDRV
+      - KEYRPWD
+      - LOCALEV
+      - LOGGEREV
+      - LSTRTMR
+      - LU62ARM
+      - LU62CHL
+      - LUGROUP
+      - LUNAME
+      - MARKINT
+      - MAXCHL
+      - MAXHANDS
+      - MAXMSGL
+      - MAXPRTY
       - MAXUMSGS
+      - MONACLS
+      - MONCHL
+      - MONQ
+      - OPORTMAX
+      - OPORTMIN
       - OTELPCTL
       - OTELTRAC
+      - PARENT
+      - PERFMEV
+      - PLATFORM
+      - PSCLUS
+      - PSMODE
+      - PSNPMSG
+      - PSNPRES
+      - PSRTYCNT
+      - PSSYNCPT
       - QMGRPROD
+      - QMID
+      - QMNAME
+      - QSGNAME
       - RCVTIME
+      - RCVTMIN
       - RCVTTYPE
+      - REMOTEEV
+      - REPOS
+      - REPOSNL
+      - REVDNS
+      - ROUTEREC
+      - SCHINIT
+      - SCMDSERV
+      - SCYCASE
+      - SPLCAP
       - SQQMNAME
       - SSLCRLNL
+      - SSLCRYP
+      - SSLEV
+      - SSLFIPS
+      - SSLKEYR
+      - SSLRKEYC
+      - SSLTASKS
+      - STATACLS
+      - STATCHL
+      - STATINT
+      - STATMQI
+      - STATQ
+      - STRSTPEV
+      - SUITEB
+      - SYNCPT
+      - TCPCHL
+      - TCPKEEP
+      - TCPNAME
+      - TCPSTACK
+      - TRAXSTR
+      - TRAXTBL
+      - TREELIFE
+      - TRIGINT
+      - VERSION
+      - XRCAP
     notes: []
   - name: DISPLAY QMSTATUS
     href: SSFKSJ_9.4.0/refadmin/q086250_.html
@@ -2170,13 +2537,79 @@ mqsc_commands:
       - UNKNOWN
       - WHERE
     input_only:
+      - ALL
       - LOG
-      - TYPE(NATIVEHA)
+      - WHERE
     output_only:
+      - ACKLSN
+      - ACTIVE
+      - ARCHLOG
+      - ARCHSZ
+      - AUTOCLUS
+      - CHINIT
+      - CHKPTCNT
+      - CHKPTOPS
+      - CHKPTSZ
+      - CMDSERV
+      - CONNGRP
+      - CONNS
+      - CURRLOG
+      - DATFSSZ
+      - DATFSUSE
+      - DATPATH
+      - DISKLSN
+      - GRPADDR
+      - GRPLSN
+      - GRPNAME
+      - GRPROLE
+      - GRPVER
+      - GRSTATUS
+      - HASTATUS
+      - HOSTNAME
+      - INITLSN
+      - INITTIME
+      - INSTANCE
+      - INSTDESC
+      - INSTNAME
+      - INSTPATH
       - LDAPCONN
+      - LEADER
+      - LIVETIME
+      - LOGEXTSZ
+      - LOGFSSZ
+      - LOGFSUSE
+      - LOGINUSE
+      - LOGPATH
+      - LOGPRIM
+      - LOGSEC
+      - LOGSTRDA
+      - LOGSTRL
+      - LOGSTRTI
+      - LOGTYPE
+      - LOGUTIL
+      - MEDIALOG
+      - MEDIASZ
+      - QMFSENC
+      - QMFSSZ
       - QMFSUSE
+      - QMNAME
+      - QUORUM
+      - RCOVLSN
+      - RCOVTIME
+      - RECLOG
+      - RECSZ
+      - REPLADDR
+      - REPLICA
+      - REUSESZ
+      - ROLE
       - SHARED
-      - TYPE(REDUCELOG)
+      - STANDBY
+      - STARTDA
+      - STARTTI
+      - STATUS
+      - SYNCTIME
+      - UNICLUS
+      - UNKNOWN
     notes: []
   - name: DISPLAY QSTATUS
     href: SSFKSJ_9.4.0/refadmin/q086260_.html
@@ -2191,8 +2624,43 @@ mqsc_commands:
       - OPENTYPE
       - TYPE
       - WHERE
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - CMDSCOPE
+      - OPENTYPE
+      - WHERE
+    output_only:
+      - APPLDESC
+      - APPLTYPE
+      - ASID
+      - ASTATE
+      - BROWSE
+      - CHANNEL
+      - CONNAME
+      - CURDEPTH
+      - CURFSIZE
+      - CURMAXFS
+      - EXTURID
+      - HSTATE
+      - INPUT
+      - INQUIRE
+      - IPPROCS
+      - MAXFSIZE
+      - MEDIALOG
+      - OFF
+      - OPPROCS
+      - OUTPUT
+      - PID
+      - PSBNAME
+      - PSTID
+      - QMURID
+      - SET
+      - TASKNO
+      - TID
+      - TRANSID
+      - UNCOM
+      - URTYPE
+      - USERID
     notes:
   - name: DISPLAY QUEUE
     href: SSFKSJ_9.4.0/refadmin/q086270_.html
@@ -2379,7 +2847,6 @@ mqsc_commands:
       - MAXFSIZE
       - MAXMSGL
       - MONQ
-      - MQ
       - MQPMO
       - MSGDLVSQ
       - NONE
@@ -2428,13 +2895,21 @@ mqsc_commands:
       - SUBTYPE
       - WHERE
     input_only:
+      - ALL
       - CMDSCOPE
       - QSGDISP
-      - SUBTYPE
       - SUBUSER
       - WHERE
     output_only:
+      - ACTCONN
       - COMMEV
+      - LMSGDATE
+      - LMSGTIME
+      - MCASTREL
+      - NUMMSGS
+      - RESMDATE
+      - RESMTIME
+      - TOPICSTR
     notes:
   - name: DISPLAY SECURITY
     href: SSFKSJ_9.4.0/refadmin/q086290_.html
@@ -2460,8 +2935,20 @@ mqsc_commands:
       - (generic-service-name)
       - ALL
       - WHERE
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - WHERE
+    output_only:
+      - ALTDATE
+      - ALTTIME
+      - DESCR
+      - SERVTYPE
+      - STARTARG
+      - STARTCMD
+      - STDERR
+      - STDOUT
+      - STOPARG
+      - STOPCMD
     notes:
   - name: DISPLAY SMDS
     href: SSFKSJ_9.4.0/refadmin/q086310_.html
@@ -2477,10 +2964,15 @@ mqsc_commands:
       - SMDS(qmgr-name|*)
       - WHERE
     input_only:
+      - ALL
       - DESCR
       - RECOVER
+      - WHERE
     output_only:
       - CFSTRUCT
+      - DSBUFS
+      - DSEXPAND
+      - SMDS
     notes:
   - name: DISPLAY SMDSCONN
     href: SSFKSJ_9.4.0/refadmin/q086320_.html
@@ -2512,16 +3004,18 @@ mqsc_commands:
       - QSGDISP
       - WHERE
     input_only:
+      - ALL
       - CMDSCOPE
       - PSID
       - QSGDISP
-      - QSGDISP(ALL)
-      - QSGDISP(COPY)
-      - QSGDISP(GROUP)
-      - QSGDISP(QMGR)
       - WHERE
     output_only:
+      - ALTDATE
+      - ALTTIME
+      - DESCR
+      - PASSTKTA
       - XCFGNAME
+      - XCFMNAME
     notes:
   - name: DISPLAY SUB
     href: SSFKSJ_9.4.0/refadmin/q086340_.html
@@ -2592,10 +3086,21 @@ mqsc_commands:
       - ALL
       - WHERE
     input_only:
-      - CONTROL
+      - ALL
+      - WHERE
     output_only:
+      - DESCR
+      - PID
       - SERVTYPE
-      - SERVTYPE(SERVER)
+      - STARTARG
+      - STARTCMD
+      - STARTDA
+      - STARTTI
+      - STATUS
+      - STDERR
+      - STDOUT
+      - STOPARG
+      - STOPCMD
     notes:
   - name: DISPLAY SYSTEM
     href: SSFKSJ_9.4.0/refadmin/q086360_.html
@@ -2624,8 +3129,18 @@ mqsc_commands:
       - CMDSCOPE
       - QSGDISP
       - WHERE
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - CMDSCOPE
+      - QSGDISP
+      - WHERE
+    output_only:
+      - CLROUTE
+      - CLSTATE
+      - CLUSDATE
+      - CLUSQMGR
+      - CLUSTIME
+      - QMID
     notes:
   - name: DISPLAY THREAD
     href: SSFKSJ_9.4.0/refadmin/q086370_.html
@@ -2689,15 +3204,11 @@ mqsc_commands:
       - WHERE
       - WILDCARD
     input_only:
+      - ALL
       - CLUSINFO
       - CMDSCOPE
       - QSGDISP
-      - QSGDISP(ALL)
-      - QSGDISP(COPY)
-      - QSGDISP(GROUP)
-      - QSGDISP(LIVE)
-      - QSGDISP(PRIVATE)
-      - QSGDISP(QMGR)
+      - WHERE
     output_only:
       - ALTDATE
       - ALTTIME
@@ -2706,7 +3217,6 @@ mqsc_commands:
       - CLSTATE
       - CLUSDATE
       - CLUSQMGR
-      - CLUSTER
       - CLUSTIME
       - COMMINFO
       - CUSTOM
@@ -2717,7 +3227,6 @@ mqsc_commands:
       - MCAST
       - MDURMDL
       - MNDURMDL
-      - MQ
       - NPMSGDLV
       - PAGEVAL
       - PMSGDLV
@@ -2729,7 +3238,6 @@ mqsc_commands:
       - SUB
       - SUBSCOPE
       - TOPICSTR
-      - TYPE
       - USEDLQ
       - WILDCARD
     notes: []
@@ -2750,8 +3258,50 @@ mqsc_commands:
       - TYPE
       - WHERE
       - topicstr)
-    input_only: []
-    output_only: []
+    input_only:
+      - ALL
+      - CMDSCOPE
+      - TYPE
+      - WHERE
+    output_only:
+      - ACTCONN
+      - ADMIN
+      - CAPEXPRY
+      - CLROUTE
+      - CLUSTER
+      - COMMEV
+      - COMMINFO
+      - CONNID
+      - DEFPRESP
+      - DEFPRTY
+      - DEFPSIST
+      - DURABLE
+      - DURSUB
+      - LMSGDATE
+      - LMSGTIME
+      - LPUBDATE
+      - LPUBTIME
+      - MCAST
+      - MCASTREL
+      - MDURMDL
+      - MNDURMDL
+      - NPMSGDLV
+      - NUMMSGS
+      - NUMPUBS
+      - PMSGDLV
+      - PUB
+      - PUBCOUNT
+      - PUBSCOPE
+      - RESMDATE
+      - RESMTIME
+      - RETAINED
+      - SUB
+      - SUBCOUNT
+      - SUBID
+      - SUBSCOPE
+      - SUBTYPE
+      - SUBUSER
+      - USEDLQ
     notes:
   - name: DISPLAY TRACE
     href: SSFKSJ_9.4.0/refadmin/q086400_.html
@@ -2771,20 +3321,15 @@ mqsc_commands:
       - STAT
     input_only: []
     output_only:
-      - ACCTG
-      - CHINIT
       - CLASS
-      - CMDSCOPE
       - COMMENT
       - DEST
       - DETAIL
-      - GLOBAL
       - GTF
       - RES
       - RMID
       - SMF
       - SRV
-      - STAT
       - TNO
       - USERID
     notes:

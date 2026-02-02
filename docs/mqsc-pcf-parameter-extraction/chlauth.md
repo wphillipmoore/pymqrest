@@ -23,17 +23,25 @@ commands:
       input_parameters: []
       output_parameters:
         - ADDRESS
+        - ADDRLIST
+        - ALL
+        - ALTDATE
+        - ALTTIME
+        - CHCKCLNT
         - CLNTUSER
+        - CMDSCOPE
+        - CUSTOM
+        - DESCR
         - MATCH
-        - MATCH(EXACT)
-        - MATCH(GENERIC)
+        - MCAUSER
         - QMNAME
-        - REVDNS(ENABLED)
+        - REVDNS
         - SSLCERTI
         - SSLPEER
-        - TYPE(ALL)
-        - TYPE(USERMAP)
+        - TYPE
+        - USERLIST
         - WARN
+        - WHERE
       section_sources:
         {}
     pcf:
@@ -445,20 +453,28 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY CHLAUTH
     output_parameters:
       - ADDRESS
+      - ADDRLIST
+      - ALL
+      - ALTDATE
+      - ALTTIME
+      - CHCKCLNT
       - CLNTUSER
+      - CMDSCOPE
+      - CUSTOM
+      - DESCR
       - MATCH
-      - MATCH(EXACT)
-      - MATCH(GENERIC)
+      - MCAUSER
       - QMNAME
-      - REVDNS(ENABLED)
+      - REVDNS
       - SSLCERTI
       - SSLPEER
-      - TYPE(ALL)
-      - TYPE(USERMAP)
+      - TYPE
+      - USERLIST
       - WARN
+      - WHERE
 ```

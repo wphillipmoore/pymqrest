@@ -1050,7 +1050,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_AUTH_INFO
       request_href: SSFKSJ_9.4.0/refadmin/q087090_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087090_.html
       request_parameters:
         - name: AuthInfoName
           pcf_type: MQCFST
@@ -1071,9 +1071,27 @@ commands:
           enum_values:
             - MQIS_NO
             - MQIS_YES
-      response_parameters: []
+      response_parameters:
+        - name: AuthInfoName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: CommandScope
+          pcf_type: MQCFST
+          type_hint: str
+        - name: QSGDisposition
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQQSGD_COPY
+            - MQQSGD_GROUP
+            - MQQSGD_Q_MGR
+        - name: IgnoreState
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQIS_YES
+            - MQIS_NO
     notes:
-      - delete-authinfo-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -1325,7 +1343,7 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY AUTHINFO
     output_parameters:

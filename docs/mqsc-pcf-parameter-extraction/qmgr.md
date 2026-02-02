@@ -1597,23 +1597,144 @@ commands:
         - qmgr-name
       input_parameters: []
       output_parameters:
+        - ACCTCONO
+        - ACCTINT
+        - ACCTMQI
         - ACCTQ
         - ACCTQMQI
+        - ACTCHL
+        - ACTIVREC
+        - ACTVCONO
         - ACTVTRC
         - ADOPTCHK
+        - ADOPTMCA
         - ADVCAP
         - ALL
+        - ALTDATE
+        - ALTTIME
+        - AMQPCAP
+        - AUTHEVSC
+        - AUTHOREV
+        - BRIDGEEV
+        - CCSID
+        - CERTLABL
+        - CERTQSGL
+        - CERTVPOL
         - CFCONLOS
+        - CHAD
+        - CHADEV
+        - CHADEXIT
+        - CHIADAPS
+        - CHIDISPS
+        - CHISERVP
+        - CHLAUTH
+        - CHLEV
+        - CLWLDATA
+        - CLWLEXIT
+        - CLWLLEN
+        - CLWLMRUC
         - CLWLUSEQ
+        - CMDEV
+        - CMDLEVEL
+        - COMMANDQ
+        - CONFIGEV
+        - CONNAUTH
+        - CPILEVEL
+        - CRDATE
+        - CRTIME
+        - CUSTOM
+        - DEADQ
         - DEFCLXQ
+        - DEFXMITQ
+        - DESCR
+        - DISTL
+        - DNSGROUP
+        - DNSWLM
+        - EXPRYINT
+        - GROUPUR
+        - IGQ
+        - IGQAUT
+        - IGQUSER
+        - IMGINTVL
+        - IMGLOGLN
+        - IMGRCOVO
+        - IMGRCOVQ
+        - IMGSCHED
+        - INHIBTEV
+        - INITKEY
+        - IPADDRV
+        - KEYRPWD
+        - LOCALEV
+        - LOGGEREV
+        - LSTRTMR
+        - LU62ARM
+        - LU62CHL
+        - LUGROUP
+        - LUNAME
+        - MARKINT
+        - MAXCHL
+        - MAXHANDS
+        - MAXMSGL
+        - MAXPRTY
         - MAXUMSGS
+        - MONACLS
+        - MONCHL
+        - MONQ
+        - OPORTMAX
+        - OPORTMIN
         - OTELPCTL
         - OTELTRAC
+        - PARENT
+        - PERFMEV
+        - PLATFORM
+        - PSCLUS
+        - PSMODE
+        - PSNPMSG
+        - PSNPRES
+        - PSRTYCNT
+        - PSSYNCPT
         - QMGRPROD
+        - QMID
+        - QMNAME
+        - QSGNAME
         - RCVTIME
+        - RCVTMIN
         - RCVTTYPE
+        - REMOTEEV
+        - REPOS
+        - REPOSNL
+        - REVDNS
+        - ROUTEREC
+        - SCHINIT
+        - SCMDSERV
+        - SCYCASE
+        - SPLCAP
         - SQQMNAME
         - SSLCRLNL
+        - SSLCRYP
+        - SSLEV
+        - SSLFIPS
+        - SSLKEYR
+        - SSLRKEYC
+        - SSLTASKS
+        - STATACLS
+        - STATCHL
+        - STATINT
+        - STATMQI
+        - STATQ
+        - STRSTPEV
+        - SUITEB
+        - SYNCPT
+        - TCPCHL
+        - TCPKEEP
+        - TCPNAME
+        - TCPSTACK
+        - TRAXSTR
+        - TRAXTBL
+        - TREELIFE
+        - TRIGINT
+        - VERSION
+        - XRCAP
       section_sources:
         'Requested parameters':
           - DEFCLXQ
@@ -2599,10 +2720,77 @@ commands:
       positional_parameters: []
       input_parameters: []
       output_parameters:
+        - ACKLSN
+        - ACTIVE
+        - ARCHLOG
+        - ARCHSZ
+        - AUTOCLUS
+        - CHINIT
+        - CHKPTCNT
+        - CHKPTOPS
+        - CHKPTSZ
+        - CMDSERV
+        - CONNGRP
+        - CONNS
+        - CURRLOG
+        - DATFSSZ
+        - DATFSUSE
+        - DATPATH
+        - DISKLSN
+        - GRPADDR
+        - GRPLSN
+        - GRPNAME
+        - GRPROLE
+        - GRPVER
+        - GRSTATUS
+        - HASTATUS
+        - HOSTNAME
+        - INITLSN
+        - INITTIME
+        - INSTANCE
+        - INSTDESC
+        - INSTNAME
+        - INSTPATH
         - LDAPCONN
+        - LEADER
+        - LIVETIME
+        - LOGEXTSZ
+        - LOGFSSZ
+        - LOGFSUSE
+        - LOGINUSE
+        - LOGPATH
+        - LOGPRIM
+        - LOGSEC
+        - LOGSTRDA
+        - LOGSTRL
+        - LOGSTRTI
+        - LOGTYPE
+        - LOGUTIL
+        - MEDIALOG
+        - MEDIASZ
+        - NHATYPE
+        - QMFSENC
+        - QMFSSZ
         - QMFSUSE
+        - QMNAME
+        - QUORUM
+        - RCOVLSN
+        - RCOVTIME
+        - RECLOG
+        - RECSZ
+        - REPLADDR
+        - REPLICA
+        - REUSESZ
+        - ROLE
         - SHARED
-        - TYPE(REDUCELOG)
+        - STANDBY
+        - STARTDA
+        - STARTTI
+        - STATUS
+        - SYNCTIME
+        - TYPE
+        - UNICLUS
+        - UNKNOWN
       section_sources:
         'Requested parameters for TYPE(NATIVEHA)':
           - ACTIVE
@@ -3528,31 +3716,219 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY QMGR
     output_parameters:
+      - ACCTCONO
+      - ACCTINT
+      - ACCTMQI
       - ACCTQ
       - ACCTQMQI
+      - ACTCHL
+      - ACTIVREC
+      - ACTVCONO
       - ACTVTRC
       - ADOPTCHK
+      - ADOPTMCA
       - ADVCAP
       - ALL
+      - ALTDATE
+      - ALTTIME
+      - AMQPCAP
+      - AUTHEVSC
+      - AUTHOREV
+      - BRIDGEEV
+      - CCSID
+      - CERTLABL
+      - CERTQSGL
+      - CERTVPOL
       - CFCONLOS
+      - CHAD
+      - CHADEV
+      - CHADEXIT
+      - CHIADAPS
+      - CHIDISPS
+      - CHISERVP
+      - CHLAUTH
+      - CHLEV
+      - CLWLDATA
+      - CLWLEXIT
+      - CLWLLEN
+      - CLWLMRUC
       - CLWLUSEQ
+      - CMDEV
+      - CMDLEVEL
+      - COMMANDQ
+      - CONFIGEV
+      - CONNAUTH
+      - CPILEVEL
+      - CRDATE
+      - CRTIME
+      - CUSTOM
+      - DEADQ
       - DEFCLXQ
+      - DEFXMITQ
+      - DESCR
+      - DISTL
+      - DNSGROUP
+      - DNSWLM
+      - EXPRYINT
+      - GROUPUR
+      - IGQ
+      - IGQAUT
+      - IGQUSER
+      - IMGINTVL
+      - IMGLOGLN
+      - IMGRCOVO
+      - IMGRCOVQ
+      - IMGSCHED
+      - INHIBTEV
+      - INITKEY
+      - IPADDRV
+      - KEYRPWD
+      - LOCALEV
+      - LOGGEREV
+      - LSTRTMR
+      - LU62ARM
+      - LU62CHL
+      - LUGROUP
+      - LUNAME
+      - MARKINT
+      - MAXCHL
+      - MAXHANDS
+      - MAXMSGL
+      - MAXPRTY
       - MAXUMSGS
+      - MONACLS
+      - MONCHL
+      - MONQ
+      - OPORTMAX
+      - OPORTMIN
       - OTELPCTL
       - OTELTRAC
+      - PARENT
+      - PERFMEV
+      - PLATFORM
+      - PSCLUS
+      - PSMODE
+      - PSNPMSG
+      - PSNPRES
+      - PSRTYCNT
+      - PSSYNCPT
       - QMGRPROD
+      - QMID
+      - QMNAME
+      - QSGNAME
       - RCVTIME
+      - RCVTMIN
       - RCVTTYPE
+      - REMOTEEV
+      - REPOS
+      - REPOSNL
+      - REVDNS
+      - ROUTEREC
+      - SCHINIT
+      - SCMDSERV
+      - SCYCASE
+      - SPLCAP
       - SQQMNAME
       - SSLCRLNL
+      - SSLCRYP
+      - SSLEV
+      - SSLFIPS
+      - SSLKEYR
+      - SSLRKEYC
+      - SSLTASKS
+      - STATACLS
+      - STATCHL
+      - STATINT
+      - STATMQI
+      - STATQ
+      - STRSTPEV
+      - SUITEB
+      - SYNCPT
+      - TCPCHL
+      - TCPKEEP
+      - TCPNAME
+      - TCPSTACK
+      - TRAXSTR
+      - TRAXTBL
+      - TREELIFE
+      - TRIGINT
+      - VERSION
+      - XRCAP
   - name: DISPLAY QMSTATUS
     output_parameters:
+      - ACKLSN
+      - ACTIVE
+      - ARCHLOG
+      - ARCHSZ
+      - AUTOCLUS
+      - CHINIT
+      - CHKPTCNT
+      - CHKPTOPS
+      - CHKPTSZ
+      - CMDSERV
+      - CONNGRP
+      - CONNS
+      - CURRLOG
+      - DATFSSZ
+      - DATFSUSE
+      - DATPATH
+      - DISKLSN
+      - GRPADDR
+      - GRPLSN
+      - GRPNAME
+      - GRPROLE
+      - GRPVER
+      - GRSTATUS
+      - HASTATUS
+      - HOSTNAME
+      - INITLSN
+      - INITTIME
+      - INSTANCE
+      - INSTDESC
+      - INSTNAME
+      - INSTPATH
       - LDAPCONN
+      - LEADER
+      - LIVETIME
+      - LOGEXTSZ
+      - LOGFSSZ
+      - LOGFSUSE
+      - LOGINUSE
+      - LOGPATH
+      - LOGPRIM
+      - LOGSEC
+      - LOGSTRDA
+      - LOGSTRL
+      - LOGSTRTI
+      - LOGTYPE
+      - LOGUTIL
+      - MEDIALOG
+      - MEDIASZ
+      - NHATYPE
+      - QMFSENC
+      - QMFSSZ
       - QMFSUSE
+      - QMNAME
+      - QUORUM
+      - RCOVLSN
+      - RCOVTIME
+      - RECLOG
+      - RECSZ
+      - REPLADDR
+      - REPLICA
+      - REUSESZ
+      - ROLE
       - SHARED
-      - TYPE(REDUCELOG)
+      - STANDBY
+      - STARTDA
+      - STARTTI
+      - STATUS
+      - SYNCTIME
+      - TYPE
+      - UNICLUS
+      - UNKNOWN
 ```

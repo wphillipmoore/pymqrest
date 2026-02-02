@@ -24,7 +24,7 @@ commands:
       input_parameters:
         - CANCEL OFFLOAD
         - CMDSCOPE
-        - MODE(QUIESCE)
+        - MODE
         - TIME
         - WAIT
       output_parameters: []
@@ -339,15 +339,4 @@ commands:
           - Archive
           - ParameterType
     notes: []
-```
-
-## Output-parameter refresh
-
-```yaml
-version: 1
-generated_at: 2026-01-27T20:30:57Z
-commands:
-  - name: DISPLAY LOG
-    output_parameters:
-      - CMDSCOPE
 ```
