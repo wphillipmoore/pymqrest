@@ -157,11 +157,9 @@ commands:
         - service-component
       input_parameters: []
       output_parameters:
-        - GROUP
-        - OBJTYPE
-        - OBJTYPE(QMGR)
-        - PRINCIPAL
-        - PROFILE
+        - AUTHLIST
+        - ENTITY
+        - ENTTYPE
       section_sources:
         {}
     pcf:
@@ -591,7 +589,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_AUTH_REC
       request_href: SSFKSJ_9.4.0/refadmin/q087100_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087100_.html
       request_parameters:
         - name: ObjectType
           pcf_type: MQCFIN
@@ -624,9 +622,44 @@ commands:
           enum_values:
             - MQIS_NO
             - MQIS_YES
-      response_parameters: []
+      response_parameters:
+        - name: ObjectType
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQOT_AUTH_INFO
+            - MQOT_CHANNEL
+            - MQOT_CLNTCONN_CHANNEL
+            - MQOT_COMM_INFO
+            - MQOT_LISTENER
+            - MQOT_NAMELIST
+            - MQOT_PROCESS
+            - MQOT_Q
+            - MQOT_Q_MGR
+            - MQOT_REMOTE_Q_MGR_NAME
+            - MQOT_SERVICE
+            - MQOT_TOPIC
+        - name: ProfileName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: GroupNames
+          pcf_type: MQCFSL
+          type_hint: list[str]
+        - name: PrincipalNames
+          pcf_type: MQCFSL
+          type_hint: list[str]
+        - name: IgnoreState
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQIS_YES
+            - MQIS_NO
+            - MQRC_OBJECT_TYPE_ERROR
+            - MQRC_UNKNOWN_ENTITY
+            - MQRCCF_ENTITY_NAME_MISSING
+            - MQRCCF_OBJECT_TYPE_MISSING
+            - MQRCCF_PROFILE_NAME_ERROR
     notes:
-      - delete-authrec-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -804,7 +837,7 @@ commands:
     pcf:
       command: MQCMD_SET_AUTH_REC
       request_href: SSFKSJ_9.4.0/refadmin/q088380_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q088380_.html
       request_parameters:
         - name: ProfileName
           pcf_type: MQCFST
@@ -894,7 +927,102 @@ commands:
         - name: ServiceComponent
           pcf_type: MQCFST
           type_hint: str
-      response_parameters: []
+      response_parameters:
+        - name: ProfileName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: ObjectType
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQOT_AUTH_INFO
+            - MQOT_CHANNEL
+            - MQOT_CLNTCONN_CHANNEL
+            - MQOT_COMM_INFO
+            - MQOT_LISTENER
+            - MQOT_NAMELIST
+            - MQOT_PROCESS
+            - MQOT_Q
+            - MQOT_Q_MGR
+            - MQOT_REMOTE_Q_MGR_NAME
+            - MQOT_SERVICE
+            - MQOT_TOPIC
+        - name: AuthorityAdd
+          pcf_type: MQCFIL
+          type_hint: list[int]
+          enum_values:
+            - MQAUTH_NONE
+            - MQAUTH_ALT_USER_AUTHORITY
+            - MQAUTH_BROWSE
+            - MQAUTH_CHANGE
+            - MQAUTH_CLEAR
+            - MQAUTH_CONNECT
+            - MQAUTH_CREATE
+            - MQAUTH_DELETE
+            - MQAUTH_DISPLAY
+            - MQAUTH_INPUT
+            - MQAUTH_INQUIRE
+            - MQAUTH_OUTPUT
+            - MQAUTH_PASS_ALL_CONTEXT
+            - MQAUTH_PASS_IDENTITY_CONTEXT
+            - MQAUTH_SET
+            - MQAUTH_SET_ALL_CONTEXT
+            - MQAUTH_SET_IDENTITY_CONTEXT
+            - MQAUTH_CONTROL
+            - MQAUTH_CONTROL_EXTENDED
+            - MQAUTH_PUBLISH
+            - MQAUTH_SUBSCRIBE
+            - MQAUTH_RESUME
+            - MQAUTH_SYSTEM
+            - MQAUTH_ALL
+            - MQAUTH_ALL_ADMIN
+            - MQAUTH_ALL_MQI
+        - name: AuthorityRemove
+          pcf_type: MQCFIL
+          type_hint: list[int]
+          enum_values:
+            - MQAUTH_NONE
+            - MQAUTH_ALT_USER_AUTHORITY
+            - MQAUTH_BROWSE
+            - MQAUTH_CHANGE
+            - MQAUTH_CLEAR
+            - MQAUTH_CONNECT
+            - MQAUTH_CREATE
+            - MQAUTH_DELETE
+            - MQAUTH_DISPLAY
+            - MQAUTH_INPUT
+            - MQAUTH_INQUIRE
+            - MQAUTH_OUTPUT
+            - MQAUTH_PASS_ALL_CONTEXT
+            - MQAUTH_PASS_IDENTITY_CONTEXT
+            - MQAUTH_SET
+            - MQAUTH_SET_ALL_CONTEXT
+            - MQAUTH_SET_IDENTITY_CONTEXT
+            - MQAUTH_CONTROL
+            - MQAUTH_CONTROL_EXTENDED
+            - MQAUTH_PUBLISH
+            - MQAUTH_SUBSCRIBE
+            - MQAUTH_RESUME
+            - MQAUTH_SYSTEM
+            - MQAUTH_ALL
+            - MQAUTH_ALL_ADMIN
+            - MQAUTH_ALL_MQI
+        - name: GroupNames
+          pcf_type: MQCFSL
+          type_hint: list[str]
+        - name: PrincipalNames
+          pcf_type: MQCFSL
+          type_hint: list[str]
+        - name: ServiceComponent
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQRC_UNKNOWN_ENTITY
+            - MQRCCF_AUTH_VALUE_ERROR
+            - MQRCCF_AUTH_VALUE_MISSING
+            - MQRCCF_ENTITY_NAME_MISSING
+            - MQRCCF_OBJECT_TYPE_MISSING
+            - MQRCCF_PROFILE_NAME_ERROR
     notes: []
 ```
 
@@ -902,13 +1030,11 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY AUTHREC
     output_parameters:
-      - GROUP
-      - OBJTYPE
-      - OBJTYPE(QMGR)
-      - PRINCIPAL
-      - PROFILE
+      - AUTHLIST
+      - ENTITY
+      - ENTTYPE
 ```

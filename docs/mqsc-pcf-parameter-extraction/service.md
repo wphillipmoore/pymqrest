@@ -342,8 +342,17 @@ commands:
         - operator
       input_parameters: []
       output_parameters:
+        - ALTDATE
+        - ALTTIME
         - CONTROL
-        - WHERE
+        - DESCR
+        - SERVTYPE
+        - STARTARG
+        - STARTCMD
+        - STDERR
+        - STDOUT
+        - STOPARG
+        - STOPCMD
       section_sources:
         {}
     pcf:
@@ -462,8 +471,19 @@ commands:
         - operator
       input_parameters: []
       output_parameters:
+        - CONTROL
+        - DESCR
+        - PID
         - SERVTYPE
-        - SERVTYPE(SERVER)
+        - STARTARG
+        - STARTCMD
+        - STARTDA
+        - STARTTI
+        - STATUS
+        - STDERR
+        - STDOUT
+        - STOPARG
+        - STOPCMD
       section_sources:
         {}
     pcf:
@@ -865,7 +885,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_SERVICE
       request_href: SSFKSJ_9.4.0/refadmin/q087190_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087190_.html
       request_parameters:
         - name: ServiceName
           pcf_type: MQCFST
@@ -876,9 +896,17 @@ commands:
           enum_values:
             - MQIS_YES
             - MQIS_NO
-      response_parameters: []
+      response_parameters:
+        - name: ServiceName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: IgnoreState
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQIS_YES
+            - MQIS_NO
     notes:
-      - delete-service-response-doc-not-found
   - mqsc:
       name: DISPLAY SERVICE
       href: SSFKSJ_9.4.0/refadmin/q086300_.html
@@ -1128,7 +1156,7 @@ commands:
     pcf:
       command: MQCMD_START_SERVICE
       request_href: SSFKSJ_9.4.0/refadmin/q088460_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q088460_.html
       request_parameters:
         - name: ServiceName
           pcf_type: MQCFST
@@ -1139,7 +1167,16 @@ commands:
           enum_values:
             - MQIS_NO
             - MQIS_YES
-      response_parameters: []
+      response_parameters:
+        - name: ServiceName
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQIACF_IGNORE_STATE
+            - MQIS_NO
+            - MQIS_YES
+            - MQRCCF_NO_START_CMD
+            - MQRCCF_SERVICE_RUNNING
     notes:
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
@@ -1157,7 +1194,7 @@ commands:
     pcf:
       command: MQCMD_STOP_SERVICE
       request_href: SSFKSJ_9.4.0/refadmin/q088530_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q088530_.html
       request_parameters:
         - name: ServiceName
           pcf_type: MQCFST
@@ -1168,7 +1205,16 @@ commands:
           enum_values:
             - MQIS_NO
             - MQIS_YES
-      response_parameters: []
+      response_parameters:
+        - name: ServiceName
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQIACF_IGNORE_STATE
+            - MQIS_NO
+            - MQIS_YES
+            - MQRCCF_NO_STOP_CMD
+            - MQRCCF_SERVICE_STOPPED
     notes:
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
@@ -1178,14 +1224,34 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY SERVICE
     output_parameters:
+      - ALTDATE
+      - ALTTIME
       - CONTROL
-      - WHERE
+      - DESCR
+      - SERVTYPE
+      - STARTARG
+      - STARTCMD
+      - STDERR
+      - STDOUT
+      - STOPARG
+      - STOPCMD
   - name: DISPLAY SVSTATUS
     output_parameters:
+      - CONTROL
+      - DESCR
+      - PID
       - SERVTYPE
-      - SERVTYPE(SERVER)
+      - STARTARG
+      - STARTCMD
+      - STARTDA
+      - STARTTI
+      - STATUS
+      - STDERR
+      - STDOUT
+      - STOPARG
+      - STOPCMD
 ```

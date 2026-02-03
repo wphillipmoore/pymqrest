@@ -26,9 +26,26 @@ commands:
         - TYPE
         - WHERE
       output_parameters:
-        - ALL
-        - TYPE
-        - WHERE
+        - ACTIVE
+        - BALANCED
+        - BALOPTS
+        - BALSTATE
+        - BALTMOUT
+        - BALTYPE
+        - CLUSTER
+        - CONNS
+        - CONNTAG
+        - COUNT
+        - IMMCOUNT
+        - IMMDATE
+        - IMMREASN
+        - IMMTIME
+        - LMSGDATE
+        - LMSGTIME
+        - MOVABLE
+        - MOVCOUNT
+        - QMID
+        - QMNAME
       section_sources:
         'Parameter descriptions for DISPLAY APSTATUS':
           - ALL
@@ -180,11 +197,28 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY APSTATUS
     output_parameters:
-      - ALL
-      - TYPE
-      - WHERE
+      - ACTIVE
+      - BALANCED
+      - BALOPTS
+      - BALSTATE
+      - BALTMOUT
+      - BALTYPE
+      - CLUSTER
+      - CONNS
+      - CONNTAG
+      - COUNT
+      - IMMCOUNT
+      - IMMDATE
+      - IMMREASN
+      - IMMTIME
+      - LMSGDATE
+      - LMSGTIME
+      - MOVABLE
+      - MOVCOUNT
+      - QMID
+      - QMNAME
 ```

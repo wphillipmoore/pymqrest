@@ -376,7 +376,20 @@ commands:
         - operator
       input_parameters: []
       output_parameters:
-        - TRPTYPE
+        - ADAPTER
+        - ALTDATE
+        - ALTTIME
+        - BACKLOG
+        - COMMANDS
+        - CONTROL
+        - DESCR
+        - IPADDR
+        - LOCLNAME
+        - NTBNAMES
+        - PORT
+        - SESSIONS
+        - SOCKET
+        - TPNAME
       section_sources:
         {}
     pcf:
@@ -951,7 +964,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_LISTENER
       request_href: SSFKSJ_9.4.0/refadmin/q087140_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087140_.html
       request_parameters:
         - name: ListenerName
           pcf_type: MQCFST
@@ -962,9 +975,17 @@ commands:
           enum_values:
             - MQIS_YES
             - MQIS_NO
-      response_parameters: []
+      response_parameters:
+        - name: ListenerName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: IgnoreState
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQIS_YES
+            - MQIS_NO
     notes:
-      - delete-listener-response-doc-not-found
   - mqsc:
       name: DISPLAY LISTENER
       href: SSFKSJ_9.4.0/refadmin/q086170_.html
@@ -1291,7 +1312,7 @@ commands:
     pcf:
       command: MQCMD_START_CHANNEL_LISTENER
       request_href: SSFKSJ_9.4.0/refadmin/q088450_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q088450_.html
       request_parameters:
         - name: CommandScope
           pcf_type: MQCFST
@@ -1328,7 +1349,43 @@ commands:
           enum_values:
             - MQIS_NO
             - MQIS_YES
-      response_parameters: []
+      response_parameters:
+        - name: CommandScope
+          pcf_type: MQCFST
+          type_hint: str
+        - name: InboundDisposition
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQINBD_Q_MGR
+            - MQINBD_GROUP
+        - name: IPAddress
+          pcf_type: MQCFST
+          type_hint: str
+        - name: ListenerName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: LUName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: Port
+          pcf_type: MQCFIN
+          type_hint: int
+        - name: TransportType
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQXPT_LU62
+            - MQXPT_TCP
+            - MQXPT_NETBIOS
+            - MQXPT_SPX
+            - MQIACF_IGNORE_STATE
+            - MQIS_NO
+            - MQIS_YES
+            - MQRCCF_COMMS_LIBRARY_ERROR
+            - MQRCCF_LISTENER_NOT_STARTED
+            - MQRCCF_LISTENER_RUNNING
+            - MQRCCF_NETBIOS_NAME_ERROR
     notes:
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
@@ -1356,7 +1413,7 @@ commands:
     pcf:
       command: MQCMD_STOP_CHANNEL_LISTENER
       request_href: SSFKSJ_9.4.0/refadmin/q088510_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q088510_.html
       request_parameters:
         - name: ListenerName
           pcf_type: MQCFST
@@ -1388,7 +1445,35 @@ commands:
           enum_values:
             - MQIS_NO
             - MQIS_YES
-      response_parameters: []
+      response_parameters:
+        - name: ListenerName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: CommandScope
+          pcf_type: MQCFST
+          type_hint: str
+        - name: InboundDisposition
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQINBD_Q_MGR
+            - MQINBD_GROUP
+        - name: IPAddress
+          pcf_type: MQCFST
+          type_hint: str
+        - name: Port
+          pcf_type: MQCFIN
+          type_hint: int
+        - name: TransportType
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQXPT_LU62
+            - MQXPT_TCP
+            - MQIACF_IGNORE_STATE
+            - MQIS_NO
+            - MQIS_YES
+            - MQRCCF_LISTENER_STOPPED
     notes:
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
@@ -1398,11 +1483,24 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY LISTENER
     output_parameters:
-      - TRPTYPE
+      - ADAPTER
+      - ALTDATE
+      - ALTTIME
+      - BACKLOG
+      - COMMANDS
+      - CONTROL
+      - DESCR
+      - IPADDR
+      - LOCLNAME
+      - NTBNAMES
+      - PORT
+      - SESSIONS
+      - SOCKET
+      - TPNAME
   - name: DISPLAY LSSTATUS
     output_parameters:
       - ADAPTER

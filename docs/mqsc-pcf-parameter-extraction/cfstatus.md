@@ -30,12 +30,18 @@ commands:
         - (time)
       input_parameters: []
       output_parameters:
-        - ACCESS(ENABLED)
-        - CFSTRUCT
-        - QMNAME
+        - ACCESS
+        - CFTYPE
+        - FAILDATE
+        - FAILTIME
+        - OFFLDUSE
+        - RCVDATE
+        - RCVTIME
+        - SIZEUSED
+        - SMDS
         - STATUS
-        - STATUS(NOTFOUND)
         - TYPE
+        - TYPEPURGE
       section_sources:
         {}
     pcf:
@@ -155,14 +161,20 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY CFSTATUS
     output_parameters:
-      - ACCESS(ENABLED)
-      - CFSTRUCT
-      - QMNAME
+      - ACCESS
+      - CFTYPE
+      - FAILDATE
+      - FAILTIME
+      - OFFLDUSE
+      - RCVDATE
+      - RCVTIME
+      - SIZEUSED
+      - SMDS
       - STATUS
-      - STATUS(NOTFOUND)
       - TYPE
+      - TYPEPURGE
 ```

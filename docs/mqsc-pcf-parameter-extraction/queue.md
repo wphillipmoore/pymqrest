@@ -95,22 +95,49 @@ commands:
         - n
       input_parameters: []
       output_parameters:
+        - APPLDESC
         - APPLTAG
-        - CMDSCOPE
+        - APPLTYPE
+        - ASID
+        - ASTATE
+        - BROWSE
+        - CHANNEL
+        - CONNAME
+        - CURDEPTH
+        - CURFSIZE
+        - CURMAXFS
+        - EXTURID
+        - HSTATE
+        - INPUT
+        - INQUIRE
+        - IPPROCS
         - LGETDATE
         - LGETTIME
         - LPUTDATE
         - LPUTTIME
+        - MAXFSIZE
+        - MEDIALOG
         - MONITOR
         - MONQ
         - MSGAGE
-        - OPENTYPE
+        - OFF
+        - OPPROCS
+        - OUTPUT
+        - PID
+        - PSBNAME
+        - PSTID
+        - QMURID
         - QSGDISP
         - QTIME
+        - SET
+        - TASKNO
+        - TID
+        - TRANSID
         - TYPE
-        - TYPE(HANDLE)
+        - UNCOM
         - URID
-        - WHERE
+        - URTYPE
+        - USERID
       section_sources:
         {}
     pcf:
@@ -546,7 +573,6 @@ commands:
         - MAXFSIZE
         - MAXMSGL
         - MONQ
-        - MQ
         - MQPMO
         - MSGDLVSQ
         - NONE
@@ -2469,7 +2495,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_Q
       request_href: SSFKSJ_9.4.0/refadmin/q087180_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087180_.html
       request_parameters:
         - name: QName
           pcf_type: MQCFST
@@ -2514,7 +2540,6 @@ commands:
       response_parameters:
         []
     notes:
-      - delete-queue-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -4718,7 +4743,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_Q
       request_href: SSFKSJ_9.4.0/refadmin/q087180_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087180_.html
       request_parameters:
         - name: QName
           pcf_type: MQCFST
@@ -4763,7 +4788,6 @@ commands:
       response_parameters:
         []
     notes:
-      - delete-queue-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -6307,7 +6331,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_Q
       request_href: SSFKSJ_9.4.0/refadmin/q087180_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087180_.html
       request_parameters:
         - name: QName
           pcf_type: MQCFST
@@ -6352,7 +6376,6 @@ commands:
       response_parameters:
         []
     notes:
-      - delete-queue-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -7832,7 +7855,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_Q
       request_href: SSFKSJ_9.4.0/refadmin/q087180_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087180_.html
       request_parameters:
         - name: QName
           pcf_type: MQCFST
@@ -7877,7 +7900,6 @@ commands:
       response_parameters:
         []
     notes:
-      - delete-queue-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -8467,26 +8489,53 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY QSTATUS
     output_parameters:
+      - APPLDESC
       - APPLTAG
-      - CMDSCOPE
+      - APPLTYPE
+      - ASID
+      - ASTATE
+      - BROWSE
+      - CHANNEL
+      - CONNAME
+      - CURDEPTH
+      - CURFSIZE
+      - CURMAXFS
+      - EXTURID
+      - HSTATE
+      - INPUT
+      - INQUIRE
+      - IPPROCS
       - LGETDATE
       - LGETTIME
       - LPUTDATE
       - LPUTTIME
+      - MAXFSIZE
+      - MEDIALOG
       - MONITOR
       - MONQ
       - MSGAGE
-      - OPENTYPE
+      - OFF
+      - OPPROCS
+      - OUTPUT
+      - PID
+      - PSBNAME
+      - PSTID
+      - QMURID
       - QSGDISP
       - QTIME
+      - SET
+      - TASKNO
+      - TID
+      - TRANSID
       - TYPE
-      - TYPE(HANDLE)
+      - UNCOM
       - URID
-      - WHERE
+      - URTYPE
+      - USERID
   - name: DISPLAY QUEUE
     output_parameters:
       - ACCTQ
@@ -8532,7 +8581,6 @@ commands:
       - MAXFSIZE
       - MAXMSGL
       - MONQ
-      - MQ
       - MQPMO
       - MSGDLVSQ
       - NONE

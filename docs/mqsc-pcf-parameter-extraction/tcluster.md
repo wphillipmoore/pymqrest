@@ -26,14 +26,13 @@ commands:
         - qmgr-name
       input_parameters: []
       output_parameters:
-        - CMDSCOPE
-        - QSGDISP
-        - QSGDISP(ALL)
-        - QSGDISP(COPY)
-        - QSGDISP(GROUP)
-        - QSGDISP(LIVE)
-        - QSGDISP(PRIVATE)
-        - QSGDISP(QMGR)
+        - CLROUTE
+        - CLSTATE
+        - CLUSDATE
+        - CLUSQMGR
+        - CLUSTER
+        - CLUSTIME
+        - QMID
       section_sources:
         {}
     pcf:
@@ -65,16 +64,15 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY TCLUSTER
     output_parameters:
-      - CMDSCOPE
-      - QSGDISP
-      - QSGDISP(ALL)
-      - QSGDISP(COPY)
-      - QSGDISP(GROUP)
-      - QSGDISP(LIVE)
-      - QSGDISP(PRIVATE)
-      - QSGDISP(QMGR)
+      - CLROUTE
+      - CLSTATE
+      - CLUSDATE
+      - CLUSQMGR
+      - CLUSTER
+      - CLUSTIME
+      - QMID
 ```

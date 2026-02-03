@@ -23,15 +23,47 @@ commands:
         - qmgr-name
       input_parameters: []
       output_parameters:
+        - APPLDESC
         - APPLTAG
-        - CMDSCOPE
+        - APPLTYPE
+        - ASID
+        - ASTATE
+        - CHANNEL
+        - CLIENTID
         - CONN
+        - CONNAME
         - CONNOPTS
-        - EXTCONN
+        - CONNTAG
+        - DEFREADA
+        - DEST
+        - DESTQMGR
         - EXTURID
+        - HSTATE
+        - NID
+        - OBJNAME
+        - OBJTYPE
+        - OPENOPTS
+        - PID
+        - PSBNAME
+        - PSTID
+        - QMURID
         - QSGDISP
+        - READA
+        - SUBID
+        - SUBNAME
+        - TASKNO
+        - TID
+        - TOPICSTR
+        - TRANSID
         - TYPE
+        - UOWLOG
+        - UOWLOGDA
+        - UOWLOGTI
         - UOWSTATE
+        - UOWSTDA
+        - UOWSTTI
+        - URTYPE
+        - USERID
         - WHERE
       section_sources:
         {}
@@ -178,18 +210,50 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY CONN
     output_parameters:
+      - APPLDESC
       - APPLTAG
-      - CMDSCOPE
+      - APPLTYPE
+      - ASID
+      - ASTATE
+      - CHANNEL
+      - CLIENTID
       - CONN
+      - CONNAME
       - CONNOPTS
-      - EXTCONN
+      - CONNTAG
+      - DEFREADA
+      - DEST
+      - DESTQMGR
       - EXTURID
+      - HSTATE
+      - NID
+      - OBJNAME
+      - OBJTYPE
+      - OPENOPTS
+      - PID
+      - PSBNAME
+      - PSTID
+      - QMURID
       - QSGDISP
+      - READA
+      - SUBID
+      - SUBNAME
+      - TASKNO
+      - TID
+      - TOPICSTR
+      - TRANSID
       - TYPE
+      - UOWLOG
+      - UOWLOGDA
+      - UOWLOGTI
       - UOWSTATE
+      - UOWSTDA
+      - UOWSTTI
+      - URTYPE
+      - USERID
       - WHERE
 ```

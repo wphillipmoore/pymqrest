@@ -123,11 +123,15 @@ commands:
       - pcf-request-doc-not-found
 ```
 
+## Notes
+
+- `DISPLAY POLICY(*)` returned overallReasonCode 3328 in local MQ REST tests; use explicit policy names for validation (for example, `DISPLAY POLICY(PYMQREST.QLOCAL)`).
+
 ## Output-parameter refresh
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY POLICY
     output_parameters:
@@ -137,7 +141,3 @@ commands:
       - POLICY
       - SIGNALG
 ```
-
-## Notes
-
-- `DISPLAY POLICY(*)` returned overallReasonCode 3328 in local MQ REST tests; use explicit policy names for validation (for example, `DISPLAY POLICY(PYMQREST.QLOCAL)`).

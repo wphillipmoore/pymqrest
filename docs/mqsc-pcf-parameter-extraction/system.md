@@ -22,7 +22,10 @@ commands:
         - qmgr-name
       input_parameters: []
       output_parameters:
+        - ACELIM
+        - CLCACHE
         - CMDSCOPE
+        - SPLCAP
       section_sources:
         {}
     pcf:
@@ -335,9 +338,12 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY SYSTEM
     output_parameters:
+      - ACELIM
+      - CLCACHE
       - CMDSCOPE
+      - SPLCAP
 ```

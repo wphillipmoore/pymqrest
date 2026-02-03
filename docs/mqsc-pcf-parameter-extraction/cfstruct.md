@@ -276,13 +276,24 @@ commands:
       input_parameters: []
       output_parameters:
         - ALL
+        - ALTDATE
+        - ALTTIME
+        - CFCONLOS
         - CFLEVEL
+        - DESCR
+        - DSBLOCK
+        - DSBUFS
+        - DSEXPAND
+        - DSGROUP
         - OFFLD1SZ
         - OFFLD1TH
         - OFFLD2SZ
         - OFFLD2TH
         - OFFLD3SZ
         - OFFLD3TH
+        - OFFLOAD
+        - RECAUTO
+        - RECOVER
       section_sources:
         {}
     pcf:
@@ -535,16 +546,27 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY CFSTRUCT
     output_parameters:
       - ALL
+      - ALTDATE
+      - ALTTIME
+      - CFCONLOS
       - CFLEVEL
+      - DESCR
+      - DSBLOCK
+      - DSBUFS
+      - DSEXPAND
+      - DSGROUP
       - OFFLD1SZ
       - OFFLD1TH
       - OFFLD2SZ
       - OFFLD2TH
       - OFFLD3SZ
       - OFFLD3TH
+      - OFFLOAD
+      - RECAUTO
+      - RECOVER
 ```

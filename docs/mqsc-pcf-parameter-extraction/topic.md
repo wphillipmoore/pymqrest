@@ -423,7 +423,6 @@ commands:
         - MCAST
         - MDURMDL
         - MNDURMDL
-        - MQ
         - NPMSGDLV
         - PAGEVAL
         - PMSGDLV
@@ -1225,7 +1224,7 @@ commands:
     pcf:
       command: MQCMD_DELETE_TOPIC
       request_href: SSFKSJ_9.4.0/refadmin/q087220_.html
-      response_href: null
+      response_href: SSFKSJ_9.4.0/refadmin/q087220_.html
       request_parameters:
         - name: TopicName
           pcf_type: MQCFST
@@ -1252,9 +1251,33 @@ commands:
           enum_values:
             - MQIS_NO
             - MQIS_YES
-      response_parameters: []
+      response_parameters:
+        - name: TopicName
+          pcf_type: MQCFST
+          type_hint: str
+        - name: CommandScope
+          pcf_type: MQCFST
+          type_hint: str
+        - name: QSGDisposition
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQQSGD_COPY
+            - MQQSGD_GROUP
+            - MQQSGD_Q_MGR
+        - name: Authrec
+          pcf_type: MQCFIN
+          type_hint: int
+          enum_values:
+            - MQRAR_YES
+            - MQRAR_NO
+        - name: IgnoreState
+          pcf_type: MQCFST
+          type_hint: str
+          enum_values:
+            - MQIS_YES
+            - MQIS_NO
     notes:
-      - delete-topic-response-doc-not-found
       - ignore-state-type-inferred-from-mqsc-ignstate
       - ignore-state-name-normalized
   - mqsc:
@@ -1585,7 +1608,7 @@ commands:
 
 ```yaml
 version: 1
-generated_at: 2026-01-27T20:30:57Z
+generated_at: 2026-02-02T19:46:59Z
 commands:
   - name: DISPLAY TOPIC
     output_parameters:
@@ -1608,7 +1631,6 @@ commands:
       - MCAST
       - MDURMDL
       - MNDURMDL
-      - MQ
       - NPMSGDLV
       - PAGEVAL
       - PMSGDLV

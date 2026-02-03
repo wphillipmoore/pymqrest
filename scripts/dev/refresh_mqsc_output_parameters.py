@@ -16,6 +16,7 @@ import ssl
 import urllib.request
 from dataclasses import dataclass
 from datetime import UTC, datetime
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -38,9 +39,21 @@ OUTPUT_HEADING_PREFIXES = (
     "Returned data",
     "Response data",
 )
+OUTPUT_HEADING_KEYWORDS = ("parameters", "status", "attributes", "data")
+OUTPUT_HEADING_EXCLUDES = (
+    "parameter descriptions",
+    "using mqsc commands",
+    "syntax diagram",
+    "usage notes",
+    "related concepts",
+    "related tasks",
+    "related reference",
+    "setting monitor values",
+)
+FALLBACK_IGNORE_TOKENS = {"ALL", "CMDSCOPE", "QSGDISP", "TYPE", "WHERE"}
 
 DISPLAY_PREFIX = "DISPLAY "
-EXCLUDED_TOKENS = {"IBM", "AMQ", "CSQ"}
+EXCLUDED_TOKENS = {"IBM", "AMQ", "CSQ", "MQ", "NO", "YES"}
 MANUAL_OUTPUT_PARAMETERS = {
     "DISPLAY AUTHSERV": ["ALL", "IFVER", "SERVCOMP", "UIDSUPP"],
     "DISPLAY GROUP": ["OBSMSGS"],
@@ -176,6 +189,18 @@ def normalize_token(token: str) -> str | None:
     return token
 
 
+def canonicalize_token(token: str) -> str | None:
+    normalized = normalize_token(token)
+    if not normalized:
+        return None
+    if "(" in normalized:
+        base = normalized.split("(", 1)[0].strip()
+        if base:
+            return base
+        return None
+    return normalized
+
+
 def strip_tags(text: str) -> str:
     return re.sub(r"<[^>]+>", "", text)
 
@@ -198,45 +223,101 @@ def extract_tokens(section_html: str) -> list[str]:
     tokens: set[str] = set()
     for text in re.findall(r"<a [^>]*>(.*?)</a>", section_html, flags=re.S | re.I):
         token = strip_tags(text).strip()
-        normalized = normalize_token(token)
+        normalized = canonicalize_token(token)
         if normalized:
             tokens.add(normalized)
     for text in re.findall(
         r'<span class="keyword parmname">(.*?)</span>', section_html, flags=re.S | re.I
     ):
         token = strip_tags(text).strip()
-        normalized = normalize_token(token)
+        normalized = canonicalize_token(token)
         if normalized:
             tokens.add(normalized)
     for text in re.findall(r'<code class="ph code">(.*?)</code>', section_html, flags=re.S | re.I):
         token = strip_tags(text).strip()
-        normalized = normalize_token(token)
+        normalized = canonicalize_token(token)
+        if normalized:
+            tokens.add(normalized)
+    for text in extract_dl_terms(section_html):
+        normalized = canonicalize_token(text)
         if normalized:
             tokens.add(normalized)
     return sorted(tokens)
 
 
+def extract_dl_terms(section_html: str) -> list[str]:
+    class DefinitionListParser(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.dl_depth = 0
+            self.dd_depth = 0
+            self.in_dt = False
+            self.buffer: list[str] = []
+            self.terms: list[str] = []
+
+        def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+            if tag == "dl":
+                self.dl_depth += 1
+            elif tag == "dd":
+                self.dd_depth += 1
+            elif tag == "dt":
+                self.in_dt = True
+                self.buffer = []
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag == "dl":
+                self.dl_depth = max(self.dl_depth - 1, 0)
+            elif tag == "dd":
+                self.dd_depth = max(self.dd_depth - 1, 0)
+            elif tag == "dt":
+                if self.dd_depth == 0 and self.buffer:
+                    text = "".join(self.buffer).strip()
+                    if text:
+                        self.terms.append(text)
+                self.in_dt = False
+                self.buffer = []
+
+        def handle_data(self, data: str) -> None:
+            if self.in_dt:
+                self.buffer.append(data)
+
+    parser = DefinitionListParser()
+    parser.feed(section_html)
+    return [strip_tags(term).strip() for term in parser.terms if term.strip()]
+
+
 def extract_display_output(html: str, command_name: str) -> OutputExtraction:
     sections = list(iter_sections(html))
     input_parameters: list[str] = []
-    output_parameters: list[str] = []
+    output_parameters: set[str] = set()
     for heading_text, section_html in sections:
         heading_lower = heading_text.lower()
         if "parameter descriptions" in heading_lower and (
             command_name in heading_text or not input_parameters
         ):
             input_parameters = extract_tokens(section_html)
-        if any(prefix.lower() in heading_lower for prefix in OUTPUT_HEADING_PREFIXES):
-            section_tokens = extract_tokens(section_html)
-            if section_tokens:
-                output_parameters = section_tokens
-                break
-    if not output_parameters and input_parameters:
-        output_parameters = input_parameters
+        if heading_lower.startswith("display "):
+            continue
+        if any(heading_lower.startswith(prefix) for prefix in OUTPUT_HEADING_EXCLUDES):
+            continue
+        if "parameter descriptions" in heading_lower:
+            continue
+        if any(prefix.lower() in heading_lower for prefix in OUTPUT_HEADING_PREFIXES) or any(
+            keyword in heading_lower for keyword in OUTPUT_HEADING_KEYWORDS
+        ):
+            output_parameters.update(extract_tokens(section_html))
+    if not output_parameters:
+        for heading_text, section_html in sections:
+            if heading_text.lower().startswith("syntax diagram"):
+                output_parameters.update(extract_tokens(section_html))
+        if not output_parameters and input_parameters:
+            meaningful_inputs = {item for item in input_parameters if item not in FALLBACK_IGNORE_TOKENS}
+            if meaningful_inputs:
+                output_parameters.update(input_parameters)
     return OutputExtraction(
         name=command_name,
         input_parameters=input_parameters,
-        output_parameters=output_parameters,
+        output_parameters=sorted(output_parameters),
     )
 
 
@@ -354,10 +435,17 @@ def update_command_metadata(
             continue
         new_lines.append(line)
     final_lines = []
+    skip_blank_after_refresh = False
     for line in new_lines:
+        if skip_blank_after_refresh and line.strip() == "":
+            continue
+        if skip_blank_after_refresh:
+            skip_blank_after_refresh = False
         final_lines.append(line)
         if line.strip() == "## Summary":
+            final_lines.append("")
             final_lines.append(f"- Output refresh updated: {timestamp}")
+            skip_blank_after_refresh = True
     path.write_text("\n".join(final_lines) + "\n", encoding="utf-8")
 
 
@@ -439,7 +527,8 @@ def update_qualifier_file(
             skip_list = False
         updated.append(line)
 
-    updated.append("")
+    while updated and updated[-1] == "":
+        updated.pop()
     refresh_commands = [
         (command_name, extraction)
         for command_name, extraction in sorted(output_map.items())
@@ -448,6 +537,7 @@ def update_qualifier_file(
     if refresh_commands:
         updated.append("")
         updated.append("## Output-parameter refresh")
+        updated.append("")
         updated.append("```yaml")
         updated.append("version: 1")
         updated.append(f"generated_at: {timestamp}")
