@@ -1,0 +1,737 @@
+version: 1
+generated_at: 2026-02-03T17:15:06Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  index_url: "https://www.ibm.com/docs/en/ibm-mq/9.4.x?topic=reference-mqsc-commands"
+  base_url: "https://www.ibm.com/docs/en/ibm-mq/9.4.x?topic="
+  retrieved_at: "2026-02-03"
+command_list:
+  path: "docs/extraction/mqsc-commands.yaml"
+notes:
+  - "Derived from the IBM MQSC commands reference index (anchor text + href)."
+  - "Commands are normalized by taking the text before the first ( in the index entry."
+  - "When multiple pages exist for a command, use platform/variant fields to select the correct page."
+  - "Queue-family entries are captured separately because the canonical command list omits generic queues entries."
+selection_rules:
+  - name: "platform"
+    description: "If a command has platform-specific pages, select the page matching the target platform (for example, z/OS vs Multiplatforms)."
+  - name: "variant"
+    description: "If a command has protocol-specific pages (MQTT/AMQP), select the page matching the protocol; otherwise use the base page."
+  - name: "queue_family"
+    description: "Queue-family index entries map to multiple MQSC qualifiers; select the qualifier-specific section on the shared page."
+queue_families:
+  - index_entry: "ALTER queues"
+    title: "ALTER queues (alter queue settings)"
+    href: "q085330_.html"
+    qualifiers:
+      - "QLOCAL"
+      - "QREMOTE"
+      - "QALIAS"
+      - "QMODEL"
+    derived_commands:
+      - "ALTER QLOCAL"
+      - "ALTER QREMOTE"
+      - "ALTER QALIAS"
+      - "ALTER QMODEL"
+    selection_rule: "Use the MQSC qualifier (QLOCAL/QREMOTE/QALIAS/QMODEL) to select the relevant section on this page."
+  - index_entry: "DEFINE queues"
+    title: "DEFINE queues"
+    href: "q085690_.html"
+    qualifiers:
+      - "QLOCAL"
+      - "QREMOTE"
+      - "QALIAS"
+      - "QMODEL"
+    derived_commands:
+      - "DEFINE QLOCAL"
+      - "DEFINE QREMOTE"
+      - "DEFINE QALIAS"
+      - "DEFINE QMODEL"
+    selection_rule: "Use the MQSC qualifier (QLOCAL/QREMOTE/QALIAS/QMODEL) to select the relevant section on this page."
+  - index_entry: "DELETE queues"
+    title: "DELETE queues"
+    href: "q085890_.html"
+    qualifiers:
+      - "QLOCAL"
+      - "QREMOTE"
+      - "QALIAS"
+      - "QMODEL"
+    derived_commands:
+      - "DELETE QLOCAL"
+      - "DELETE QREMOTE"
+      - "DELETE QALIAS"
+      - "DELETE QMODEL"
+    selection_rule: "Use the MQSC qualifier (QLOCAL/QREMOTE/QALIAS/QMODEL) to select the relevant section on this page."
+commands:
+  - command: "ALTER AUTHINFO"
+    pages:
+      - title: "ALTER AUTHINFO (alter authentication information object)"
+        href: "q085140_.html"
+  - command: "ALTER BUFFPOOL"
+    pages:
+      - title: "ALTER BUFFPOOL (alter buffer pool settings) on z/OS"
+        href: "q085150_.html"
+        platform: "z/OS"
+  - command: "ALTER CFSTRUCT"
+    pages:
+      - title: "ALTER CFSTRUCT (alter CF application structure) on z/OS"
+        href: "q085160_.html"
+        platform: "z/OS"
+  - command: "ALTER CHANNEL"
+    pages:
+      - title: "ALTER CHANNEL (alter channel settings)"
+        href: "q085170_.html"
+      - title: "ALTER CHANNEL (alter channel settings) MQTT"
+        href: "q085260_.html"
+        variant: "MQTT"
+  - command: "ALTER COMMINFO"
+    pages:
+      - title: "ALTER COMMINFO (alter communication information object) on Multiplatforms"
+        href: "q085270_.html"
+        platform: "Multiplatforms"
+  - command: "ALTER LISTENER"
+    pages:
+      - title: "ALTER LISTENER (alter an existing listener) on Multiplatforms"
+        href: "q085280_.html"
+        platform: "Multiplatforms"
+  - command: "ALTER NAMELIST"
+    pages:
+      - title: "ALTER NAMELIST (alter a list of names)"
+        href: "q085290_.html"
+  - command: "ALTER PROCESS"
+    pages:
+      - title: "ALTER PROCESS (alter an existing process definition)"
+        href: "q085300_.html"
+  - command: "ALTER PSID"
+    pages:
+      - title: "ALTER PSID (change page set expansion method) on z/OS"
+        href: "q085310_.html"
+        platform: "z/OS"
+  - command: "ALTER QMGR"
+    pages:
+      - title: "ALTER QMGR (alter queue manager settings)"
+        href: "q085320_.html"
+  - command: "ALTER SECURITY"
+    pages:
+      - title: "ALTER SECURITY (alter security options) on z/OS"
+        href: "q085380_.html"
+        platform: "z/OS"
+  - command: "ALTER SERVICE"
+    pages:
+      - title: "ALTER SERVICE (alter a service definition) on Multiplatforms"
+        href: "q085390_.html"
+        platform: "Multiplatforms"
+  - command: "ALTER SMDS"
+    pages:
+      - title: "ALTER SMDS (alter shared message data sets) on z/OS"
+        href: "q085400_.html"
+        platform: "z/OS"
+  - command: "ALTER STGCLASS"
+    pages:
+      - title: "ALTER STGCLASS (alter storage class settings) on z/OS"
+        href: "q085410_.html"
+        platform: "z/OS"
+  - command: "ALTER SUB"
+    pages:
+      - title: "ALTER SUB (alter subscription settings)"
+        href: "q085420_.html"
+  - command: "ALTER TOPIC"
+    pages:
+      - title: "ALTER TOPIC (alter topic settings)"
+        href: "q085430_.html"
+  - command: "ALTER TRACE"
+    pages:
+      - title: "ALTER TRACE (alter trace event settings) on z/OS"
+        href: "q085440_.html"
+        platform: "z/OS"
+  - command: "ARCHIVE LOG"
+    pages:
+      - title: "ARCHIVE LOG (back up the active log) on z/OS"
+        href: "q085450_.html"
+        platform: "z/OS"
+  - command: "BACKUP CFSTRUCT"
+    pages:
+      - title: "BACKUP CFSTRUCT (back up a CF application structure) on z/OS"
+        href: "q085460_.html"
+        platform: "z/OS"
+  - command: "CLEAR QLOCAL"
+    pages:
+      - title: "CLEAR QLOCAL (clear messages from local queue)"
+        href: "q085470_.html"
+  - command: "CLEAR TOPICSTR"
+    pages:
+      - title: "CLEAR TOPICSTR (clear topic string)"
+        href: "q085480_.html"
+  - command: "DEFINE AUTHINFO"
+    pages:
+      - title: "DEFINE AUTHINFO (define an authentication information object)"
+        href: "q085490_.html"
+  - command: "DEFINE BUFFPOOL"
+    pages:
+      - title: "DEFINE BUFFPOOL (define a buffer pool) on z/OS"
+        href: "q085500_.html"
+        platform: "z/OS"
+  - command: "DEFINE CFSTRUCT"
+    pages:
+      - title: "DEFINE CFSTRUCT (define coupling facility application structure) on z/OS"
+        href: "q085510_.html"
+        platform: "z/OS"
+  - command: "DEFINE CHANNEL"
+    pages:
+      - title: "DEFINE CHANNEL (define a new channel)"
+        href: "q085520_.html"
+      - title: "DEFINE CHANNEL (define a new channel) for MQTT"
+        href: "q085610_.html"
+        variant: "MQTT"
+  - command: "DEFINE COMMINFO"
+    pages:
+      - title: "DEFINE COMMINFO (define a new communication information object) on Multiplatforms"
+        href: "q085620_.html"
+        platform: "Multiplatforms"
+  - command: "DEFINE LISTENER"
+    pages:
+      - title: "DEFINE LISTENER (define a new listener) on Multiplatforms"
+        href: "q085630_.html"
+        platform: "Multiplatforms"
+  - command: "DEFINE LOG"
+    pages:
+      - title: "DEFINE LOG (define a new active log) on z/OS"
+        href: "q085640_.html"
+        platform: "z/OS"
+  - command: "DEFINE MAXSMSGS"
+    pages:
+      - title: "DEFINE MAXSMSGS (define maximum messages setting) on z/OS"
+        href: "q085650_.html"
+        platform: "z/OS"
+  - command: "DEFINE NAMELIST"
+    pages:
+      - title: "DEFINE NAMELIST (define a list of names)"
+        href: "q085660_.html"
+  - command: "DEFINE PROCESS"
+    pages:
+      - title: "DEFINE PROCESS (create a new process definition)"
+        href: "q085670_.html"
+  - command: "DEFINE PSID"
+    pages:
+      - title: "DEFINE PSID (define page set and buffer pool) on z/OS"
+        href: "q085680_.html"
+        platform: "z/OS"
+  - command: "DEFINE SERVICE"
+    pages:
+      - title: "DEFINE SERVICE (create a new service definition) on Multiplatforms"
+        href: "q085740_.html"
+        platform: "Multiplatforms"
+  - command: "DEFINE STGCLASS"
+    pages:
+      - title: "DEFINE STGCLASS (define storage class to page set mapping) on z/OS"
+        href: "q085750_.html"
+        platform: "z/OS"
+  - command: "DEFINE SUB"
+    pages:
+      - title: "DEFINE SUB (create a durable subscription)"
+        href: "q085760_.html"
+  - command: "DEFINE TOPIC"
+    pages:
+      - title: "DEFINE TOPIC (define a new administrative topic)"
+        href: "q085770_.html"
+  - command: "DELETE AUTHINFO"
+    pages:
+      - title: "DELETE AUTHINFO (delete authentication information)"
+        href: "q085780_.html"
+  - command: "DELETE AUTHREC"
+    pages:
+      - title: "DELETE AUTHREC (delete authority records) on Multiplatforms"
+        href: "q085790_.html"
+        platform: "Multiplatforms"
+  - command: "DELETE BUFFPOOL"
+    pages:
+      - title: "DELETE BUFFPOOL (delete a buffer pool) on z/OS"
+        href: "q085800_.html"
+        platform: "z/OS"
+  - command: "DELETE CFSTRUCT"
+    pages:
+      - title: "DELETE CFSTRUCT (delete CF application structure) on z/OS"
+        href: "q085810_.html"
+        platform: "z/OS"
+  - command: "DELETE CHANNEL"
+    pages:
+      - title: "DELETE CHANNEL (delete a channel)"
+        href: "q085820_.html"
+      - title: "DELETE CHANNEL (delete a channel) MQTT"
+        href: "q085830_.html"
+        variant: "MQTT"
+  - command: "DELETE COMMINFO"
+    pages:
+      - title: "DELETE COMMINFO (delete communications information) on Multiplatforms"
+        href: "q085840_.html"
+        platform: "Multiplatforms"
+  - command: "DELETE LISTENER"
+    pages:
+      - title: "DELETE LISTENER (delete a listener) on Multiplatforms"
+        href: "q085850_.html"
+        platform: "Multiplatforms"
+  - command: "DELETE NAMELIST"
+    pages:
+      - title: "DELETE NAMELIST (delete a name list)"
+        href: "q085860_.html"
+  - command: "DELETE POLICY"
+    pages:
+      - title: "DELETE POLICY (delete a security policy) on Multiplatforms"
+        href: "q120810_.html"
+        platform: "Multiplatforms"
+  - command: "DELETE PROCESS"
+    pages:
+      - title: "DELETE PROCESS (delete a process definition)"
+        href: "q085870_.html"
+  - command: "DELETE PSID"
+    pages:
+      - title: "DELETE PSID (delete a page set) on z/OS"
+        href: "q085880_.html"
+        platform: "z/OS"
+  - command: "DELETE SERVICE"
+    pages:
+      - title: "DELETE SERVICE (delete a service definition) on Multiplatforms"
+        href: "q085940_.html"
+        platform: "Multiplatforms"
+  - command: "DELETE STGCLASS"
+    pages:
+      - title: "DELETE STGCLASS (delete a storage class) on z/OS"
+        href: "q085960_.html"
+        platform: "z/OS"
+  - command: "DELETE SUB"
+    pages:
+      - title: "DELETE SUB (delete a durable subscription)"
+        href: "q085950_.html"
+  - command: "DELETE TOPIC"
+    pages:
+      - title: "DELETE TOPIC (delete an administrative topic node)"
+        href: "q085970_.html"
+  - command: "DISPLAY APSTATUS"
+    pages:
+      - title: "DISPLAY APSTATUS (display application status) on Multiplatforms"
+        href: "q133100_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY ARCHIVE"
+    pages:
+      - title: "DISPLAY ARCHIVE (display archive system information) on z/OS"
+        href: "q085980_.html"
+        platform: "z/OS"
+  - command: "DISPLAY AUTHINFO"
+    pages:
+      - title: "DISPLAY AUTHINFO (display authentication information)"
+        href: "q085990_.html"
+  - command: "DISPLAY AUTHREC"
+    pages:
+      - title: "DISPLAY AUTHREC (display authority records) on Multiplatforms"
+        href: "q086000_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY AUTHSERV"
+    pages:
+      - title: "DISPLAY AUTHSERV (display authorization services information) on AIX, Linux, and Windows"
+        href: "q086010_.html"
+        platform: "AIX, Linux, and Windows"
+  - command: "DISPLAY CFSTATUS"
+    pages:
+      - title: "DISPLAY CFSTATUS (display CF application structure status) on z/OS"
+        href: "q086020_.html"
+        platform: "z/OS"
+  - command: "DISPLAY CFSTRUCT"
+    pages:
+      - title: "DISPLAY CFSTRUCT (display CF application structure settings) on z/OS"
+        href: "q086030_.html"
+        platform: "z/OS"
+  - command: "DISPLAY CHANNEL"
+    pages:
+      - title: "DISPLAY CHANNEL (display channel definition)"
+        href: "q086040_.html"
+      - title: "DISPLAY CHANNEL (display channel definition) MQTT"
+        href: "q086050_.html"
+        variant: "MQTT"
+  - command: "DISPLAY CHINIT"
+    pages:
+      - title: "DISPLAY CHINIT (display channel initiator information) on z/OS"
+        href: "q086060_.html"
+        platform: "z/OS"
+  - command: "DISPLAY CHLAUTH"
+    pages:
+      - title: "DISPLAY CHLAUTH (display channel authentication record)"
+        href: "q086070_.html"
+  - command: "DISPLAY CHSTATUS"
+    pages:
+      - title: "DISPLAY CHSTATUS (display channel status)"
+        href: "q086090_.html"
+      - title: "DISPLAY CHSTATUS (display channel status) AMQP"
+        href: "q125020_.html"
+        variant: "AMQP"
+      - title: "DISPLAY CHSTATUS (display channel status) MQTT"
+        href: "q086100_.html"
+        variant: "MQTT"
+  - command: "DISPLAY CLUSQMGR"
+    pages:
+      - title: "DISPLAY CLUSQMGR (display channel information for cluster queue managers)"
+        href: "q086110_.html"
+  - command: "DISPLAY CMDSERV"
+    pages:
+      - title: "DISPLAY CMDSERV (display command server status) on z/OS"
+        href: "q086120_.html"
+        platform: "z/OS"
+  - command: "DISPLAY COMMINFO"
+    pages:
+      - title: "DISPLAY COMMINFO (display communication information) on Multiplatforms"
+        href: "q086130_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY CONN"
+    pages:
+      - title: "DISPLAY CONN (display application connection information)"
+        href: "q086140_.html"
+  - command: "DISPLAY ENTAUTH"
+    pages:
+      - title: "DISPLAY ENTAUTH (display entity authorizations) on Multiplatforms"
+        href: "q086150_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY GROUP"
+    pages:
+      - title: "DISPLAY GROUP (display QSG information) on z/OS"
+        href: "q086160_.html"
+        platform: "z/OS"
+  - command: "DISPLAY LISTENER"
+    pages:
+      - title: "DISPLAY LISTENER (display listener information) on Multiplatforms"
+        href: "q086170_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY LOG"
+    pages:
+      - title: "DISPLAY LOG (display log information) on z/OS"
+        href: "q086180_.html"
+        platform: "z/OS"
+  - command: "DISPLAY LSSTATUS"
+    pages:
+      - title: "DISPLAY LSSTATUS (display listener status) on Multiplatforms"
+        href: "q086190_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY MAXSMSGS"
+    pages:
+      - title: "DISPLAY MAXSMSGS (display maximum messages setting) on z/OS"
+        href: "q086200_.html"
+        platform: "z/OS"
+  - command: "DISPLAY NAMELIST"
+    pages:
+      - title: "DISPLAY NAMELIST (display a list of names)"
+        href: "q086210_.html"
+  - command: "DISPLAY POLICY"
+    pages:
+      - title: "DISPLAY POLICY (display a security policy) on Multiplatforms"
+        href: "q120820_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY PROCESS"
+    pages:
+      - title: "DISPLAY PROCESS (display process information)"
+        href: "q086220_.html"
+  - command: "DISPLAY PUBSUB"
+    pages:
+      - title: "DISPLAY PUBSUB (display publish/subscribe status information)"
+        href: "q086230_.html"
+  - command: "DISPLAY QMGR"
+    pages:
+      - title: "DISPLAY QMGR (display queue manager settings)"
+        href: "q086240_.html"
+  - command: "DISPLAY QMSTATUS"
+    pages:
+      - title: "DISPLAY QMSTATUS (display queue manager status) on Multiplatforms"
+        href: "q086250_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY QSTATUS"
+    pages:
+      - title: "DISPLAY QSTATUS (display queue status)"
+        href: "q086260_.html"
+  - command: "DISPLAY QUEUE"
+    pages:
+      - title: "DISPLAY QUEUE (display queue attributes)"
+        href: "q086270_.html"
+  - command: "DISPLAY SBSTATUS"
+    pages:
+      - title: "DISPLAY SBSTATUS (display subscription status)"
+        href: "q086280_.html"
+  - command: "DISPLAY SECURITY"
+    pages:
+      - title: "DISPLAY SECURITY (display security settings) on z/OS"
+        href: "q086290_.html"
+        platform: "z/OS"
+  - command: "DISPLAY SERVICE"
+    pages:
+      - title: "DISPLAY SERVICE (display service information) on Multiplatforms"
+        href: "q086300_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY SMDS"
+    pages:
+      - title: "DISPLAY SMDS (display shared message data sets information) on z/OS"
+        href: "q086310_.html"
+        platform: "z/OS"
+  - command: "DISPLAY SMDSCONN"
+    pages:
+      - title: "DISPLAY SMDSCONN (display shared message data sets connection information) on z/OS"
+        href: "q086320_.html"
+        platform: "z/OS"
+  - command: "DISPLAY STGCLASS"
+    pages:
+      - title: "DISPLAY STGCLASS (display storage class information) on z/OS"
+        href: "q086330_.html"
+        platform: "z/OS"
+  - command: "DISPLAY SUB"
+    pages:
+      - title: "DISPLAY SUB (display subscription information)"
+        href: "q086340_.html"
+  - command: "DISPLAY SVSTATUS"
+    pages:
+      - title: "DISPLAY SVSTATUS (display services status) on Multiplatforms"
+        href: "q086350_.html"
+        platform: "Multiplatforms"
+  - command: "DISPLAY SYSTEM"
+    pages:
+      - title: "DISPLAY SYSTEM (display system information) on z/OS"
+        href: "q086360_.html"
+        platform: "z/OS"
+  - command: "DISPLAY TCLUSTER"
+    pages:
+      - title: "DISPLAY TCLUSTER (display cluster topic attributes)"
+        href: "q114320_.html"
+  - command: "DISPLAY THREAD"
+    pages:
+      - title: "DISPLAY THREAD (display thread information) on z/OS"
+        href: "q086370_.html"
+        platform: "z/OS"
+  - command: "DISPLAY TOPIC"
+    pages:
+      - title: "DISPLAY TOPIC (display topic information)"
+        href: "q086380_.html"
+  - command: "DISPLAY TPSTATUS"
+    pages:
+      - title: "DISPLAY TPSTATUS (display topic status)"
+        href: "q086390_.html"
+  - command: "DISPLAY TRACE"
+    pages:
+      - title: "DISPLAY TRACE (display active traces list) on z/OS"
+        href: "q086400_.html"
+        platform: "z/OS"
+  - command: "DISPLAY USAGE"
+    pages:
+      - title: "DISPLAY USAGE (display usage information) on z/OS"
+        href: "q086410_.html"
+        platform: "z/OS"
+  - command: "MOVE QLOCAL"
+    pages:
+      - title: "MOVE QLOCAL (move messages between local queues) on z/OS"
+        href: "q086420_.html"
+        platform: "z/OS"
+  - command: "PING CHANNEL"
+    pages:
+      - title: "PING CHANNEL (test channel response)"
+        href: "q086430_.html"
+  - command: "PING QMGR"
+    pages:
+      - title: "PING QMGR (test queue manager response) on Multiplatforms"
+        href: "q086440_.html"
+        platform: "Multiplatforms"
+  - command: "PURGE CHANNEL"
+    pages:
+      - title: "PURGE CHANNEL (stop and purge a channel) on AIX, Linux, and Windows"
+        href: "q086450_.html"
+        platform: "AIX, Linux, and Windows"
+  - command: "RECOVER BSDS"
+    pages:
+      - title: "RECOVER BSDS (recover bootstrap data set) on z/OS"
+        href: "q086455_.html"
+        platform: "z/OS"
+  - command: "RECOVER CFSTRUCT"
+    pages:
+      - title: "RECOVER CFSTRUCT (recover CF application structure) on z/OS"
+        href: "q086460_.html"
+        platform: "z/OS"
+  - command: "REFRESH CLUSTER"
+    pages:
+      - title: "REFRESH CLUSTER (rebuild a cluster)"
+        href: "q086470_.html"
+  - command: "REFRESH QMGR"
+    pages:
+      - title: "REFRESH QMGR (refresh a queue manager)"
+        href: "q086480_.html"
+  - command: "REFRESH SECURITY"
+    pages:
+      - title: "REFRESH SECURITY (refresh security settings)"
+        href: "q086490_.html"
+  - command: "RESET CFSTRUCT"
+    pages:
+      - title: "RESET CFSTRUCT (reset a CF application structure) on z/OS"
+        href: "q086500_.html"
+        platform: "z/OS"
+  - command: "RESET CHANNEL"
+    pages:
+      - title: "RESET CHANNEL (reset message sequence number for a channel)"
+        href: "q086510_.html"
+  - command: "RESET CLUSTER"
+    pages:
+      - title: "RESET CLUSTER (remove a cluster member)"
+        href: "q086520_.html"
+  - command: "RESET QMGR"
+    pages:
+      - title: "RESET QMGR (reset a queue manager)"
+        href: "q086530_.html"
+  - command: "RESET QSTATS"
+    pages:
+      - title: "RESET QSTATS (report and reset queue performance data) on z/OS"
+        href: "q086540_.html"
+        platform: "z/OS"
+  - command: "RESET SMDS"
+    pages:
+      - title: "RESET SMDS (reset shared message data sets) on z/OS"
+        href: "q086550_.html"
+        platform: "z/OS"
+  - command: "RESET TPIPE"
+    pages:
+      - title: "RESET TPIPE (reset sequence numbers for an IMS Tpipe) on z/OS"
+        href: "q086560_.html"
+        platform: "z/OS"
+  - command: "RESOLVE CHANNEL"
+    pages:
+      - title: "RESOLVE CHANNEL (ask a channel to resolve in-doubt messages)"
+        href: "q086570_.html"
+  - command: "RESOLVE INDOUBT"
+    pages:
+      - title: "RESOLVE INDOUBT (resolve threads left in doubt) on z/OS"
+        href: "q086580_.html"
+        platform: "z/OS"
+  - command: "RESUME QMGR"
+    pages:
+      - title: "RESUME QMGR (resume a cluster queue manager)"
+        href: "q086590_.html"
+  - command: "RVERIFY SECURITY"
+    pages:
+      - title: "RVERIFY SECURITY (set a user reverification flag) on z/OS"
+        href: "q086600_.html"
+        platform: "z/OS"
+  - command: "SET ARCHIVE"
+    pages:
+      - title: "SET ARCHIVE (change archive system settings) on z/OS"
+        href: "q086610_.html"
+        platform: "z/OS"
+  - command: "SET AUTHREC"
+    pages:
+      - title: "SET AUTHREC (set authority records) on Multiplatforms"
+        href: "q086620_.html"
+        platform: "Multiplatforms"
+  - command: "SET CHLAUTH"
+    pages:
+      - title: "SET CHLAUTH (create or modify a channel authentication record)"
+        href: "q086630_.html"
+  - command: "SET LOG"
+    pages:
+      - title: "SET LOG (notify completion of log archiving) on Multiplatforms"
+        href: "q129100_.html"
+        platform: "Multiplatforms"
+      - title: "SET LOG (change log system settings) on z/OS"
+        href: "q086640_.html"
+        platform: "z/OS"
+  - command: "SET POLICY"
+    pages:
+      - title: "SET POLICY (set security policy) on Multiplatforms"
+        href: "q120800_.html"
+        platform: "Multiplatforms"
+  - command: "SET SYSTEM"
+    pages:
+      - title: "SET SYSTEM (change system settings) on z/OS"
+        href: "q086650_.html"
+        platform: "z/OS"
+  - command: "START CHANNEL"
+    pages:
+      - title: "START CHANNEL (start a channel)"
+        href: "q086660_.html"
+      - title: "START CHANNEL (start a channel) MQTT"
+        href: "q086670_.html"
+        variant: "MQTT"
+  - command: "START CHINIT"
+    pages:
+      - title: "START CHINIT (start a channel initiator) on z/OS"
+        href: "q086680_.html"
+        platform: "z/OS"
+  - command: "START CMDSERV"
+    pages:
+      - title: "START CMDSERV (start the command server) on z/OS"
+        href: "q086690_.html"
+        platform: "z/OS"
+  - command: "START LISTENER"
+    pages:
+      - title: "START LISTENER (start a channel listener)"
+        href: "q086700_.html"
+  - command: "START QMGR"
+    pages:
+      - title: "START QMGR (start queue manager) on z/OS"
+        href: "q086710_.html"
+        platform: "z/OS"
+  - command: "START SERVICE"
+    pages:
+      - title: "START SERVICE (start a service) on Multiplatforms"
+        href: "q086720_.html"
+        platform: "Multiplatforms"
+  - command: "START SMDSCONN"
+    pages:
+      - title: "START SMDSCONN (restart a shared message data set connection) on z/OS"
+        href: "q086730_.html"
+        platform: "z/OS"
+  - command: "START TRACE"
+    pages:
+      - title: "START TRACE (start trace) on z/OS"
+        href: "q086740_.html"
+        platform: "z/OS"
+  - command: "STOP CHANNEL"
+    pages:
+      - title: "STOP CHANNEL (stop a channel)"
+        href: "q086750_.html"
+      - title: "STOP CHANNEL (stop a channel) MQTT"
+        href: "q086760_.html"
+        variant: "MQTT"
+  - command: "STOP CHINIT"
+    pages:
+      - title: "STOP CHINIT (stop channel initiator) on z/OS"
+        href: "q086770_.html"
+        platform: "z/OS"
+  - command: "STOP CMDSERV"
+    pages:
+      - title: "STOP CMDSERV (stop the command server) on z/OS"
+        href: "q086780_.html"
+        platform: "z/OS"
+  - command: "STOP CONN"
+    pages:
+      - title: "STOP CONN (stop a connection) on Multiplatforms"
+        href: "q086790_.html"
+        platform: "Multiplatforms"
+  - command: "STOP LISTENER"
+    pages:
+      - title: "STOP LISTENER (stop a channel listener)"
+        href: "q086800_.html"
+  - command: "STOP QMGR"
+    pages:
+      - title: "STOP QMGR (stop queue manager) on z/OS"
+        href: "q086810_.html"
+        platform: "z/OS"
+  - command: "STOP SERVICE"
+    pages:
+      - title: "STOP SERVICE (stop a service) on Multiplatforms"
+        href: "q086820_.html"
+        platform: "Multiplatforms"
+  - command: "STOP SMDSCONN"
+    pages:
+      - title: "STOP SMDSCONN (stop shared message data sets connection) on z/OS"
+        href: "q086830_.html"
+        platform: "z/OS"
+  - command: "STOP TRACE"
+    pages:
+      - title: "STOP TRACE (stop trace) on z/OS"
+        href: "q086840_.html"
+        platform: "z/OS"
+  - command: "SUSPEND QMGR"
+    pages:
+      - title: "SUSPEND QMGR (suspend a cluster queue manager)"
+        href: "q086850_.html"
+missing_pages: []
+unmapped_index_entries: []

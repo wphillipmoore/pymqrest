@@ -1,0 +1,32 @@
+version: 1
+generated_at: 2026-02-03T21:12:23Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DISPLAY SERVICE"
+    href: "SSFKSJ_9.4.0/refadmin/q086300_.html"
+    positional_parameters: []
+    input_parameters: []
+    output_parameters:
+      - "ALTDATE"
+      - "ALTTIME"
+      - "CONTROL"
+      - "DESCR"
+      - "SERVTYPE"
+      - "STARTARG"
+      - "STARTCMD"
+      - "STDERR"
+      - "STDOUT"
+      - "STOPARG"
+      - "STOPCMD"
+    section_sources:
+      input:
+        - "Keyword and parameter descriptions for DISPLAY SERVICE"
+      output:
+        - "Requested parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

@@ -1,0 +1,39 @@
+version: 1
+generated_at: 2026-02-03T21:12:21Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DISPLAY CFSTRUCT"
+    href: "SSFKSJ_9.4.0/refadmin/q086030_.html"
+    positional_parameters: []
+    input_parameters: []
+    output_parameters:
+      - "ALTDATE"
+      - "ALTTIME"
+      - "CFCONLOS"
+      - "CFLEVEL"
+      - "DESCR"
+      - "DSBLOCK"
+      - "DSBUFS"
+      - "DSEXPAND"
+      - "DSGROUP"
+      - "OFFLD1SZ"
+      - "OFFLD1TH"
+      - "OFFLD2SZ"
+      - "OFFLD2TH"
+      - "OFFLD3SZ"
+      - "OFFLD3TH"
+      - "OFFLOAD"
+      - "RECAUTO"
+      - "RECOVER"
+    section_sources:
+      input:
+        - "Keyword and parameter descriptions for DISPLAY CFSTRUCT"
+      output:
+        - "Requested parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

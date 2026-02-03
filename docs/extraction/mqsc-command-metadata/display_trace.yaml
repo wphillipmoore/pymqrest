@@ -1,0 +1,25 @@
+version: 1
+generated_at: 2026-02-03T21:12:24Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DISPLAY TRACE"
+    href: "SSFKSJ_9.4.0/refadmin/q086400_.html"
+    positional_parameters: []
+    input_parameters:
+      - "CLASS"
+      - "CMDSCOPE"
+      - "COMMENT"
+      - "DEST"
+      - "DETAIL"
+      - "RMID"
+      - "TNO"
+      - "USERID"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for DISPLAY TRACE"
+    notes: []

@@ -1,0 +1,29 @@
+version: 1
+generated_at: 2026-02-03T21:12:22Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DISPLAY NAMELIST"
+    href: "SSFKSJ_9.4.0/refadmin/q086210_.html"
+    positional_parameters: []
+    input_parameters:
+      - "CMDSCOPE"
+      - "NLTYPE"
+      - "QSGDISP"
+    output_parameters:
+      - "ALTDATE"
+      - "ALTTIME"
+      - "DESCR"
+      - "NAMCOUNT"
+      - "NAMES"
+    section_sources:
+      input:
+        - "Parameter descriptions for DISPLAY NAMELIST"
+      output:
+        - "Requested parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

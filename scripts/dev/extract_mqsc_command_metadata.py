@@ -1,0 +1,636 @@
+#!/usr/bin/env python3
+"""Extract MQSC command metadata from IBM Docs content API."""
+from __future__ import annotations
+
+import argparse
+import re
+import ssl
+import urllib.request
+from datetime import UTC, datetime
+from html.parser import HTMLParser
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DOCS_ROOT = PROJECT_ROOT / "docs" / "extraction"
+IBM_DOCS_BASE = "https://www.ibm.com/docs/api/v1/content/"
+
+INPUT_HEADING_PREFIXES = (
+    "Parameter descriptions",
+    "Keyword and parameter descriptions",
+)
+OUTPUT_HEADING_PREFIXES = (
+    "Requested parameters",
+    "Returned parameters",
+    "Response parameters",
+)
+SYNTAX_HEADING_PREFIX = "Syntax diagram"
+
+EXCLUDED_TOKENS = {"IBM", "AMQ", "CSQ", "MQ", "NO", "YES"}
+DEFERRED_INPUT_TOKENS = {
+    "WHERE": "WHERE filtering is deferred; tracked in issue #71.",
+    "ALL": "ALL requests all attributes and is implied when no specific attributes are listed.",
+}
+DEFERRED_OUTPUT_TOKENS = {
+    "ALL": "ALL requests all attributes and is implied when no specific attributes are listed.",
+    "WHERE": "WHERE filtering is deferred; tracked in issue #71.",
+}
+DEFERRED_POSITIONAL_TOKENS = {
+    "filter-keyword",
+    "filter-value",
+    "operator",
+}
+
+COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
+    "DISPLAY APSTATUS": {
+        "output_section_titles": [
+            "Application status parameters",
+            "Queue manager status parameters",
+            "Local status parameters",
+        ],
+        "notes": [
+            "Returned attributes depend on TYPE; capture all parameters but do not model the dependency yet.",
+        ],
+    },
+    "DISPLAY ARCHIVE": {
+        "notes": [
+            "CMDSCOPE accepts ' ' (single space), qmgr-name, or * on z/OS.",
+        ],
+    },
+    "DISPLAY COMMINFO": {
+        "input_remove": ["COMMEV"],
+        "output_add": ["DESCR"],
+    },
+    "DISPLAY CONN": {
+        "output_section_titles": [
+            "Connection attributes",
+            "Handle attributes",
+        ],
+    },
+    "DISPLAY AUTHREC": {
+        "input_add": ["SERVCOMP"],
+    },
+    "DISPLAY CFSTATUS": {
+        "output_section_titles": [
+            "Summary status",
+            "Connection status",
+            "Backup status",
+            "SMDS status",
+        ],
+    },
+    "DISPLAY CFSTRUCT": {
+        "input_remove": ["DESCR", "RECOVER"],
+    },
+    "DISPLAY CHANNEL": {
+        "input_add": ["TYPE"],
+        "input_remove": ["CHLTYPE", "DESCR", "MCANAME"],
+        "notes": [
+            "TYPE is a synonym for CHLTYPE in DISPLAY CHANNEL; use TYPE as the input parameter.",
+        ],
+    },
+    "DISPLAY CHLAUTH": {
+        "input_section_titles": ["Parameters for DISPLAY CHLAUTH"],
+    },
+    "DISPLAY CHSTATUS": {
+        "output_section_titles": [
+            "Common status",
+            "Current-only status",
+            "Short status",
+        ],
+    },
+    "DISPLAY CLUSQMGR": {
+        "input_add": ["CLUSTER", "CHANNEL"],
+        "input_remove": ["STATUS"],
+    },
+    "DISPLAY ENTAUTH": {
+        "input_add": ["OBJNAME", "SERVCOMP"],
+    },
+    "DISPLAY LOG": {
+        "output_add": ["COMMANDS"],
+    },
+    "DISPLAY NAMELIST": {
+        "output_remove": ["NLTYPE", "QSGDISP"],
+    },
+    "DISPLAY PROCESS": {
+        "input_remove": ["APPLTYPE"],
+    },
+    "DISPLAY PUBSUB": {
+        "output_remove": ["TYPE"],
+    },
+    "DISPLAY QMGR": {
+        "input_remove": ["CHINIT", "CLUSTER", "EVENT", "PUBSUB", "SYSTEM"],
+        "notes": [
+            "CHINIT/CLUSTER/EVENT/PUBSUB/SYSTEM are selector keywords for requested attributes; they are not returned keys.",
+        ],
+    },
+    "DISPLAY QMSTATUS": {
+        "input_remove": ["LOG"],
+        "notes": [
+            "LOG is a selector keyword for requested attributes; it is not a returned key.",
+        ],
+    },
+    "DISPLAY QSTATUS": {
+        "input_set": ["CMDSCOPE"],
+        "output_section_titles": [
+            "Queue status",
+            "Handle status",
+        ],
+        "output_remove": ["MONITOR"],
+        "notes": [
+            "MONITOR is a selector keyword for requested attributes; it is not a returned key.",
+        ],
+    },
+    "DISPLAY QUEUE": {
+        "input_set": [
+            "CFSTRUCT",
+            "CLUSNL",
+            "CLUSTER",
+            "CMDSCOPE",
+            "PSID",
+            "QSGDISP",
+            "STGCLASS",
+            "TARGTYPE",
+            "TYPE",
+        ],
+        "notes": [
+            "CLUSINFO is a selector keyword for requested attributes; it is not a returned key.",
+        ],
+    },
+    "DISPLAY SBSTATUS": {
+        "input_remove": ["QSGDISP", "SUBUSER"],
+        "output_remove": ["COMMEV"],
+        "output_add": ["SUBID", "SUBUSER"],
+    },
+    "DISPLAY SECURITY": {
+        "input_remove": [
+            "CSQH037I",
+            "CSQH038I",
+            "CSQH040I",
+            "CSQH042I",
+            "INTERVAL",
+            "SWITCHES",
+            "TIMEOUT",
+        ],
+    },
+    "DISPLAY SERVICE": {
+        "input_remove": ["CONTROL"],
+    },
+    "DISPLAY SMDS": {
+        "input_remove": ["DESCR", "RECOVER"],
+        "input_add": ["CFSTRUCT"],
+    },
+    "DISPLAY SMDSCONN": {
+        "input_remove": ["DESCR", "RECOVER"],
+    },
+    "DISPLAY SUB": {
+        "output_from_input_sections": True,
+        "notes": [
+            "Output section header missing; using parameter descriptions to seed output attributes.",
+        ],
+    },
+    "DISPLAY SVSTATUS": {
+        "input_remove": ["CONTROL"],
+    },
+    "DISPLAY TCLUSTER": {
+        "output_section_titles": ["Requested attributes"],
+    },
+    "DISPLAY TOPIC": {
+        "input_remove": ["CLUSINFO", "DESCR"],
+    },
+    "DISPLAY TPSTATUS": {
+        "output_section_titles": [
+            "Topic status parameters",
+            "Sub status parameters",
+            "Pub status parameters",
+        ],
+    },
+    "DISPLAY TRACE": {
+        "input_remove": ["ACCTG", "CHINIT", "GLOBAL", "STAT"],
+        "input_add": ["CLASS", "COMMENT", "DEST", "DETAIL", "RMID", "TNO", "USERID"],
+    },
+    "DISPLAY USAGE": {
+        "input_remove": ["CSQE280I", "CSQE285I"],
+    },
+}
+
+
+def strip_tags(text: str) -> str:
+    return re.sub(r"<[^>]+>", "", text)
+
+
+def iter_sections(html: str) -> list[tuple[str, str]]:
+    headings: list[tuple[int, int, int, str]] = []
+    for match in re.finditer(r"<h([1-6])[^>]*>(.*?)</h\1>", html, flags=re.S | re.I):
+        heading_text = strip_tags(match.group(2)).strip()
+        headings.append((match.start(), match.end(), int(match.group(1)), heading_text))
+    sections: list[tuple[str, str]] = []
+    for index, (_start, end, level, heading_text) in enumerate(headings):
+        next_start = len(html)
+        for next_start_index in range(index + 1, len(headings)):
+            if headings[next_start_index][2] <= level:
+                next_start = headings[next_start_index][0]
+                break
+        sections.append((heading_text, html[end:next_start]))
+    return sections
+
+
+def normalize_token(token: str) -> str | None:
+    token = token.replace("\xa0", " ").strip()
+    token = token.replace("\n", "").strip()
+    token = re.sub(r"\s+", " ", token)
+    token = re.sub(r"\(\s*", "(", token)
+    token = re.sub(r"\s*\)", ")", token)
+    if not token:
+        return None
+    if "(" in token:
+        base = token.split("(", 1)[0].strip()
+        if re.match(r"^[A-Z][A-Z0-9_.]*$", base) and base not in EXCLUDED_TOKENS:
+            return token
+    if not re.match(r"^[A-Z][A-Z0-9_.()]*$", token):
+        return None
+    if token in EXCLUDED_TOKENS:
+        return None
+    return token
+
+
+def canonicalize_token(token: str) -> str | None:
+    normalized = normalize_token(token)
+    if not normalized:
+        return None
+    if "(" in normalized:
+        base = normalized.split("(", 1)[0].strip()
+        if base:
+            return base
+        return None
+    return normalized
+
+
+def extract_dl_terms(section_html: str) -> list[str]:
+    class DefinitionListParser(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.dd_depth = 0
+            self.in_dt = False
+            self.buffer: list[str] = []
+            self.terms: list[str] = []
+
+        def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+            if tag == "dd":
+                self.dd_depth += 1
+            elif tag == "dt":
+                self.in_dt = True
+                self.buffer = []
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag == "dd":
+                self.dd_depth = max(self.dd_depth - 1, 0)
+            elif tag == "dt":
+                if self.dd_depth == 0 and self.buffer:
+                    text = "".join(self.buffer).strip()
+                    if text:
+                        self.terms.append(text)
+                self.in_dt = False
+                self.buffer = []
+
+        def handle_data(self, data: str) -> None:
+            if self.in_dt:
+                self.buffer.append(data)
+
+    parser = DefinitionListParser()
+    parser.feed(section_html)
+    return [strip_tags(term).strip() for term in parser.terms if term.strip()]
+
+
+def extract_tokens(section_html: str) -> list[str]:
+    tokens: set[str] = set()
+    for text in re.findall(r"<a [^>]*>(.*?)</a>", section_html, flags=re.S | re.I):
+        token = strip_tags(text).strip()
+        normalized = canonicalize_token(token)
+        if normalized:
+            tokens.add(normalized)
+    for text in re.findall(
+        r'<span class="keyword parmname">(.*?)</span>', section_html, flags=re.S | re.I
+    ):
+        token = strip_tags(text).strip()
+        normalized = canonicalize_token(token)
+        if normalized:
+            tokens.add(normalized)
+    for text in re.findall(r'<code class="ph code">(.*?)</code>', section_html, flags=re.S | re.I):
+        token = strip_tags(text).strip()
+        normalized = canonicalize_token(token)
+        if normalized:
+            tokens.add(normalized)
+    for text in extract_dl_terms(section_html):
+        normalized = canonicalize_token(text)
+        if normalized:
+            tokens.add(normalized)
+    return sorted(tokens)
+
+
+def extract_varnames(section_html: str) -> list[str]:
+    varnames: list[str] = []
+    for text in re.findall(r'<var class="keyword varname">(.*?)</var>', section_html):
+        token = strip_tags(text).strip()
+        if token:
+            varnames.append(token)
+    return varnames
+
+
+def extract_syntax_vars(section_html: str) -> list[str]:
+    vars_found: list[str] = []
+    for text in re.findall(r'<text class="syntaxvar">(.*?)</text>', section_html):
+        token = strip_tags(text).strip()
+        if token:
+            vars_found.append(token)
+    return vars_found
+
+
+def unique_in_order(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for value in values:
+        if value in seen:
+            continue
+        seen.add(value)
+        ordered.append(value)
+    return ordered
+
+
+def add_note(notes: list[str], note: str) -> None:
+    if note not in notes:
+        notes.append(note)
+
+
+def extract_command_name(html: str) -> str | None:
+    match = re.search(r"<h1[^>]*>(.*?)</h1>", html, flags=re.S | re.I)
+    if not match:
+        return None
+    heading = strip_tags(match.group(1)).strip()
+    if " (" in heading:
+        return heading.split(" (", 1)[0].strip()
+    if " on " in heading:
+        return heading.split(" on ", 1)[0].strip()
+    return heading
+
+
+def fetch_html(href: str) -> str:
+    url = f"{IBM_DOCS_BASE}{href}"
+    context = ssl._create_unverified_context()
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": "pymqrest-metadata-extract/1.0",
+            "Accept": "text/html",
+        },
+    )
+    with urllib.request.urlopen(request, context=context) as response:
+        html_bytes = response.read()
+    return html_bytes.decode("utf-8", errors="ignore")
+
+
+def slugify_command(name: str) -> str:
+    slug = name.strip().lower().replace(" ", "_")
+    slug = re.sub(r"[^a-z0-9_]+", "", slug)
+    slug = re.sub(r"_+", "_", slug).strip("_")
+    return slug or "unknown"
+
+
+def yaml_quote(value: str) -> str:
+    escaped = value.replace("\\", "\\\\").replace('"', "\\\"")
+    return f'"{escaped}"'
+
+
+def write_yaml(
+    *,
+    output_path: Path,
+    name: str,
+    href: str,
+    positional_parameters: list[str],
+    input_parameters: list[str],
+    output_parameters: list[str],
+    input_sections: list[str],
+    output_sections: list[str],
+    positional_notes: str | None,
+    notes: list[str],
+) -> None:
+    now = datetime.now(UTC)
+    generated_at = now.isoformat(timespec="seconds").replace("+00:00", "Z")
+    retrieved_at = now.date().isoformat()
+
+    lines: list[str] = []
+
+    def add(line: str, indent: int = 0) -> None:
+        lines.append(" " * indent + line)
+
+    add("version: 1")
+    add(f"generated_at: {generated_at}")
+    add("source:")
+    add(f"  product: {yaml_quote('IBM MQ')}")
+    add(f"  version: {yaml_quote('9.4.x')}")
+    add(f"  content_api: {yaml_quote(IBM_DOCS_BASE)}")
+    add(f"  retrieved_at: {yaml_quote(retrieved_at)}")
+    add("mqsc_commands:")
+    add(f"  - name: {yaml_quote(name)}")
+    add(f"    href: {yaml_quote(href)}")
+    if positional_parameters:
+        add("    positional_parameters:")
+        for token in positional_parameters:
+            add(f"      - {yaml_quote(token)}")
+    else:
+        add("    positional_parameters: []")
+    if input_parameters:
+        add("    input_parameters:")
+        for token in input_parameters:
+            add(f"      - {yaml_quote(token)}")
+    else:
+        add("    input_parameters: []")
+    if output_parameters:
+        add("    output_parameters:")
+        for token in output_parameters:
+            add(f"      - {yaml_quote(token)}")
+    else:
+        add("    output_parameters: []")
+    add("    section_sources:")
+    if input_sections:
+        add("      input:")
+        for title in input_sections:
+            add(f"        - {yaml_quote(title)}")
+    if output_sections:
+        add("      output:")
+        for title in output_sections:
+            add(f"        - {yaml_quote(title)}")
+    if positional_notes:
+        add(f"      positional: {yaml_quote(positional_notes)}")
+    if notes:
+        add("    notes:")
+        for note in notes:
+            add(f"      - {yaml_quote(note)}")
+    else:
+        add("    notes: []")
+
+    output_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Extract MQSC command metadata from IBM Docs content API."
+    )
+    parser.add_argument("--href", required=True, help="IBM Docs content path")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        help="Output YAML path (overrides --output-dir).",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=DOCS_ROOT / "mqsc-command-metadata",
+        help="Directory for per-command YAML outputs.",
+    )
+    args = parser.parse_args()
+
+    html = fetch_html(args.href)
+    name = extract_command_name(html) or "UNKNOWN"
+    overrides = COMMAND_OVERRIDES.get(name, {})
+    sections = iter_sections(html)
+
+    input_section_titles = {
+        title.lower() for title in overrides.get("input_section_titles", [])  # type: ignore[arg-type]
+    }
+    output_section_titles = {
+        title.lower() for title in overrides.get("output_section_titles", [])  # type: ignore[arg-type]
+    }
+
+    input_sections: list[tuple[str, str]] = []
+    output_sections: list[tuple[str, str]] = []
+    syntax_section: tuple[str, str] | None = None
+
+    for heading, section in sections:
+        lower = heading.lower()
+        if input_section_titles:
+            if lower in input_section_titles:
+                input_sections.append((heading, section))
+        else:
+            if not input_sections and any(
+                lower.startswith(prefix.lower()) for prefix in INPUT_HEADING_PREFIXES
+            ):
+                input_sections.append((heading, section))
+        if output_section_titles:
+            if lower in output_section_titles:
+                output_sections.append((heading, section))
+        else:
+            if not output_sections and any(
+                lower.startswith(prefix.lower()) for prefix in OUTPUT_HEADING_PREFIXES
+            ):
+                output_sections.append((heading, section))
+        if syntax_section is None and lower.startswith(SYNTAX_HEADING_PREFIX.lower()):
+            syntax_section = (heading, section)
+
+    input_parameters: list[str] = []
+    output_parameters: list[str] = []
+    positional_parameters: list[str] = []
+    varname_tokens: list[str] = []
+    syntax_tokens: list[str] = []
+    positional_notes = None
+    notes: list[str] = []
+
+    for heading, section in input_sections:
+        input_parameters.extend(extract_tokens(section))
+        varname_tokens.extend(extract_varnames(section))
+    for heading, section in output_sections:
+        output_parameters.extend(extract_tokens(section))
+    if syntax_section:
+        _heading, section = syntax_section
+        syntax_tokens = extract_syntax_vars(section)
+
+    input_parameters = sorted(set(input_parameters))
+    output_parameters = sorted(set(output_parameters))
+    input_parameters_raw = list(input_parameters)
+
+    positional_parameters = unique_in_order(varname_tokens + syntax_tokens)
+    if "FilterCondition" in positional_parameters and any(
+        token.startswith("filter-") for token in positional_parameters
+    ):
+        positional_parameters = [token for token in positional_parameters if token != "FilterCondition"]
+    if positional_parameters:
+        deferred_positional = [
+            token for token in positional_parameters if token in DEFERRED_POSITIONAL_TOKENS
+        ]
+        if deferred_positional:
+            positional_parameters = [
+                token for token in positional_parameters if token not in DEFERRED_POSITIONAL_TOKENS
+            ]
+            add_note(notes, "WHERE filtering is deferred; tracked in issue #71.")
+
+    if name.startswith("DISPLAY "):
+        positional_parameters = []
+
+    if positional_parameters:
+        positional_notes = "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+
+    if overrides.get("output_from_input_sections") and not output_parameters:
+        output_parameters = list(input_parameters_raw)
+
+    input_set = overrides.get("input_set")
+    output_set = overrides.get("output_set")
+    if input_set is not None:
+        input_parameters = list(input_set)  # type: ignore[arg-type]
+    if output_set is not None:
+        output_parameters = list(output_set)  # type: ignore[arg-type]
+
+    input_add = overrides.get("input_add", [])
+    input_remove = overrides.get("input_remove", [])
+    output_add = overrides.get("output_add", [])
+    output_remove = overrides.get("output_remove", [])
+    for token in input_add:  # type: ignore[not-an-iterable]
+        if token not in input_parameters:
+            input_parameters.append(token)
+    for token in input_remove:  # type: ignore[not-an-iterable]
+        if token in input_parameters:
+            input_parameters.remove(token)
+    for token in output_add:  # type: ignore[not-an-iterable]
+        if token not in output_parameters:
+            output_parameters.append(token)
+    for token in output_remove:  # type: ignore[not-an-iterable]
+        if token in output_parameters:
+            output_parameters.remove(token)
+    input_parameters = sorted(set(input_parameters))
+    output_parameters = sorted(set(output_parameters))
+
+    if input_parameters:
+        deferred = [token for token in input_parameters if token in DEFERRED_INPUT_TOKENS]
+        if deferred:
+            input_parameters = [token for token in input_parameters if token not in DEFERRED_INPUT_TOKENS]
+            for token in deferred:
+                add_note(notes, DEFERRED_INPUT_TOKENS[token])
+
+    if output_parameters:
+        deferred = [token for token in output_parameters if token in DEFERRED_OUTPUT_TOKENS]
+        if deferred:
+            output_parameters = [token for token in output_parameters if token not in DEFERRED_OUTPUT_TOKENS]
+            for token in deferred:
+                add_note(notes, DEFERRED_OUTPUT_TOKENS[token])
+
+    for note in overrides.get("notes", []):  # type: ignore[not-an-iterable]
+        add_note(notes, str(note))
+    output_path = args.output
+    if output_path is None:
+        slug = slugify_command(name)
+        output_path = args.output_dir / f"{slug}.yaml"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    write_yaml(
+        output_path=output_path,
+        name=name,
+        href=args.href,
+        positional_parameters=positional_parameters,
+        input_parameters=input_parameters,
+        output_parameters=output_parameters,
+        input_sections=[heading for heading, _section in input_sections],
+        output_sections=[heading for heading, _section in output_sections],
+        positional_notes=positional_notes,
+        notes=notes,
+    )
+
+
+if __name__ == "__main__":
+    main()
