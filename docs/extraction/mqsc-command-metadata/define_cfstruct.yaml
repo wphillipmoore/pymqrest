@@ -1,0 +1,48 @@
+version: 1
+generated_at: 2026-02-03T23:40:03Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DEFINE CFSTRUCT"
+    href: "SSFKSJ_9.4.0/refadmin/q085510_.html"
+    positional_parameters:
+      - "(structure-name)"
+      - "integer"
+      - "string"
+      - "cfstruct-name"
+      - "percentage"
+      - "size"
+      - "dsname.prefix.*.dsname.suffix"
+      - "structure-name"
+    input_parameters:
+      - "CFCONLOS"
+      - "CFLEVEL"
+      - "CFSTRUCT"
+      - "DESCR"
+      - "DSBLOCK"
+      - "DSBUFS"
+      - "DSEXPAND"
+      - "DSGROUP"
+      - "INDXTYPE"
+      - "LIKE"
+      - "NOREPLACE"
+      - "OFFLD1SZ"
+      - "OFFLD1TH"
+      - "OFFLD2SZ"
+      - "OFFLD2TH"
+      - "OFFLD3SZ"
+      - "OFFLD3TH"
+      - "OFFLOAD"
+      - "PROPCTL"
+      - "RECAUTO"
+      - "RECOVER"
+      - "REPLACE"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for DEFINE CFSTRUCT"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

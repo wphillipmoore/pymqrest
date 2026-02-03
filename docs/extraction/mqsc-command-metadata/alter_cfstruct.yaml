@@ -1,0 +1,43 @@
+version: 1
+generated_at: 2026-02-03T23:39:56Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "ALTER CFSTRUCT"
+    href: "SSFKSJ_9.4.0/refadmin/q085160_.html"
+    positional_parameters:
+      - "(structure-name)"
+      - "integer"
+      - "string"
+      - "data.set.name.*"
+      - "structure-name"
+    input_parameters:
+      - "ALTERSMDS"
+      - "CFCONLOS"
+      - "CFLEVEL"
+      - "CFSTRUCT"
+      - "DESCR"
+      - "DSBLOCK"
+      - "DSBUFS"
+      - "DSEXPAND"
+      - "DSGROUP"
+      - "INDXTYPE"
+      - "OFFLD1SZ"
+      - "OFFLD1TH"
+      - "OFFLD2SZ"
+      - "OFFLD2TH"
+      - "OFFLD3SZ"
+      - "OFFLD3TH"
+      - "OFFLOAD"
+      - "PROPCTL"
+      - "RECAUTO"
+      - "RECOVER"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for ALTER CFSTRUCT"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

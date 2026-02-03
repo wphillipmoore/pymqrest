@@ -1,0 +1,26 @@
+version: 1
+generated_at: 2026-02-03T23:40:06Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DELETE AUTHREC"
+    href: "SSFKSJ_9.4.0/refadmin/q085790_.html"
+    positional_parameters:
+      - "profile-name"
+      - "principal-name"
+      - "group-name"
+    input_parameters:
+      - "GROUP"
+      - "IGNSTATE"
+      - "OBJTYPE"
+      - "PRINCIPAL"
+      - "PROFILE"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for DELETE AUTHREC"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

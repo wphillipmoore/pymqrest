@@ -1,0 +1,19 @@
+version: 1
+generated_at: 2026-02-03T23:40:06Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DELETE CFSTRUCT"
+    href: "SSFKSJ_9.4.0/refadmin/q085810_.html"
+    positional_parameters:
+      - "structure-name"
+    input_parameters: []
+    output_parameters: []
+    section_sources:
+      input:
+        - "Keyword and parameter descriptions for DELETE CFSTRUCT"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

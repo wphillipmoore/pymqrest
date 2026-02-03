@@ -1,0 +1,26 @@
+version: 1
+generated_at: 2026-02-03T23:40:04Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DEFINE PSID"
+    href: "SSFKSJ_9.4.0/refadmin/q085680_.html"
+    positional_parameters:
+      - "psid-number"
+      - "ddname"
+      - "integer"
+      - "data set name"
+    input_parameters:
+      - "BUFFPOOL"
+      - "DSN"
+      - "EXPAND"
+      - "LOCATION"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for DEFINE PSID"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

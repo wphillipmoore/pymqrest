@@ -1,0 +1,26 @@
+version: 1
+generated_at: 2026-02-03T23:40:24Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "RESET QMGR"
+    href: "SSFKSJ_9.4.0/refadmin/q086530_.html"
+    positional_parameters:
+      - "name"
+      - "qmgr-name"
+      - "child-name"
+      - "parent-name"
+      - "&nbsp;name"
+    input_parameters:
+      - "CMDSCOPE"
+      - "QSGDISP"
+      - "TYPE"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for RESET QMGR"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

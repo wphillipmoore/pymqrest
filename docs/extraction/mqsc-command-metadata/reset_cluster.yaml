@@ -1,0 +1,29 @@
+version: 1
+generated_at: 2026-02-03T23:40:23Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "RESET CLUSTER"
+    href: "SSFKSJ_9.4.0/refadmin/q086520_.html"
+    positional_parameters:
+      - "(clustername)"
+      - "qmgr-name"
+      - "qmid"
+      - "qmname"
+      - "clustername"
+      - "(qmid)"
+    input_parameters:
+      - "ACTION"
+      - "CMDSCOPE"
+      - "QMID"
+      - "QMNAME"
+      - "QUEUES"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for RESET CLUSTER"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

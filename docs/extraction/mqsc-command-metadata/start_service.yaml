@@ -1,0 +1,20 @@
+version: 1
+generated_at: 2026-02-03T23:40:28Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "START SERVICE"
+    href: "SSFKSJ_9.4.0/refadmin/q086720_.html"
+    positional_parameters:
+      - "service-name"
+    input_parameters:
+      - "IGNSTATE"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for START SERVICE"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

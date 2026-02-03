@@ -1,0 +1,27 @@
+version: 1
+generated_at: 2026-02-03T23:40:26Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "SET CHLAUTH"
+    href: "SSFKSJ_9.4.0/refadmin/q086630_.html"
+    positional_parameters:
+      - "channel-profile-name"
+      - "qmgr-name"
+      - "custom-values"
+      - "string"
+      - "user-name"
+      - "generic-ip-address"
+      - "client-user-name"
+      - "generic-partner-qmgr-name"
+      - "user"
+      - "generic-ssl-peer-name"
+      - "generic-issuer-name"
+    input_parameters: []
+    output_parameters: []
+    section_sources:
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []

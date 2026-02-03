@@ -1,0 +1,42 @@
+version: 1
+generated_at: 2026-02-03T23:40:05Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-03"
+mqsc_commands:
+  - name: "DEFINE STGCLASS"
+    href: "SSFKSJ_9.4.0/refadmin/q085750_.html"
+    positional_parameters:
+      - "storage-class"
+      - "qmgr-name"
+      - "description"
+      - "stgclass-name"
+      - "application name"
+      - "integer"
+      - "storage_class_name"
+      - "group name"
+      - "member name"
+      - "string"
+      - "aname"
+      - "gname"
+      - "mname"
+    input_parameters:
+      - "CMDSCOPE"
+      - "DESCR"
+      - "LIKE"
+      - "NOREPLACE"
+      - "PASSTKTA"
+      - "PSID"
+      - "QSGDISP"
+      - "REPLACE"
+      - "STGCLASS"
+      - "XCFGNAME"
+      - "XCFMNAME"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for DEFINE STGCLASS"
+      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+    notes: []
