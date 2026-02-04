@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:17Z
+generated_at: 2026-02-04T11:54:36Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,6 +9,9 @@ mqsc_commands:
   - name: "DISPLAY CHSTATUS"
     href: "SSFKSJ_9.4.0/refadmin/q086090_.html"
     input_parameters:
+      - "1"
+      - "2"
+      - "3"
       - "CHLDISP"
       - "CHLTYPE"
       - "CMDSCOPE"
@@ -31,6 +34,7 @@ mqsc_commands:
       - "XQMSGSA"
       - "XQTIME"
     output_parameters:
+      - "4"
       - "AMQPKA"
       - "BATCHES"
       - "BATCHSZ"
@@ -38,6 +42,7 @@ mqsc_commands:
       - "BUFSSENT"
       - "BYTSRCVD"
       - "BYTSSENT"
+      - "CHANNEL"
       - "CHLTYPE"
       - "CHSTADA"
       - "CHSTATI"
@@ -49,6 +54,7 @@ mqsc_commands:
       - "CURMSGS"
       - "CURSEQNO"
       - "CURSHCNV"
+      - "DEFINE"
       - "EXITTIME"
       - "HBINT"
       - "INDOUBT"

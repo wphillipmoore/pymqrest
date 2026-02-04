@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:20Z
+generated_at: 2026-02-04T11:54:39Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -12,10 +12,12 @@ mqsc_commands:
       - "CHLAUTH"
       - "CMDSCOPE"
       - "CONNAUTH"
+      - "JWKS"
       - "MQADMIN"
       - "MQNLIST"
       - "MQPROC"
       - "MQQUEUE"
+      - "MQSC"
       - "MXADMIN"
       - "MXNLIST"
       - "MXPROC"

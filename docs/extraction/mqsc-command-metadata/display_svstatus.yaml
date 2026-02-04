@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:19Z
+generated_at: 2026-02-04T11:54:38Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -11,8 +11,11 @@ mqsc_commands:
     input_parameters: []
     output_parameters:
       - "CONTROL"
+      - "DEFINE"
       - "DESCR"
+      - "MQSC"
       - "PID"
+      - "SERVICE"
       - "SERVTYPE"
       - "STARTARG"
       - "STARTCMD"

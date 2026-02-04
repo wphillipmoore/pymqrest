@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:14Z
+generated_at: 2026-02-04T11:54:33Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -19,7 +19,14 @@ mqsc_commands:
       - "DSGROUP"
       - "INDXTYPE"
       - "LIKE"
+      - "MQSC"
       - "NOREPLACE"
+      - "OFFLD1SZ"
+      - "OFFLD1TH"
+      - "OFFLD2SZ"
+      - "OFFLD2TH"
+      - "OFFLD3SZ"
+      - "OFFLD3TH"
       - "OFFLOAD"
       - "PROPCTL"
       - "RECAUTO"

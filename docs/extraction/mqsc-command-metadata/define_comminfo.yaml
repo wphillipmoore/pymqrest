@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:14Z
+generated_at: 2026-02-04T11:54:33Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -12,7 +12,9 @@ mqsc_commands:
       - "BRIDGE"
       - "CCSID"
       - "COMMEV"
+      - "COMMINFO"
       - "DESCR"
+      - "DISPLAY"
       - "ENCODING"
       - "GRPADDR"
       - "LIKE"
@@ -20,6 +22,7 @@ mqsc_commands:
       - "MCHBINT"
       - "MCPROP"
       - "MONINT"
+      - "MQSC"
       - "MSGHIST"
       - "NOREPLACE"
       - "NSUBHIST"

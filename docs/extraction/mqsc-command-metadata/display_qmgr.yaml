@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:18Z
+generated_at: 2026-02-04T11:54:37Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -24,10 +24,12 @@ mqsc_commands:
       - "ADOPTMCA"
       - "ADVCAP"
       - "ALTDATE"
+      - "ALTER"
       - "ALTTIME"
       - "AMQPCAP"
       - "AUTHEVSC"
       - "AUTHOREV"
+      - "B"
       - "BRIDGEEV"
       - "CCSID"
       - "CERTLABL"
@@ -80,6 +82,8 @@ mqsc_commands:
       - "LOCALEV"
       - "LOGGEREV"
       - "LSTRTMR"
+      - "LU62ARM"
+      - "LU62CHL"
       - "LUGROUP"
       - "LUNAME"
       - "MARKINT"
@@ -92,6 +96,8 @@ mqsc_commands:
       - "MONACLS"
       - "MONCHL"
       - "MONQ"
+      - "MQSC"
+      - "NSA"
       - "OPORTMAX"
       - "OPORTMIN"
       - "OTELPCTL"
@@ -105,6 +111,7 @@ mqsc_commands:
       - "PSNPRES"
       - "PSRTYCNT"
       - "PSSYNCPT"
+      - "QMGR"
       - "QMGRPROD"
       - "QMID"
       - "QMNAME"
@@ -129,6 +136,7 @@ mqsc_commands:
       - "SSLKEYR"
       - "SSLRKEYC"
       - "SSLTASKS"
+      - "START"
       - "STATACLS"
       - "STATCHL"
       - "STATINT"

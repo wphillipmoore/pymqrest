@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:23Z
+generated_at: 2026-02-04T11:54:42Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -12,10 +12,14 @@ mqsc_commands:
       - "CLUSNL"
       - "CLUSTER"
       - "CMDSCOPE"
+      - "CSQJ372I"
       - "FACILITY"
+      - "IMS"
       - "LOG"
       - "MODE"
-      - "RESUMEQMGR"
+      - "MQSC"
+      - "QMGR"
+      - "RESUME"
       - "SUSPENDED"
     output_parameters: []
     section_sources:

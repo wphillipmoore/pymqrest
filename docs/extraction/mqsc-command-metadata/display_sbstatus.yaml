@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:18Z
+generated_at: 2026-02-04T11:54:37Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -14,13 +14,16 @@ mqsc_commands:
       - "SUBTYPE"
     output_parameters:
       - "ACTCONN"
+      - "DEFINE"
       - "DURABLE"
       - "LMSGDATE"
       - "LMSGTIME"
       - "MCASTREL"
+      - "MQSC"
       - "NUMMSGS"
       - "RESMDATE"
       - "RESMTIME"
+      - "SUB"
       - "SUBID"
       - "SUBTYPE"
       - "SUBUSER"

@@ -242,11 +242,12 @@ def normalize_token(token: str) -> str | None:
     token = re.sub(r"\s+", " ", token)
     token = re.sub(r"\(\s*", "(", token)
     token = re.sub(r"\s*\)", ")", token)
+    token = token.strip(" ,.;:")
     if not token:
         return None
     if "(" in token:
         token = token.split("(", 1)[0].strip()
-    if not re.fullmatch(r"[A-Z]+", token):
+    if not re.fullmatch(r"[A-Z0-9]+", token):
         return None
     if token in EXCLUDED_TOKENS:
         return None
@@ -295,27 +296,34 @@ def extract_dl_terms(section_html: str) -> list[str]:
 
 def extract_tokens(section_html: str) -> list[str]:
     tokens: set[str] = set()
+
+    def iter_raw_tokens(text: str) -> list[str]:
+        if not text:
+            return []
+        return [part for part in re.split(r"\s+", text.strip()) if part]
+
     for text in re.findall(r"<a [^>]*>(.*?)</a>", section_html, flags=re.S | re.I):
-        token = strip_tags(text).strip()
-        normalized = canonicalize_token(token)
-        if normalized:
-            tokens.add(normalized)
+        for token in iter_raw_tokens(strip_tags(text)):
+            normalized = canonicalize_token(token)
+            if normalized:
+                tokens.add(normalized)
     for text in re.findall(
         r'<span class="keyword parmname">(.*?)</span>', section_html, flags=re.S | re.I
     ):
-        token = strip_tags(text).strip()
-        normalized = canonicalize_token(token)
-        if normalized:
-            tokens.add(normalized)
+        for token in iter_raw_tokens(strip_tags(text)):
+            normalized = canonicalize_token(token)
+            if normalized:
+                tokens.add(normalized)
     for text in re.findall(r'<code class="ph code">(.*?)</code>', section_html, flags=re.S | re.I):
-        token = strip_tags(text).strip()
-        normalized = canonicalize_token(token)
-        if normalized:
-            tokens.add(normalized)
+        for token in iter_raw_tokens(strip_tags(text)):
+            normalized = canonicalize_token(token)
+            if normalized:
+                tokens.add(normalized)
     for text in extract_dl_terms(section_html):
-        normalized = canonicalize_token(text)
-        if normalized:
-            tokens.add(normalized)
+        for token in iter_raw_tokens(text):
+            normalized = canonicalize_token(token)
+            if normalized:
+                tokens.add(normalized)
     return sorted(tokens)
 
 

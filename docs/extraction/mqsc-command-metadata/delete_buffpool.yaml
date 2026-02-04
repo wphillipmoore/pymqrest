@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:15Z
+generated_at: 2026-02-04T11:54:34Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,7 +8,8 @@ source:
 mqsc_commands:
   - name: "DELETE BUFFPOOL"
     href: "SSFKSJ_9.4.0/refadmin/q085800_.html"
-    input_parameters: []
+    input_parameters:
+      - "MQSC"
     output_parameters: []
     section_sources:
       input:

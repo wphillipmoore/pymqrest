@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:12Z
+generated_at: 2026-02-04T11:54:32Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -14,9 +14,12 @@ mqsc_commands:
       - "COMMANDS"
       - "CONTROL"
       - "DESCR"
+      - "DISPLAY"
       - "IPADDR"
       - "LIKE"
+      - "LISTENER"
       - "LOCLNAME"
+      - "MQSC"
       - "NTBNAMES"
       - "PORT"
       - "SESSIONS"

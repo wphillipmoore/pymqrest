@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:48:17Z
+generated_at: 2026-02-04T11:54:35Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -28,17 +28,19 @@ mqsc_commands:
       - "FAILDATE"
       - "FAILTIME"
       - "LOGS"
+      - "MQSC"
       - "OFFLDUSE"
+      - "PURGE"
       - "QMNAME"
       - "RCVDATE"
       - "RCVTIME"
+      - "RESET"
       - "SIZEMAX"
       - "SIZEUSED"
       - "SMDS"
       - "STATUS"
       - "SYSNAME"
       - "TYPE"
-      - "TYPEPURGE"
     section_sources:
       input:
         - "Keyword and parameter descriptions for DISPLAY CFSTATUS"
