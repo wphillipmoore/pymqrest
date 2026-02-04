@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T23:05:47Z
+generated_at: 2026-02-04T23:11:12Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -1559,7 +1559,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ChannelStatistics"
+    snake: "channel_statistics"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -1571,10 +1573,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "ChannelStatus"
-      - "MCAStatus"
+    status: "override"
+    pcf: "ChannelStatus"
+    snake: "channel_status"
     mqsc_commands:
       input:
         - "STOP CHANNEL"
@@ -1653,10 +1654,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "TransportType"
-      - "TrpType"
+    status: "override"
+    pcf: "TransportType"
+    snake: "transport_type"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
