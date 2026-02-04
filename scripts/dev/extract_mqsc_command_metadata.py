@@ -593,7 +593,7 @@ def extract_command_name(html: str) -> str | None:
     if not match:
         return None
     heading = strip_tags(match.group(1)).strip()
-    if heading.startswith("CHANGE, COPY, and CREATE "):
+    if heading.lower().startswith("change, copy, and create "):
         return None
     if " (" in heading:
         return heading.split(" (", 1)[0].strip()
