@@ -199,6 +199,9 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
             "Constraint block",
         ],
     },
+    "STOP CHANNEL": {
+        "extra_hrefs": ["SSFKSJ_9.4.0/refadmin/q086760_.html"],
+    },
     "DISPLAY ENTAUTH": {
         "input_add": ["OBJNAME", "SERVCOMP"],
     },
