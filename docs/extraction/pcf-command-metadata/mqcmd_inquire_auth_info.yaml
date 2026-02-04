@@ -1,0 +1,55 @@
+version: 1
+generated_at: 2026-02-04T19:35:02Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+pcf_commands:
+  - name: "MQCMD_INQUIRE_AUTH_INFO"
+    mqsc_commands:
+      - "DISPLAY AUTHINFO"
+    hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q087270_.html"
+    response_hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q087280_.html"
+    input_parameters:
+      - "AuthInfoAttrs"
+      - "AuthInfoName"
+      - "AuthInfoType"
+      - "CommandScope"
+      - "IntegerFilterCommand"
+      - "QSGDisposition"
+      - "StringFilterCommand"
+    output_parameters:
+      - "AdoptContext"
+      - "AlterationDate"
+      - "AlterationTime"
+      - "AuthInfoConnName"
+      - "AuthInfoDesc"
+      - "AuthInfoName"
+      - "AuthInfoType"
+      - "AuthenticationMethod"
+      - "AuthorizationMethod"
+      - "BaseDNGroup"
+      - "BaseDNUser"
+      - "ClassGroup"
+      - "Classuser"
+      - "FailureDelay"
+      - "FindGroup"
+      - "GroupField"
+      - "GroupNesting"
+      - "LDAPPassword"
+      - "LDAPUserName"
+      - "OCSPResponderURL"
+      - "QSGDisposition"
+      - "SecureComms"
+      - "ShortUser"
+      - "UserField"
+    section_sources:
+      input:
+        - "Optional parameters"
+        - "Required parameters"
+      output:
+        - "Response data"
+    notes: []

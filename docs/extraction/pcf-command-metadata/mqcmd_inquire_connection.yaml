@@ -1,0 +1,73 @@
+version: 1
+generated_at: 2026-02-04T19:35:02Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+pcf_commands:
+  - name: "MQCMD_INQUIRE_CONNECTION"
+    mqsc_commands:
+      - "DISPLAY CONN"
+    hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q087620_.html"
+    response_hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q087630_.html"
+    input_parameters:
+      - "ByteStringFilterCommand"
+      - "CommandScope"
+      - "ConnInfoType"
+      - "ConnectionAttrs"
+      - "ConnectionId"
+      - "GenericConnectionId"
+      - "IntegerFilterCommand"
+      - "StringFilterCommand"
+      - "URDisposition"
+    output_parameters:
+      - "ApplDesc"
+      - "ApplTag"
+      - "ApplType"
+      - "AsynchronousState"
+      - "ChannelName"
+      - "ClientId"
+      - "ConnInfoType"
+      - "ConnectionId"
+      - "ConnectionName"
+      - "ConnectionOptions"
+      - "ConnectionTag"
+      - "Destination"
+      - "DestinationQueueManager"
+      - "HandleState"
+      - "ObjectName"
+      - "ObjectType"
+      - "OpenOptions"
+      - "OriginName"
+      - "OriginUOWId"
+      - "PSBName"
+      - "PSTId"
+      - "ProcessId"
+      - "QMgrUOWId"
+      - "QSGDispositon"
+      - "ReadAhead"
+      - "StartUOWLogExtent"
+      - "SubscriptionID"
+      - "SubscriptionName"
+      - "ThreadId"
+      - "TopicString"
+      - "TransactionId"
+      - "UOWIdentifier"
+      - "UOWLogStartDate"
+      - "UOWLogStartTime"
+      - "UOWStartDate"
+      - "UOWStartTime"
+      - "UOWState"
+      - "UOWType"
+      - "URDisposition"
+      - "UserId"
+    section_sources:
+      input:
+        - "Optional parameters"
+        - "Required parameters"
+      output:
+        - "Response data"
+    notes: []

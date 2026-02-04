@@ -1,0 +1,59 @@
+version: 1
+generated_at: 2026-02-04T19:35:02Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+pcf_commands:
+  - name: "MQCMD_INQUIRE_SYSTEM"
+    mqsc_commands:
+      - "DISPLAY SYSTEM"
+    hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q088080_.html"
+    response_hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q088090_.html"
+    input_parameters:
+      - "CommandScope"
+    output_parameters:
+      - "CheckpointCount"
+      - "ClusterCacheType"
+      - "CodedCharSetId"
+      - "CommandUserId"
+      - "DB2BlobTasks"
+      - "DB2Name"
+      - "DB2Tasks"
+      - "DSGName"
+      - "Exclmsg"
+      - "ExitInterval"
+      - "ExitTasks"
+      - "MULCCapture"
+      - "MaximumAcePool"
+      - "OTMADruExit"
+      - "OTMAGroup"
+      - "OTMAInterval"
+      - "OTMAMember"
+      - "OTMSTpipePrefix"
+      - "QIndexDefer"
+      - "QSGName"
+      - "RESLEVELAudit"
+      - "RoutingCode"
+      - "SMFAccounting"
+      - "SMFAcctIntervalMins"
+      - "SMFAcctIntervalSecs"
+      - "SMFInterval"
+      - "SMFStatistics"
+      - "SMFStatsIntervalMins"
+      - "SMFStatsIntervalSecs"
+      - "Service"
+      - "Splcap"
+      - "TraceClass"
+      - "TraceSize"
+      - "WLMInterval"
+      - "WLMIntervalUnits"
+    section_sources:
+      input:
+        - "Optional parameters"
+      output:
+        - "Response data"
+    notes: []

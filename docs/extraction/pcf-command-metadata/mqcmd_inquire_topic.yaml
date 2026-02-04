@@ -1,0 +1,64 @@
+version: 1
+generated_at: 2026-02-04T19:35:02Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+pcf_commands:
+  - name: "MQCMD_INQUIRE_TOPIC"
+    mqsc_commands:
+      - "DISPLAY TOPIC"
+    hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q088100_.html"
+    response_hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q088110_.html"
+    input_parameters:
+      - "CapExpiry"
+      - "ClusterInfo"
+      - "CommandScope"
+      - "IntegerFilterCommand"
+      - "QSGDisposition"
+      - "StringFilterCommand"
+      - "TopicAttrs"
+      - "TopicName"
+      - "TopicType"
+    output_parameters:
+      - "AlterationDate"
+      - "AlterationTime"
+      - "Blank"
+      - "CapExpiry"
+      - "ClusterName"
+      - "ClusterObjectState"
+      - "ClusterPubRoute"
+      - "CommInfo"
+      - "Custom"
+      - "DefPersistence"
+      - "DefPriority"
+      - "DefPutResponse"
+      - "DurableModelQName"
+      - "DurableSubscriptions"
+      - "InhibitPublications"
+      - "InhibitSubscriptions"
+      - "Multicast"
+      - "NonDurableModelQName"
+      - "NonPersistentMsgDelivery"
+      - "PersistentMsgDelivery"
+      - "ProxySubscriptions"
+      - "PublicationScope"
+      - "QMgrName"
+      - "String"
+      - "SubscriptionScope"
+      - "TopicDesc"
+      - "TopicName"
+      - "TopicString"
+      - "TopicType"
+      - "UseDLQ"
+      - "WildcardOperation"
+    section_sources:
+      input:
+        - "Optional parameters"
+        - "Required parameters"
+      output:
+        - "Response data"
+    notes: []

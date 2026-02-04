@@ -1,0 +1,30 @@
+version: 1
+generated_at: 2026-02-04T19:35:02Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+pcf_commands:
+  - name: "MQCMD_INQUIRE_SMDSCONN"
+    mqsc_commands:
+      - "DISPLAY SMDSCONN"
+    hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q087980_.html"
+    response_hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q087990_.html"
+    input_parameters:
+      - "CFStrucName"
+      - "CommandScope"
+    output_parameters:
+      - "Avail"
+      - "CFStrucName"
+      - "ExpandST"
+      - "OpenMode"
+      - "Status"
+    section_sources:
+      input:
+        - "Required parameters"
+      output:
+        - "Response data"
+    notes: []

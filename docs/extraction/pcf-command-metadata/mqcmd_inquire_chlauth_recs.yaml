@@ -1,0 +1,53 @@
+version: 1
+generated_at: 2026-02-04T19:35:02Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+pcf_commands:
+  - name: "MQCMD_INQUIRE_CHLAUTH_RECS"
+    mqsc_commands:
+      - "DISPLAY CHLAUTH"
+    hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q087440_.html"
+    response_hrefs:
+      - "SSFKSJ_9.4.0/refadmin/q087450_.html"
+    input_parameters:
+      - "Address"
+      - "ByteStringFilterCommand"
+      - "ChannelAuthAttrs"
+      - "CheckClient"
+      - "ClntUser"
+      - "CommandScope"
+      - "IntegerFilterCommand"
+      - "Match"
+      - "QMName"
+      - "SSLCertIssuer"
+      - "SSLPeer"
+      - "StringFilterCommand"
+      - "Type"
+    output_parameters:
+      - "AddrList"
+      - "Address"
+      - "AlterationDate"
+      - "AlterationTime"
+      - "CheckClient"
+      - "Chlauth"
+      - "ClntUser"
+      - "Description"
+      - "MCAUser"
+      - "QMName"
+      - "SSLCertIssuer"
+      - "SSLPeer"
+      - "Type"
+      - "UserList"
+      - "UserSrc"
+      - "Warn"
+    section_sources:
+      input:
+        - "Optional parameters"
+        - "Required parameters"
+      output:
+        - "Response data"
+    notes: []
