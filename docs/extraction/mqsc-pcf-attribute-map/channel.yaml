@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T22:39:19Z
+generated_at: 2026-02-04T22:41:13Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -776,7 +776,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "LongRetryInterval"
+    snake: "long_retry_interval"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"

@@ -9,6 +9,7 @@ overrides:
     CURSEQNO: "CurrentSequenceNumber"
     DATALEN: "DataCount"
     LIKE: "FromChannelName"
+    LONGTMR: "LongRetryInterval"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"
