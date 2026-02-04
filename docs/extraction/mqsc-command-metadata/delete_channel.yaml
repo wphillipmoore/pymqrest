@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:25:38Z
+generated_at: 2026-02-04T11:48:15Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,9 +8,6 @@ source:
 mqsc_commands:
   - name: "DELETE CHANNEL"
     href: "SSFKSJ_9.4.0/refadmin/q085820_.html"
-    positional_parameters:
-      - "channel-name"
-      - "qmgr-name"
     input_parameters:
       - "CHLTABLE"
       - "CMDSCOPE"
@@ -20,5 +17,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for DELETE CHANNEL"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

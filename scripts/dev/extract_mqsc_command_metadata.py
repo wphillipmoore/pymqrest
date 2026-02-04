@@ -394,12 +394,10 @@ def write_yaml(
     output_path: Path,
     name: str,
     href: str,
-    positional_parameters: list[str],
     input_parameters: list[str],
     output_parameters: list[str],
     input_sections: list[str],
     output_sections: list[str],
-    positional_notes: str | None,
     notes: list[str],
 ) -> None:
     now = datetime.now(UTC)
@@ -421,12 +419,6 @@ def write_yaml(
     add("mqsc_commands:")
     add(f"  - name: {yaml_quote(name)}")
     add(f"    href: {yaml_quote(href)}")
-    if positional_parameters:
-        add("    positional_parameters:")
-        for token in positional_parameters:
-            add(f"      - {yaml_quote(token)}")
-    else:
-        add("    positional_parameters: []")
     if input_parameters:
         add("    input_parameters:")
         for token in input_parameters:
@@ -448,8 +440,6 @@ def write_yaml(
         add("      output:")
         for title in output_sections:
             add(f"        - {yaml_quote(title)}")
-    if positional_notes:
-        add(f"      positional: {yaml_quote(positional_notes)}")
     if notes:
         add("    notes:")
         for note in notes:
@@ -517,10 +507,8 @@ def main() -> None:
 
     input_parameters: list[str] = []
     output_parameters: list[str] = []
-    positional_parameters: list[str] = []
     varname_tokens: list[str] = []
     syntax_tokens: list[str] = []
-    positional_notes = None
     notes: list[str] = []
 
     for heading, section in input_sections:
@@ -536,26 +524,12 @@ def main() -> None:
     output_parameters = sorted(set(output_parameters))
     input_parameters_raw = list(input_parameters)
 
-    positional_parameters = unique_in_order(varname_tokens + syntax_tokens)
-    if "FilterCondition" in positional_parameters and any(
-        token.startswith("filter-") for token in positional_parameters
+    if "FilterCondition" in varname_tokens and any(
+        token.startswith("filter-") for token in varname_tokens
     ):
-        positional_parameters = [token for token in positional_parameters if token != "FilterCondition"]
-    if positional_parameters:
-        deferred_positional = [
-            token for token in positional_parameters if token in DEFERRED_POSITIONAL_TOKENS
-        ]
-        if deferred_positional:
-            positional_parameters = [
-                token for token in positional_parameters if token not in DEFERRED_POSITIONAL_TOKENS
-            ]
-            add_note(notes, "WHERE filtering is deferred; tracked in issue #71.")
-
-    if name.startswith("DISPLAY "):
-        positional_parameters = []
-
-    if positional_parameters:
-        positional_notes = "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
+        varname_tokens = [token for token in varname_tokens if token != "FilterCondition"]
+    if any(token in DEFERRED_POSITIONAL_TOKENS for token in varname_tokens + syntax_tokens):
+        add_note(notes, "WHERE filtering is deferred; tracked in issue #71.")
 
     if overrides.get("output_from_input_sections") and not output_parameters:
         output_parameters = list(input_parameters_raw)
@@ -612,12 +586,10 @@ def main() -> None:
         output_path=output_path,
         name=name,
         href=args.href,
-        positional_parameters=positional_parameters,
         input_parameters=input_parameters,
         output_parameters=output_parameters,
         input_sections=[heading for heading, _section in input_sections],
         output_sections=[heading for heading, _section in output_sections],
-        positional_notes=positional_notes,
         notes=notes,
     )
 

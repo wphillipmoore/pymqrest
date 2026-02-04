@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:25:33Z
+generated_at: 2026-02-04T11:48:14Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,10 +8,6 @@ source:
 mqsc_commands:
   - name: "BACKUP CFSTRUCT"
     href: "SSFKSJ_9.4.0/refadmin/q085460_.html"
-    positional_parameters:
-      - "structure-name"
-      - "integer"
-      - "qmgr-name"
     input_parameters:
       - "CMDSCOPE"
       - "EXCLINT"
@@ -19,5 +15,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Keyword and parameter descriptions for BACKUP CFSTRUCT"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

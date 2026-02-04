@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:25:40Z
+generated_at: 2026-02-04T11:48:16Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,13 +8,10 @@ source:
 mqsc_commands:
   - name: "DELETE POLICY"
     href: "SSFKSJ_9.4.0/refadmin/q120810_.html"
-    positional_parameters:
-      - "policy-name"
     input_parameters:
       - "IGNSTATE"
     output_parameters: []
     section_sources:
       input:
         - "Parameter descriptions for DELETE POLICY"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:25:37Z
+generated_at: 2026-02-04T11:48:15Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,20 +8,6 @@ source:
 mqsc_commands:
   - name: "DEFINE STGCLASS"
     href: "SSFKSJ_9.4.0/refadmin/q085750_.html"
-    positional_parameters:
-      - "storage-class"
-      - "qmgr-name"
-      - "description"
-      - "stgclass-name"
-      - "application name"
-      - "integer"
-      - "storage_class_name"
-      - "group name"
-      - "member name"
-      - "string"
-      - "aname"
-      - "gname"
-      - "mname"
     input_parameters:
       - "CMDSCOPE"
       - "DESCR"
@@ -38,5 +24,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for DEFINE STGCLASS"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

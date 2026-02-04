@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:26:11Z
+generated_at: 2026-02-04T11:48:21Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,11 +8,6 @@ source:
 mqsc_commands:
   - name: "SET AUTHREC"
     href: "SSFKSJ_9.4.0/refadmin/q086620_.html"
-    positional_parameters:
-      - "profile-name"
-      - "principal-name"
-      - "group-name"
-      - "service-component"
     input_parameters:
       - "AUTHADD"
       - "AUTHRMV"
@@ -25,5 +20,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for SET AUTHREC"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

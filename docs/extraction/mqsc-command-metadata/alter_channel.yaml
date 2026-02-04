@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:25:27Z
+generated_at: 2026-02-04T11:48:12Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,24 +8,6 @@ source:
 mqsc_commands:
   - name: "ALTER CHANNEL"
     href: "SSFKSJ_9.4.0/refadmin/q085170_.html"
-    positional_parameters:
-      - "channel-name"
-      - "integer"
-      - "(channel-name)"
-      - "name"
-      - "nlname"
-      - "clustername"
-      - "qmgr-name"
-      - "string"
-      - "[,[ip-addr][(low-port[,high-port])]]"
-      - "ip-addr"
-      - "dllname"
-      - "progname"
-      - "libname"
-      - "content='properties'"
-      - "UserIdentifier"
-      - "(string)"
-      - "channel-type"
     input_parameters:
       - "AFFINITY"
       - "AMQPKA"
@@ -120,5 +102,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for ALTER CHANNEL"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:25:33Z
+generated_at: 2026-02-04T11:48:14Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,10 +8,6 @@ source:
 mqsc_commands:
   - name: "CLEAR TOPICSTR"
     href: "SSFKSJ_9.4.0/refadmin/q085480_.html"
-    positional_parameters:
-      - "(topic-string)"
-      - "qmgr-name"
-      - "topic-string"
     input_parameters:
       - "CLRTYPE"
       - "CMDSCOPE"
@@ -21,5 +17,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for CLEAR TOPICSTR"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:26:15Z
+generated_at: 2026-02-04T11:48:22Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,15 +8,6 @@ source:
 mqsc_commands:
   - name: "STOP CHANNEL"
     href: "SSFKSJ_9.4.0/refadmin/q086750_.html"
-    positional_parameters:
-      - "(channel-name)"
-      - "qmgr-name"
-      - "(connection-name)"
-      - "channelname"
-      - "(qmname)"
-      - "channel-name"
-      - "connection-name"
-      - "qmname"
     input_parameters:
       - "CHLDISP"
       - "CMDSCOPE"
@@ -33,5 +24,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for STOP CHANNEL"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

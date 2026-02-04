@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:25:31Z
+generated_at: 2026-02-04T11:48:13Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,18 +8,6 @@ source:
 mqsc_commands:
   - name: "ALTER STGCLASS"
     href: "SSFKSJ_9.4.0/refadmin/q085410_.html"
-    positional_parameters:
-      - "(storage-class)"
-      - "qmgr-name"
-      - "description"
-      - "application name"
-      - "integer"
-      - "group name"
-      - "member name"
-      - "storage class"
-      - "aname"
-      - "group-name"
-      - "member-name"
     input_parameters:
       - "CMDSCOPE"
       - "DESCR"
@@ -32,5 +20,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for ALTER STGCLASS"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

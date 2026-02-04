@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:26:18Z
+generated_at: 2026-02-04T11:48:23Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,10 +8,6 @@ source:
 mqsc_commands:
   - name: "SUSPEND QMGR"
     href: "SSFKSJ_9.4.0/refadmin/q086850_.html"
-    positional_parameters:
-      - "(clustername)"
-      - "(nlname)"
-      - "qmgr-name"
     input_parameters:
       - "CLUSNL"
       - "CLUSTER"
@@ -25,5 +21,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for SUSPEND QMGR"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []

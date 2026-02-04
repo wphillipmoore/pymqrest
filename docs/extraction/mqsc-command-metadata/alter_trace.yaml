@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:25:32Z
+generated_at: 2026-02-04T11:48:14Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,12 +8,6 @@ source:
 mqsc_commands:
   - name: "ALTER TRACE"
     href: "SSFKSJ_9.4.0/refadmin/q085440_.html"
-    positional_parameters:
-      - "integer"
-      - "qmgr-name"
-      - "integer:integer"
-      - "string"
-      - "ifcid"
     input_parameters:
       - "A"
       - "ACCTG"
@@ -27,5 +21,4 @@ mqsc_commands:
     section_sources:
       input:
         - "Parameter descriptions for ALTER TRACE"
-      positional: "Varname tokens from parameter descriptions, supplemented by syntax diagram variables."
     notes: []
