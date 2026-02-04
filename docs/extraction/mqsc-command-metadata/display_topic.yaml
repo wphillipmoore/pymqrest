@@ -1,0 +1,55 @@
+version: 1
+generated_at: 2026-02-04T15:38:23Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY TOPIC"
+    href: "SSFKSJ_9.4.0/refadmin/q086380_.html"
+    input_parameters:
+      - "CLUSTER"
+      - "CMDSCOPE"
+      - "QSGDISP"
+      - "TYPE"
+    output_parameters:
+      - "ALTDATE"
+      - "ALTTIME"
+      - "CAPEXPRY"
+      - "CLROUTE"
+      - "CLSTATE"
+      - "CLUSDATE"
+      - "CLUSQMGR"
+      - "CLUSTER"
+      - "CLUSTIME"
+      - "COMMINFO"
+      - "CUSTOM"
+      - "DEFPRESP"
+      - "DEFPRTY"
+      - "DEFPSIST"
+      - "DESCR"
+      - "DURSUB"
+      - "MCAST"
+      - "MDURMDL"
+      - "MNDURMDL"
+      - "NPMSGDLV"
+      - "PMSGDLV"
+      - "PROXYSUB"
+      - "PUB"
+      - "PUBSCOPE"
+      - "QMID"
+      - "SUB"
+      - "SUBSCOPE"
+      - "TOPICSTR"
+      - "TYPE"
+      - "USEDLQ"
+      - "WILDCARD"
+    section_sources:
+      input:
+        - "Parameter descriptions for DISPLAY TOPIC"
+      output:
+        - "Requested parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

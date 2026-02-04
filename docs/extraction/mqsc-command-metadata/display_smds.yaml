@@ -1,0 +1,25 @@
+version: 1
+generated_at: 2026-02-04T15:38:22Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY SMDS"
+    href: "SSFKSJ_9.4.0/refadmin/q086310_.html"
+    input_parameters:
+      - "CFSTRUCT"
+    output_parameters:
+      - "CFSTRUCT"
+      - "DSBUFS"
+      - "DSEXPAND"
+      - "SMDS"
+    section_sources:
+      input:
+        - "Parameter descriptions for DISPLAY SMDS"
+      output:
+        - "Requested parameters for DISPLAY SMDS"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

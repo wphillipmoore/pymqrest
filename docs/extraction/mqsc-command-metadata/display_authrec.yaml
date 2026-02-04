@@ -1,0 +1,28 @@
+version: 1
+generated_at: 2026-02-04T15:38:20Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY AUTHREC"
+    href: "SSFKSJ_9.4.0/refadmin/q086000_.html"
+    input_parameters:
+      - "GROUP"
+      - "MATCH"
+      - "OBJTYPE"
+      - "PRINCIPAL"
+      - "PROFILE"
+      - "SERVCOMP"
+    output_parameters:
+      - "AUTHLIST"
+      - "ENTITY"
+      - "ENTTYPE"
+    section_sources:
+      input:
+        - "Parameter descriptions for DISPLAY AUTHREC"
+      output:
+        - "Requested parameters"
+    notes:
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

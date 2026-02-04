@@ -1,0 +1,42 @@
+version: 1
+generated_at: 2026-02-04T15:38:21Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY CHLAUTH"
+    href: "SSFKSJ_9.4.0/refadmin/q086070_.html"
+    input_parameters:
+      - "ADDRESS"
+      - "CLNTUSER"
+      - "CMDSCOPE"
+      - "MATCH"
+      - "QMNAME"
+      - "SSLCERTI"
+      - "SSLPEER"
+      - "TYPE"
+    output_parameters:
+      - "ADDRESS"
+      - "ADDRLIST"
+      - "ALTDATE"
+      - "ALTTIME"
+      - "CHCKCLNT"
+      - "CLNTUSER"
+      - "CUSTOM"
+      - "DESCR"
+      - "MCAUSER"
+      - "QMNAME"
+      - "SSLCERTI"
+      - "SSLPEER"
+      - "TYPE"
+      - "USERLIST"
+    section_sources:
+      input:
+        - "Parameters for DISPLAY CHLAUTH"
+      output:
+        - "Requested parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

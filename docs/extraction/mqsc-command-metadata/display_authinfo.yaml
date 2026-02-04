@@ -1,0 +1,48 @@
+version: 1
+generated_at: 2026-02-04T15:38:20Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY AUTHINFO"
+    href: "SSFKSJ_9.4.0/refadmin/q085990_.html"
+    input_parameters:
+      - "AUTHTYPE"
+      - "CMDSCOPE"
+      - "QSGDISP"
+    output_parameters:
+      - "ADOPTCTX"
+      - "ALTDATE"
+      - "ALTTIME"
+      - "AUTHENMD"
+      - "AUTHORMD"
+      - "AUTHTYPE"
+      - "BASEDNG"
+      - "BASEDNU"
+      - "CHCKCLNT"
+      - "CHCKLOCL"
+      - "CLASSGRP"
+      - "CLASSUSR"
+      - "CONNAME"
+      - "DESCR"
+      - "FAILDLAY"
+      - "FINDGRP"
+      - "GRPFIELD"
+      - "LDAPPWD"
+      - "LDAPUSER"
+      - "NESTGRP"
+      - "OCSPURL"
+      - "QSGDISP"
+      - "SECCOMM"
+      - "SHORTUSR"
+      - "USRFIELD"
+    section_sources:
+      input:
+        - "Parameter descriptions for DISPLAY AUTHINFO"
+      output:
+        - "Requested parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

@@ -1,0 +1,33 @@
+version: 1
+generated_at: 2026-02-04T15:38:23Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY SVSTATUS"
+    href: "SSFKSJ_9.4.0/refadmin/q086350_.html"
+    input_parameters: []
+    output_parameters:
+      - "CONTROL"
+      - "DESCR"
+      - "PID"
+      - "SERVTYPE"
+      - "STARTARG"
+      - "STARTCMD"
+      - "STARTDA"
+      - "STARTTI"
+      - "STATUS"
+      - "STDERR"
+      - "STDOUT"
+      - "STOPARG"
+      - "STOPCMD"
+    section_sources:
+      input:
+        - "Keyword and parameter descriptions for DISPLAY SVSTATUS"
+      output:
+        - "Requested parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

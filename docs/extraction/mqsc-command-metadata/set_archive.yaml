@@ -1,0 +1,35 @@
+version: 1
+generated_at: 2026-02-04T15:48:18Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "SET ARCHIVE"
+    href: "SSFKSJ_9.4.0/refadmin/q086610_.html"
+    input_parameters:
+      - "ALCUNIT"
+      - "ARCPFX1"
+      - "ARCPFX2"
+      - "ARCRETN"
+      - "ARCWRTC"
+      - "ARCWTOR"
+      - "BLKSIZE"
+      - "CATALOG"
+      - "CMDSCOPE"
+      - "COMPACT"
+      - "DEFAULT"
+      - "PRIQTY"
+      - "PROTECT"
+      - "QUIESCE"
+      - "SECQTY"
+      - "TSTAMP"
+      - "UNIT"
+      - "UNIT2"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for SET ARCHIVE"
+        - "Parameter block"
+    notes: []

@@ -1,0 +1,29 @@
+version: 1
+generated_at: 2026-02-04T15:38:22Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY STGCLASS"
+    href: "SSFKSJ_9.4.0/refadmin/q086330_.html"
+    input_parameters:
+      - "CMDSCOPE"
+      - "PSID"
+      - "QSGDISP"
+    output_parameters:
+      - "ALTDATE"
+      - "ALTTIME"
+      - "DESCR"
+      - "PASSTKTA"
+      - "XCFGNAME"
+      - "XCFMNAME"
+    section_sources:
+      input:
+        - "Parameter descriptions for DISPLAY STGCLASS"
+      output:
+        - "Requested parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."

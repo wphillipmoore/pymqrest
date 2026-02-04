@@ -1,0 +1,22 @@
+version: 1
+generated_at: 2026-02-04T15:38:17Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "ALTER TRACE"
+    href: "SSFKSJ_9.4.0/refadmin/q085440_.html"
+    input_parameters:
+      - "CLASS"
+      - "CMDSCOPE"
+      - "COMMENT"
+      - "IFCID"
+      - "TNO"
+    output_parameters: []
+    section_sources:
+      input:
+        - "Parameter descriptions for ALTER TRACE"
+        - "Trace parameters"
+    notes: []

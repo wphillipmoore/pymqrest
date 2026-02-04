@@ -1,0 +1,44 @@
+version: 1
+generated_at: 2026-02-04T15:38:20Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY APSTATUS"
+    href: "SSFKSJ_9.4.0/refadmin/q133100_.html"
+    input_parameters:
+      - "TYPE"
+    output_parameters:
+      - "ACTIVE"
+      - "BALANCED"
+      - "BALOPTS"
+      - "BALSTATE"
+      - "BALTMOUT"
+      - "BALTYPE"
+      - "CLUSTER"
+      - "CONNS"
+      - "CONNTAG"
+      - "COUNT"
+      - "IMMCOUNT"
+      - "IMMDATE"
+      - "IMMREASN"
+      - "IMMTIME"
+      - "LMSGDATE"
+      - "LMSGTIME"
+      - "MOVABLE"
+      - "MOVCOUNT"
+      - "QMID"
+      - "QMNAME"
+    section_sources:
+      input:
+        - "Parameter descriptions for DISPLAY APSTATUS"
+      output:
+        - "Application status parameters"
+        - "Queue manager status parameters"
+        - "Local status parameters"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
+      - "ALL requests all attributes and is implied when no specific attributes are listed."
+      - "Returned attributes depend on TYPE; capture all parameters but do not model the dependency yet."

@@ -1,0 +1,46 @@
+version: 1
+generated_at: 2026-02-04T15:38:20Z
+source:
+  product: "IBM MQ"
+  version: "9.4.x"
+  content_api: "https://www.ibm.com/docs/api/v1/content/"
+  retrieved_at: "2026-02-04"
+mqsc_commands:
+  - name: "DISPLAY CFSTATUS"
+    href: "SSFKSJ_9.4.0/refadmin/q086020_.html"
+    input_parameters:
+      - "SMDS"
+      - "TYPE"
+    output_parameters:
+      - "ACCESS"
+      - "BKUPDATE"
+      - "BKUPERBA"
+      - "BKUPSIZE"
+      - "BKUPSRBA"
+      - "BKUPTIME"
+      - "CFTYPE"
+      - "ENTSMAX"
+      - "ENTSUSED"
+      - "FAILDATE"
+      - "FAILTIME"
+      - "LOGS"
+      - "OFFLDUSE"
+      - "QMNAME"
+      - "RCVDATE"
+      - "RCVTIME"
+      - "SIZEMAX"
+      - "SIZEUSED"
+      - "SMDS"
+      - "STATUS"
+      - "SYSNAME"
+      - "TYPE"
+    section_sources:
+      input:
+        - "Keyword and parameter descriptions for DISPLAY CFSTATUS"
+      output:
+        - "Summary status"
+        - "Connection status"
+        - "Backup status"
+        - "SMDS status"
+    notes:
+      - "WHERE filtering is deferred; tracked in issue #71."
