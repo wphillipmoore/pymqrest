@@ -165,6 +165,9 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
     "MOVE QLOCAL": {
         "input_add": ["TOQLOCAL"],
     },
+    "REFRESH SECURITY": {
+        "input_set": ["CMDSCOPE", "TYPE"],
+    },
     "DISPLAY ENTAUTH": {
         "input_add": ["OBJNAME", "SERVCOMP"],
     },

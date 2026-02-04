@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T15:17:48Z
+generated_at: 2026-02-04T15:33:56Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,17 +9,7 @@ mqsc_commands:
   - name: "REFRESH SECURITY"
     href: "SSFKSJ_9.4.0/refadmin/q086490_.html"
     input_parameters:
-      - "CHLAUTH"
       - "CMDSCOPE"
-      - "MQADMIN"
-      - "MQNLIST"
-      - "MQPROC"
-      - "MQQUEUE"
-      - "MXADMIN"
-      - "MXNLIST"
-      - "MXPROC"
-      - "MXQUEUE"
-      - "MXTOPIC"
       - "TYPE"
     output_parameters: []
     section_sources:
