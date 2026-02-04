@@ -812,7 +812,7 @@ def main() -> None:
         if token in output_parameters:
             output_parameters.remove(token)
 
-    if name.startswith("ALTER "):
+    if name.startswith("ALTER ") or name.startswith("RECOVER "):
         qualifier = name.split()[1]
         if qualifier in input_parameters:
             input_parameters.remove(qualifier)
