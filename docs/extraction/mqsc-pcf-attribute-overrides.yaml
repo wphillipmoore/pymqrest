@@ -18,6 +18,8 @@ overrides:
     SHARECNV: "SharingConversations"
     SHORTTMR: "ShortRetryInterval"
     SSLCERTU: "SSLCertUserId"
+    SSLKEYP: "SSLPassPhrase"
+    SSLKEYR: "SSLKeyFile"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"
