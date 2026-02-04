@@ -329,6 +329,7 @@ MAPPING_DATA: dict[str, object] = {'commands': {'ALTER AUTHINFO': {'qualifier': 
                                                 'default_channel_disposition': 'DEFCDISP',
                                                 'description': 'DESCR',
                                                 'disc_interval': 'DISCINT',
+                                                'from_channel_name': 'LIKE',
                                                 'header_compression': 'COMPHDR',
                                                 'heartbeat_interval': 'HBINT',
                                                 'ignore_state': 'IGNSTATE',

@@ -8,6 +8,7 @@ overrides:
     CONVERT: "DataConversion"
     CURSEQNO: "CurrentSequenceNumber"
     DATALEN: "DataCount"
+    LIKE: "FromChannelName"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"
