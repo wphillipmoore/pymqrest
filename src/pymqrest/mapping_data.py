@@ -445,6 +445,7 @@ MAPPING_DATA: dict[str, object] = {'commands': {'ALTER AUTHINFO': {'qualifier': 
                                                  'LSTLUWID': 'last_luwid',
                                                  'LSTMSGDA': 'last_msg_date',
                                                  'LSTMSGTI': 'last_msg_time',
+                                                 'LSTSEQNO': 'last_sequence_number',
                                                  'MAXINST': 'max_instances',
                                                  'MAXINSTC': 'max_instances_per_client',
                                                  'MAXMSGL': 'max_msg_length',
