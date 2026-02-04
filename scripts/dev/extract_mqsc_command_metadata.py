@@ -104,6 +104,9 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
     "ALTER BUFFPOOL": {
         "input_remove": ["LOC"],
     },
+    "ALTER CFSTRUCT": {
+        "input_remove": ["SMDS"],
+    },
     "DISPLAY ENTAUTH": {
         "input_add": ["OBJNAME", "SERVCOMP"],
     },
