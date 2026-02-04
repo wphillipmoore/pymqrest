@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T23:14:04Z
+generated_at: 2026-02-04T23:53:18Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -198,7 +198,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "AuthInfoDesc"
+    snake: "auth_info_desc"
     mqsc_commands:
       input:
         - "ALTER AUTHINFO"
@@ -294,7 +296,9 @@ attributes:
   - mqsc: "LIKE"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "FromAuthInfoName"
+    snake: "from_auth_info_name"
     mqsc_commands:
       input:
         - "DEFINE AUTHINFO"
@@ -303,21 +307,15 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "GroupNesting"
+    snake: "group_nesting"
     mqsc_commands:
       input:
         - "ALTER AUTHINFO"
         - "DEFINE AUTHINFO"
       output:
         - "DISPLAY AUTHINFO"
-  - mqsc: "NOREPLACE"
-    contexts:
-      - "input"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "DEFINE AUTHINFO"
-      output:
   - mqsc: "OCSPURL"
     contexts:
       - "input"

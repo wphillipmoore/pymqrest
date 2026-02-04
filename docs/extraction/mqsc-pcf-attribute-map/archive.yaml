@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T23:14:04Z
+generated_at: 2026-02-04T23:53:18Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -56,7 +56,9 @@ attributes:
   - mqsc: "ARCWRTC"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "RoutingCode"
+    snake: "routing_code"
     mqsc_commands:
       input:
         - "SET ARCHIVE"
@@ -112,18 +114,12 @@ attributes:
       input:
         - "SET ARCHIVE"
       output:
-  - mqsc: "DEFAULT"
-    contexts:
-      - "input"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "SET ARCHIVE"
-      output:
   - mqsc: "PRIQTY"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "AllocPrimary"
+    snake: "alloc_primary"
     mqsc_commands:
       input:
         - "SET ARCHIVE"
@@ -151,7 +147,9 @@ attributes:
   - mqsc: "SECQTY"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "AllocSecondary"
+    snake: "alloc_secondary"
     mqsc_commands:
       input:
         - "SET ARCHIVE"

@@ -254,6 +254,38 @@ def read_request_key_value_keys(path: Path) -> dict[str, set[str]]:
     return key_map
 
 
+def read_skip_tokens(path: Path) -> dict[str, set[str]]:
+    if not path.exists():
+        return {}
+    skip_map: dict[str, set[str]] = {}
+    in_section = False
+    current_qualifier: str | None = None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        if stripped.startswith("skip_tokens:"):
+            in_section = True
+            current_qualifier = None
+            continue
+        if not in_section:
+            continue
+        indent = len(line) - len(line.lstrip(" "))
+        if indent == 0:
+            in_section = False
+            current_qualifier = None
+            continue
+        if indent == 2 and stripped.endswith(":"):
+            current_qualifier = stripped[:-1]
+            skip_map.setdefault(current_qualifier, set())
+            continue
+        if indent == 4 and stripped.startswith("-") and current_qualifier:
+            token = stripped[1:].strip().strip('"')
+            if token:
+                skip_map[current_qualifier].add(token)
+    return skip_map
+
+
 def split_pascal(name: str) -> list[str]:
     return re.findall(r"[A-Z]+(?=[A-Z][a-z]|\d|$)|[A-Z]?[a-z]+|\d+", name)
 
@@ -367,6 +399,7 @@ def main() -> None:
     pcf_metadata = read_pcf_metadata()
     overrides = read_overrides()
     request_key_value_keys = read_request_key_value_keys(OVERRIDES_PATH)
+    explicit_skip_tokens = read_skip_tokens(OVERRIDES_PATH)
 
     qualifier_index: dict[str, dict[str, object]] = {}
     qualifier_usage: dict[str, dict[str, dict[str, set[str]]]] = {}
@@ -416,7 +449,8 @@ def main() -> None:
         pcf_output = data["pcf_output"]
         overrides_for_qualifier = overrides.get(qualifier, {})
         usage = qualifier_usage.get(qualifier, {})
-        skip_tokens = request_key_value_keys.get(qualifier, set())
+        skip_tokens = set(request_key_value_keys.get(qualifier, set()))
+        skip_tokens.update(explicit_skip_tokens.get(qualifier, set()))
 
         lines: list[str] = []
         lines.append("version: 1")

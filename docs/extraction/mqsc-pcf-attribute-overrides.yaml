@@ -1,13 +1,29 @@
 version: 1
 overrides:
+  apstatus:
+    BALTMOUT: "Timeout"
+    BALTYPE: "ApplicationType"
+  archive:
+    ARCWRTC: "RoutingCode"
+    PRIQTY: "AllocPrimary"
+    SECQTY: "AllocSecondary"
+  authinfo:
+    DESCR: "AuthInfoDesc"
+    LIKE: "FromAuthInfoName"
+    NESTGRP: "GroupNesting"
+  authrec:
+    MATCH: "Options"
   channel:
+    ACTION: "InDoubt"
     MAXINSTC: "MaxInstancesPerClient"
     AUTOSTART: "AutoStart"
+    CERTLABL: "CertificateLabel"
     COMPHDR: "HeaderCompression"
     COMPMSG: "MessageCompression"
     CONVERT: "DataConversion"
     CURSEQNO: "CurrentSequenceNumber"
     DATALEN: "DataCount"
+    DESCR: "ChannelDesc"
     LIKE: "FromChannelName"
     LONGTMR: "LongRetryInterval"
     LSTSEQNO: "LastSequenceNumber"
@@ -15,6 +31,7 @@ overrides:
     MRDATA: "MsgRetryUserData"
     MRRTY: "MsgRetryCount"
     MRTMR: "MsgRetryInterval"
+    PORT: "Port"
     SHARECNV: "SharingConversations"
     SHORTTMR: "ShortRetryInterval"
     SSLCERTU: "SSLCertUserId"
@@ -24,11 +41,48 @@ overrides:
     STATCHL: "ChannelStatistics"
     STATUS: "ChannelStatus"
     TRPTYPE: "TransportType"
+    TYPE: "ChannelType"
+  chstatus:
+    COMPHDR: "HeaderCompression"
+    COMPMSG: "MessageCompression"
+    CURSEQNO: "CurrentSequenceNumber"
+    LSTSEQNO: "LastSequenceNumber"
+    MONCHL: "ChannelMonitoring"
+    PORT: "Port"
+    SSLRKEYS: "SSLKeyResets"
+    STATCHL: "ChannelStatistics"
+    STATUS: "ChannelStatus"
+  cfstatus:
+    SMDS: "Smds"
+  cfstruct:
+    DESCR: "CFStrucDesc"
+    DSEXPAND: "DSExpand"
+    LIKE: "FromCFStrucName"
+    OFFLD1SZ: "OffloadSize1"
+    OFFLD1TH: "OffloadThreshold1"
+    OFFLD2SZ: "OffloadSize2"
+    OFFLD2TH: "OffloadThreshold2"
+    OFFLD3SZ: "OffloadSize3"
+    OFFLD3TH: "OffloadThreshold3"
+    TYPE: "Purge"
+skip_tokens:
+  archive:
+    - "DEFAULT"
+  authinfo:
+    - "NOREPLACE"
+  channel:
+    - "NOREPLACE"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"
   channel:
     channel_monitoring: "MONCHL"
+    channel_type: "TYPE"
+request_value_map:
+  cfstruct:
+    purge:
+      yes: "PURGE"
+      no: "NORMAL"
 request_key_value_map:
   channel:
     channel_instance_type:
@@ -52,3 +106,14 @@ request_key_value_map:
       yes:
         key: "REPLACE"
         value: "NO"
+  chstatus:
+    channel_instance_type:
+      current:
+        key: "CURRENT"
+        value: "YES"
+      saved:
+        key: "SAVED"
+        value: "YES"
+      short:
+        key: "SHORT"
+        value: "YES"

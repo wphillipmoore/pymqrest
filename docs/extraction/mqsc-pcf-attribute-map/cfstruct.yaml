@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T23:14:04Z
+generated_at: 2026-02-04T23:53:18Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -94,7 +94,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "CFStrucDesc"
+    snake: "cf_struc_desc"
     mqsc_commands:
       input:
         - "ALTER CFSTRUCT"
@@ -131,7 +133,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "DSExpand"
+    snake: "ds_expand"
     mqsc_commands:
       input:
         - "ALTER CFSTRUCT"
@@ -164,7 +168,9 @@ attributes:
   - mqsc: "LIKE"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "FromCFStrucName"
+    snake: "from_cf_struc_name"
     mqsc_commands:
       input:
         - "DEFINE CFSTRUCT"
@@ -181,7 +187,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "OffloadSize1"
+    snake: "offload_size1"
     mqsc_commands:
       input:
         - "ALTER CFSTRUCT"
@@ -192,7 +200,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "OffloadThreshold1"
+    snake: "offload_threshold1"
     mqsc_commands:
       input:
         - "ALTER CFSTRUCT"
@@ -203,7 +213,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "OffloadSize2"
+    snake: "offload_size2"
     mqsc_commands:
       input:
         - "ALTER CFSTRUCT"
@@ -214,7 +226,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "OffloadThreshold2"
+    snake: "offload_threshold2"
     mqsc_commands:
       input:
         - "ALTER CFSTRUCT"
@@ -225,7 +239,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "OffloadSize3"
+    snake: "offload_size3"
     mqsc_commands:
       input:
         - "ALTER CFSTRUCT"
@@ -236,7 +252,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "OffloadThreshold3"
+    snake: "offload_threshold3"
     mqsc_commands:
       input:
         - "ALTER CFSTRUCT"
@@ -295,7 +313,9 @@ attributes:
   - mqsc: "TYPE"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "Purge"
+    snake: "purge"
     mqsc_commands:
       input:
         - "RECOVER CFSTRUCT"
