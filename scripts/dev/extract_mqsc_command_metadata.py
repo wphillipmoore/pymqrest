@@ -101,6 +101,9 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
         "input_add": ["CLUSTER", "CHANNEL"],
         "input_remove": ["STATUS"],
     },
+    "ALTER BUFFPOOL": {
+        "input_remove": ["LOC"],
+    },
     "DISPLAY ENTAUTH": {
         "input_add": ["OBJNAME", "SERVCOMP"],
     },
