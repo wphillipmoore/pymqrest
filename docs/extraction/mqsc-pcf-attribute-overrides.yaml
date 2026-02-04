@@ -1,2 +1,5 @@
 version: 1
 overrides: {}
+request_prefer_mqsc:
+  archive:
+    alloc_units: "ALCUNIT"

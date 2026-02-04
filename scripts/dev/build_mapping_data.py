@@ -11,6 +11,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ATTR_MAP_DIR = PROJECT_ROOT / "docs" / "extraction" / "mqsc-pcf-attribute-map"
 MAPPING_DATA_PATH = PROJECT_ROOT / "src" / "pymqrest" / "mapping_data.py"
+OVERRIDES_PATH = PROJECT_ROOT / "docs" / "extraction" / "mqsc-pcf-attribute-overrides.yaml"
 
 ALLOWED_STATUSES = {"matched", "input-only", "output-only", "override"}
 
@@ -78,10 +79,38 @@ def parse_qualifier_file(path: Path) -> tuple[str, list[AttributeEntry]]:
     return qualifier, entries
 
 
-def build_maps(entries: list[AttributeEntry]) -> tuple[dict[str, str], dict[str, str], list[str]]:
-    request_key_map: dict[str, str] = {}
+def read_request_prefer_map(path: Path) -> dict[str, dict[str, str]]:
+    if not path.exists():
+        return {}
+    prefer_map: dict[str, dict[str, str]] = {}
+    in_section = False
+    current_qualifier: str | None = None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        if stripped.startswith("request_prefer_mqsc:"):
+            in_section = True
+            continue
+        if not in_section:
+            continue
+        if line.startswith("  ") and stripped.endswith(":"):
+            current_qualifier = stripped[:-1]
+            prefer_map.setdefault(current_qualifier, {})
+            continue
+        if line.startswith("    ") and ":" in stripped and current_qualifier:
+            key, value = stripped.split(":", 1)
+            prefer_map[current_qualifier][key.strip()] = value.strip().strip('"')
+    return prefer_map
+
+
+def build_maps(
+    entries: list[AttributeEntry],
+    *,
+    prefer_mqsc: dict[str, str],
+) -> tuple[dict[str, str], dict[str, str], list[str]]:
+    request_candidates: dict[str, set[str]] = {}
     response_key_map: dict[str, str] = {}
-    request_conflicts: set[str] = set()
     response_conflicts: set[str] = set()
     collisions: list[str] = []
 
@@ -91,15 +120,7 @@ def build_maps(entries: list[AttributeEntry]) -> tuple[dict[str, str], dict[str,
         if entry.snake is None:
             continue
         if "input" in entry.contexts:
-            if entry.snake in request_conflicts:
-                continue
-            existing = request_key_map.get(entry.snake)
-            if existing and existing != entry.mqsc:
-                collisions.append(f"request:{entry.snake}:{existing}:{entry.mqsc}")
-                request_conflicts.add(entry.snake)
-                request_key_map.pop(entry.snake, None)
-            else:
-                request_key_map[entry.snake] = entry.mqsc
+            request_candidates.setdefault(entry.snake, set()).add(entry.mqsc)
         if "output" in entry.contexts:
             if entry.mqsc in response_conflicts:
                 continue
@@ -110,6 +131,18 @@ def build_maps(entries: list[AttributeEntry]) -> tuple[dict[str, str], dict[str,
                 response_key_map.pop(entry.mqsc, None)
             else:
                 response_key_map[entry.mqsc] = entry.snake
+
+    request_key_map: dict[str, str] = {}
+    for snake, candidates in request_candidates.items():
+        if len(candidates) == 1:
+            request_key_map[snake] = next(iter(candidates))
+            continue
+        preferred = prefer_mqsc.get(snake)
+        if preferred and preferred in candidates:
+            request_key_map[snake] = preferred
+            collisions.append(f"request:{snake}:{','.join(sorted(candidates))}:preferred:{preferred}")
+            continue
+        collisions.append(f"request:{snake}:{','.join(sorted(candidates))}")
 
     return request_key_map, response_key_map, collisions
 
@@ -126,9 +159,13 @@ def main() -> None:
         raise RuntimeError("mapping_data.qualifiers is not a dict")
 
     collision_log: list[str] = []
+    prefer_map = read_request_prefer_map(OVERRIDES_PATH)
     for path in sorted(args.attr_dir.glob("*.yaml")):
         qualifier, entries = parse_qualifier_file(path)
-        request_key_map, response_key_map, collisions = build_maps(entries)
+        request_key_map, response_key_map, collisions = build_maps(
+            entries,
+            prefer_mqsc=prefer_map.get(qualifier, {}),
+        )
         collision_log.extend([f"{qualifier}:{entry}" for entry in collisions])
 
         qualifier_entry = qualifiers.get(qualifier)
