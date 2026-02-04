@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T15:38:25Z
+generated_at: 2026-02-04T16:13:38Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -11,12 +11,17 @@ mqsc_commands:
     input_parameters:
       - "ACCTG"
       - "CHINIT"
-      - "CMDSCOPE"
-      - "COMMENT"
+      - "CLASS"
+      - "DEST"
       - "GLOBAL"
+      - "RMID"
       - "STAT"
+      - "TNO"
+      - "USERID"
     output_parameters: []
     section_sources:
       input:
         - "Parameter descriptions for STOP TRACE"
+        - "Destination block"
+        - "Constraint block"
     notes: []

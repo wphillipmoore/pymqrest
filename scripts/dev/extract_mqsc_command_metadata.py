@@ -202,6 +202,14 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
     "STOP CHANNEL": {
         "extra_hrefs": ["SSFKSJ_9.4.0/refadmin/q086760_.html"],
     },
+    "STOP TRACE": {
+        "input_section_titles": [
+            "Parameter descriptions for STOP TRACE",
+            "Destination block",
+            "Constraint block",
+        ],
+        "input_remove": ["CMDSCOPE", "COMMENT"],
+    },
     "DISPLAY ENTAUTH": {
         "input_add": ["OBJNAME", "SERVCOMP"],
     },
