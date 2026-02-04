@@ -309,6 +309,54 @@ def extract_dl_terms(section_html: str) -> list[str]:
     return [strip_tags(term).strip() for term in parser.terms if term.strip()]
 
 
+def extract_parmname_terms(section_html: str) -> list[str]:
+    class ParmnameParser(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.dd_depth = 0
+            self.in_parmname = False
+            self.allowed = False
+            self.buffer: list[str] = []
+            self.terms: list[str] = []
+
+        def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+            if tag == "dd":
+                self.dd_depth += 1
+                return
+            if tag != "span":
+                return
+            classes = ""
+            for key, value in attrs:
+                if key == "class" and value:
+                    classes = value
+                    break
+            if "parmname" in classes and "keyword" in classes:
+                self.in_parmname = True
+                self.allowed = self.dd_depth == 0
+                self.buffer = []
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag == "dd":
+                self.dd_depth = max(self.dd_depth - 1, 0)
+                return
+            if tag == "span" and self.in_parmname:
+                if self.allowed and self.buffer:
+                    text = "".join(self.buffer).strip()
+                    if text:
+                        self.terms.append(text)
+                self.in_parmname = False
+                self.allowed = False
+                self.buffer = []
+
+        def handle_data(self, data: str) -> None:
+            if self.in_parmname:
+                self.buffer.append(data)
+
+    parser = ParmnameParser()
+    parser.feed(section_html)
+    return [strip_tags(term).strip() for term in parser.terms if term.strip()]
+
+
 def extract_tokens(section_html: str) -> list[str]:
     tokens: set[str] = set()
 
@@ -317,10 +365,8 @@ def extract_tokens(section_html: str) -> list[str]:
             return []
         return [part for part in re.split(r"\s+", text.strip()) if part]
 
-    for text in re.findall(
-        r'<span class="keyword parmname">(.*?)</span>', section_html, flags=re.S | re.I
-    ):
-        for token in iter_raw_tokens(strip_tags(text)):
+    for text in extract_parmname_terms(section_html):
+        for token in iter_raw_tokens(text):
             normalized = canonicalize_token(token)
             if normalized:
                 tokens.add(normalized)
