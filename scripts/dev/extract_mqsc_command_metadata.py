@@ -168,6 +168,12 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
     "REFRESH SECURITY": {
         "input_set": ["CMDSCOPE", "TYPE"],
     },
+    "SET ARCHIVE": {
+        "input_section_titles": [
+            "Parameter descriptions for SET ARCHIVE",
+            "Parameter block",
+        ],
+    },
     "DISPLAY ENTAUTH": {
         "input_add": ["OBJNAME", "SERVCOMP"],
     },
