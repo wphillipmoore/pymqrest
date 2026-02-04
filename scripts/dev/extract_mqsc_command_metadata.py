@@ -149,6 +149,13 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
             "Queue manager parameters",
         ],
     },
+    "ALTER TRACE": {
+        "input_section_titles": [
+            "Parameter descriptions for ALTER TRACE",
+            "Trace parameters",
+        ],
+        "input_remove": ["ACCTG", "GLOBAL", "STAT"],
+    },
     "DISPLAY ENTAUTH": {
         "input_add": ["OBJNAME", "SERVCOMP"],
     },

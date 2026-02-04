@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T15:09:10Z
+generated_at: 2026-02-04T15:12:55Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,13 +9,14 @@ mqsc_commands:
   - name: "ALTER TRACE"
     href: "SSFKSJ_9.4.0/refadmin/q085440_.html"
     input_parameters:
-      - "ACCTG"
+      - "CLASS"
       - "CMDSCOPE"
-      - "GLOBAL"
-      - "STAT"
+      - "COMMENT"
+      - "IFCID"
       - "TNO"
     output_parameters: []
     section_sources:
       input:
         - "Parameter descriptions for ALTER TRACE"
+        - "Trace parameters"
     notes: []
