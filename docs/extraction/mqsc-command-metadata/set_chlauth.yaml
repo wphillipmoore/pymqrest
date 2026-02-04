@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T15:38:24Z
+generated_at: 2026-02-04T15:51:59Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,7 +8,25 @@ source:
 mqsc_commands:
   - name: "SET CHLAUTH"
     href: "SSFKSJ_9.4.0/refadmin/q086630_.html"
-    input_parameters: []
+    input_parameters:
+      - "ACTION"
+      - "ADDRESS"
+      - "ADDRLIST"
+      - "CHCKCLNT"
+      - "CLNTUSER"
+      - "CMDSCOPE"
+      - "CUSTOM"
+      - "DESCR"
+      - "MCAUSER"
+      - "QMNAME"
+      - "SSLCERTI"
+      - "SSLPEER"
+      - "TYPE"
+      - "USERLIST"
+      - "USERSRC"
+      - "WARN"
     output_parameters: []
     section_sources:
+      input:
+        - "Parameters for SET CHLAUTH"
     notes: []

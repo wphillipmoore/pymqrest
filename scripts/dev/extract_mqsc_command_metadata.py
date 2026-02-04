@@ -174,6 +174,9 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
             "Parameter block",
         ],
     },
+    "SET CHLAUTH": {
+        "input_section_titles": ["Parameters for SET CHLAUTH"],
+    },
     "DISPLAY ENTAUTH": {
         "input_add": ["OBJNAME", "SERVCOMP"],
     },
@@ -557,6 +560,8 @@ def extract_command_name(html: str) -> str | None:
     if not match:
         return None
     heading = strip_tags(match.group(1)).strip()
+    if heading.startswith("CHANGE, COPY, and CREATE "):
+        return None
     if " (" in heading:
         return heading.split(" (", 1)[0].strip()
     if " on " in heading:
