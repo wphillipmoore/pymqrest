@@ -13,6 +13,15 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DOCS_ROOT = PROJECT_ROOT / "docs" / "extraction"
 IBM_DOCS_BASE = "https://www.ibm.com/docs/api/v1/content/"
+QUEUE_FAMILY_HREFS = {
+    "alter-queues": "SSFKSJ_9.4.0/refadmin/q085330_.html",
+}
+QUEUE_FAMILY_QUALIFIERS = {
+    "local queue": "QLOCAL",
+    "model queue": "QMODEL",
+    "alias queue": "QALIAS",
+    "remote queue": "QREMOTE",
+}
 
 INPUT_HEADING_PREFIXES = (
     "Parameter descriptions",
@@ -389,6 +398,63 @@ def extract_tokens(section_html: str) -> list[str]:
     return sorted(tokens)
 
 
+def parse_queue_family_table(html: str, caption_keyword: str) -> tuple[dict[str, list[str]], str]:
+    tables = re.findall(r"<table[^>]*>.*?</table>", html, flags=re.S | re.I)
+    target_table = None
+    caption_text = ""
+    for table in tables:
+        caption_match = re.search(r"<caption[^>]*>(.*?)</caption>", table, flags=re.S | re.I)
+        if not caption_match:
+            continue
+        caption_text = strip_tags(caption_match.group(1)).strip()
+        if caption_keyword.lower() in caption_text.lower():
+            target_table = table
+            break
+    if not target_table:
+        raise ValueError(f"Queue family table not found for caption {caption_keyword!r}")
+
+    rows = re.findall(r"<tr>(.*?)</tr>", target_table, flags=re.S | re.I)
+    if not rows:
+        raise ValueError("Queue family table has no rows")
+
+    header_cells = re.findall(r"<t[hd][^>]*>(.*?)</t[hd]>", rows[0], flags=re.S | re.I)
+    columns = [strip_tags(cell).strip().lower() for cell in header_cells]
+    qualifier_indexes: dict[int, str] = {}
+    for idx, column in enumerate(columns):
+        qualifier = QUEUE_FAMILY_QUALIFIERS.get(column)
+        if qualifier:
+            qualifier_indexes[idx] = qualifier
+
+    if not qualifier_indexes:
+        raise ValueError("Queue family table headers did not include queue qualifiers")
+
+    parameters_by_qualifier: dict[str, list[str]] = {
+        qualifier: [] for qualifier in qualifier_indexes.values()
+    }
+
+    for row in rows[1:]:
+        cells = re.findall(r"<t[hd][^>]*>(.*?)</t[hd]>", row, flags=re.S | re.I)
+        if not cells:
+            continue
+        raw_param = strip_tags(cells[0]).strip()
+        param_tokens = [
+            token
+            for token in (canonicalize_token(part) for part in re.split(r"\s+", raw_param))
+            if token
+        ]
+        if not param_tokens:
+            continue
+        param = param_tokens[0]
+        for idx, qualifier in qualifier_indexes.items():
+            if idx >= len(cells):
+                continue
+            cell_html = cells[idx]
+            if "tick.gif" in cell_html or "alt=\"X\"" in cell_html:
+                parameters_by_qualifier[qualifier].append(param)
+
+    return parameters_by_qualifier, caption_text
+
+
 def extract_varnames(section_html: str) -> list[str]:
     varnames: list[str] = []
     for text in re.findall(r'<var class="keyword varname">(.*?)</var>', section_html):
@@ -527,7 +593,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Extract MQSC command metadata from IBM Docs content API."
     )
-    parser.add_argument("--href", required=True, help="IBM Docs content path")
+    parser.add_argument("--href", help="IBM Docs content path")
+    parser.add_argument(
+        "--queue-family",
+        choices=sorted(QUEUE_FAMILY_HREFS.keys()),
+        help="Generate queue-family command metadata.",
+    )
     parser.add_argument(
         "--output",
         type=Path,
@@ -540,6 +611,34 @@ def main() -> None:
         help="Directory for per-command YAML outputs.",
     )
     args = parser.parse_args()
+
+    if not args.href and not args.queue_family:
+        parser.error("Either --href or --queue-family is required.")
+
+    if args.queue_family:
+        href = QUEUE_FAMILY_HREFS[args.queue_family]
+        html = fetch_html(href)
+        parameters_by_qualifier, caption = parse_queue_family_table(
+            html, "ALTER queues parameters"
+        )
+        for qualifier, parameters in parameters_by_qualifier.items():
+            name = f"ALTER {qualifier}"
+            slug = slugify_command(name)
+            output_path = args.output_dir / f"{slug}.yaml"
+            write_yaml(
+                output_path=output_path,
+                name=name,
+                href=href,
+                input_parameters=sorted(set(parameters)),
+                output_parameters=[],
+                input_sections=[caption] if caption else [],
+                output_sections=[],
+                notes=[],
+            )
+        return
+
+    if not args.href:
+        parser.error("--href is required when --queue-family is not set.")
 
     html = fetch_html(args.href)
     name = extract_command_name(html) or "UNKNOWN"
