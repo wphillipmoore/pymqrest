@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T23:11:12Z
+generated_at: 2026-02-04T23:14:04Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -11,13 +11,11 @@ mqsc_commands:
   - "DEFINE CHANNEL"
   - "DELETE CHANNEL"
   - "DISPLAY CHANNEL"
-  - "DISPLAY CHLAUTH"
   - "DISPLAY CHSTATUS"
   - "PING CHANNEL"
   - "PURGE CHANNEL"
   - "RESET CHANNEL"
   - "RESOLVE CHANNEL"
-  - "SET CHLAUTH"
   - "START CHANNEL"
   - "STOP CHANNEL"
 pcf_commands:
@@ -26,12 +24,10 @@ pcf_commands:
   - "MQCMD_DELETE_CHANNEL"
   - "MQCMD_INQUIRE_CHANNEL"
   - "MQCMD_INQUIRE_CHANNEL_STATUS"
-  - "MQCMD_INQUIRE_CHLAUTH_RECS"
   - "MQCMD_PING_CHANNEL"
   - "MQCMD_PURGE_CHANNEL"
   - "MQCMD_RESET_CHANNEL"
   - "MQCMD_RESOLVE_CHANNEL"
-  - "MQCMD_SET_CHLAUTH_REC"
   - "MQCMD_START_CHANNEL"
   - "MQCMD_STOP_CHANNEL"
 attributes:
@@ -39,38 +35,12 @@ attributes:
     contexts:
       - "input"
     status: "matched"
-    pcf: "Action"
-    snake: "action"
+    pcf: "SharingConversations"
+    snake: "sharing_conversations"
     mqsc_commands:
       input:
         - "RESOLVE CHANNEL"
-        - "SET CHLAUTH"
       output:
-  - mqsc: "ADDRESS"
-    contexts:
-      - "input"
-      - "output"
-    status: "matched"
-    pcf: "Address"
-    snake: "address"
-    mqsc_commands:
-      input:
-        - "DISPLAY CHLAUTH"
-        - "SET CHLAUTH"
-      output:
-        - "DISPLAY CHLAUTH"
-  - mqsc: "ADDRLIST"
-    contexts:
-      - "input"
-      - "output"
-    status: "matched"
-    pcf: "AddrList"
-    snake: "addr_list"
-    mqsc_commands:
-      input:
-        - "SET CHLAUTH"
-      output:
-        - "DISPLAY CHLAUTH"
   - mqsc: "AFFINITY"
     contexts:
       - "input"
@@ -94,7 +64,6 @@ attributes:
       input:
       output:
         - "DISPLAY CHANNEL"
-        - "DISPLAY CHLAUTH"
   - mqsc: "ALTTIME"
     contexts:
       - "output"
@@ -105,7 +74,6 @@ attributes:
       input:
       output:
         - "DISPLAY CHANNEL"
-        - "DISPLAY CHLAUTH"
   - mqsc: "AMQPKA"
     contexts:
       - "input"
@@ -258,18 +226,6 @@ attributes:
         - "DEFINE CHANNEL"
       output:
         - "DISPLAY CHANNEL"
-  - mqsc: "CHCKCLNT"
-    contexts:
-      - "input"
-      - "output"
-    status: "matched"
-    pcf: "CheckClient"
-    snake: "check_client"
-    mqsc_commands:
-      input:
-        - "SET CHLAUTH"
-      output:
-        - "DISPLAY CHLAUTH"
   - mqsc: "CHLDISP"
     contexts:
       - "input"
@@ -342,19 +298,6 @@ attributes:
         - "PURGE CHANNEL"
         - "STOP CHANNEL"
       output:
-  - mqsc: "CLNTUSER"
-    contexts:
-      - "input"
-      - "output"
-    status: "matched"
-    pcf: "ClntUser"
-    snake: "clnt_user"
-    mqsc_commands:
-      input:
-        - "DISPLAY CHLAUTH"
-        - "SET CHLAUTH"
-      output:
-        - "DISPLAY CHLAUTH"
   - mqsc: "CLNTWGHT"
     contexts:
       - "input"
@@ -445,12 +388,10 @@ attributes:
         - "DEFINE CHANNEL"
         - "DELETE CHANNEL"
         - "DISPLAY CHANNEL"
-        - "DISPLAY CHLAUTH"
         - "DISPLAY CHSTATUS"
         - "PING CHANNEL"
         - "RESET CHANNEL"
         - "RESOLVE CHANNEL"
-        - "SET CHLAUTH"
         - "START CHANNEL"
         - "STOP CHANNEL"
       output:
@@ -570,18 +511,6 @@ attributes:
       input:
       output:
         - "DISPLAY CHSTATUS"
-  - mqsc: "CUSTOM"
-    contexts:
-      - "input"
-      - "output"
-    status: "input-only"
-    pcf: "Custom"
-    snake: "custom"
-    mqsc_commands:
-      input:
-        - "SET CHLAUTH"
-      output:
-        - "DISPLAY CHLAUTH"
   - mqsc: "DATALEN"
     contexts:
       - "input"
@@ -620,17 +549,13 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "Description"
-    snake: "description"
+    status: "unmapped"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
         - "DEFINE CHANNEL"
-        - "SET CHLAUTH"
       output:
         - "DISPLAY CHANNEL"
-        - "DISPLAY CHLAUTH"
   - mqsc: "DISCINT"
     contexts:
       - "input"
@@ -825,16 +750,6 @@ attributes:
       input:
       output:
         - "DISPLAY CHSTATUS"
-  - mqsc: "MATCH"
-    contexts:
-      - "input"
-    status: "matched"
-    pcf: "Match"
-    snake: "match"
-    mqsc_commands:
-      input:
-        - "DISPLAY CHLAUTH"
-      output:
   - mqsc: "MAXINST"
     contexts:
       - "input"
@@ -925,17 +840,16 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "MCAUser"
-    snake: "mca_user"
+    status: "conflict"
+    candidates:
+      - "MCAUser"
+      - "MCAUserIdentifier"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
         - "DEFINE CHANNEL"
-        - "SET CHLAUTH"
       output:
         - "DISPLAY CHANNEL"
-        - "DISPLAY CHLAUTH"
         - "DISPLAY CHSTATUS"
   - mqsc: "MODE"
     contexts:
@@ -1187,18 +1101,15 @@ attributes:
       - "input"
       - "output"
     status: "matched"
-    pcf: "QMName"
-    snake: "qm_name"
+    pcf: "QMgrName"
+    snake: "q_mgr_name"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
         - "DEFINE CHANNEL"
-        - "DISPLAY CHLAUTH"
-        - "SET CHLAUTH"
         - "STOP CHANNEL"
       output:
         - "DISPLAY CHANNEL"
-        - "DISPLAY CHLAUTH"
         - "DISPLAY CHSTATUS"
   - mqsc: "QSGDISP"
     contexts:
@@ -1451,17 +1362,13 @@ attributes:
         - "DISPLAY CHANNEL"
   - mqsc: "SSLCERTI"
     contexts:
-      - "input"
       - "output"
-    status: "input-only"
-    pcf: "SSLCertIssuer"
-    snake: "ssl_cert_issuer"
+    status: "matched"
+    pcf: "SSLCertUserId"
+    snake: "ssl_cert_user_id"
     mqsc_commands:
       input:
-        - "DISPLAY CHLAUTH"
-        - "SET CHLAUTH"
       output:
-        - "DISPLAY CHLAUTH"
         - "DISPLAY CHSTATUS"
   - mqsc: "SSLCERTU"
     contexts:
@@ -1533,17 +1440,14 @@ attributes:
       - "input"
       - "output"
     status: "matched"
-    pcf: "SSLPeer"
-    snake: "ssl_peer"
+    pcf: "SSLPeerName"
+    snake: "ssl_peer_name"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
         - "DEFINE CHANNEL"
-        - "DISPLAY CHLAUTH"
-        - "SET CHLAUTH"
       output:
         - "DISPLAY CHANNEL"
-        - "DISPLAY CHLAUTH"
         - "DISPLAY CHSTATUS"
   - mqsc: "SSLRKEYS"
     contexts:
@@ -1666,17 +1570,14 @@ attributes:
   - mqsc: "TYPE"
     contexts:
       - "input"
-      - "output"
-    status: "matched"
-    pcf: "Type"
-    snake: "type"
+    status: "ambiguous"
+    candidates:
+      - "MCAType"
+      - "TrpType"
     mqsc_commands:
       input:
         - "DISPLAY CHANNEL"
-        - "DISPLAY CHLAUTH"
-        - "SET CHLAUTH"
       output:
-        - "DISPLAY CHLAUTH"
   - mqsc: "USECLTID"
     contexts:
       - "input"
@@ -1717,38 +1618,6 @@ attributes:
         - "DEFINE CHANNEL"
       output:
         - "DISPLAY CHANNEL"
-  - mqsc: "USERLIST"
-    contexts:
-      - "input"
-      - "output"
-    status: "matched"
-    pcf: "UserList"
-    snake: "user_list"
-    mqsc_commands:
-      input:
-        - "SET CHLAUTH"
-      output:
-        - "DISPLAY CHLAUTH"
-  - mqsc: "USERSRC"
-    contexts:
-      - "input"
-    status: "matched"
-    pcf: "UserSrc"
-    snake: "user_src"
-    mqsc_commands:
-      input:
-        - "SET CHLAUTH"
-      output:
-  - mqsc: "WARN"
-    contexts:
-      - "input"
-    status: "matched"
-    pcf: "Warn"
-    snake: "warn"
-    mqsc_commands:
-      input:
-        - "SET CHLAUTH"
-      output:
   - mqsc: "XBATCHSZ"
     contexts:
       - "output"
