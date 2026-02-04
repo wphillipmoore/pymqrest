@@ -101,6 +101,9 @@ COMMAND_OVERRIDES: dict[str, dict[str, object]] = {
         "input_add": ["CLUSTER", "CHANNEL"],
         "input_remove": ["STATUS"],
     },
+    "ALTER CHANNEL": {
+        "input_section_titles": ["Parameter descriptions for ALTER CHANNEL"],
+    },
     "ALTER BUFFPOOL": {
         "input_remove": ["LOC"],
     },
@@ -250,7 +253,7 @@ def normalize_token(token: str) -> str | None:
         return None
     if "(" in token:
         token = token.split("(", 1)[0].strip()
-    if not re.fullmatch(r"[A-Z0-9]+", token):
+    if not re.fullmatch(r"[A-Z][A-Z0-9]*", token):
         return None
     if token in EXCLUDED_TOKENS:
         return None
@@ -547,6 +550,10 @@ def main() -> None:
 
     if overrides.get("output_from_input_sections") and not output_parameters:
         output_parameters = list(input_parameters_raw)
+
+    if not name.startswith("DISPLAY "):
+        input_parameters = sorted(set(input_parameters).union(output_parameters))
+        output_parameters = []
 
     input_set = overrides.get("input_set")
     output_set = overrides.get("output_set")

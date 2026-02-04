@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:31Z
+generated_at: 2026-02-04T12:16:52Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,7 +9,6 @@ mqsc_commands:
   - name: "ALTER CHANNEL"
     href: "SSFKSJ_9.4.0/refadmin/q085170_.html"
     input_parameters:
-      - "1"
       - "AFFINITY"
       - "ALTER"
       - "AMQP"
