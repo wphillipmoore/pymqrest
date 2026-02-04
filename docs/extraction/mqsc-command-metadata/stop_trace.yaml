@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T16:13:38Z
+generated_at: 2026-02-04T16:14:45Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,13 +9,9 @@ mqsc_commands:
   - name: "STOP TRACE"
     href: "SSFKSJ_9.4.0/refadmin/q086840_.html"
     input_parameters:
-      - "ACCTG"
-      - "CHINIT"
       - "CLASS"
       - "DEST"
-      - "GLOBAL"
       - "RMID"
-      - "STAT"
       - "TNO"
       - "USERID"
     output_parameters: []
