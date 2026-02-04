@@ -1,0 +1,85 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "svstatus"
+mqsc_commands:
+  - "DISPLAY SVSTATUS"
+pcf_commands:
+  - "MQCMD_INQUIRE_SERVICE_STATUS"
+attributes:
+  - mqsc: "CONTROL"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "DESCR"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "PID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ProcessId"
+    snake: "process_id"
+  - mqsc: "SERVTYPE"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "STARTARG"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StartArguments"
+    snake: "start_arguments"
+  - mqsc: "STARTCMD"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StartCommand"
+    snake: "start_command"
+  - mqsc: "STARTDA"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StartDate"
+    snake: "start_date"
+  - mqsc: "STARTTI"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StartTime"
+    snake: "start_time"
+  - mqsc: "STATUS"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Status"
+    snake: "status"
+  - mqsc: "STDERR"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StderrDestination"
+    snake: "stderr_destination"
+  - mqsc: "STDOUT"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StdoutDestination"
+    snake: "stdout_destination"
+  - mqsc: "STOPARG"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StopArguments"
+    snake: "stop_arguments"
+  - mqsc: "STOPCMD"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StopCommand"
+    snake: "stop_command"

@@ -1,0 +1,115 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "archive"
+mqsc_commands:
+  - "DISPLAY ARCHIVE"
+  - "SET ARCHIVE"
+pcf_commands:
+  - "MQCMD_INQUIRE_ARCHIVE"
+  - "MQCMD_SET_ARCHIVE"
+attributes:
+  - mqsc: "ALCUNIT"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "AllocUnits"
+    snake: "alloc_units"
+  - mqsc: "ARCPFX1"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "ArchivePrefix1"
+    snake: "archive_prefix1"
+  - mqsc: "ARCPFX2"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "ArchivePrefix2"
+    snake: "archive_prefix2"
+  - mqsc: "ARCRETN"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "ArchiveRetention"
+    snake: "archive_retention"
+  - mqsc: "ARCWRTC"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "ARCWTOR"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "ArchiveWTOR"
+    snake: "archive_wtor"
+  - mqsc: "BLKSIZE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "BlockSize"
+    snake: "block_size"
+  - mqsc: "CATALOG"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Catalog"
+    snake: "catalog"
+  - mqsc: "CMDSCOPE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "CommandScope"
+    snake: "command_scope"
+  - mqsc: "COMPACT"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Compact"
+    snake: "compact"
+  - mqsc: "DEFAULT"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "PRIQTY"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "PROTECT"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Protect"
+    snake: "protect"
+  - mqsc: "QUIESCE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "QuiesceInterval"
+    snake: "quiesce_interval"
+  - mqsc: "SECQTY"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "TSTAMP"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "TimeStampFormat"
+    snake: "time_stamp_format"
+  - mqsc: "UNIT"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "AllocUnits"
+    snake: "alloc_units"
+  - mqsc: "UNIT2"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "ArchiveUnit2"
+    snake: "archive_unit2"

@@ -1,0 +1,146 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "cfstatus"
+mqsc_commands:
+  - "DISPLAY CFSTATUS"
+pcf_commands:
+  - "MQCMD_INQUIRE_CF_STRUC_STATUS"
+attributes:
+  - mqsc: "ACCESS"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Access"
+    snake: "access"
+  - mqsc: "BKUPDATE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "BackupDate"
+    snake: "backup_date"
+  - mqsc: "BKUPERBA"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "BackupEndRBA"
+    snake: "backup_end_rba"
+  - mqsc: "BKUPSIZE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "BackupSize"
+    snake: "backup_size"
+  - mqsc: "BKUPSRBA"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "BackupStartRBA"
+    snake: "backup_start_rba"
+  - mqsc: "BKUPTIME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "BackupTime"
+    snake: "backup_time"
+  - mqsc: "CFTYPE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "CFStrucType"
+    snake: "cf_struc_type"
+  - mqsc: "ENTSMAX"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "EntriesMax"
+    snake: "entries_max"
+  - mqsc: "ENTSUSED"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "EntriesUsed"
+    snake: "entries_used"
+  - mqsc: "FAILDATE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "FailDate"
+    snake: "fail_date"
+  - mqsc: "FAILTIME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "FailTime"
+    snake: "fail_time"
+  - mqsc: "LOGS"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "LogQMgrNames"
+    snake: "log_q_mgr_names"
+  - mqsc: "OFFLDUSE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "OffLdUse"
+    snake: "off_ld_use"
+  - mqsc: "QMNAME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "QMgrName"
+    snake: "q_mgr_name"
+  - mqsc: "RCVDATE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "RcvDate"
+    snake: "rcv_date"
+  - mqsc: "RCVTIME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "RcvTime"
+    snake: "rcv_time"
+  - mqsc: "SIZEMAX"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "SizeMax"
+    snake: "size_max"
+  - mqsc: "SIZEUSED"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "SizeUsed"
+    snake: "size_used"
+  - mqsc: "SMDS"
+    contexts:
+      - "input"
+      - "output"
+    status: "unmapped"
+  - mqsc: "STATUS"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "CFStatusType"
+    snake: "cf_status_type"
+  - mqsc: "SYSNAME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "SysName"
+    snake: "sys_name"
+  - mqsc: "TYPE"
+    contexts:
+      - "input"
+      - "output"
+    status: "conflict"
+    candidates:
+      - "CFStatusType"
+      - "CFStrucType"

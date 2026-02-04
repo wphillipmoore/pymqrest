@@ -1,0 +1,87 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "namelist"
+mqsc_commands:
+  - "ALTER NAMELIST"
+  - "DEFINE NAMELIST"
+  - "DELETE NAMELIST"
+  - "DISPLAY NAMELIST"
+pcf_commands:
+  - "MQCMD_CHANGE_NAMELIST"
+  - "MQCMD_CREATE_NAMELIST"
+  - "MQCMD_DELETE_NAMELIST"
+  - "MQCMD_INQUIRE_NAMELIST"
+attributes:
+  - mqsc: "ALTDATE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "AlterationDate"
+    snake: "alteration_date"
+  - mqsc: "ALTTIME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "AlterationTime"
+    snake: "alteration_time"
+  - mqsc: "CMDSCOPE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "CommandScope"
+    snake: "command_scope"
+  - mqsc: "DESCR"
+    contexts:
+      - "input"
+      - "output"
+    status: "unmapped"
+  - mqsc: "IGNSTATE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "IgnoreState"
+    snake: "ignore_state"
+  - mqsc: "LIKE"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "NAMCOUNT"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "NameCount"
+    snake: "name_count"
+  - mqsc: "NAMES"
+    contexts:
+      - "input"
+      - "output"
+    status: "matched"
+    pcf: "Names"
+    snake: "names"
+  - mqsc: "NLTYPE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "NamelistType"
+    snake: "namelist_type"
+  - mqsc: "NOREPLACE"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "QSGDISP"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "QSGDisposition"
+    snake: "qsg_disposition"
+  - mqsc: "REPLACE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Replace"
+    snake: "replace"

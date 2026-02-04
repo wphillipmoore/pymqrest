@@ -1,0 +1,69 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "log"
+mqsc_commands:
+  - "DISPLAY LOG"
+  - "SET LOG"
+pcf_commands:
+  - "MQCMD_INQUIRE_LOG"
+  - "MQCMD_SET_LOG"
+attributes:
+  - mqsc: "CMDSCOPE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "CommandScope"
+    snake: "command_scope"
+  - mqsc: "COMMANDS"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "COMPLOG"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "DEALLCT"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "DeallocateInterval"
+    snake: "deallocate_interval"
+  - mqsc: "DEFAULT"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "MAXARCH"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "MaxArchiveLog"
+    snake: "max_archive_log"
+  - mqsc: "MAXCNOFF"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "MaxConcurrentOffloads"
+    snake: "max_concurrent_offloads"
+  - mqsc: "MAXRTU"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "MaxReadTapeUnits"
+    snake: "max_read_tape_units"
+  - mqsc: "WRTHRSH"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "ZHYLINK"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "ZHYWRITE"
+    contexts:
+      - "input"
+    status: "unmapped"

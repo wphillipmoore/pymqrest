@@ -1,0 +1,65 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "system"
+mqsc_commands:
+  - "DISPLAY SYSTEM"
+  - "SET SYSTEM"
+pcf_commands:
+  - "MQCMD_INQUIRE_SYSTEM"
+  - "MQCMD_SET_SYSTEM"
+attributes:
+  - mqsc: "ACCTIME"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "ACELIM"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "CLCACHE"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "CMDSCOPE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "CommandScope"
+    snake: "command_scope"
+  - mqsc: "DEFAULT"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "EXCLMSG"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Exclmsg"
+    snake: "exclmsg"
+  - mqsc: "LOGLOAD"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "SERVICE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Service"
+    snake: "service"
+  - mqsc: "SPLCAP"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "STATIME"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "TRACTBL"
+    contexts:
+      - "input"
+    status: "unmapped"

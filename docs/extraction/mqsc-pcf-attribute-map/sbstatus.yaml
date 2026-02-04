@@ -1,0 +1,73 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "sbstatus"
+mqsc_commands:
+  - "DISPLAY SBSTATUS"
+pcf_commands:
+  - "MQCMD_INQUIRE_SUB_STATUS"
+attributes:
+  - mqsc: "ACTCONN"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "CMDSCOPE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "CommandScope"
+    snake: "command_scope"
+  - mqsc: "DURABLE"
+    contexts:
+      - "input"
+      - "output"
+    status: "input-only"
+    pcf: "Durable"
+    snake: "durable"
+  - mqsc: "LMSGDATE"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "LMSGTIME"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "MCASTREL"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "NUMMSGS"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "RESMDATE"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "RESMTIME"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "SUBID"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "SUBTYPE"
+    contexts:
+      - "input"
+      - "output"
+    status: "input-only"
+    pcf: "SubscriptionType"
+    snake: "subscription_type"
+  - mqsc: "SUBUSER"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "TOPICSTR"
+    contexts:
+      - "output"
+    status: "unmapped"

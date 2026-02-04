@@ -1,0 +1,271 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "conn"
+mqsc_commands:
+  - "DISPLAY CONN"
+  - "STOP CONN"
+pcf_commands:
+  - "MQCMD_INQUIRE_CONNECTION"
+  - "MQCMD_STOP_CONNECTION"
+attributes:
+  - mqsc: "APPLDESC"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ApplDesc"
+    snake: "appl_desc"
+  - mqsc: "APPLTAG"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ApplTag"
+    snake: "appl_tag"
+  - mqsc: "APPLTYPE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ApplType"
+    snake: "appl_type"
+  - mqsc: "ASID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "TransactionId"
+    snake: "transaction_id"
+  - mqsc: "ASTATE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "HandleState"
+    snake: "handle_state"
+  - mqsc: "CHANNEL"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ChannelName"
+    snake: "channel_name"
+  - mqsc: "CLIENTID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ClientId"
+    snake: "client_id"
+  - mqsc: "CMDSCOPE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "CommandScope"
+    snake: "command_scope"
+  - mqsc: "CONN"
+    contexts:
+      - "output"
+    status: "ambiguous"
+    candidates:
+      - "ConnInfoType"
+      - "ConnectionId"
+  - mqsc: "CONNAME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ConnectionName"
+    snake: "connection_name"
+  - mqsc: "CONNOPTS"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ConnectionOptions"
+    snake: "connection_options"
+  - mqsc: "CONNTAG"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ConnectionTag"
+    snake: "connection_tag"
+  - mqsc: "DEFREADA"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "DEST"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Destination"
+    snake: "destination"
+  - mqsc: "DESTQMGR"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "DestinationQueueManager"
+    snake: "destination_queue_manager"
+  - mqsc: "EXTCONN"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "EXTURID"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "HSTATE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "HandleState"
+    snake: "handle_state"
+  - mqsc: "NID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ClientId"
+    snake: "client_id"
+  - mqsc: "OBJNAME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ObjectName"
+    snake: "object_name"
+  - mqsc: "OBJTYPE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ObjectType"
+    snake: "object_type"
+  - mqsc: "OPENOPTS"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "OpenOptions"
+    snake: "open_options"
+  - mqsc: "PID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "PSTId"
+    snake: "pst_id"
+  - mqsc: "PSBNAME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "PSBName"
+    snake: "psb_name"
+  - mqsc: "PSTID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "PSTId"
+    snake: "pst_id"
+  - mqsc: "QMURID"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "QSGDISP"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "QSGDispositon"
+    snake: "qsg_dispositon"
+  - mqsc: "READA"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ReadAhead"
+    snake: "read_ahead"
+  - mqsc: "SUBID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "SubscriptionID"
+    snake: "subscription_id"
+  - mqsc: "SUBNAME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "SubscriptionName"
+    snake: "subscription_name"
+  - mqsc: "TASKNO"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "TID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "PSTId"
+    snake: "pst_id"
+  - mqsc: "TOPICSTR"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "TopicString"
+    snake: "topic_string"
+  - mqsc: "TRANSID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "TransactionId"
+    snake: "transaction_id"
+  - mqsc: "TYPE"
+    contexts:
+      - "input"
+      - "output"
+    status: "conflict"
+    candidates:
+      - "ConnInfoType"
+      - "UOWType"
+  - mqsc: "UOWLOG"
+    contexts:
+      - "output"
+    status: "ambiguous"
+    candidates:
+      - "UOWLogStartDate"
+      - "UOWLogStartTime"
+  - mqsc: "UOWLOGDA"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "UOWLogStartDate"
+    snake: "uow_log_start_date"
+  - mqsc: "UOWLOGTI"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "UOWLogStartTime"
+    snake: "uow_log_start_time"
+  - mqsc: "UOWSTATE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "UOWState"
+    snake: "uow_state"
+  - mqsc: "UOWSTDA"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "UOWStartDate"
+    snake: "uow_start_date"
+  - mqsc: "UOWSTTI"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "UOWStartTime"
+    snake: "uow_start_time"
+  - mqsc: "URDISP"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "URDisposition"
+    snake: "ur_disposition"
+  - mqsc: "URTYPE"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "USERID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "UserId"
+    snake: "user_id"

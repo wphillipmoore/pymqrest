@@ -1,0 +1,29 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "indoubt"
+mqsc_commands:
+  - "RESOLVE INDOUBT"
+pcf_commands:
+  - "MQCMD_RESOLVE_INDOUBT"
+attributes:
+  - mqsc: "ACTION"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "CMDSCOPE"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "NID"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "QMNAME"
+    contexts:
+      - "input"
+    status: "unmapped"

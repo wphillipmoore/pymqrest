@@ -1,0 +1,67 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "policy"
+mqsc_commands:
+  - "DELETE POLICY"
+  - "DISPLAY POLICY"
+  - "SET POLICY"
+pcf_commands:
+  - "MQCMD_CHANGE_PROT_POLICY"
+  - "MQCMD_DELETE_PROT_POLICY"
+  - "MQCMD_INQUIRE_PROT_POLICY"
+attributes:
+  - mqsc: "ACTION"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Action"
+    snake: "action"
+  - mqsc: "ENCALG"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "EncAlg"
+    snake: "enc_alg"
+  - mqsc: "ENFORCE"
+    contexts:
+      - "input"
+    status: "unmapped"
+  - mqsc: "IGNSTATE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "IgnoreState"
+    snake: "ignore_state"
+  - mqsc: "KEYREUSE"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "KeyReuse"
+    snake: "key_reuse"
+  - mqsc: "RECIP"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Recipient"
+    snake: "recipient"
+  - mqsc: "SIGNALG"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "SignAlg"
+    snake: "sign_alg"
+  - mqsc: "SIGNER"
+    contexts:
+      - "input"
+    status: "matched"
+    pcf: "Signer"
+    snake: "signer"
+  - mqsc: "TOLERATE"
+    contexts:
+      - "input"
+    status: "unmapped"

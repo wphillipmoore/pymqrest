@@ -1,0 +1,105 @@
+version: 1
+generated_at: 2026-02-04T20:11:59Z
+source:
+  mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
+  pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
+  command_map: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-command-map.yaml"
+  overrides: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-overrides.yaml"
+qualifier: "lsstatus"
+mqsc_commands:
+  - "DISPLAY LSSTATUS"
+pcf_commands:
+  - "MQCMD_INQUIRE_LISTENER_STATUS"
+attributes:
+  - mqsc: "ADAPTER"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Adapter"
+    snake: "adapter"
+  - mqsc: "BACKLOG"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Backlog"
+    snake: "backlog"
+  - mqsc: "CONTROL"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "DESCR"
+    contexts:
+      - "output"
+    status: "unmapped"
+  - mqsc: "IPADDR"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "IPAddress"
+    snake: "ip_address"
+  - mqsc: "LOCLNAME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "LocalName"
+    snake: "local_name"
+  - mqsc: "NTBNAMES"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "NetbiosNames"
+    snake: "netbios_names"
+  - mqsc: "PID"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "ProcessId"
+    snake: "process_id"
+  - mqsc: "PORT"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Port"
+    snake: "port"
+  - mqsc: "SESSIONS"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Sessions"
+    snake: "sessions"
+  - mqsc: "SOCKET"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Socket"
+    snake: "socket"
+  - mqsc: "STARTDA"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StartDate"
+    snake: "start_date"
+  - mqsc: "STARTTI"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "StartTime"
+    snake: "start_time"
+  - mqsc: "STATUS"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "Status"
+    snake: "status"
+  - mqsc: "TPNAME"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "TPName"
+    snake: "tp_name"
+  - mqsc: "TRPTYPE"
+    contexts:
+      - "output"
+    status: "matched"
+    pcf: "TransportType"
+    snake: "transport_type"
