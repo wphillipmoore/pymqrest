@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T12:28:24Z
+generated_at: 2026-02-04T12:36:44Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -10,7 +10,6 @@ mqsc_commands:
     href: "SSFKSJ_9.4.0/refadmin/q085170_.html"
     input_parameters:
       - "AFFINITY"
-      - "AMQP"
       - "AMQPKA"
       - "BACKLOG"
       - "BATCHHB"

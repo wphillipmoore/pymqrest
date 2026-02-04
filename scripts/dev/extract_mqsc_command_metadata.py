@@ -253,6 +253,8 @@ def normalize_token(token: str) -> str | None:
     token = re.sub(r"\s+", " ", token)
     token = re.sub(r"\(\s*", "(", token)
     token = re.sub(r"\s*\)", ")", token)
+    if token.endswith(":"):
+        return None
     token = token.strip(" ,.;:")
     if not token:
         return None
