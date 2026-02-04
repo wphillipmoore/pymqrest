@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:39Z
+generated_at: 2026-02-04T14:45:55Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -11,8 +11,6 @@ mqsc_commands:
     input_parameters:
       - "CHLDISP"
       - "CMDSCOPE"
-      - "DEFCDISP"
-      - "MQSC"
       - "SEQNUM"
     output_parameters: []
     section_sources:

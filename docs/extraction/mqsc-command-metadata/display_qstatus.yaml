@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:37Z
+generated_at: 2026-02-04T14:45:48Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -22,7 +22,6 @@ mqsc_commands:
       - "CURDEPTH"
       - "CURFSIZE"
       - "CURMAXFS"
-      - "EXTURID"
       - "HSTATE"
       - "INPUT"
       - "INQUIRE"
@@ -31,13 +30,9 @@ mqsc_commands:
       - "LGETTIME"
       - "LPUTDATE"
       - "LPUTTIME"
-      - "MAXFSIZE"
       - "MEDIALOG"
       - "MONQ"
-      - "MQCONNX"
-      - "MQSC"
       - "MSGAGE"
-      - "OFF"
       - "OPPROCS"
       - "OUTPUT"
       - "PID"

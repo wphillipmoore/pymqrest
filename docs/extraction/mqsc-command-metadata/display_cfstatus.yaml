@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:35Z
+generated_at: 2026-02-04T14:45:43Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,11 +9,7 @@ mqsc_commands:
   - name: "DISPLAY CFSTATUS"
     href: "SSFKSJ_9.4.0/refadmin/q086020_.html"
     input_parameters:
-      - "ACCESS"
-      - "CFSTRUCT"
-      - "QMNAME"
       - "SMDS"
-      - "STATUS"
       - "TYPE"
     output_parameters:
       - "ACCESS"
@@ -28,13 +24,10 @@ mqsc_commands:
       - "FAILDATE"
       - "FAILTIME"
       - "LOGS"
-      - "MQSC"
       - "OFFLDUSE"
-      - "PURGE"
       - "QMNAME"
       - "RCVDATE"
       - "RCVTIME"
-      - "RESET"
       - "SIZEMAX"
       - "SIZEUSED"
       - "SMDS"

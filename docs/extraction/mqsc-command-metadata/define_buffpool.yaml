@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:33Z
+generated_at: 2026-02-04T14:45:30Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,15 +9,10 @@ mqsc_commands:
   - name: "DEFINE BUFFPOOL"
     href: "SSFKSJ_9.4.0/refadmin/q085500_.html"
     input_parameters:
-      - "4KB"
-      - "ABOVE"
       - "BUFFERS"
-      - "CSQP064I"
       - "FIXED4KB"
       - "LOC"
       - "LOCATION"
-      - "MP16"
-      - "MQSC"
       - "NOREPLACE"
       - "PAGECLAS"
       - "REPLACE"

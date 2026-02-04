@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:42Z
+generated_at: 2026-02-04T14:46:03Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,9 +9,7 @@ mqsc_commands:
   - name: "STOP CONN"
     href: "SSFKSJ_9.4.0/refadmin/q086790_.html"
     input_parameters:
-      - "CONN"
       - "EXTCONN"
-      - "MQSC"
     output_parameters: []
     section_sources:
       input:

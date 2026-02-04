@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:39Z
+generated_at: 2026-02-04T14:45:54Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -11,13 +11,10 @@ mqsc_commands:
     input_parameters:
       - "CHLAUTH"
       - "CMDSCOPE"
-      - "CONNAUTH"
-      - "JWKS"
       - "MQADMIN"
       - "MQNLIST"
       - "MQPROC"
       - "MQQUEUE"
-      - "MQSC"
       - "MXADMIN"
       - "MXNLIST"
       - "MXPROC"

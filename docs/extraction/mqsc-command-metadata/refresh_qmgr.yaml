@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:39Z
+generated_at: 2026-02-04T14:45:54Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,20 +9,13 @@ mqsc_commands:
   - name: "REFRESH QMGR"
     href: "SSFKSJ_9.4.0/refadmin/q086480_.html"
     input_parameters:
-      - "ALTDATE"
-      - "ALTTIME"
       - "CMDSCOPE"
-      - "EXPRYINT"
       - "INCLINT"
-      - "LPA"
-      - "MQSC"
       - "NAME"
       - "OBJECT"
-      - "QSGDISP"
       - "TYPE"
     output_parameters: []
     section_sources:
       input:
         - "Parameter descriptions for REFRESH QMGR"
-    notes:
-      - "ALL requests all attributes and is implied when no specific attributes are listed."
+    notes: []

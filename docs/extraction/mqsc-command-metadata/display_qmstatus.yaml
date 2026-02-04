@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:37Z
+generated_at: 2026-02-04T14:45:47Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -57,12 +57,10 @@ mqsc_commands:
       - "RECLOG"
       - "RECSZ"
       - "REUSESZ"
-      - "SHARED"
       - "STANDBY"
       - "STARTDA"
       - "STARTTI"
       - "STATUS"
-      - "TYPE"
       - "UNICLUS"
     section_sources:
       input:

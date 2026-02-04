@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:36Z
+generated_at: 2026-02-04T14:45:45Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,15 +9,9 @@ mqsc_commands:
   - name: "DISPLAY CONN"
     href: "SSFKSJ_9.4.0/refadmin/q086140_.html"
     input_parameters:
-      - "APPLTAG"
       - "CMDSCOPE"
-      - "CONN"
-      - "CONNOPTS"
       - "EXTCONN"
-      - "EXTURID"
-      - "QSGDISP"
       - "TYPE"
-      - "UOWSTATE"
       - "URDISP"
     output_parameters:
       - "APPLDESC"
@@ -31,7 +25,6 @@ mqsc_commands:
       - "CONNAME"
       - "CONNOPTS"
       - "CONNTAG"
-      - "DEFINE"
       - "DEFREADA"
       - "DEST"
       - "DESTQMGR"
@@ -42,7 +35,6 @@ mqsc_commands:
       - "OBJTYPE"
       - "OPENOPTS"
       - "PID"
-      - "PROCESS"
       - "PSBNAME"
       - "PSTID"
       - "QMURID"

@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T12:00:28Z
+generated_at: 2026-02-04T14:45:21Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -9,17 +9,13 @@ mqsc_commands:
   - name: "ALTER CFSTRUCT"
     href: "SSFKSJ_9.4.0/refadmin/q085160_.html"
     input_parameters:
-      - "ALTER"
       - "CFCONLOS"
       - "CFLEVEL"
-      - "CFSTRUCT"
       - "DESCR"
       - "DSBLOCK"
       - "DSBUFS"
       - "DSEXPAND"
       - "DSGROUP"
-      - "INDXTYPE"
-      - "MQSC"
       - "OFFLD1SZ"
       - "OFFLD1TH"
       - "OFFLD2SZ"
@@ -27,7 +23,6 @@ mqsc_commands:
       - "OFFLD3SZ"
       - "OFFLD3TH"
       - "OFFLOAD"
-      - "PROPCTL"
       - "RECAUTO"
       - "RECOVER"
     output_parameters: []

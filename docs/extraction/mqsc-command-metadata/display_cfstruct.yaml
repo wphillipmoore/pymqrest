@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:35Z
+generated_at: 2026-02-04T14:45:43Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -19,7 +19,6 @@ mqsc_commands:
       - "DSBUFS"
       - "DSEXPAND"
       - "DSGROUP"
-      - "MQSC"
       - "OFFLD1SZ"
       - "OFFLD1TH"
       - "OFFLD2SZ"

@@ -25,7 +25,7 @@ OUTPUT_HEADING_PREFIXES = (
 )
 SYNTAX_HEADING_PREFIX = "Syntax diagram"
 
-EXCLUDED_TOKENS = {"IBM", "AMQ", "CSQ", "MQ", "NO", "YES"}
+EXCLUDED_TOKENS = {"IBM", "AMQ", "CSQ", "MQ", "MQSC", "NO", "YES"}
 DEFERRED_INPUT_TOKENS = {
     "WHERE": "WHERE filtering is deferred; tracked in issue #71.",
     "ALL": "ALL requests all attributes and is implied when no specific attributes are listed.",

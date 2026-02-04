@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:34Z
+generated_at: 2026-02-04T14:45:34Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -10,11 +10,8 @@ mqsc_commands:
     href: "SSFKSJ_9.4.0/refadmin/q085680_.html"
     input_parameters:
       - "BUFFPOOL"
-      - "DEFINE"
       - "DSN"
       - "EXPAND"
-      - "LOCATION"
-      - "MQSC"
     output_parameters: []
     section_sources:
       input:

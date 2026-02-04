@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:35Z
+generated_at: 2026-02-04T14:45:43Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -13,7 +13,6 @@ mqsc_commands:
       - "QSGDISP"
       - "TYPE"
     output_parameters:
-      - "1"
       - "AFFINITY"
       - "ALTDATE"
       - "ALTTIME"
@@ -24,7 +23,6 @@ mqsc_commands:
       - "BATCHLIM"
       - "BATCHSZ"
       - "CERTLABL"
-      - "CHANNEL"
       - "CHLTYPE"
       - "CLNTWGHT"
       - "CLUSNL"
@@ -37,8 +35,6 @@ mqsc_commands:
       - "CONNAME"
       - "CONVERT"
       - "DEFCDISP"
-      - "DEFINE"
-      - "DEFRECON"
       - "DESCR"
       - "DISCINT"
       - "HBINT"
@@ -54,7 +50,6 @@ mqsc_commands:
       - "MCAUSER"
       - "MODENAME"
       - "MONCHL"
-      - "MQSC"
       - "MRDATA"
       - "MREXIT"
       - "MRRTY"
@@ -87,7 +82,6 @@ mqsc_commands:
       - "TPNAME"
       - "TPROOT"
       - "TRPTYPE"
-      - "TYPE"
       - "USECLTID"
       - "USEDLQ"
       - "USERID"

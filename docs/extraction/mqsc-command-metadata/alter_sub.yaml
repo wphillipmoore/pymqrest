@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:32Z
+generated_at: 2026-02-04T14:45:28Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -14,17 +14,14 @@ mqsc_commands:
       - "DESTCORL"
       - "DESTQMGR"
       - "EXPIRY"
-      - "MQSC"
       - "PSPROP"
       - "PUBACCT"
       - "PUBAPPID"
       - "PUBPRTY"
       - "REQONLY"
-      - "SUBNAME"
       - "SUBUSER"
       - "USERDATA"
       - "VARUSER"
-      - "XMITQ"
     output_parameters: []
     section_sources:
       input:

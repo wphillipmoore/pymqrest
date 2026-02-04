@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:36Z
+generated_at: 2026-02-04T14:45:45Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -18,7 +18,6 @@ mqsc_commands:
       - "AUTHLIST"
       - "ENTITY"
       - "ENTTYPE"
-      - "MQSC"
       - "OBJTYPE"
     section_sources:
       input:

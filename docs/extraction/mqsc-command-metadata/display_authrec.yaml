@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:35Z
+generated_at: 2026-02-04T14:45:42Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -19,7 +19,6 @@ mqsc_commands:
       - "AUTHLIST"
       - "ENTITY"
       - "ENTTYPE"
-      - "MQSC"
     section_sources:
       input:
         - "Parameter descriptions for DISPLAY AUTHREC"

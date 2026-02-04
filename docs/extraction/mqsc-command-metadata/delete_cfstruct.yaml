@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:34Z
+generated_at: 2026-02-04T14:45:39Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -8,8 +8,7 @@ source:
 mqsc_commands:
   - name: "DELETE CFSTRUCT"
     href: "SSFKSJ_9.4.0/refadmin/q085810_.html"
-    input_parameters:
-      - "MQSC"
+    input_parameters: []
     output_parameters: []
     section_sources:
       input:

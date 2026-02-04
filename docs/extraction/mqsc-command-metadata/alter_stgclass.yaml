@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:32Z
+generated_at: 2026-02-04T14:45:27Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -10,9 +10,7 @@ mqsc_commands:
     href: "SSFKSJ_9.4.0/refadmin/q085410_.html"
     input_parameters:
       - "CMDSCOPE"
-      - "DEFINE"
       - "DESCR"
-      - "MQSC"
       - "PASSTKTA"
       - "PSID"
       - "QSGDISP"

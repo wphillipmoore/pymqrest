@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:38Z
+generated_at: 2026-02-04T14:45:51Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -25,7 +25,6 @@ mqsc_commands:
       - "CLUSTIME"
       - "COMMINFO"
       - "CUSTOM"
-      - "DEFINE"
       - "DEFPRESP"
       - "DEFPRTY"
       - "DEFPSIST"
@@ -34,18 +33,14 @@ mqsc_commands:
       - "MCAST"
       - "MDURMDL"
       - "MNDURMDL"
-      - "MQSC"
       - "NPMSGDLV"
-      - "PAGEVAL"
       - "PMSGDLV"
       - "PROXYSUB"
       - "PUB"
       - "PUBSCOPE"
       - "QMID"
-      - "SQGETTMR"
       - "SUB"
       - "SUBSCOPE"
-      - "TOPIC"
       - "TOPICSTR"
       - "TYPE"
       - "USEDLQ"

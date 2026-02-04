@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-04T11:54:35Z
+generated_at: 2026-02-04T14:45:42Z
 source:
   product: "IBM MQ"
   version: "9.4.x"
@@ -11,14 +11,12 @@ mqsc_commands:
     input_parameters:
       - "AUTHTYPE"
       - "CMDSCOPE"
-      - "DESCR"
       - "QSGDISP"
     output_parameters:
       - "ADOPTCTX"
       - "ALTDATE"
       - "ALTTIME"
       - "AUTHENMD"
-      - "AUTHINFO"
       - "AUTHORMD"
       - "AUTHTYPE"
       - "BASEDNG"
@@ -28,14 +26,12 @@ mqsc_commands:
       - "CLASSGRP"
       - "CLASSUSR"
       - "CONNAME"
-      - "DEFINE"
       - "DESCR"
       - "FAILDLAY"
       - "FINDGRP"
       - "GRPFIELD"
       - "LDAPPWD"
       - "LDAPUSER"
-      - "MQSC"
       - "NESTGRP"
       - "OCSPURL"
       - "QSGDISP"
