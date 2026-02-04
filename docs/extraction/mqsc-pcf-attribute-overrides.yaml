@@ -3,6 +3,7 @@ overrides:
   channel:
     MAXINSTC: "MaxInstancesPerClient"
     AUTOSTART: "AutoStart"
+    COMPHDR: "HeaderCompression"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"
