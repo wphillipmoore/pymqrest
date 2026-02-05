@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:29:15Z
+generated_at: 2026-02-05T14:50:14Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -316,11 +316,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "ambiguous"
-    candidates:
-      - "ChannelAutoDef"
-      - "ChinitAdapters"
-      - "CodedCharSetId"
+    status: "override"
+    pcf: "ChannelAutoDef"
+    snake: "channel_auto_def"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -374,16 +372,6 @@ attributes:
         - "ALTER QMGR"
       output:
         - "DISPLAY QMGR"
-  - mqsc: "CHINIT"
-    contexts:
-      - "output"
-    status: "matched"
-    pcf: "ChinitAdapters"
-    snake: "chinit_adapters"
-    mqsc_commands:
-      input:
-      output:
-        - "DISPLAY QMSTATUS"
   - mqsc: "CHISERVP"
     contexts:
       - "input"
@@ -456,18 +444,6 @@ attributes:
     status: "override"
     pcf: "ClusterNamelist"
     snake: "cluster_namelist"
-    mqsc_commands:
-      input:
-        - "RESUME QMGR"
-        - "SUSPEND QMGR"
-      output:
-  - mqsc: "CLUSTER"
-    contexts:
-      - "input"
-    status: "ambiguous"
-    candidates:
-      - "ClusterWorkLoadData"
-      - "ClusterWorkLoadExit"
     mqsc_commands:
       input:
         - "RESUME QMGR"
@@ -1075,18 +1051,6 @@ attributes:
         - "ALTER QMGR"
       output:
         - "DISPLAY QMGR"
-  - mqsc: "LOG"
-    contexts:
-      - "input"
-    status: "ambiguous"
-    candidates:
-      - "ArchivedLog"
-      - "LoggerEvent"
-    mqsc_commands:
-      input:
-        - "RESUME QMGR"
-        - "SUSPEND QMGR"
-      output:
   - mqsc: "LOGEXTSZ"
     contexts:
       - "output"
@@ -1450,10 +1414,9 @@ attributes:
   - mqsc: "OBJECT"
     contexts:
       - "input"
-    status: "ambiguous"
-    candidates:
-      - "ObjectName"
-      - "ObjectType"
+    status: "override"
+    pcf: "ObjectType"
+    snake: "object_type"
     mqsc_commands:
       input:
         - "REFRESH QMGR"
@@ -1920,10 +1883,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "ambiguous"
-    candidates:
-      - "SSLKeyRepository"
-      - "SSLKeyResetCount"
+    status: "override"
+    pcf: "SSLKeyRepository"
+    snake: "ssl_key_repository"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -2187,10 +2149,9 @@ attributes:
   - mqsc: "TYPE"
     contexts:
       - "input"
-    status: "ambiguous"
-    candidates:
-      - "ObjectType"
-      - "StatusType"
+    status: "override"
+    pcf: "StatusType"
+    snake: "status_type"
     mqsc_commands:
       input:
         - "DISPLAY QMSTATUS"

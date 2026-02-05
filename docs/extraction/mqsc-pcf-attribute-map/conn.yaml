@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:29:15Z
+generated_at: 2026-02-05T14:50:14Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -93,17 +93,6 @@ attributes:
       input:
         - "DISPLAY CONN"
       output:
-  - mqsc: "CONN"
-    contexts:
-      - "output"
-    status: "ambiguous"
-    candidates:
-      - "ConnInfoType"
-      - "ConnectionId"
-    mqsc_commands:
-      input:
-      output:
-        - "DISPLAY CONN"
   - mqsc: "CONNAME"
     contexts:
       - "output"
@@ -361,10 +350,9 @@ attributes:
   - mqsc: "UOWLOG"
     contexts:
       - "output"
-    status: "ambiguous"
-    candidates:
-      - "UOWLogStartDate"
-      - "UOWLogStartTime"
+    status: "override"
+    pcf: "StartUOWLogExtent"
+    snake: "start_uow_log_extent"
     mqsc_commands:
       input:
       output:

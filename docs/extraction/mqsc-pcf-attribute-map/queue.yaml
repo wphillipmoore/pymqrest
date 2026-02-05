@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:29:15Z
+generated_at: 2026-02-05T14:50:14Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -112,11 +112,9 @@ attributes:
   - mqsc: "ASTATE"
     contexts:
       - "output"
-    status: "ambiguous"
-    candidates:
-      - "HandleState"
-      - "LastGetDate"
-      - "LastPutDate"
+    status: "override"
+    pcf: "AsynchronousState"
+    snake: "asynchronous_state"
     mqsc_commands:
       input:
       output:
@@ -275,12 +273,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "ambiguous"
-    candidates:
-      - "ClusterDate"
-      - "ClusterInfo"
-      - "ClusterName"
-      - "ClusterTime"
+    status: "override"
+    pcf: "ClusterName"
+    snake: "cluster_name"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -1059,10 +1054,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "ambiguous"
-    candidates:
-      - "QDepthHighEvent"
-      - "QDepthHighLimit"
+    status: "override"
+    pcf: "QDepthHighLimit"
+    snake: "q_depth_high_limit"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1075,10 +1069,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "ambiguous"
-    candidates:
-      - "QDepthLowEvent"
-      - "QDepthLowLimit"
+    status: "override"
+    pcf: "QDepthLowLimit"
+    snake: "q_depth_low_limit"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1477,10 +1470,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "ambiguous"
-    candidates:
-      - "TriggerData"
-      - "TriggerType"
+    status: "override"
+    pcf: "TriggerControl"
+    snake: "trigger_control"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"

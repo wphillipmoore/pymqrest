@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:29:15Z
+generated_at: 2026-02-05T14:50:14Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -255,17 +255,6 @@ attributes:
     mqsc_commands:
       input:
         - "DELETE AUTHINFO"
-      output:
-  - mqsc: "LDAP"
-    contexts:
-      - "input"
-    status: "ambiguous"
-    candidates:
-      - "LDAPPassword"
-      - "LDAPUserName"
-    mqsc_commands:
-      input:
-        - "DEFINE AUTHINFO"
       output:
   - mqsc: "LDAPPWD"
     contexts:

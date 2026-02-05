@@ -69,6 +69,7 @@ overrides:
     EXTURID: "UOWIdentifier"
     QMURID: "QMgrUOWId"
     TASKNO: "TaskNumber"
+    UOWLOG: "StartUOWLogExtent"
     URTYPE: "UOWType"
   cfstatus:
     SMDS: "Smds"
@@ -119,6 +120,7 @@ overrides:
     ACCTMQI: "MQIAccounting"
     ACCTQ: "QueueAccounting"
     CERTQSGL: "QSGCertificateLabel"
+    CHAD: "ChannelAutoDef"
     CLUSNL: "ClusterNamelist"
     CPILEVEL: "CPILevel"
     DESCR: "QmgrDesc"
@@ -126,15 +128,18 @@ overrides:
     MONACLS: "ClusterSenderMonitoringDefault"
     MONCHL: "ChannelMonitoring"
     MONQ: "QueueMonitoring"
+    OBJECT: "ObjectType"
     QMFSENC: "QMgrEncryption"
     QUORUM: "Quorum"
     SCHINIT: "ChannelInitiatorControl"
     SCMDSERV: "CommandServerControl"
     SSLRKEYC: "SSLKeyResetCount"
+    SSLKEYR: "SSLKeyRepository"
     STATACLS: "ClusterSenderStatistics"
     STATCHL: "ChannelStatistics"
     STATMQI: "MQIStatistics"
     STATQ: "QueueStatistics"
+    TYPE: "StatusType"
     TRAXSTR: "ChinitTraceAutoStart"
     TRAXTBL: "ChinitTraceTableSize"
   queue:
@@ -151,6 +156,11 @@ overrides:
     STRMQOS: "StreamQService"
     TASKNO: "TaskNumber"
     TOQLOCAL: "ToQName"
+    ASTATE: "AsynchronousState"
+    CLUSTER: "ClusterName"
+    QDEPTHHI: "QDepthHighLimit"
+    QDEPTHLO: "QDepthLowLimit"
+    TRIGGER: "TriggerControl"
   sbstatus:
     ACTCONN: "ActiveConnection"
     LMSGDATE: "LastPublishDate"
@@ -200,19 +210,36 @@ skip_tokens:
   archive:
     - "DEFAULT"
   authinfo:
+    - "LDAP"
     - "REPLACE"
     - "NOREPLACE"
+  authrec:
+    - "AUTHLIST"
+    - "ENTITY"
+    - "ENTTYPE"
   channel:
     - "NOREPLACE"
   chstatus:
     - "USECLTID"
   conn:
+    - "CONN"
     - "DEFREADA"
+  entauth:
+    - "AUTHLIST"
+    - "ENTITY"
+    - "ENTTYPE"
+    - "OBJTYPE"
   log:
     - "DEFAULT"
   qmgr:
+    - "CHINIT"
+    - "CLUSTER"
     - "DNSGROUP"
     - "DNSWLM"
+    - "EVENT"
+    - "LOG"
+    - "PUBSUB"
+    - "SYSTEM"
   queue:
     - "REPLACE"
     - "NOREPLACE"
