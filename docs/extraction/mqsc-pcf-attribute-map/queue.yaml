@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:16:51Z
+generated_at: 2026-02-05T14:26:17Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -904,28 +904,6 @@ attributes:
         - "DEFINE QMODEL"
       output:
         - "DISPLAY QUEUE"
-  - mqsc: "NOPURGE"
-    contexts:
-      - "input"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "DELETE QALIAS"
-        - "DELETE QLOCAL"
-        - "DELETE QMODEL"
-        - "DELETE QREMOTE"
-      output:
-  - mqsc: "NOREPLACE"
-    contexts:
-      - "input"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "DEFINE QALIAS"
-        - "DEFINE QLOCAL"
-        - "DEFINE QMODEL"
-        - "DEFINE QREMOTE"
-      output:
   - mqsc: "NPMCLASS"
     contexts:
       - "input"
@@ -1243,19 +1221,6 @@ attributes:
       input:
       output:
         - "DISPLAY QUEUE"
-  - mqsc: "REPLACE"
-    contexts:
-      - "input"
-    status: "matched"
-    pcf: "Replace"
-    snake: "replace"
-    mqsc_commands:
-      input:
-        - "DEFINE QALIAS"
-        - "DEFINE QLOCAL"
-        - "DEFINE QMODEL"
-        - "DEFINE QREMOTE"
-      output:
   - mqsc: "RETINTVL"
     contexts:
       - "input"

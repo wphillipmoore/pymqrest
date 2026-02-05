@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:16:51Z
+generated_at: 2026-02-05T14:26:17Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -187,14 +187,6 @@ attributes:
       input:
         - "DEFINE SUB"
       output:
-  - mqsc: "NOREPLACE"
-    contexts:
-      - "input"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "DEFINE SUB"
-      output:
   - mqsc: "PSPROP"
     contexts:
       - "input"
@@ -251,14 +243,6 @@ attributes:
         - "DISPLAY SUB"
       output:
         - "DISPLAY SUB"
-  - mqsc: "REPLACE"
-    contexts:
-      - "input"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "DEFINE SUB"
-      output:
   - mqsc: "REQONLY"
     contexts:
       - "input"

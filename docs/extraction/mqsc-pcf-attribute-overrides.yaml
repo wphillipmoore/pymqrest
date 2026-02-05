@@ -194,6 +194,7 @@ skip_tokens:
   archive:
     - "DEFAULT"
   authinfo:
+    - "REPLACE"
     - "NOREPLACE"
   channel:
     - "NOREPLACE"
@@ -207,14 +208,39 @@ skip_tokens:
     - "DNSGROUP"
     - "DNSWLM"
   queue:
+    - "REPLACE"
+    - "NOREPLACE"
+    - "NOPURGE"
     - "TARGQ"
+  comminfo:
+    - "REPLACE"
+    - "NOREPLACE"
+  cfstruct:
+    - "REPLACE"
+    - "NOREPLACE"
+  namelist:
+    - "REPLACE"
+    - "NOREPLACE"
+  process:
+    - "REPLACE"
+    - "NOREPLACE"
+  service:
+    - "REPLACE"
+    - "NOREPLACE"
+  stgclass:
+    - "REPLACE"
+    - "NOREPLACE"
   sub:
+    - "REPLACE"
+    - "NOREPLACE"
     - "SUMMARY"
   topic:
     - "CLUSDATE"
     - "CLUSQMGR"
     - "CLUSTIME"
     - "QMID"
+    - "REPLACE"
+    - "NOREPLACE"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"
@@ -227,6 +253,18 @@ request_value_map:
       yes: "PURGE"
       no: "NORMAL"
 request_key_value_map:
+  authinfo:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
   channel:
     channel_instance_type:
       current:
@@ -267,7 +305,66 @@ request_key_value_map:
       short:
         key: "SHORT"
         value: "YES"
+  comminfo:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
+  cfstruct:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
+  namelist:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
+  process:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
   queue:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
     purge:
       yes:
         key: "PURGE"
@@ -278,4 +375,52 @@ request_key_value_map:
     nopurge:
       yes:
         key: "PURGE"
+        value: "NO"
+  service:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
+  stgclass:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
+  sub:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
+        value: "NO"
+  topic:
+    replace:
+      yes:
+        key: "REPLACE"
+        value: "YES"
+      no:
+        key: "REPLACE"
+        value: "NO"
+    noreplace:
+      yes:
+        key: "REPLACE"
         value: "NO"

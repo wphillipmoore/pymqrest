@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:16:51Z
+generated_at: 2026-02-05T14:26:17Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -261,14 +261,6 @@ attributes:
         - "DEFINE TOPIC"
       output:
         - "DISPLAY TOPIC"
-  - mqsc: "NOREPLACE"
-    contexts:
-      - "input"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "DEFINE TOPIC"
-      output:
   - mqsc: "NPMSGDLV"
     contexts:
       - "input"
@@ -346,16 +338,6 @@ attributes:
         - "DEFINE TOPIC"
         - "DELETE TOPIC"
         - "DISPLAY TOPIC"
-      output:
-  - mqsc: "REPLACE"
-    contexts:
-      - "input"
-    status: "matched"
-    pcf: "Replace"
-    snake: "replace"
-    mqsc_commands:
-      input:
-        - "DEFINE TOPIC"
       output:
   - mqsc: "SUB"
     contexts:
