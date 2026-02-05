@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:50:14Z
+generated_at: 2026-02-05T15:06:56Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -113,10 +113,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "ActivityRecording"
-      - "ActivityTrace"
+    status: "override"
+    pcf: "ActivityTrace"
+    snake: "activity_trace"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1650,10 +1649,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "RcovTime"
-      - "ReceiveTimeout"
+    status: "override"
+    pcf: "ReceiveTimeout"
+    snake: "receive_timeout"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1973,10 +1971,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "InstallationPath"
-      - "StatisticsInterval"
+    status: "override"
+    pcf: "StatisticsInterval"
+    snake: "statistics_interval"
     mqsc_commands:
       input:
         - "ALTER QMGR"

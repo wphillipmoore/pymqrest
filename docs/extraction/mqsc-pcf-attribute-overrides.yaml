@@ -70,8 +70,10 @@ overrides:
     QMURID: "QMgrUOWId"
     TASKNO: "TaskNumber"
     UOWLOG: "StartUOWLogExtent"
+    TYPE: "ConnInfoType"
     URTYPE: "UOWType"
   cfstatus:
+    TYPE: "CFStatusType"
     SMDS: "Smds"
   cfstruct:
     DESCR: "CFStrucDesc"
@@ -119,6 +121,7 @@ overrides:
   qmgr:
     ACCTMQI: "MQIAccounting"
     ACCTQ: "QueueAccounting"
+    ACTVTRC: "ActivityTrace"
     CERTQSGL: "QSGCertificateLabel"
     CHAD: "ChannelAutoDef"
     CLUSNL: "ClusterNamelist"
@@ -131,12 +134,14 @@ overrides:
     OBJECT: "ObjectType"
     QMFSENC: "QMgrEncryption"
     QUORUM: "Quorum"
+    RCVTIME: "ReceiveTimeout"
     SCHINIT: "ChannelInitiatorControl"
     SCMDSERV: "CommandServerControl"
     SSLRKEYC: "SSLKeyResetCount"
     SSLKEYR: "SSLKeyRepository"
     STATACLS: "ClusterSenderStatistics"
     STATCHL: "ChannelStatistics"
+    STATINT: "StatisticsInterval"
     STATMQI: "MQIStatistics"
     STATQ: "QueueStatistics"
     TYPE: "StatusType"
@@ -149,9 +154,13 @@ overrides:
     DESCR: "QDesc"
     IPPROCS: "OpenInputCount"
     LIKE: "FromQName"
+    MAXFSIZE: "MaxQFileSize"
     MONQ: "QueueMonitoring"
     OPPROCS: "OpenOutputCount"
+    PROCESS: "ProcessName"
+    PSID: "PageSetID"
     QMURID: "QMgrUOWId"
+    RNAME: "RemoteQName"
     STATQ: "QueueStatistics"
     STRMQOS: "StreamQService"
     TASKNO: "TaskNumber"
@@ -198,6 +207,7 @@ overrides:
     DESCR: "ServiceDesc"
     SERVTYPE: "ServiceType"
   topic:
+    COMMINFO: "CommInfo"
     LIKE: "FromTopicName"
     MDURMDL: "DurableModelQName"
     MNDURMDL: "NonDurableModelQName"
@@ -280,6 +290,8 @@ request_prefer_mqsc:
   channel:
     channel_monitoring: "MONCHL"
     channel_type: "TYPE"
+  queue:
+    page_set_id: "PSID"
 request_value_map:
   cfstruct:
     purge:

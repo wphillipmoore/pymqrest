@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:50:14Z
+generated_at: 2026-02-05T15:06:56Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -821,10 +821,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "CurrentMaxQFileSize"
-      - "MaxQFileSize"
+    status: "override"
+    pcf: "MaxQFileSize"
+    snake: "max_q_file_size"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -969,10 +968,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "ProcessId"
-      - "ProcessName"
+    status: "override"
+    pcf: "ProcessName"
+    snake: "process_name"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1012,10 +1010,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "PSTId"
-      - "PageSetID"
+    status: "override"
+    pcf: "PageSetID"
+    snake: "page_set_id"
     mqsc_commands:
       input:
         - "DISPLAY QUEUE"
@@ -1233,10 +1230,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "FromQName"
-      - "QMgrName"
+    status: "override"
+    pcf: "RemoteQName"
+    snake: "remote_q_name"
     mqsc_commands:
       input:
         - "ALTER QREMOTE"

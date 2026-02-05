@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:50:14Z
+generated_at: 2026-02-05T15:06:56Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -338,10 +338,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "conflict"
-    candidates:
-      - "ConnInfoType"
-      - "UOWType"
+    status: "override"
+    pcf: "ConnInfoType"
+    snake: "conn_info_type"
     mqsc_commands:
       input:
         - "DISPLAY CONN"
