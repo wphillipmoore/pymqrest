@@ -5,6 +5,8 @@ source:
 filtered_tokens:
   - 'STATUS'
   - 'TYPE'
+accepted_collisions:
+  note: "Remaining collisions are accepted."
 summary:
   total_mqsc_tokens: 612
   collision_tokens: 6
