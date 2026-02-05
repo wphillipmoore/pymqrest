@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T19:36:58Z
+generated_at: 2026-02-05T19:43:53Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -74,9 +74,9 @@ attributes:
   - mqsc: "CFTYPE"
     contexts:
       - "output"
-    status: "matched"
-    pcf: "CFStrucType"
-    snake: "cf_struc_type"
+    status: "override"
+    pcf: "CFStructType"
+    snake: "cf_struct_type"
     mqsc_commands:
       input:
       output:

@@ -269,7 +269,7 @@ MAPPING_DATA: dict[str, object] = {'commands': {'ALTER AUTHINFO': {'qualifier': 
                                                   'BKUPSIZE': 'backup_size',
                                                   'BKUPSRBA': 'backup_start_rba',
                                                   'BKUPTIME': 'backup_time',
-                                                  'CFTYPE': 'cf_struc_type',
+                                                  'CFTYPE': 'cf_struct_type',
                                                   'ENTSMAX': 'entries_max',
                                                   'ENTSUSED': 'entries_used',
                                                   'FAILDATE': 'fail_date',

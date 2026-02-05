@@ -131,6 +131,7 @@ overrides:
   cfstatus:
     RCVDATE: "RecoveryStartDate"
     RCVTIME: "RecoveryStartTime"
+    CFTYPE: "CFStructType"
     TYPE: "CFStatusType"
     SMDS: "Smds"
     QMNAME: "QMgrName"
