@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T16:24:51Z
+generated_at: 2026-02-05T16:26:50Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -199,8 +199,8 @@ attributes:
       - "input"
       - "output"
     status: "override"
-    pcf: "AuthInfoDesc"
-    snake: "auth_info_desc"
+    pcf: "Description"
+    snake: "description"
     mqsc_commands:
       input:
         - "ALTER AUTHINFO"

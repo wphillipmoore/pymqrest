@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T16:25:08Z
+generated_at: 2026-02-05T16:27:09Z
 source:
   mqsc_pcf_attribute_map_dir: '/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-map'
 summary:
@@ -56,33 +56,23 @@ collisions:
         - 'sub'
   - mqsc: 'DESCR'
     occurrences:
-      AuthInfoDesc:
-        - 'authinfo'
-      CFStrucDesc:
-        - 'cfstruct'
-      ChannelDesc:
-        - 'channel'
       Description:
+        - 'authinfo'
+        - 'cfstruct'
+        - 'channel'
         - 'chlauth'
         - 'comminfo'
-      DurableSubscriptions:
-        - 'topic'
-      ListenerDesc:
         - 'listener'
         - 'lsstatus'
-      NamelistDesc:
         - 'namelist'
-      ProcessDesc:
         - 'process'
-      QDesc:
-        - 'queue'
-      QmgrDesc:
         - 'qmgr'
-      ServiceDesc:
+        - 'queue'
         - 'service'
-        - 'svstatus'
-      StorageClassDesc:
         - 'stgclass'
+        - 'svstatus'
+      DurableSubscriptions:
+        - 'topic'
   - mqsc: 'GROUP'
     occurrences:
       GroupName:

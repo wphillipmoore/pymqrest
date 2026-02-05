@@ -10,7 +10,7 @@ overrides:
   authinfo:
     CHCKCLNT: "CheckClient"
     CONNAME: "ConnectionName"
-    DESCR: "AuthInfoDesc"
+    DESCR: "Description"
     LIKE: "FromAuthInfoName"
     NESTGRP: "GroupNesting"
   authrec:
@@ -32,7 +32,7 @@ overrides:
     CONVERT: "DataConversion"
     CURSEQNO: "CurrentSequenceNumber"
     DATALEN: "DataCount"
-    DESCR: "ChannelDesc"
+    DESCR: "Description"
     LIKE: "FromChannelName"
     LONGTMR: "LongRetryInterval"
     LSTSEQNO: "LastSequenceNumber"
@@ -100,7 +100,7 @@ overrides:
     TYPE: "CFStatusType"
     SMDS: "Smds"
   cfstruct:
-    DESCR: "CFStrucDesc"
+    DESCR: "Description"
     DSEXPAND: "DSExpand"
     LIKE: "FromCFStrucName"
     OFFLD1SZ: "OffloadSize1"
@@ -120,7 +120,7 @@ overrides:
     QMNAME: "QMgrName"
   listener:
     CONTROL: "StartMode"
-    DESCR: "ListenerDesc"
+    DESCR: "Description"
     LIKE: "FromListenerName"
   log:
     COMMANDS: "Commands"
@@ -130,16 +130,16 @@ overrides:
     ZHYWRITE: "ZHyperWrite"
   lsstatus:
     CONTROL: "StartMode"
-    DESCR: "ListenerDesc"
+    DESCR: "Description"
   namelist:
-    DESCR: "NamelistDesc"
+    DESCR: "Description"
     LIKE: "FromNamelistName"
   policy:
     ENFORCE: "Enforce"
     TOLERATE: "Tolerate"
   process:
     APPLICID: "ApplId"
-    DESCR: "ProcessDesc"
+    DESCR: "Description"
     ENVRDATA: "EnvData"
     LIKE: "FromProcessName"
     USERDATA: "UserData"
@@ -151,7 +151,7 @@ overrides:
     CHAD: "ChannelAutoDef"
     CLUSNL: "ClusterNamelist"
     CPILEVEL: "CPILevel"
-    DESCR: "QmgrDesc"
+    DESCR: "Description"
     INCLINT: "RefreshInterval"
     MONACLS: "ClusterSenderMonitoringDefault"
     MONCHL: "ChannelMonitoring"
@@ -177,7 +177,7 @@ overrides:
     CFSTRUCT: "CFStructName"
     CLUSQMGR: "ClusterQMgr"
     DEFSOPT: "DefInputOpenOption"
-    DESCR: "QDesc"
+    DESCR: "Description"
     CLWLPRTY: "ClusterWorkloadPriority"
     CLWLRANK: "ClusterWorkloadRank"
     IPPROCS: "OpenInputCount"
@@ -213,7 +213,7 @@ overrides:
     TOPICSTR: "TopicString"
   service:
     CONTROL: "StartMode"
-    DESCR: "ServiceDesc"
+    DESCR: "Description"
     LIKE: "FromServiceName"
   smds:
     CFSTRUCT: "CFStructName"
@@ -222,7 +222,7 @@ overrides:
   smdsconn:
     CFSTRUCT: "CFStructName"
   stgclass:
-    DESCR: "StorageClassDesc"
+    DESCR: "Description"
     LIKE: "FromStorageClassName"
   sub:
     ALTDATE: "AlterationDate"
@@ -237,7 +237,7 @@ overrides:
     USERDATA: "UserData"
   svstatus:
     CONTROL: "StartMode"
-    DESCR: "ServiceDesc"
+    DESCR: "Description"
     SERVTYPE: "ServiceType"
   topic:
     COMMINFO: "CommInfo"
@@ -474,7 +474,7 @@ request_key_value_map:
         key: "REPLACE"
         value: "NO"
   stgclass:
-    DESCR: "StorageClassDesc"
+    DESCR: "Description"
     LIKE: "FromStorageClassName"
     replace:
       yes:
