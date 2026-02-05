@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T00:13:53Z
+generated_at: 2026-02-05T00:25:24Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -134,14 +134,6 @@ attributes:
       input:
       output:
         - "DISPLAY CONN"
-  - mqsc: "DEFREADA"
-    contexts:
-      - "output"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-      output:
-        - "DISPLAY CONN"
   - mqsc: "DEST"
     contexts:
       - "output"
@@ -174,7 +166,9 @@ attributes:
   - mqsc: "EXTURID"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "UOWIdentifier"
+    snake: "uow_identifier"
     mqsc_commands:
       input:
       output:
@@ -262,7 +256,9 @@ attributes:
   - mqsc: "QMURID"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QMgrUOWId"
+    snake: "q_mgr_uow_id"
     mqsc_commands:
       input:
       output:
@@ -310,7 +306,9 @@ attributes:
   - mqsc: "TASKNO"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "TaskNumber"
+    snake: "task_number"
     mqsc_commands:
       input:
       output:
@@ -432,7 +430,9 @@ attributes:
   - mqsc: "URTYPE"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "UOWType"
+    snake: "uow_type"
     mqsc_commands:
       input:
       output:

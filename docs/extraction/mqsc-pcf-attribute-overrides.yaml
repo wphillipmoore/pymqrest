@@ -64,6 +64,11 @@ overrides:
     CCSID: "CCSID"
     LIKE: "FromComminfoName"
     MCHBINT: "MulticastHeartbeat"
+  conn:
+    EXTURID: "UOWIdentifier"
+    QMURID: "QMgrUOWId"
+    TASKNO: "TaskNumber"
+    URTYPE: "UOWType"
   cfstatus:
     SMDS: "Smds"
   cfstruct:
@@ -86,6 +91,8 @@ skip_tokens:
     - "NOREPLACE"
   chstatus:
     - "USECLTID"
+  conn:
+    - "DEFREADA"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"
