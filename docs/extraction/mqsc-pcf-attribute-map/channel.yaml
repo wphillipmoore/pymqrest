@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T19:24:42Z
+generated_at: 2026-02-05T19:31:53Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -558,9 +558,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "MaxMsgLength"
-    snake: "max_msg_length"
+    status: "override"
+    pcf: "MaxMessageLength"
+    snake: "max_message_length"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -647,8 +647,8 @@ attributes:
       - "input"
       - "output"
     status: "override"
-    pcf: "MsgRetryUserData"
-    snake: "msg_retry_user_data"
+    pcf: "MessageRetryUserData"
+    snake: "message_retry_user_data"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -659,9 +659,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "MsgRetryExit"
-    snake: "msg_retry_exit"
+    status: "override"
+    pcf: "MessageRetryExit"
+    snake: "message_retry_exit"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -673,8 +673,8 @@ attributes:
       - "input"
       - "output"
     status: "override"
-    pcf: "MsgRetryCount"
-    snake: "msg_retry_count"
+    pcf: "MessageRetryCount"
+    snake: "message_retry_count"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -686,8 +686,8 @@ attributes:
       - "input"
       - "output"
     status: "override"
-    pcf: "MsgRetryInterval"
-    snake: "msg_retry_interval"
+    pcf: "MessageRetryInterval"
+    snake: "message_retry_interval"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -698,9 +698,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "MsgUserData"
-    snake: "msg_user_data"
+    status: "override"
+    pcf: "MessageUserData"
+    snake: "message_user_data"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -711,9 +711,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "MsgExit"
-    snake: "msg_exit"
+    status: "override"
+    pcf: "MessageExit"
+    snake: "message_exit"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -737,9 +737,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "NonPersistentMsgSpeed"
-    snake: "non_persistent_msg_speed"
+    status: "override"
+    pcf: "NonPersistentMessageSpeed"
+    snake: "non_persistent_message_speed"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -926,9 +926,9 @@ attributes:
   - mqsc: "SEQNUM"
     contexts:
       - "input"
-    status: "matched"
-    pcf: "MsgSeqNumber"
-    snake: "msg_seq_number"
+    status: "override"
+    pcf: "MessageSeqNumber"
+    snake: "message_seq_number"
     mqsc_commands:
       input:
         - "RESET CHANNEL"

@@ -44,9 +44,9 @@ overrides:
     MONCHL: "ChannelMonitoring"
     MCAUSER: "MCAUser"
     QMNAME: "QMgrName"
-    MRDATA: "MsgRetryUserData"
-    MRRTY: "MsgRetryCount"
-    MRTMR: "MsgRetryInterval"
+    MRDATA: "MessageRetryUserData"
+    MRRTY: "MessageRetryCount"
+    MRTMR: "MessageRetryInterval"
     PORT: "Port"
     SHARECNV: "SharingConversations"
     SHORTTMR: "ShortRetryInterval"
@@ -62,6 +62,12 @@ overrides:
     TYPE: "ChannelType"
     USERID: "UserId"
     XMITQ: "TransmissionQName"
+    MAXMSGL: "MaxMessageLength"
+    MREXIT: "MessageRetryExit"
+    MSGDATA: "MessageUserData"
+    MSGEXIT: "MessageExit"
+    NPMSPEED: "NonPersistentMessageSpeed"
+    SEQNUM: "MessageSeqNumber"
   chstatus:
     AMQPKA: "AMQPKeepAlive"
     COMPHDR: "HeaderCompression"
@@ -84,7 +90,13 @@ overrides:
     TPROOT: "TopicRoot"
     XMITQ: "TransmissionQName"
     XBATCHSZ: "BatchSizeIndicator"
-    XQMSGSA: "MsgsAvailable"
+    XQMSGSA: "MessagesAvailable"
+    CURMSGS: "CurrentMessages"
+    LSTMSGDA: "LastMessageDate"
+    LSTMSGTI: "LastMessageTime"
+    MAXMSGL: "MaxMessageLength"
+    MSGS: "Messages"
+    NPMSPEED: "NonPersistentMessageSpeed"
   chlauth:
     QMNAME: "QMgrName"
     SSLPEER: "SSLPeerName"
@@ -101,6 +113,7 @@ overrides:
     LIKE: "Like"
     MCHBINT: "MulticastHeartbeat"
     PORT: "Port"
+    MSGHIST: "MessageHistory"
   conn:
     EXTCONN: "ConnectionPrefix"
     EXTURID: "UOWIdentifier"
@@ -199,6 +212,11 @@ overrides:
     TYPE: "StatusType"
     TRAXSTR: "ChinitTraceAutoStart"
     TRAXTBL: "ChinitTraceTableSize"
+    MARKINT: "MessageMarkBrowseInterval"
+    MAXMSGL: "MaxMessageLength"
+    MAXUMSGS: "MaxUncommittedMessages"
+    PSNPMSG: "PubSubNPInputMessage"
+    PSRTYCNT: "PubSubMaxMessageRetryCount"
   queue:
     ACCTQ: "QueueAccounting"
     CLUSDATE: "ClusterDate"
@@ -240,6 +258,11 @@ overrides:
     QDEPTHLO: "QDepthLowLimit"
     TRIGGER: "TriggerControl"
     USERID: "UserId"
+    MAXMSGL: "MaxMessageLength"
+    MSGAGE: "OldestMessageAge"
+    MSGDLVSQ: "MessageDeliverySequence"
+    TRIGMPRI: "TriggerMessagePriority"
+    UNCOM: "UncommittedMessages"
   sbstatus:
     ACTCONN: "ActiveConnection"
     LMSGDATE: "LastMessageDate"
@@ -300,6 +323,8 @@ overrides:
   pubsub:
     SUBCOUNT: "SubscriptionCount"
     QMNAME: "QMgrName"
+  group:
+    OBSMSGS: "ObsoleteDB2Messages"
 skip_qualifiers:
   - "system"
 skip_tokens:

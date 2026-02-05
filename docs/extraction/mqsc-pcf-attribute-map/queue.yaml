@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T19:24:42Z
+generated_at: 2026-02-05T19:31:53Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -826,9 +826,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "MaxMsgLength"
-    snake: "max_msg_length"
+    status: "override"
+    pcf: "MaxMessageLength"
+    snake: "max_message_length"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -866,9 +866,9 @@ attributes:
   - mqsc: "MSGAGE"
     contexts:
       - "output"
-    status: "matched"
-    pcf: "OldestMsgAge"
-    snake: "oldest_msg_age"
+    status: "override"
+    pcf: "OldestMessageAge"
+    snake: "oldest_message_age"
     mqsc_commands:
       input:
       output:
@@ -877,9 +877,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "MsgDeliverySequence"
-    snake: "msg_delivery_sequence"
+    status: "override"
+    pcf: "MessageDeliverySequence"
+    snake: "message_delivery_sequence"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1443,9 +1443,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "TriggerMsgPriority"
-    snake: "trigger_msg_priority"
+    status: "override"
+    pcf: "TriggerMessagePriority"
+    snake: "trigger_message_priority"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1472,9 +1472,9 @@ attributes:
   - mqsc: "UNCOM"
     contexts:
       - "output"
-    status: "matched"
-    pcf: "UncommittedMsgs"
-    snake: "uncommitted_msgs"
+    status: "override"
+    pcf: "UncommittedMessages"
+    snake: "uncommitted_messages"
     mqsc_commands:
       input:
       output:
