@@ -65,6 +65,7 @@ overrides:
     LIKE: "FromComminfoName"
     MCHBINT: "MulticastHeartbeat"
   conn:
+    EXTCONN: "ConnectionPrefix"
     EXTURID: "UOWIdentifier"
     QMURID: "QMgrUOWId"
     TASKNO: "TaskNumber"
@@ -103,6 +104,39 @@ overrides:
   lsstatus:
     CONTROL: "StartMode"
     DESCR: "ListenerDesc"
+  namelist:
+    DESCR: "NamelistDesc"
+    LIKE: "FromNamelistName"
+  policy:
+    ENFORCE: "Enforce"
+    TOLERATE: "Tolerate"
+  process:
+    APPLICID: "ApplId"
+    DESCR: "ProcessDesc"
+    ENVRDATA: "EnvData"
+    LIKE: "FromProcessName"
+  qmgr:
+    ACCTMQI: "MQIAccounting"
+    ACCTQ: "QueueAccounting"
+    CERTQSGL: "QSGCertificateLabel"
+    CLUSNL: "ClusterNamelist"
+    CPILEVEL: "CPILevel"
+    DESCR: "QmgrDesc"
+    INCLINT: "RefreshInterval"
+    MONACLS: "ClusterSenderMonitoringDefault"
+    MONCHL: "ChannelMonitoring"
+    MONQ: "QueueMonitoring"
+    QMFSENC: "QMgrEncryption"
+    QUORUM: "Quorum"
+    SCHINIT: "ChannelInitiatorControl"
+    SCMDSERV: "CommandServerControl"
+    SSLRKEYC: "SSLKeyResetCount"
+    STATACLS: "ClusterSenderStatistics"
+    STATCHL: "ChannelStatistics"
+    STATMQI: "MQIStatistics"
+    STATQ: "QueueStatistics"
+    TRAXSTR: "ChinitTraceAutoStart"
+    TRAXTBL: "ChinitTraceTableSize"
 skip_tokens:
   archive:
     - "DEFAULT"
@@ -116,6 +150,9 @@ skip_tokens:
     - "DEFREADA"
   log:
     - "DEFAULT"
+  qmgr:
+    - "DNSGROUP"
+    - "DNSWLM"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"

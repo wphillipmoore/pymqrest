@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T12:33:40Z
+generated_at: 2026-02-05T13:28:08Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -54,7 +54,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "NamelistDesc"
+    snake: "namelist_desc"
     mqsc_commands:
       input:
         - "ALTER NAMELIST"
@@ -74,7 +76,9 @@ attributes:
   - mqsc: "LIKE"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "FromNamelistName"
+    snake: "from_namelist_name"
     mqsc_commands:
       input:
         - "DEFINE NAMELIST"

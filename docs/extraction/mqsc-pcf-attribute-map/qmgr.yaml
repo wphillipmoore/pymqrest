@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T12:33:40Z
+generated_at: 2026-02-05T13:28:08Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -53,7 +53,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "MQIAccounting"
+    snake: "mqi_accounting"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -63,7 +65,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QueueAccounting"
+    snake: "queue_accounting"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -276,7 +280,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QSGCertificateLabel"
+    snake: "qsg_certificate_label"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -447,9 +453,9 @@ attributes:
   - mqsc: "CLUSNL"
     contexts:
       - "input"
-    status: "matched"
-    pcf: "ClusterSenderMonitoringDefault"
-    snake: "cluster_sender_monitoring_default"
+    status: "override"
+    pcf: "ClusterNamelist"
+    snake: "cluster_namelist"
     mqsc_commands:
       input:
         - "RESUME QMGR"
@@ -621,7 +627,9 @@ attributes:
   - mqsc: "CPILEVEL"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "CPILevel"
+    snake: "cpi_level"
     mqsc_commands:
       input:
       output:
@@ -738,7 +746,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QmgrDesc"
+    snake: "qmgr_desc"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -762,28 +772,6 @@ attributes:
     snake: "dist_lists"
     mqsc_commands:
       input:
-      output:
-        - "DISPLAY QMGR"
-  - mqsc: "DNSGROUP"
-    contexts:
-      - "input"
-      - "output"
-    status: "matched"
-    pcf: "DNSGroup"
-    snake: "dns_group"
-    mqsc_commands:
-      input:
-        - "ALTER QMGR"
-      output:
-        - "DISPLAY QMGR"
-  - mqsc: "DNSWLM"
-    contexts:
-      - "input"
-      - "output"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "ALTER QMGR"
       output:
         - "DISPLAY QMGR"
   - mqsc: "EXPRYINT"
@@ -970,7 +958,9 @@ attributes:
   - mqsc: "INCLINT"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "RefreshInterval"
+    snake: "refresh_interval"
     mqsc_commands:
       input:
         - "REFRESH QMGR"
@@ -1405,7 +1395,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ClusterSenderMonitoringDefault"
+    snake: "cluster_sender_monitoring_default"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1415,7 +1407,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ChannelMonitoring"
+    snake: "channel_monitoring"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1425,7 +1419,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QueueMonitoring"
+    snake: "queue_monitoring"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1619,7 +1615,9 @@ attributes:
   - mqsc: "QMFSENC"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QMgrEncryption"
+    snake: "q_mgr_encryption"
     mqsc_commands:
       input:
       output:
@@ -1678,7 +1676,9 @@ attributes:
   - mqsc: "QUORUM"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "Quorum"
+    snake: "quorum"
     mqsc_commands:
       input:
       output:
@@ -1814,7 +1814,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ChannelInitiatorControl"
+    snake: "channel_initiator_control"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1824,7 +1826,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "CommandServerControl"
+    snake: "command_server_control"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1929,7 +1933,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "SSLKeyResetCount"
+    snake: "ssl_key_reset_count"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1981,7 +1987,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ClusterSenderStatistics"
+    snake: "cluster_sender_statistics"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1991,7 +1999,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ChannelStatistics"
+    snake: "channel_statistics"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -2014,7 +2024,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "MQIStatistics"
+    snake: "mqi_statistics"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -2024,7 +2036,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QueueStatistics"
+    snake: "queue_statistics"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -2126,7 +2140,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ChinitTraceAutoStart"
+    snake: "chinit_trace_auto_start"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -2136,7 +2152,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ChinitTraceTableSize"
+    snake: "chinit_trace_table_size"
     mqsc_commands:
       input:
         - "ALTER QMGR"

@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T12:33:40Z
+generated_at: 2026-02-05T13:28:08Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -157,7 +157,9 @@ attributes:
   - mqsc: "EXTCONN"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "ConnectionPrefix"
+    snake: "connection_prefix"
     mqsc_commands:
       input:
         - "DISPLAY CONN"
