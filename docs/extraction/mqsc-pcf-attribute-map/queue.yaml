@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T19:16:58Z
+generated_at: 2026-02-05T19:24:42Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -335,9 +335,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "CLWLUseQ"
-    snake: "clwl_use_q"
+    status: "override"
+    pcf: "ClusterWorkloadUseQueue"
+    snake: "cluster_workload_use_queue"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
