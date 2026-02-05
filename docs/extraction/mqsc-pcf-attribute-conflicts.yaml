@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T18:53:41Z
+generated_at: 2026-02-05T19:17:19Z
 source:
   mqsc_pcf_attribute_map_dir: '/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-map'
 filtered_tokens:
@@ -7,7 +7,7 @@ filtered_tokens:
   - 'TYPE'
 summary:
   total_mqsc_tokens: 612
-  collision_tokens: 8
+  collision_tokens: 6
 collisions:
   - mqsc: 'ACTION'
     occurrences:
@@ -31,12 +31,6 @@ collisions:
         - 'chlauth'
       Options:
         - 'authrec'
-  - mqsc: 'MEDIALOG'
-    occurrences:
-      MediaRecoveryLog:
-        - 'qmgr'
-      MediaRecoveryLogExtent:
-        - 'queue'
   - mqsc: 'PRINCIPAL'
     occurrences:
       PrincipalName:
@@ -45,21 +39,13 @@ collisions:
         - 'authrec'
   - mqsc: 'RCVTIME'
     occurrences:
-      RcvTime:
-        - 'cfstatus'
       ReceiveTimeout:
         - 'qmgr'
+      RecoveryStartTime:
+        - 'cfstatus'
   - mqsc: 'REPOS'
     occurrences:
       RefreshRepository:
         - 'cluster'
       RepositoryName:
         - 'qmgr'
-  - mqsc: 'SSLPEER'
-    occurrences:
-      SSLPeer:
-        - 'chlauth'
-      SSLPeerName:
-        - 'channel'
-      SSLShortPeerName:
-        - 'chstatus'

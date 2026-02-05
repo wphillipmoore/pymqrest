@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T18:53:18Z
+generated_at: 2026-02-05T19:16:58Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -154,9 +154,9 @@ attributes:
   - mqsc: "RCVDATE"
     contexts:
       - "output"
-    status: "matched"
-    pcf: "RcvDate"
-    snake: "rcv_date"
+    status: "override"
+    pcf: "RecoveryStartDate"
+    snake: "recovery_start_date"
     mqsc_commands:
       input:
       output:
@@ -164,9 +164,9 @@ attributes:
   - mqsc: "RCVTIME"
     contexts:
       - "output"
-    status: "matched"
-    pcf: "RcvTime"
-    snake: "rcv_time"
+    status: "override"
+    pcf: "RecoveryStartTime"
+    snake: "recovery_start_time"
     mqsc_commands:
       input:
       output:
