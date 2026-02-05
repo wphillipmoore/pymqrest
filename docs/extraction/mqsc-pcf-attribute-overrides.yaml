@@ -137,6 +137,20 @@ overrides:
     STATQ: "QueueStatistics"
     TRAXSTR: "ChinitTraceAutoStart"
     TRAXTBL: "ChinitTraceTableSize"
+  queue:
+    ACCTQ: "QueueAccounting"
+    CLUSQMGR: "ClusterQMgr"
+    DEFSOPT: "DefInputOpenOption"
+    DESCR: "QDesc"
+    IPPROCS: "OpenInputCount"
+    LIKE: "FromQName"
+    MONQ: "QueueMonitoring"
+    OPPROCS: "OpenOutputCount"
+    QMURID: "QMgrUOWId"
+    STATQ: "QueueStatistics"
+    STRMQOS: "StreamQService"
+    TASKNO: "TaskNumber"
+    TOQLOCAL: "ToQName"
 skip_tokens:
   archive:
     - "DEFAULT"
@@ -153,6 +167,8 @@ skip_tokens:
   qmgr:
     - "DNSGROUP"
     - "DNSWLM"
+  queue:
+    - "TARGQ"
 request_prefer_mqsc:
   archive:
     alloc_units: "ALCUNIT"
@@ -205,3 +221,15 @@ request_key_value_map:
       short:
         key: "SHORT"
         value: "YES"
+  queue:
+    purge:
+      yes:
+        key: "PURGE"
+        value: "YES"
+      no:
+        key: "PURGE"
+        value: "NO"
+    nopurge:
+      yes:
+        key: "PURGE"
+        value: "NO"

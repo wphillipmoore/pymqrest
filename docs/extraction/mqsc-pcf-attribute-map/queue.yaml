@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T13:28:08Z
+generated_at: 2026-02-05T13:45:24Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -38,7 +38,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QueueAccounting"
+    snake: "queue_accounting"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -252,7 +254,9 @@ attributes:
   - mqsc: "CLUSQMGR"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ClusterQMgr"
+    snake: "cluster_q_mgr"
     mqsc_commands:
       input:
       output:
@@ -546,7 +550,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "DefInputOpenOption"
+    snake: "def_input_open_option"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -573,7 +579,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QDesc"
+    snake: "q_desc"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -734,7 +742,9 @@ attributes:
   - mqsc: "IPPROCS"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "OpenInputCount"
+    snake: "open_input_count"
     mqsc_commands:
       input:
       output:
@@ -763,7 +773,9 @@ attributes:
   - mqsc: "LIKE"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "FromQName"
+    snake: "from_q_name"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -855,7 +867,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QueueMonitoring"
+    snake: "queue_monitoring"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -930,7 +944,9 @@ attributes:
   - mqsc: "OPPROCS"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "OpenOutputCount"
+    snake: "open_output_count"
     mqsc_commands:
       input:
       output:
@@ -1042,19 +1058,6 @@ attributes:
       input:
       output:
         - "DISPLAY QSTATUS"
-  - mqsc: "PURGE"
-    contexts:
-      - "input"
-    status: "matched"
-    pcf: "Purge"
-    snake: "purge"
-    mqsc_commands:
-      input:
-        - "DELETE QALIAS"
-        - "DELETE QLOCAL"
-        - "DELETE QMODEL"
-        - "DELETE QREMOTE"
-      output:
   - mqsc: "PUT"
     contexts:
       - "input"
@@ -1164,7 +1167,9 @@ attributes:
   - mqsc: "QMURID"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QMgrUOWId"
+    snake: "q_mgr_uow_id"
     mqsc_commands:
       input:
       output:
@@ -1339,7 +1344,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "QueueStatistics"
+    snake: "queue_statistics"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1383,7 +1390,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "StreamQService"
+    snake: "stream_q_service"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1405,15 +1414,6 @@ attributes:
         - "DEFINE QALIAS"
       output:
         - "DISPLAY QUEUE"
-  - mqsc: "TARGQ"
-    contexts:
-      - "input"
-    status: "unmapped"
-    mqsc_commands:
-      input:
-        - "ALTER QALIAS"
-        - "DEFINE QALIAS"
-      output:
   - mqsc: "TARGTYPE"
     contexts:
       - "input"
@@ -1431,7 +1431,9 @@ attributes:
   - mqsc: "TASKNO"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "TaskNumber"
+    snake: "task_number"
     mqsc_commands:
       input:
       output:
@@ -1449,7 +1451,9 @@ attributes:
   - mqsc: "TOQLOCAL"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "ToQName"
+    snake: "to_q_name"
     mqsc_commands:
       input:
         - "MOVE QLOCAL"
