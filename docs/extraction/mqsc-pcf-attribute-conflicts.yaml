@@ -1,10 +1,10 @@
 version: 1
-generated_at: 2026-02-05T16:13:40Z
+generated_at: 2026-02-05T16:23:23Z
 source:
   mqsc_pcf_attribute_map_dir: '/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-pcf-attribute-map'
 summary:
   total_mqsc_tokens: 623
-  collision_tokens: 36
+  collision_tokens: 33
 collisions:
   - mqsc: 'ACTION'
     occurrences:
@@ -28,31 +28,12 @@ collisions:
         - 'queue'
       HandleState:
         - 'conn'
-  - mqsc: 'CFSTRUCT'
-    occurrences:
-      CFStrucName:
-        - 'smds'
-        - 'smdsconn'
-      CFStructure:
-        - 'queue'
   - mqsc: 'CLIENTID'
     occurrences:
       ClientId:
         - 'conn'
       ClientIdentifier:
         - 'channel'
-  - mqsc: 'CLWLPRTY'
-    occurrences:
-      CLWLChannelPriority:
-        - 'channel'
-      CLWLQueuePriority:
-        - 'queue'
-  - mqsc: 'CLWLRANK'
-    occurrences:
-      CLWLChannelRank:
-        - 'channel'
-      CLWLQueueRank:
-        - 'queue'
   - mqsc: 'CONNS'
     occurrences:
       Connections:

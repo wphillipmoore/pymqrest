@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T16:13:20Z
+generated_at: 2026-02-05T16:23:05Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -186,9 +186,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "CFStructure"
-    snake: "cf_structure"
+    status: "override"
+    pcf: "CFStructName"
+    snake: "cf_struct_name"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -301,9 +301,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "CLWLQueuePriority"
-    snake: "clwl_queue_priority"
+    status: "override"
+    pcf: "ClusterWorkloadPriority"
+    snake: "cluster_workload_priority"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -318,9 +318,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "matched"
-    pcf: "CLWLQueueRank"
-    snake: "clwl_queue_rank"
+    status: "override"
+    pcf: "ClusterWorkloadTank"
+    snake: "cluster_workload_tank"
     mqsc_commands:
       input:
         - "ALTER QALIAS"

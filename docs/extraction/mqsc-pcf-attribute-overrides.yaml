@@ -22,6 +22,8 @@ overrides:
     AMQPKA: "KeepAliveInterval"
     CCSID: "CodedCharSetId"
     CHANNEL: "ChannelName"
+    CLWLPRTY: "ClusterWorkloadPriority"
+    CLWLRANK: "ClusterWorkloadTank"
     MAXINSTC: "MaxInstancesPerClient"
     AUTOSTART: "AutoStart"
     CERTLABL: "CertificateLabel"
@@ -172,9 +174,12 @@ overrides:
     TRAXTBL: "ChinitTraceTableSize"
   queue:
     ACCTQ: "QueueAccounting"
+    CFSTRUCT: "CFStructName"
     CLUSQMGR: "ClusterQMgr"
     DEFSOPT: "DefInputOpenOption"
     DESCR: "QDesc"
+    CLWLPRTY: "ClusterWorkloadPriority"
+    CLWLRANK: "ClusterWorkloadTank"
     IPPROCS: "OpenInputCount"
     LIKE: "FromQName"
     MAXFSIZE: "MaxQFileSize"
@@ -211,11 +216,11 @@ overrides:
     DESCR: "ServiceDesc"
     LIKE: "FromServiceName"
   smds:
-    CFSTRUCT: "CFStrucName"
+    CFSTRUCT: "CFStructName"
     DSEXPAND: "DSExpand"
     SMDS: "SMDS"
   smdsconn:
-    CFSTRUCT: "CFStrucName"
+    CFSTRUCT: "CFStructName"
   stgclass:
     DESCR: "StorageClassDesc"
     LIKE: "FromStorageClassName"
