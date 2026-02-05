@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T13:45:24Z
+generated_at: 2026-02-05T13:56:03Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -14,7 +14,9 @@ attributes:
   - mqsc: "ACTCONN"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ActiveConnection"
+    snake: "active_connection"
     mqsc_commands:
       input:
       output:
@@ -44,7 +46,9 @@ attributes:
   - mqsc: "LMSGDATE"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "LastPublishDate"
+    snake: "last_publish_date"
     mqsc_commands:
       input:
       output:
@@ -52,7 +56,9 @@ attributes:
   - mqsc: "LMSGTIME"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "LastPublishTime"
+    snake: "last_publish_time"
     mqsc_commands:
       input:
       output:
@@ -60,7 +66,9 @@ attributes:
   - mqsc: "MCASTREL"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "MCastRelIndicator"
+    snake: "m_cast_rel_indicator"
     mqsc_commands:
       input:
       output:
@@ -68,7 +76,9 @@ attributes:
   - mqsc: "NUMMSGS"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "NumberMsgs"
+    snake: "number_msgs"
     mqsc_commands:
       input:
       output:
@@ -76,7 +86,9 @@ attributes:
   - mqsc: "RESMDATE"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ResumeDate"
+    snake: "resume_date"
     mqsc_commands:
       input:
       output:
@@ -84,7 +96,9 @@ attributes:
   - mqsc: "RESMTIME"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ResumeTime"
+    snake: "resume_time"
     mqsc_commands:
       input:
       output:
@@ -92,7 +106,9 @@ attributes:
   - mqsc: "SUBID"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "SubscriptionId"
+    snake: "subscription_id"
     mqsc_commands:
       input:
       output:
@@ -112,7 +128,9 @@ attributes:
   - mqsc: "SUBUSER"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "SubscriptionUser"
+    snake: "subscription_user"
     mqsc_commands:
       input:
       output:
@@ -120,7 +138,9 @@ attributes:
   - mqsc: "TOPICSTR"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "TopicString"
+    snake: "topic_string"
     mqsc_commands:
       input:
       output:

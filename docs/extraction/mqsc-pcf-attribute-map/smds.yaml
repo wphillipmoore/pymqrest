@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T13:45:24Z
+generated_at: 2026-02-05T13:56:03Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -29,7 +29,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "CFStrucName"
+    snake: "cf_struc_name"
     mqsc_commands:
       input:
         - "ALTER SMDS"
@@ -53,7 +55,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "DSExpand"
+    snake: "ds_expand"
     mqsc_commands:
       input:
         - "ALTER SMDS"
@@ -62,7 +66,9 @@ attributes:
   - mqsc: "SMDS"
     contexts:
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "SMDS"
+    snake: "smds"
     mqsc_commands:
       input:
       output:

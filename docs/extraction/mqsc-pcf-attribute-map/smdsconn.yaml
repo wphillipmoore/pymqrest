@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T13:45:24Z
+generated_at: 2026-02-05T13:56:03Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -18,7 +18,9 @@ attributes:
   - mqsc: "CFSTRUCT"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "CFStrucName"
+    snake: "cf_struc_name"
     mqsc_commands:
       input:
         - "DISPLAY SMDSCONN"

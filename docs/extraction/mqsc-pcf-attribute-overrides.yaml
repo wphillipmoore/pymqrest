@@ -151,6 +151,27 @@ overrides:
     STRMQOS: "StreamQService"
     TASKNO: "TaskNumber"
     TOQLOCAL: "ToQName"
+  sbstatus:
+    ACTCONN: "ActiveConnection"
+    LMSGDATE: "LastPublishDate"
+    LMSGTIME: "LastPublishTime"
+    MCASTREL: "MCastRelIndicator"
+    NUMMSGS: "NumberMsgs"
+    RESMDATE: "ResumeDate"
+    RESMTIME: "ResumeTime"
+    SUBID: "SubscriptionId"
+    SUBUSER: "SubscriptionUser"
+    TOPICSTR: "TopicString"
+  service:
+    CONTROL: "StartMode"
+    DESCR: "ServiceDesc"
+    LIKE: "FromServiceName"
+  smds:
+    CFSTRUCT: "CFStrucName"
+    DSEXPAND: "DSExpand"
+    SMDS: "SMDS"
+  smdsconn:
+    CFSTRUCT: "CFStrucName"
 skip_tokens:
   archive:
     - "DEFAULT"

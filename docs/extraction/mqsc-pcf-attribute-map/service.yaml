@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T13:45:24Z
+generated_at: 2026-02-05T13:56:03Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -45,7 +45,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "StartMode"
+    snake: "start_mode"
     mqsc_commands:
       input:
         - "ALTER SERVICE"
@@ -56,7 +58,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "ServiceDesc"
+    snake: "service_desc"
     mqsc_commands:
       input:
         - "ALTER SERVICE"
@@ -78,7 +82,9 @@ attributes:
   - mqsc: "LIKE"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "FromServiceName"
+    snake: "from_service_name"
     mqsc_commands:
       input:
         - "ALTER SERVICE"
