@@ -116,7 +116,7 @@ overrides:
     MSGHIST: "MessageHistory"
   conn:
     EXTCONN: "ConnectionPrefix"
-    EXTURID: "UOWIdentifier"
+    EXTURID: "UOWId"
     PID: "ProcessId"
     QMURID: "QMgrUOWId"
     TASKNO: "TaskNumber"
@@ -249,7 +249,7 @@ overrides:
     TASKNO: "TaskNumber"
     TID: "ThreadId"
     TOQLOCAL: "ToQName"
-    URID: "UOWIdentifier"
+    URID: "UOWId"
     URTYPE: "UOWType"
     XMITQ: "TransmissionQName"
     ASTATE: "AsynchronousState"
@@ -299,6 +299,7 @@ overrides:
     SUBNAME: "SubscriptionName"
     SUBUSER: "SubscriptionUserId"
     USERDATA: "UserData"
+    PUBAPPID: "PublishedApplicationId"
   svstatus:
     CONTROL: "StartMode"
     DESCR: "Description"

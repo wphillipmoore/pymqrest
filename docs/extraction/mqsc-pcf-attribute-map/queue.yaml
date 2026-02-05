@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T19:31:53Z
+generated_at: 2026-02-05T19:36:58Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -1483,8 +1483,8 @@ attributes:
     contexts:
       - "output"
     status: "override"
-    pcf: "UOWIdentifier"
-    snake: "uow_identifier"
+    pcf: "UOWId"
+    snake: "uow_id"
     mqsc_commands:
       input:
       output:
