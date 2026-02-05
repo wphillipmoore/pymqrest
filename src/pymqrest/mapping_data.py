@@ -1419,7 +1419,7 @@ MAPPING_DATA: dict[str, object] = {'commands': {'ALTER AUTHINFO': {'qualifier': 
                              'response_value_map': {}},
                 'stgclass': {'request_key_map': {'command_scope': 'CMDSCOPE',
                                                  'description': 'DESCR',
-                                                 'from_storage_class_name': 'LIKE',
+                                                 'like': 'LIKE',
                                                  'page_set_id': 'PSID',
                                                  'pass_ticket_application': 'PASSTKTA',
                                                  'qsg_disposition': 'QSGDISP',
