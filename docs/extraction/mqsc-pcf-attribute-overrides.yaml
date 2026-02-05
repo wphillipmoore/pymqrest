@@ -172,7 +172,13 @@ overrides:
     SMDS: "SMDS"
   smdsconn:
     CFSTRUCT: "CFStrucName"
+  stgclass:
+    DESCR: "StorageClassDesc"
+    LIKE: "FromStorageClassName"
   sub:
+    ALTDATE: "AlterationDate"
+    ALTTIME: "AlterationTime"
+    CRDATE: "CreationDate"
     CRTIME: "CreationTime"
     REQONLY: "RequestOnly"
     SELTYPE: "SelectorType"
@@ -389,6 +395,8 @@ request_key_value_map:
         key: "REPLACE"
         value: "NO"
   stgclass:
+    DESCR: "StorageClassDesc"
+    LIKE: "FromStorageClassName"
     replace:
       yes:
         key: "REPLACE"

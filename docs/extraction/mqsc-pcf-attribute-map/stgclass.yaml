@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-02-05T14:26:17Z
+generated_at: 2026-02-05T14:29:15Z
 source:
   mqsc_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/mqsc-command-metadata"
   pcf_metadata_dir: "/Users/pmoore/dev/github/pymqrest/docs/extraction/pcf-command-metadata"
@@ -54,7 +54,9 @@ attributes:
     contexts:
       - "input"
       - "output"
-    status: "unmapped"
+    status: "override"
+    pcf: "StorageClassDesc"
+    snake: "storage_class_desc"
     mqsc_commands:
       input:
         - "ALTER STGCLASS"
@@ -64,7 +66,9 @@ attributes:
   - mqsc: "LIKE"
     contexts:
       - "input"
-    status: "unmapped"
+    status: "override"
+    pcf: "FromStorageClassName"
+    snake: "from_storage_class_name"
     mqsc_commands:
       input:
         - "DEFINE STGCLASS"
