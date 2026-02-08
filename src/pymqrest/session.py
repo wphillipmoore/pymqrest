@@ -191,6 +191,8 @@ class MQRESTSession(MQRESTCommandMixin):
             else:
                 parameter_objects.append({})
 
+        parameter_objects = _flatten_nested_objects(parameter_objects)
+
         if map_attributes:
             normalized_objects = [_normalize_response_attributes(item) for item in parameter_objects]
             return map_response_list(
@@ -292,6 +294,24 @@ def _normalize_response_parameters(response_parameters: Sequence[str] | None) ->
 
 def _is_all_response_parameters(response_parameters: Sequence[str]) -> bool:
     return any(parameter.lower() == "all" for parameter in response_parameters)
+
+
+def _flatten_nested_objects(
+    parameter_objects: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    flattened: list[dict[str, object]] = []
+    for item in parameter_objects:
+        objects = item.get("objects")
+        if isinstance(objects, list):
+            shared = {k: v for k, v in item.items() if k != "objects"}
+            for nested_item in objects:
+                if isinstance(nested_item, Mapping):
+                    merged = dict(shared)
+                    merged.update(nested_item)
+                    flattened.append(merged)
+        else:
+            flattened.append(item)
+    return flattened
 
 
 def _normalize_response_attributes(attributes: Mapping[str, object]) -> dict[str, object]:

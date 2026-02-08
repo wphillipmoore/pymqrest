@@ -900,6 +900,278 @@ def test_map_where_keyword_keyword_only() -> None:
     assert result == "CURDEPTH"
 
 
+def test_nested_objects_flattened_with_mapping() -> None:
+    response_payload = {
+        "commandResponse": [
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {
+                    "conn": "ABC123",
+                    "extconn": "DEF456",
+                    "objects": [
+                        {"objname": "Q1", "hstate": "ACTIVE"},
+                        {"objname": "Q2", "hstate": "INACTIVE"},
+                    ],
+                },
+            },
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, _transport = _build_session(response_payload, mapping_strict=False)
+
+    result = session.display_conn()
+
+    first, second = result
+    # Shared attributes replicated onto each flattened item (unmapped keys stay uppercase)
+    assert first["CONN"] == "ABC123"
+    assert first["EXTCONN"] == "DEF456"
+    # Handle attributes mapped to snake_case (OBJNAME -> object_name, HSTATE -> handle_state)
+    assert first["object_name"] == "Q1"
+    assert first["handle_state"] == "ACTIVE"
+    assert second["CONN"] == "ABC123"
+    assert second["EXTCONN"] == "DEF456"
+    assert second["object_name"] == "Q2"
+    assert second["handle_state"] == "INACTIVE"
+    # objects key is not present in flattened output
+    assert "objects" not in first
+    assert "OBJECTS" not in first
+
+
+def test_nested_objects_flattened_without_mapping() -> None:
+    response_payload = {
+        "commandResponse": [
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {
+                    "conn": "ABC123",
+                    "type": "HANDLE",
+                    "objects": [
+                        {"objname": "Q1", "hstate": "ACTIVE"},
+                    ],
+                },
+            },
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session = MQRESTSession(
+        rest_base_url="https://example.invalid/ibmmq/rest/v2",
+        qmgr_name="QM1",
+        username="user",
+        password=TEST_PASSWORD,
+        transport=FakeTransport(
+            TransportResponse(
+                status_code=200,
+                text=json.dumps(response_payload),
+                headers={},
+            ),
+        ),
+        map_attributes=False,
+    )
+
+    result = session.display_conn()
+
+    assert result == [{"conn": "ABC123", "type": "HANDLE", "objname": "Q1", "hstate": "ACTIVE"}]
+
+
+def test_nested_objects_empty_list_returns_empty() -> None:
+    response_payload = {
+        "commandResponse": [
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {
+                    "conn": "ABC123",
+                    "type": "HANDLE",
+                    "objects": [],
+                },
+            },
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session = MQRESTSession(
+        rest_base_url="https://example.invalid/ibmmq/rest/v2",
+        qmgr_name="QM1",
+        username="user",
+        password=TEST_PASSWORD,
+        transport=FakeTransport(
+            TransportResponse(
+                status_code=200,
+                text=json.dumps(response_payload),
+                headers={},
+            ),
+        ),
+        map_attributes=False,
+    )
+
+    result = session.display_conn()
+
+    assert result == []
+
+
+def test_nested_objects_mixed_with_flat_items() -> None:
+    response_payload = {
+        "commandResponse": [
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {
+                    "conn": "ABC123",
+                    "type": "HANDLE",
+                    "objects": [
+                        {"objname": "Q1"},
+                    ],
+                },
+            },
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {
+                    "conn": "DEF456",
+                    "flat_attr": "value",
+                },
+            },
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session = MQRESTSession(
+        rest_base_url="https://example.invalid/ibmmq/rest/v2",
+        qmgr_name="QM1",
+        username="user",
+        password=TEST_PASSWORD,
+        transport=FakeTransport(
+            TransportResponse(
+                status_code=200,
+                text=json.dumps(response_payload),
+                headers={},
+            ),
+        ),
+        map_attributes=False,
+    )
+
+    result = session.display_conn()
+
+    first, second = result
+    assert first == {"conn": "ABC123", "type": "HANDLE", "objname": "Q1"}
+    assert second == {"conn": "DEF456", "flat_attr": "value"}
+
+
+def test_nested_objects_single_entry() -> None:
+    response_payload = {
+        "commandResponse": [
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {
+                    "conn": "ABC123",
+                    "objects": [{"objname": "Q1"}],
+                },
+            },
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session = MQRESTSession(
+        rest_base_url="https://example.invalid/ibmmq/rest/v2",
+        qmgr_name="QM1",
+        username="user",
+        password=TEST_PASSWORD,
+        transport=FakeTransport(
+            TransportResponse(
+                status_code=200,
+                text=json.dumps(response_payload),
+                headers={},
+            ),
+        ),
+        map_attributes=False,
+    )
+
+    result = session.display_conn()
+
+    assert result == [{"conn": "ABC123", "objname": "Q1"}]
+
+
+def test_nested_objects_non_list_passes_through() -> None:
+    response_payload = {
+        "commandResponse": [
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {
+                    "conn": "ABC123",
+                    "objects": "not_a_list",
+                },
+            },
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session = MQRESTSession(
+        rest_base_url="https://example.invalid/ibmmq/rest/v2",
+        qmgr_name="QM1",
+        username="user",
+        password=TEST_PASSWORD,
+        transport=FakeTransport(
+            TransportResponse(
+                status_code=200,
+                text=json.dumps(response_payload),
+                headers={},
+            ),
+        ),
+        map_attributes=False,
+    )
+
+    result = session.display_conn()
+
+    assert result == [{"conn": "ABC123", "objects": "not_a_list"}]
+
+
+def test_nested_objects_non_dict_items_skipped() -> None:
+    response_payload = {
+        "commandResponse": [
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {
+                    "conn": "ABC123",
+                    "objects": [
+                        {"objname": "Q1"},
+                        "not_a_dict",
+                        {"objname": "Q2"},
+                    ],
+                },
+            },
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session = MQRESTSession(
+        rest_base_url="https://example.invalid/ibmmq/rest/v2",
+        qmgr_name="QM1",
+        username="user",
+        password=TEST_PASSWORD,
+        transport=FakeTransport(
+            TransportResponse(
+                status_code=200,
+                text=json.dumps(response_payload),
+                headers={},
+            ),
+        ),
+        map_attributes=False,
+    )
+
+    result = session.display_conn()
+
+    first, second = result
+    assert first == {"conn": "ABC123", "objname": "Q1"}
+    assert second == {"conn": "ABC123", "objname": "Q2"}
+
+
 def _load_mqsc_commands() -> list[str]:
     mapping_path = Path(__file__).resolve().parents[2] / "docs/extraction/mqsc-commands.yaml"
     commands: list[str] = []
