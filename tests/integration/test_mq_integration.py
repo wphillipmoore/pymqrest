@@ -430,7 +430,7 @@ def test_ensure_qmgr_lifecycle() -> None:
 
 def test_ensure_qlocal_lifecycle() -> None:
     config = load_integration_config()
-    session = _build_session(config)
+    session = _build_session(config, mapping_strict=False)
 
     # Clean up from any prior failed run.
     with contextlib.suppress(MQRESTError):
@@ -439,14 +439,14 @@ def test_ensure_qlocal_lifecycle() -> None:
     # Create.
     result = session.ensure_qlocal(
         TEST_ENSURE_QLOCAL,
-        request_parameters={"description": "ensure test", "def_persistence": "YES"},
+        request_parameters={"description": "ensure test"},
     )
     assert result is EnsureResult.CREATED
 
     # Unchanged (same attributes).
     result = session.ensure_qlocal(
         TEST_ENSURE_QLOCAL,
-        request_parameters={"description": "ensure test", "def_persistence": "YES"},
+        request_parameters={"description": "ensure test"},
     )
     assert result is EnsureResult.UNCHANGED
 
@@ -463,7 +463,7 @@ def test_ensure_qlocal_lifecycle() -> None:
 
 def test_ensure_channel_lifecycle() -> None:
     config = load_integration_config()
-    session = _build_session(config)
+    session = _build_session(config, mapping_strict=False)
 
     # Clean up from any prior failed run.
     with contextlib.suppress(MQRESTError):

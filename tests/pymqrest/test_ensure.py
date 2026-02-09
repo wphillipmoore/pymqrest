@@ -225,6 +225,26 @@ class TestEnsureQmgr:
 
 
 class TestEnsureCreated:
+    def test_display_error_treated_as_not_found(self) -> None:
+        # MQ returns error (reason 2085) for DISPLAY of non-existent object.
+        # The ensure method should catch this and proceed to DEFINE.
+        display_error_response: dict[str, object] = {
+            "commandResponse": [
+                {"completionCode": 2, "reasonCode": 2085, "message": ["AMQ8147E: object not found."]},
+            ],
+            "overallCompletionCode": 2,
+            "overallReasonCode": 3008,
+        }
+        define_response = _success_payload()
+        session, transport = _build_session([display_error_response, define_response])
+
+        result = session.ensure_qlocal("TEST.Q", request_parameters={"description": "test"})
+
+        assert result is EnsureResult.CREATED
+        assert len(transport.recorded_requests) == EXPECT_TWO_REQUESTS
+        define_payload = transport.recorded_requests[1].payload
+        assert define_payload["command"] == "DEFINE"
+
     def test_object_not_found_creates(self) -> None:
         display_response = _success_payload()  # empty commandResponse
         define_response = _success_payload()
