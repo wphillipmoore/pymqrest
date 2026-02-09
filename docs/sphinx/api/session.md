@@ -6,9 +6,10 @@ IBM MQ via the REST API. It inherits all MQSC command methods from
 
 ## MQRESTSession
 
-```{autoclass} pymqrest.session.MQRESTSession
-:members:
-:show-inheritance:
+```{eval-rst}
+.. autoclass:: pymqrest.session.MQRESTSession
+   :members:
+   :show-inheritance:
 ```
 
 ## Transport
@@ -17,14 +18,17 @@ The transport layer abstracts HTTP communication. The default
 `RequestsTransport` uses the `requests` library. Custom transports
 can be injected for testing or alternative HTTP clients.
 
-```{autoclass} pymqrest.session.TransportResponse
-:members:
+```{eval-rst}
+.. autoclass:: pymqrest.session.TransportResponse
+   :exclude-members: status_code, text, headers
 ```
 
-```{autoclass} pymqrest.session.MQRESTTransport
-:members:
+```{eval-rst}
+.. autoclass:: pymqrest.session.MQRESTTransport
+   :members:
 ```
 
-```{autoclass} pymqrest.session.RequestsTransport
-:members:
+```{eval-rst}
+.. autoclass:: pymqrest.session.RequestsTransport
+   :members:
 ```
