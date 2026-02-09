@@ -242,7 +242,10 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
         command_upper = command.strip().upper()
         qualifier_upper = mqsc_qualifier.strip().upper()
         normalized_request_parameters = dict(request_parameters or {})
-        normalized_response_parameters = _normalize_response_parameters(response_parameters)
+        normalized_response_parameters = _normalize_response_parameters(
+            response_parameters,
+            is_display=command_upper == "DISPLAY",
+        )
         map_attributes = self._map_attributes
         mapping_qualifier = self._resolve_mapping_qualifier(command_upper, qualifier_upper)
 
@@ -392,9 +395,13 @@ def _build_command_payload(
     return payload
 
 
-def _normalize_response_parameters(response_parameters: Sequence[str] | None) -> list[str]:
+def _normalize_response_parameters(
+    response_parameters: Sequence[str] | None,
+    *,
+    is_display: bool = True,
+) -> list[str]:
     if response_parameters is None:
-        return list(DEFAULT_RESPONSE_PARAMETERS)
+        return list(DEFAULT_RESPONSE_PARAMETERS) if is_display else []
     normalized_parameters = list(response_parameters)
     if _is_all_response_parameters(normalized_parameters):
         return list(DEFAULT_RESPONSE_PARAMETERS)

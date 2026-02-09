@@ -5,6 +5,8 @@ from __future__ import annotations
 import enum
 from typing import TYPE_CHECKING
 
+from .exceptions import MQRESTCommandError
+
 if TYPE_CHECKING:
     from collections.abc import Mapping, Sequence
 
@@ -67,13 +69,16 @@ class MQRESTEnsureMixin:
             The :class:`EnsureResult` indicating what action was taken.
 
         """
-        current_objects = self._mqsc_command(
-            command="DISPLAY",
-            mqsc_qualifier=display_qualifier,
-            name=name,
-            request_parameters=None,
-            response_parameters=["all"],
-        )
+        try:
+            current_objects = self._mqsc_command(
+                command="DISPLAY",
+                mqsc_qualifier=display_qualifier,
+                name=name,
+                request_parameters=None,
+                response_parameters=["all"],
+            )
+        except MQRESTCommandError:
+            current_objects = []
 
         params = dict(request_parameters) if request_parameters else {}
 
