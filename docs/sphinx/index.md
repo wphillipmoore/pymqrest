@@ -13,6 +13,7 @@ and error propagation.
 :caption: User Guide
 
 getting-started
+examples
 architecture
 mapping-pipeline
 ai-engineering

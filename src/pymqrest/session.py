@@ -223,6 +223,11 @@ class MQRESTSession(MQRESTCommandMixin):
         self.last_http_status: int | None = None
         self.last_command_payload: dict[str, object] | None = None
 
+    @property
+    def qmgr_name(self) -> str:
+        """The queue manager name this session targets."""
+        return self._qmgr_name
+
     def _mqsc_command(  # noqa: PLR0913
         self,
         *,
