@@ -8,14 +8,14 @@ Related MQSC commands: `ALTER PROCESS`, `DEFINE PROCESS`, `DELETE PROCESS`, `DIS
 
 | Python name | MQSC parameter |
 | --- | --- |
-| `appl_id` | `APPLICID` |
-| `appl_type` | `APPLTYPE` |
+| `application_id` | `APPLICID` |
+| `application_type` | `APPLTYPE` |
 | `command_scope` | `CMDSCOPE` |
 | `description` | `DESCR` |
-| `env_data` | `ENVRDATA` |
+| `environment_data` | `ENVRDATA` |
 | `ignore_state` | `IGNSTATE` |
 | `like` | `LIKE` |
-| `qsg_disposition` | `QSGDISP` |
+| `queue_sharing_group_disposition` | `QSGDISP` |
 | `user_data` | `USERDATA` |
 
 ## Response key map
@@ -24,10 +24,10 @@ Related MQSC commands: `ALTER PROCESS`, `DEFINE PROCESS`, `DELETE PROCESS`, `DIS
 | --- | --- |
 | `ALTDATE` | `alteration_date` |
 | `ALTTIME` | `alteration_time` |
-| `APPLICID` | `appl_id` |
-| `APPLTYPE` | `appl_type` |
+| `APPLICID` | `application_id` |
+| `APPLTYPE` | `application_type` |
 | `DESCR` | `description` |
-| `ENVRDATA` | `env_data` |
+| `ENVRDATA` | `environment_data` |
 | `USERDATA` | `user_data` |
 
 ## Request key-value map

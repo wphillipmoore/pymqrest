@@ -398,7 +398,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "DefReconnect"
-    snake: "def_reconnect"
+    snake: "default_reconnect"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -423,7 +423,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DiscInterval"
-    snake: "disc_interval"
+    snake: "disconnect_interval"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -814,7 +814,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrName"
-    snake: "q_mgr_name"
+    snake: "queue_manager_name"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -827,7 +827,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "QSGDisposition"
-    snake: "qsg_disposition"
+    snake: "queue_sharing_group_disposition"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -866,7 +866,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ResetSeq"
-    snake: "reset_seq"
+    snake: "reset_sequence"
     mqsc_commands:
       input:
       output:
@@ -928,7 +928,7 @@ attributes:
       - "input"
     status: "override"
     pcf: "MessageSeqNumber"
-    snake: "message_seq_number"
+    snake: "message_sequence_number"
     mqsc_commands:
       input:
         - "RESET CHANNEL"
@@ -939,7 +939,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "SeqNumberWrap"
-    snake: "seq_number_wrap"
+    snake: "sequence_number_wrap"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -991,7 +991,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "SPLProtection"
-    snake: "spl_protection"
+    snake: "security_policy_protection"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -1086,7 +1086,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "TemporaryModelQName"
-    snake: "temporary_model_q_name"
+    snake: "temporary_model_queue_name"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -1097,7 +1097,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "TemporaryQPrefix"
-    snake: "temporary_q_prefix"
+    snake: "temporary_queue_prefix"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -1148,7 +1148,7 @@ attributes:
       - "output"
     status: "input-only"
     pcf: "UseCltId"
-    snake: "use_clt_id"
+    snake: "use_client_id"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"
@@ -1187,7 +1187,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "TransmissionQName"
-    snake: "transmission_q_name"
+    snake: "transmission_queue_name"
     mqsc_commands:
       input:
         - "ALTER CHANNEL"

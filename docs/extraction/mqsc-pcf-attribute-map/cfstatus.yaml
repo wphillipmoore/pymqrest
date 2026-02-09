@@ -126,7 +126,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "LogQMgrNames"
-    snake: "log_q_mgr_names"
+    snake: "log_queue_manager_names"
     mqsc_commands:
       input:
       output:
@@ -146,7 +146,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrName"
-    snake: "q_mgr_name"
+    snake: "queue_manager_name"
     mqsc_commands:
       input:
       output:

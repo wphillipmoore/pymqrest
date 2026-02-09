@@ -43,7 +43,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "ApplId"
-    snake: "appl_id"
+    snake: "application_id"
     mqsc_commands:
       input:
         - "ALTER PROCESS"
@@ -56,7 +56,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplType"
-    snake: "appl_type"
+    snake: "application_type"
     mqsc_commands:
       input:
         - "ALTER PROCESS"
@@ -95,7 +95,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "EnvData"
-    snake: "env_data"
+    snake: "environment_data"
     mqsc_commands:
       input:
         - "ALTER PROCESS"
@@ -127,7 +127,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "QSGDisposition"
-    snake: "qsg_disposition"
+    snake: "queue_sharing_group_disposition"
     mqsc_commands:
       input:
         - "ALTER PROCESS"

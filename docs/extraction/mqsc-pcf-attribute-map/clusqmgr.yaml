@@ -76,7 +76,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrId"
-    snake: "q_mgr_id"
+    snake: "queue_manager_id"
     mqsc_commands:
       input:
       output:
@@ -86,7 +86,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QMgrType"
-    snake: "q_mgr_type"
+    snake: "queue_manager_type"
     mqsc_commands:
       input:
       output:
@@ -126,7 +126,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "TransmissionQName"
-    snake: "transmission_q_name"
+    snake: "transmission_queue_name"
     mqsc_commands:
       input:
       output:

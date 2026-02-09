@@ -302,7 +302,7 @@ class TestEnsureUnchanged:
         display_response = _success_payload([{"MAXDEPTH": "5000"}])
         session, transport = _build_session([display_response])
 
-        result = session.ensure_qlocal("TEST.Q", request_parameters={"max_q_depth": 5000})
+        result = session.ensure_qlocal("TEST.Q", request_parameters={"max_queue_depth": 5000})
 
         assert result is EnsureResult.UNCHANGED
         assert len(transport.recorded_requests) == EXPECT_ONE_REQUEST
@@ -353,12 +353,12 @@ class TestEnsureUpdated:
 
         result = session.ensure_qlocal(
             "TEST.Q",
-            request_parameters={"description": "new", "max_q_depth": 5000},
+            request_parameters={"description": "new", "max_queue_depth": 5000},
         )
 
         assert result is EnsureResult.UPDATED
         alter_payload = transport.recorded_requests[1].payload
-        # max_q_depth matches (5000 == "5000"), so only description should be sent.
+        # max_queue_depth matches (5000 == "5000"), so only description should be sent.
         assert alter_payload["parameters"] == {"DESCR": "new"}
 
     def test_missing_attribute_treated_as_changed(self) -> None:
@@ -368,7 +368,7 @@ class TestEnsureUpdated:
 
         result = session.ensure_qlocal(
             "TEST.Q",
-            request_parameters={"description": "test", "max_q_depth": 5000},
+            request_parameters={"description": "test", "max_queue_depth": 5000},
         )
 
         assert result is EnsureResult.UPDATED

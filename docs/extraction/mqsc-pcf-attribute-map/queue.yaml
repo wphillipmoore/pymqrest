@@ -74,7 +74,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplDesc"
-    snake: "appl_desc"
+    snake: "application_desc"
     mqsc_commands:
       input:
       output:
@@ -84,7 +84,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplTag"
-    snake: "appl_tag"
+    snake: "application_tag"
     mqsc_commands:
       input:
       output:
@@ -94,7 +94,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplType"
-    snake: "appl_type"
+    snake: "application_type"
     mqsc_commands:
       input:
       output:
@@ -254,7 +254,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "ClusterQMgr"
-    snake: "cluster_q_mgr"
+    snake: "cluster_queue_manager"
     mqsc_commands:
       input:
       output:
@@ -264,7 +264,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "ClusterQType"
-    snake: "cluster_q_type"
+    snake: "cluster_queue_type"
     mqsc_commands:
       input:
       output:
@@ -405,7 +405,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "CurrentQDepth"
-    snake: "current_q_depth"
+    snake: "current_queue_depth"
     mqsc_commands:
       input:
       output:
@@ -416,7 +416,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "CurrentQFileSize"
-    snake: "current_q_file_size"
+    snake: "current_queue_file_size"
     mqsc_commands:
       input:
       output:
@@ -426,7 +426,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "CurrentMaxQFileSize"
-    snake: "current_max_q_file_size"
+    snake: "current_max_queue_file_size"
     mqsc_commands:
       input:
       output:
@@ -456,7 +456,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefBind"
-    snake: "def_bind"
+    snake: "default_bind"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -492,7 +492,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefPriority"
-    snake: "def_priority"
+    snake: "default_priority"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -511,7 +511,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefPersistence"
-    snake: "def_persistence"
+    snake: "default_persistence"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -530,7 +530,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefReadAhead"
-    snake: "def_read_ahead"
+    snake: "default_read_ahead"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -547,7 +547,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "DefInputOpenOption"
-    snake: "def_input_open_option"
+    snake: "default_input_open_option"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -595,7 +595,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DistLists"
-    snake: "dist_lists"
+    snake: "distribution_lists"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -705,7 +705,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "InitiationQName"
-    snake: "initiation_q_name"
+    snake: "initiation_queue_name"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -798,7 +798,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "MaxQDepth"
-    snake: "max_q_depth"
+    snake: "max_queue_depth"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -813,7 +813,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "MaxQFileSize"
-    snake: "max_q_file_size"
+    snake: "max_queue_file_size"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1043,7 +1043,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QDepthHighLimit"
-    snake: "q_depth_high_limit"
+    snake: "queue_depth_high_limit"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1058,7 +1058,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QDepthLowLimit"
-    snake: "q_depth_low_limit"
+    snake: "queue_depth_low_limit"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1073,7 +1073,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QDepthHighEvent"
-    snake: "q_depth_high_event"
+    snake: "queue_depth_high_event"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1088,7 +1088,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QDepthLowEvent"
-    snake: "q_depth_low_event"
+    snake: "queue_depth_low_event"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1103,7 +1103,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QDepthMaxEvent"
-    snake: "q_depth_max_event"
+    snake: "queue_depth_max_event"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1117,7 +1117,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrId"
-    snake: "q_mgr_id"
+    snake: "queue_manager_id"
     mqsc_commands:
       input:
       output:
@@ -1127,7 +1127,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrUOWId"
-    snake: "q_mgr_uow_id"
+    snake: "queue_manager_unit_of_work_id"
     mqsc_commands:
       input:
       output:
@@ -1138,7 +1138,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QSGDisposition"
-    snake: "qsg_disposition"
+    snake: "queue_sharing_group_disposition"
     mqsc_commands:
       input:
         - "CLEAR QLOCAL"
@@ -1157,7 +1157,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QServiceInterval"
-    snake: "q_service_interval"
+    snake: "queue_service_interval"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1171,7 +1171,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "OnQTime"
-    snake: "on_q_time"
+    snake: "on_queue_time"
     mqsc_commands:
       input:
       output:
@@ -1181,7 +1181,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QType"
-    snake: "q_type"
+    snake: "queue_type"
     mqsc_commands:
       input:
       output:
@@ -1207,7 +1207,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "RemoteQName"
-    snake: "remote_q_name"
+    snake: "remote_queue_name"
     mqsc_commands:
       input:
         - "ALTER QREMOTE"
@@ -1220,7 +1220,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "RemoteQMgrName"
-    snake: "remote_q_mgr_name"
+    snake: "remote_queue_manager_name"
     mqsc_commands:
       input:
         - "ALTER QREMOTE"
@@ -1306,7 +1306,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "StreamQ"
-    snake: "stream_q"
+    snake: "stream_queue"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1321,7 +1321,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "StreamQService"
-    snake: "stream_q_service"
+    snake: "stream_queue_service"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1369,7 +1369,7 @@ attributes:
       - "input"
     status: "override"
     pcf: "ToQName"
-    snake: "to_q_name"
+    snake: "to_queue_name"
     mqsc_commands:
       input:
         - "MOVE QLOCAL"
@@ -1484,7 +1484,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "UOWId"
-    snake: "uow_id"
+    snake: "unit_of_work_id"
     mqsc_commands:
       input:
       output:
@@ -1494,7 +1494,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "UOWType"
-    snake: "uow_type"
+    snake: "unit_of_work_type"
     mqsc_commands:
       input:
       output:
@@ -1530,7 +1530,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "TransmissionQName"
-    snake: "transmission_q_name"
+    snake: "transmission_queue_name"
     mqsc_commands:
       input:
         - "ALTER QREMOTE"

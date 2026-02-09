@@ -30,7 +30,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "EncAlg"
-    snake: "enc_alg"
+    snake: "encryption_algorithm"
     mqsc_commands:
       input:
         - "SET POLICY"
@@ -80,7 +80,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "SignAlg"
-    snake: "sign_alg"
+    snake: "sign_algorithm"
     mqsc_commands:
       input:
         - "SET POLICY"

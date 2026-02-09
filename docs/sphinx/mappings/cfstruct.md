@@ -9,7 +9,7 @@ Related MQSC commands: `ALTER CFSTRUCT`, `BACKUP CFSTRUCT`, `DEFINE CFSTRUCT`, `
 | Python name | MQSC parameter |
 | --- | --- |
 | `action` | `ACTION` |
-| `cf_conn_lost` | `CFCONLOS` |
+| `cf_connection_lost` | `CFCONLOS` |
 | `cf_level` | `CFLEVEL` |
 | `command_scope` | `CMDSCOPE` |
 | `data_sharing_block` | `DSBLOCK` |
@@ -36,7 +36,7 @@ Related MQSC commands: `ALTER CFSTRUCT`, `BACKUP CFSTRUCT`, `DEFINE CFSTRUCT`, `
 | --- | --- |
 | `ALTDATE` | `alteration_date` |
 | `ALTTIME` | `alteration_time` |
-| `CFCONLOS` | `cf_conn_lost` |
+| `CFCONLOS` | `cf_connection_lost` |
 | `CFLEVEL` | `cf_level` |
 | `DESCR` | `description` |
 | `DSBLOCK` | `data_sharing_block` |

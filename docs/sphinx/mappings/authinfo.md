@@ -9,15 +9,15 @@ Related MQSC commands: `ALTER AUTHINFO`, `DEFINE AUTHINFO`, `DELETE AUTHINFO`, `
 | Python name | MQSC parameter |
 | --- | --- |
 | `adopt_context` | `ADOPTCTX` |
-| `auth_info_type` | `AUTHTYPE` |
+| `authentication_info_type` | `AUTHTYPE` |
 | `authentication_method` | `AUTHENMD` |
 | `authorization_method` | `AUTHORMD` |
 | `base_dn_group` | `BASEDNG` |
 | `base_dn_user` | `BASEDNU` |
 | `check_client` | `CHCKCLNT` |
-| `checklocal` | `CHCKLOCL` |
+| `check_local` | `CHCKLOCL` |
 | `class_group` | `CLASSGRP` |
-| `classuser` | `CLASSUSR` |
+| `class_user` | `CLASSUSR` |
 | `command_scope` | `CMDSCOPE` |
 | `connection_name` | `CONNAME` |
 | `description` | `DESCR` |
@@ -30,7 +30,7 @@ Related MQSC commands: `ALTER AUTHINFO`, `DEFINE AUTHINFO`, `DELETE AUTHINFO`, `
 | `ldap_user_name` | `LDAPUSER` |
 | `like` | `LIKE` |
 | `ocsp_responder_url` | `OCSPURL` |
-| `qsg_disposition` | `QSGDISP` |
+| `queue_sharing_group_disposition` | `QSGDISP` |
 | `secure_comms` | `SECCOMM` |
 | `short_user` | `SHORTUSR` |
 | `user_field` | `USRFIELD` |
@@ -44,13 +44,13 @@ Related MQSC commands: `ALTER AUTHINFO`, `DEFINE AUTHINFO`, `DELETE AUTHINFO`, `
 | `ALTTIME` | `alteration_time` |
 | `AUTHENMD` | `authentication_method` |
 | `AUTHORMD` | `authorization_method` |
-| `AUTHTYPE` | `auth_info_type` |
+| `AUTHTYPE` | `authentication_info_type` |
 | `BASEDNG` | `base_dn_group` |
 | `BASEDNU` | `base_dn_user` |
 | `CHCKCLNT` | `check_client` |
-| `CHCKLOCL` | `checklocal` |
+| `CHCKLOCL` | `check_local` |
 | `CLASSGRP` | `class_group` |
-| `CLASSUSR` | `classuser` |
+| `CLASSUSR` | `class_user` |
 | `CONNAME` | `connection_name` |
 | `DESCR` | `description` |
 | `FAILDLAY` | `failure_delay` |
@@ -60,7 +60,7 @@ Related MQSC commands: `ALTER AUTHINFO`, `DEFINE AUTHINFO`, `DELETE AUTHINFO`, `
 | `LDAPUSER` | `ldap_user_name` |
 | `NESTGRP` | `group_nesting` |
 | `OCSPURL` | `ocsp_responder_url` |
-| `QSGDISP` | `qsg_disposition` |
+| `QSGDISP` | `queue_sharing_group_disposition` |
 | `SECCOMM` | `secure_comms` |
 | `SHORTUSR` | `short_user` |
 | `USRFIELD` | `user_field` |

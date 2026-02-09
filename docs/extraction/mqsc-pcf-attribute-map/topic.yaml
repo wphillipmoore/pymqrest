@@ -155,7 +155,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefPriority"
-    snake: "def_priority"
+    snake: "default_priority"
     mqsc_commands:
       input:
         - "ALTER TOPIC"
@@ -168,7 +168,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefPersistence"
-    snake: "def_persistence"
+    snake: "default_persistence"
     mqsc_commands:
       input:
         - "ALTER TOPIC"
@@ -240,7 +240,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "DurableModelQName"
-    snake: "durable_model_q_name"
+    snake: "durable_model_queue_name"
     mqsc_commands:
       input:
         - "ALTER TOPIC"
@@ -253,7 +253,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "NonDurableModelQName"
-    snake: "non_durable_model_q_name"
+    snake: "non_durable_model_queue_name"
     mqsc_commands:
       input:
         - "ALTER TOPIC"
@@ -317,7 +317,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "QSGDisposition"
-    snake: "qsg_disposition"
+    snake: "queue_sharing_group_disposition"
     mqsc_commands:
       input:
         - "ALTER TOPIC"

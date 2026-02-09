@@ -10,7 +10,7 @@ Related MQSC commands: `DISPLAY CHINIT`, `START CHINIT`, `STOP CHINIT`
 | --- | --- |
 | `command_scope` | `CMDSCOPE` |
 | `environment_info` | `ENVPARM` |
-| `initiation_q_name` | `INITQ` |
+| `initiation_queue_name` | `INITQ` |
 | `shared_channel_restart` | `SHARED` |
 
 ---

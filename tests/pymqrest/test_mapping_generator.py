@@ -49,8 +49,8 @@ def test_normalize_mapping_inverts_key_and_value_maps() -> None:
         "qualifiers": {
             "queue": {
                 "response_key_map": {
-                    "CURDEPTH": "current_q_depth",
-                    "DEFPSIST": "def_persistence",
+                    "CURDEPTH": "current_queue_depth",
+                    "DEFPSIST": "default_persistence",
                 },
                 "response_value_map": {
                     "DEFPSIST": {
@@ -65,10 +65,10 @@ def test_normalize_mapping_inverts_key_and_value_maps() -> None:
     qualifier_data = normalized["qualifiers"]["queue"]
 
     assert qualifier_data["request_key_map"] == {
-        "current_q_depth": "CURDEPTH",
-        "def_persistence": "DEFPSIST",
+        "current_queue_depth": "CURDEPTH",
+        "default_persistence": "DEFPSIST",
     }
-    assert qualifier_data["request_value_map"] == {"def_persistence": {"def": "DEF"}}
+    assert qualifier_data["request_value_map"] == {"default_persistence": {"def": "DEF"}}
 
 
 def test_merge_mapping_overrides_removes_entries() -> None:
@@ -80,8 +80,8 @@ def test_merge_mapping_overrides_removes_entries() -> None:
         "qualifiers": {
             "queue": {
                 "response_key_map": {
-                    "CURDEPTH": "current_q_depth",
-                    "DEFPSIST": "def_persistence",
+                    "CURDEPTH": "current_queue_depth",
+                    "DEFPSIST": "default_persistence",
                 },
             },
         },
@@ -99,7 +99,7 @@ def test_merge_mapping_overrides_removes_entries() -> None:
     merged = merge_mapping_overrides(base_data, override_data)
     response_map = merged["qualifiers"]["queue"]["response_key_map"]
 
-    assert response_map == {"CURDEPTH": "current_q_depth"}
+    assert response_map == {"CURDEPTH": "current_queue_depth"}
 
 
 def test_normalize_mapping_rejects_inconsistent_maps() -> None:
@@ -111,10 +111,10 @@ def test_normalize_mapping_rejects_inconsistent_maps() -> None:
         "qualifiers": {
             "queue": {
                 "response_key_map": {
-                    "CURDEPTH": "current_q_depth",
+                    "CURDEPTH": "current_queue_depth",
                 },
                 "request_key_map": {
-                    "current_q_depth": "CURDEPTH",
+                    "current_queue_depth": "CURDEPTH",
                     "extra": "EXTRA",
                 },
             },

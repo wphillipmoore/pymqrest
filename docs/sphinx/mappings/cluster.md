@@ -10,8 +10,8 @@ Related MQSC commands: `REFRESH CLUSTER`, `RESET CLUSTER`
 | --- | --- |
 | `action` | `ACTION` |
 | `command_scope` | `CMDSCOPE` |
-| `q_mgr_id` | `QMID` |
-| `q_mgr_name` | `QMNAME` |
+| `queue_manager_id` | `QMID` |
+| `queue_manager_name` | `QMNAME` |
 | `refresh_repository` | `REPOS` |
 | `remove_queues` | `QUEUES` |
 

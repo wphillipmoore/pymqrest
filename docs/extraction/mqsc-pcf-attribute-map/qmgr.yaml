@@ -31,7 +31,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "AccountingConnOverride"
-    snake: "accounting_conn_override"
+    snake: "accounting_connection_override"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -103,7 +103,7 @@ attributes:
       - "output"
     status: "output-only"
     pcf: "ActivityConnOverride"
-    snake: "activity_conn_override"
+    snake: "activity_connection_override"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -257,7 +257,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "CodedCharSetId"
-    snake: "coded_char_set_id"
+    snake: "coded_character_set_id"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -281,7 +281,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QSGCertificateLabel"
-    snake: "qsg_certificate_label"
+    snake: "queue_sharing_group_certificate_label"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -317,7 +317,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "ChannelAutoDef"
-    snake: "channel_auto_def"
+    snake: "channel_auto_define"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -329,7 +329,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ChannelAutoDefEvent"
-    snake: "channel_auto_def_event"
+    snake: "channel_auto_define_event"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -341,7 +341,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ChannelAutoDefExit"
-    snake: "channel_auto_def_exit"
+    snake: "channel_auto_define_exit"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -560,7 +560,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "CommandInputQName"
-    snake: "command_input_q_name"
+    snake: "command_input_queue_name"
     mqsc_commands:
       input:
       output:
@@ -583,7 +583,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ConnAuth"
-    snake: "conn_auth"
+    snake: "connection_authentication"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -677,7 +677,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DeadLetterQName"
-    snake: "dead_letter_q_name"
+    snake: "dead_letter_queue_name"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -689,7 +689,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefClusterXmitQueueType"
-    snake: "def_cluster_xmit_queue_type"
+    snake: "default_cluster_xmit_queue_type"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -701,7 +701,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefXmitQName"
-    snake: "def_xmit_q_name"
+    snake: "default_xmit_queue_name"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -734,7 +734,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DistLists"
-    snake: "dist_lists"
+    snake: "distribution_lists"
     mqsc_commands:
       input:
       output:
@@ -778,7 +778,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "GroupUR"
-    snake: "group_ur"
+    snake: "group_unit_of_recovery"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -799,7 +799,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "GrpName"
-    snake: "grp_name"
+    snake: "group_name"
     mqsc_commands:
       input:
       output:
@@ -809,7 +809,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "GrpRole"
-    snake: "grp_role"
+    snake: "group_role"
     mqsc_commands:
       input:
       output:
@@ -1466,7 +1466,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "PubSubClus"
-    snake: "pub_sub_clus"
+    snake: "pub_sub_cluster"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1490,7 +1490,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "PubSubNPInputMessage"
-    snake: "pub_sub_np_input_message"
+    snake: "pub_sub_non_persistent_input_message"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1502,7 +1502,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "PubSubNPResponse"
-    snake: "pub_sub_np_response"
+    snake: "pub_sub_non_persistent_response"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1537,7 +1537,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrEncryption"
-    snake: "q_mgr_encryption"
+    snake: "queue_manager_encryption"
     mqsc_commands:
       input:
       output:
@@ -1547,7 +1547,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QMgrFSSize"
-    snake: "q_mgr_fs_size"
+    snake: "queue_manager_fs_size"
     mqsc_commands:
       input:
       output:
@@ -1557,7 +1557,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QMgrFSUse"
-    snake: "q_mgr_fs_use"
+    snake: "queue_manager_fs_use"
     mqsc_commands:
       input:
       output:
@@ -1567,7 +1567,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrId"
-    snake: "q_mgr_id"
+    snake: "queue_manager_id"
     mqsc_commands:
       input:
       output:
@@ -1577,7 +1577,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrName"
-    snake: "q_mgr_name"
+    snake: "queue_manager_name"
     mqsc_commands:
       input:
       output:
@@ -1588,7 +1588,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QSGName"
-    snake: "qsg_name"
+    snake: "queue_sharing_group_name"
     mqsc_commands:
       input:
       output:
@@ -1691,7 +1691,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "RevDns"
-    snake: "rev_dns"
+    snake: "reverse_dns"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1761,7 +1761,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "SharedQQmgrName"
-    snake: "shared_q_qmgr_name"
+    snake: "shared_queue_queue_manager_name"
     mqsc_commands:
       input:
         - "ALTER QMGR"

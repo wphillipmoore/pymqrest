@@ -103,7 +103,7 @@ def test_display_qmgr_returns_first_object() -> None:
 
     result = session.display_qmgr()
 
-    assert result == {"q_mgr_name": "QM1"}
+    assert result == {"queue_manager_name": "QM1"}
 
 
 def test_display_qmstatus_returns_first_object() -> None:
@@ -177,15 +177,15 @@ def test_display_queue_maps_parameters_and_response_parameters() -> None:
     session, transport = _build_session(response_payload)
 
     result = session.display_queue(
-        request_parameters={"def_persistence": "def"},
-        response_parameters=["def_persistence", "current_q_depth"],
+        request_parameters={"default_persistence": "def"},
+        response_parameters=["default_persistence", "current_queue_depth"],
     )
 
     recorded_request = transport.recorded_requests[0]
     assert recorded_request.payload["name"] == "*"
     assert recorded_request.payload["parameters"] == {"DEFPSIST": "DEF"}
     assert recorded_request.payload["responseParameters"] == ["DEFPSIST", "CURDEPTH"]
-    assert result == [{"def_persistence": "not_fixed", "current_q_depth": 5}]
+    assert result == [{"default_persistence": "not_fixed", "current_queue_depth": 5}]
 
 
 def test_map_response_parameters_unknown_key_lenient() -> None:
@@ -291,9 +291,9 @@ def test_map_response_parameters_handles_invalid_maps(monkeypatch: pytest.Monkey
         mapping_strict=False,
     )
 
-    result = session._map_response_parameters("DISPLAY", "QUEUE", "queue", ["current_q_depth"])  # noqa: SLF001
+    result = session._map_response_parameters("DISPLAY", "QUEUE", "queue", ["current_queue_depth"])  # noqa: SLF001
 
-    assert result == ["current_q_depth"]
+    assert result == ["current_queue_depth"]
 
 
 def test_map_response_parameters_without_response_map(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -725,7 +725,7 @@ def test_display_queue_where_maps_filter_keyword() -> None:
     }
     session, transport = _build_session(response_payload)
 
-    session.display_queue(where="current_q_depth GT 100")
+    session.display_queue(where="current_queue_depth GT 100")
 
     recorded_request = transport.recorded_requests[0]
     assert recorded_request.payload["parameters"] == {"WHERE": "CURDEPTH GT 100"}
@@ -823,8 +823,8 @@ def test_display_queue_where_combined_with_request_parameters() -> None:
     session, transport = _build_session(response_payload)
 
     session.display_queue(
-        request_parameters={"def_persistence": "def"},
-        where="current_q_depth GT 100",
+        request_parameters={"default_persistence": "def"},
+        where="current_queue_depth GT 100",
     )
 
     recorded_request = transport.recorded_requests[0]
@@ -898,7 +898,7 @@ def test_map_where_keyword_unknown_qualifier_lenient_passes_through() -> None:
 
 def test_map_where_keyword_keyword_only() -> None:
     result = session_module._map_where_keyword(  # noqa: SLF001
-        "current_q_depth",
+        "current_queue_depth",
         "queue",
         strict=False,
     )

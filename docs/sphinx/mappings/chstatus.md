@@ -12,7 +12,7 @@ Related MQSC commands: `DISPLAY CHSTATUS`
 | `command_scope` | `CMDSCOPE` |
 | `connection_name` | `CONNAME` |
 | `non_persistent_message_speed` | `NPMSPEED` |
-| `transmission_q_name` | `XMITQ` |
+| `transmission_queue_name` | `XMITQ` |
 
 ## Response key map
 
@@ -56,15 +56,15 @@ Related MQSC commands: `DISPLAY CHSTATUS`
 | `NETTIME` | `net_time` |
 | `NPMSPEED` | `non_persistent_message_speed` |
 | `PORT` | `port` |
-| `QMNAME` | `q_mgr_name` |
-| `RAPPLTAG` | `remote_appl_tag` |
+| `QMNAME` | `queue_manager_name` |
+| `RAPPLTAG` | `remote_application_tag` |
 | `RPRODUCT` | `remote_product` |
-| `RQMNAME` | `remote_q_mgr_name` |
+| `RQMNAME` | `remote_queue_manager_name` |
 | `RVERSION` | `remote_version` |
 | `SECPROT` | `security_protocol` |
 | `SHORTRTS` | `short_retries_left` |
-| `SSLCERTI` | `ssl_cert_issuer` |
-| `SSLCERTU` | `ssl_cert_user_id` |
+| `SSLCERTI` | `ssl_certificate_issuer` |
+| `SSLCERTU` | `ssl_certificate_user_id` |
 | `SSLCIPH` | `ssl_cipher_spec` |
 | `SSLKEYDA` | `ssl_key_reset_date` |
 | `SSLKEYTI` | `ssl_key_reset_time` |

@@ -42,7 +42,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "InitiationQName"
-    snake: "initiation_q_name"
+    snake: "initiation_queue_name"
     mqsc_commands:
       input:
         - "START CHINIT"

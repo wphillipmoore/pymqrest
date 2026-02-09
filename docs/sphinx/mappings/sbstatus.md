@@ -20,7 +20,7 @@ Related MQSC commands: `DISPLAY SBSTATUS`
 | `DURABLE` | `durable` |
 | `LMSGDATE` | `last_message_date` |
 | `LMSGTIME` | `last_message_time` |
-| `MCASTREL` | `m_cast_rel_indicator` |
+| `MCASTREL` | `multicast_reliability_indicator` |
 | `NUMMSGS` | `number_of_messages` |
 | `RESMDATE` | `resume_date` |
 | `RESMTIME` | `resume_time` |

@@ -18,8 +18,8 @@ EXPECTED_ISSUE_COUNT = 2
 
 def test_map_request_attributes_translates_keys_and_values() -> None:
     request_attributes = {
-        "def_persistence": "def",
-        "def_priority": 3,
+        "default_persistence": "def",
+        "default_priority": 3,
     }
 
     mapped_attributes = map_request_attributes("queue", request_attributes)
@@ -75,8 +75,8 @@ def test_map_response_attributes_translates_keys_and_values() -> None:
     mapped_attributes = map_response_attributes("queue", response_attributes)
 
     assert mapped_attributes == {
-        "def_persistence": "not_fixed",
-        "current_q_depth": 2,
+        "default_persistence": "not_fixed",
+        "current_queue_depth": 2,
     }
 
 

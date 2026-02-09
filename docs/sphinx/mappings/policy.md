@@ -9,12 +9,12 @@ Related MQSC commands: `DELETE POLICY`, `DISPLAY POLICY`, `SET POLICY`
 | Python name | MQSC parameter |
 | --- | --- |
 | `action` | `ACTION` |
-| `enc_alg` | `ENCALG` |
+| `encryption_algorithm` | `ENCALG` |
 | `enforce` | `ENFORCE` |
 | `ignore_state` | `IGNSTATE` |
 | `key_reuse` | `KEYREUSE` |
 | `recipient` | `RECIP` |
-| `sign_alg` | `SIGNALG` |
+| `sign_algorithm` | `SIGNALG` |
 | `signer` | `SIGNER` |
 | `tolerate` | `TOLERATE` |
 

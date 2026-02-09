@@ -56,7 +56,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "CodedCharSetId"
-    snake: "coded_char_set_id"
+    snake: "coded_character_set_id"
     mqsc_commands:
       input:
         - "ALTER COMMINFO"
@@ -108,7 +108,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "GrpAddress"
-    snake: "grp_address"
+    snake: "group_address"
     mqsc_commands:
       input:
         - "ALTER COMMINFO"
@@ -154,7 +154,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "MulticastPropControl"
-    snake: "multicast_prop_control"
+    snake: "multicast_property_control"
     mqsc_commands:
       input:
         - "ALTER COMMINFO"
@@ -193,7 +193,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "NewSubHistory"
-    snake: "new_sub_history"
+    snake: "new_subscription_history"
     mqsc_commands:
       input:
         - "ALTER COMMINFO"

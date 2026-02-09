@@ -11,7 +11,7 @@ Related MQSC commands: `RESOLVE INDOUBT`
 | `command_scope` | `CMDSCOPE` |
 | `in_doubt` | `ACTION` |
 | `origin_id` | `NID` |
-| `q_mgr_name` | `QMNAME` |
+| `queue_manager_name` | `QMNAME` |
 
 ---
 
