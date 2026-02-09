@@ -438,7 +438,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "RemoteApplTag"
-    snake: "remote_appl_tag"
+    snake: "remote_application_tag"
     mqsc_commands:
       input:
       output:
@@ -498,7 +498,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "SSLCertIssuer"
-    snake: "ssl_cert_issuer"
+    snake: "ssl_certificate_issuer"
     mqsc_commands:
       input:
       output:
@@ -508,7 +508,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "SSLCertUserId"
-    snake: "ssl_cert_user_id"
+    snake: "ssl_certificate_user_id"
     mqsc_commands:
       input:
       output:

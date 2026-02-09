@@ -8,9 +8,9 @@ Related MQSC commands: `DISPLAY ARCHIVE`, `SET ARCHIVE`
 
 | Python name | MQSC parameter |
 | --- | --- |
-| `alloc_primary` | `PRIQTY` |
-| `alloc_secondary` | `SECQTY` |
-| `alloc_units` | `ALCUNIT` |
+| `allocation_primary` | `PRIQTY` |
+| `allocation_secondary` | `SECQTY` |
+| `allocation_units` | `ALCUNIT` |
 | `archive_prefix1` | `ARCPFX1` |
 | `archive_prefix2` | `ARCPFX2` |
 | `archive_retention` | `ARCRETN` |

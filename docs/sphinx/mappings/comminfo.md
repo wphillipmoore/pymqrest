@@ -9,18 +9,18 @@ Related MQSC commands: `ALTER COMMINFO`, `DEFINE COMMINFO`, `DELETE COMMINFO`, `
 | Python name | MQSC parameter |
 | --- | --- |
 | `bridge` | `BRIDGE` |
-| `coded_char_set_id` | `CCSID` |
+| `coded_character_set_id` | `CCSID` |
 | `comm_event` | `COMMEV` |
 | `description` | `DESCR` |
 | `encoding` | `ENCODING` |
-| `grp_address` | `GRPADDR` |
+| `group_address` | `GRPADDR` |
 | `ignore_state` | `IGNSTATE` |
 | `like` | `LIKE` |
 | `message_history` | `MSGHIST` |
 | `monitor_interval` | `MONINT` |
 | `multicast_heartbeat` | `MCHBINT` |
-| `multicast_prop_control` | `MCPROP` |
-| `new_sub_history` | `NSUBHIST` |
+| `multicast_property_control` | `MCPROP` |
+| `new_subscription_history` | `NSUBHIST` |
 | `port` | `PORT` |
 | `type` | `TYPE` |
 
@@ -31,16 +31,16 @@ Related MQSC commands: `ALTER COMMINFO`, `DEFINE COMMINFO`, `DELETE COMMINFO`, `
 | `ALTDATE` | `alteration_date` |
 | `ALTTIME` | `alteration_time` |
 | `BRIDGE` | `bridge` |
-| `CCSID` | `coded_char_set_id` |
+| `CCSID` | `coded_character_set_id` |
 | `COMMEV` | `comm_event` |
 | `DESCR` | `description` |
 | `ENCODING` | `encoding` |
-| `GRPADDR` | `grp_address` |
+| `GRPADDR` | `group_address` |
 | `MCHBINT` | `multicast_heartbeat` |
-| `MCPROP` | `multicast_prop_control` |
+| `MCPROP` | `multicast_property_control` |
 | `MONINT` | `monitor_interval` |
 | `MSGHIST` | `message_history` |
-| `NSUBHIST` | `new_sub_history` |
+| `NSUBHIST` | `new_subscription_history` |
 | `PORT` | `port` |
 | `TYPE` | `type` |
 

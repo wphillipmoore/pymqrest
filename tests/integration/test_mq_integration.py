@@ -106,7 +106,7 @@ def _lifecycle_cases() -> list[LifecycleCase]:
             delete_method="delete_queue",
             define_parameters={
                 "replace": "YES",
-                "def_persistence": "YES",
+                "default_persistence": "YES",
                 "description": "pymqrest test qlocal",
             },
         ),

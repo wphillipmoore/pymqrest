@@ -18,7 +18,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplDesc"
-    snake: "appl_desc"
+    snake: "application_desc"
     mqsc_commands:
       input:
       output:
@@ -28,7 +28,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplTag"
-    snake: "appl_tag"
+    snake: "application_tag"
     mqsc_commands:
       input:
       output:
@@ -38,7 +38,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplType"
-    snake: "appl_type"
+    snake: "application_type"
     mqsc_commands:
       input:
       output:
@@ -139,7 +139,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "UOWId"
-    snake: "uow_id"
+    snake: "unit_of_work_id"
     mqsc_commands:
       input:
       output:
@@ -219,7 +219,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrUOWId"
-    snake: "queue_manager_uow_id"
+    snake: "queue_manager_unit_of_work_id"
     mqsc_commands:
       input:
       output:
@@ -229,7 +229,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QSGDisposition"
-    snake: "qsg_disposition"
+    snake: "queue_sharing_group_disposition"
     mqsc_commands:
       input:
       output:
@@ -310,7 +310,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "ConnInfoType"
-    snake: "conn_info_type"
+    snake: "connection_info_type"
     mqsc_commands:
       input:
         - "DISPLAY CONN"
@@ -321,7 +321,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "StartUOWLogExtent"
-    snake: "start_uow_log_extent"
+    snake: "start_unit_of_work_log_extent"
     mqsc_commands:
       input:
       output:
@@ -331,7 +331,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "UOWLogStartDate"
-    snake: "uow_log_start_date"
+    snake: "unit_of_work_log_start_date"
     mqsc_commands:
       input:
       output:
@@ -341,7 +341,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "UOWLogStartTime"
-    snake: "uow_log_start_time"
+    snake: "unit_of_work_log_start_time"
     mqsc_commands:
       input:
       output:
@@ -351,7 +351,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "UOWState"
-    snake: "uow_state"
+    snake: "unit_of_work_state"
     mqsc_commands:
       input:
       output:
@@ -361,7 +361,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "UOWStartDate"
-    snake: "uow_start_date"
+    snake: "unit_of_work_start_date"
     mqsc_commands:
       input:
       output:
@@ -371,7 +371,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "UOWStartTime"
-    snake: "uow_start_time"
+    snake: "unit_of_work_start_time"
     mqsc_commands:
       input:
       output:
@@ -381,7 +381,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "URDisposition"
-    snake: "ur_disposition"
+    snake: "unit_of_recovery_disposition"
     mqsc_commands:
       input:
         - "DISPLAY CONN"
@@ -391,7 +391,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "UOWType"
-    snake: "uow_type"
+    snake: "unit_of_work_type"
     mqsc_commands:
       input:
       output:

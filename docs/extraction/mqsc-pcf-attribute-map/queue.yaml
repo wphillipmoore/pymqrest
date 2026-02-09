@@ -74,7 +74,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplDesc"
-    snake: "appl_desc"
+    snake: "application_desc"
     mqsc_commands:
       input:
       output:
@@ -84,7 +84,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplTag"
-    snake: "appl_tag"
+    snake: "application_tag"
     mqsc_commands:
       input:
       output:
@@ -94,7 +94,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ApplType"
-    snake: "appl_type"
+    snake: "application_type"
     mqsc_commands:
       input:
       output:
@@ -456,7 +456,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefBind"
-    snake: "def_bind"
+    snake: "default_bind"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -492,7 +492,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefPriority"
-    snake: "def_priority"
+    snake: "default_priority"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -511,7 +511,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefPersistence"
-    snake: "def_persistence"
+    snake: "default_persistence"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -530,7 +530,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefReadAhead"
-    snake: "def_read_ahead"
+    snake: "default_read_ahead"
     mqsc_commands:
       input:
         - "ALTER QALIAS"
@@ -547,7 +547,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "DefInputOpenOption"
-    snake: "def_input_open_option"
+    snake: "default_input_open_option"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -595,7 +595,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DistLists"
-    snake: "dist_lists"
+    snake: "distribution_lists"
     mqsc_commands:
       input:
         - "ALTER QLOCAL"
@@ -1127,7 +1127,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrUOWId"
-    snake: "queue_manager_uow_id"
+    snake: "queue_manager_unit_of_work_id"
     mqsc_commands:
       input:
       output:
@@ -1138,7 +1138,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QSGDisposition"
-    snake: "qsg_disposition"
+    snake: "queue_sharing_group_disposition"
     mqsc_commands:
       input:
         - "CLEAR QLOCAL"
@@ -1484,7 +1484,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "UOWId"
-    snake: "uow_id"
+    snake: "unit_of_work_id"
     mqsc_commands:
       input:
       output:
@@ -1494,7 +1494,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "UOWType"
-    snake: "uow_type"
+    snake: "unit_of_work_type"
     mqsc_commands:
       input:
       output:

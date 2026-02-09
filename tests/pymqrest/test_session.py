@@ -177,15 +177,15 @@ def test_display_queue_maps_parameters_and_response_parameters() -> None:
     session, transport = _build_session(response_payload)
 
     result = session.display_queue(
-        request_parameters={"def_persistence": "def"},
-        response_parameters=["def_persistence", "current_queue_depth"],
+        request_parameters={"default_persistence": "def"},
+        response_parameters=["default_persistence", "current_queue_depth"],
     )
 
     recorded_request = transport.recorded_requests[0]
     assert recorded_request.payload["name"] == "*"
     assert recorded_request.payload["parameters"] == {"DEFPSIST": "DEF"}
     assert recorded_request.payload["responseParameters"] == ["DEFPSIST", "CURDEPTH"]
-    assert result == [{"def_persistence": "not_fixed", "current_queue_depth": 5}]
+    assert result == [{"default_persistence": "not_fixed", "current_queue_depth": 5}]
 
 
 def test_map_response_parameters_unknown_key_lenient() -> None:
@@ -823,7 +823,7 @@ def test_display_queue_where_combined_with_request_parameters() -> None:
     session, transport = _build_session(response_payload)
 
     session.display_queue(
-        request_parameters={"def_persistence": "def"},
+        request_parameters={"default_persistence": "def"},
         where="current_queue_depth GT 100",
     )
 

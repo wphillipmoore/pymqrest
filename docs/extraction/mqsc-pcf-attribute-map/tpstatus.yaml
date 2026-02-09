@@ -96,7 +96,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefPriority"
-    snake: "def_priority"
+    snake: "default_priority"
     mqsc_commands:
       input:
       output:
@@ -106,7 +106,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefPersistence"
-    snake: "def_persistence"
+    snake: "default_persistence"
     mqsc_commands:
       input:
       output:
@@ -186,7 +186,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "MCastRelIndicator"
-    snake: "m_cast_rel_indicator"
+    snake: "multicast_reliability_indicator"
     mqsc_commands:
       input:
       output:

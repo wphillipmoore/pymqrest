@@ -9,17 +9,17 @@ Related MQSC commands: `DISPLAY CONN`, `STOP CONN`
 | Python name | MQSC parameter |
 | --- | --- |
 | `command_scope` | `CMDSCOPE` |
-| `conn_info_type` | `TYPE` |
+| `connection_info_type` | `TYPE` |
 | `connection_prefix` | `EXTCONN` |
-| `ur_disposition` | `URDISP` |
+| `unit_of_recovery_disposition` | `URDISP` |
 
 ## Response key map
 
 | MQSC parameter | Python name |
 | --- | --- |
-| `APPLDESC` | `appl_desc` |
-| `APPLTAG` | `appl_tag` |
-| `APPLTYPE` | `appl_type` |
+| `APPLDESC` | `application_desc` |
+| `APPLTAG` | `application_tag` |
+| `APPLTYPE` | `application_type` |
 | `CHANNEL` | `channel_name` |
 | `CLIENTID` | `client_id` |
 | `CONNAME` | `connection_name` |
@@ -27,7 +27,7 @@ Related MQSC commands: `DISPLAY CONN`, `STOP CONN`
 | `CONNTAG` | `connection_tag` |
 | `DEST` | `destination` |
 | `DESTQMGR` | `destination_queue_manager` |
-| `EXTURID` | `uow_id` |
+| `EXTURID` | `unit_of_work_id` |
 | `HSTATE` | `handle_state` |
 | `OBJNAME` | `object_name` |
 | `OBJTYPE` | `object_type` |
@@ -35,8 +35,8 @@ Related MQSC commands: `DISPLAY CONN`, `STOP CONN`
 | `PID` | `process_id` |
 | `PSBNAME` | `psb_name` |
 | `PSTID` | `pst_id` |
-| `QMURID` | `queue_manager_uow_id` |
-| `QSGDISP` | `qsg_disposition` |
+| `QMURID` | `queue_manager_unit_of_work_id` |
+| `QSGDISP` | `queue_sharing_group_disposition` |
 | `READA` | `read_ahead` |
 | `SUBID` | `subscription_id` |
 | `SUBNAME` | `subscription_name` |
@@ -44,14 +44,14 @@ Related MQSC commands: `DISPLAY CONN`, `STOP CONN`
 | `TID` | `thread_id` |
 | `TOPICSTR` | `topic_string` |
 | `TRANSID` | `transaction_id` |
-| `TYPE` | `conn_info_type` |
-| `UOWLOG` | `start_uow_log_extent` |
-| `UOWLOGDA` | `uow_log_start_date` |
-| `UOWLOGTI` | `uow_log_start_time` |
-| `UOWSTATE` | `uow_state` |
-| `UOWSTDA` | `uow_start_date` |
-| `UOWSTTI` | `uow_start_time` |
-| `URTYPE` | `uow_type` |
+| `TYPE` | `connection_info_type` |
+| `UOWLOG` | `start_unit_of_work_log_extent` |
+| `UOWLOGDA` | `unit_of_work_log_start_date` |
+| `UOWLOGTI` | `unit_of_work_log_start_time` |
+| `UOWSTATE` | `unit_of_work_state` |
+| `UOWSTDA` | `unit_of_work_start_date` |
+| `UOWSTTI` | `unit_of_work_start_time` |
+| `URTYPE` | `unit_of_work_type` |
 | `USERID` | `user_id` |
 
 ---

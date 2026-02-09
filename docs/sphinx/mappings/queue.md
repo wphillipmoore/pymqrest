@@ -8,7 +8,7 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 
 | Python name | MQSC parameter |
 | --- | --- |
-| `auth_record` | `AUTHREC` |
+| `authorization_record` | `AUTHREC` |
 | `backout_requeue_name` | `BOQNAME` |
 | `backout_threshold` | `BOTHRESH` |
 | `cf_struct_name` | `CFSTRUCT` |
@@ -20,15 +20,15 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 | `cluster_workload_use_queue` | `CLWLUSEQ` |
 | `command_scope` | `CMDSCOPE` |
 | `custom` | `CUSTOM` |
-| `def_bind` | `DEFBIND` |
-| `def_input_open_option` | `DEFSOPT` |
-| `def_persistence` | `DEFPSIST` |
-| `def_priority` | `DEFPRTY` |
-| `def_read_ahead` | `DEFREADA` |
+| `default_bind` | `DEFBIND` |
+| `default_input_open_option` | `DEFSOPT` |
+| `default_persistence` | `DEFPSIST` |
+| `default_priority` | `DEFPRTY` |
 | `default_put_response` | `DEFPRESP` |
+| `default_read_ahead` | `DEFREADA` |
 | `definition_type` | `DEFTYPE` |
 | `description` | `DESCR` |
-| `dist_lists` | `DISTL` |
+| `distribution_lists` | `DISTL` |
 | `force` | `FORCE` |
 | `harden_get_backout` | `HARDENBO` |
 | `ignore_state` | `IGNSTATE` |
@@ -45,7 +45,6 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 | `page_set_id` | `PSID` |
 | `process_name` | `PROCESS` |
 | `property_control` | `PROPCTL` |
-| `qsg_disposition` | `QSGDISP` |
 | `queue_accounting` | `ACCTQ` |
 | `queue_depth_high_event` | `QDPHIEV` |
 | `queue_depth_high_limit` | `QDEPTHHI` |
@@ -54,6 +53,7 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 | `queue_depth_max_event` | `QDPMAXEV` |
 | `queue_monitoring` | `MONQ` |
 | `queue_service_interval` | `QSVCINT` |
+| `queue_sharing_group_disposition` | `QSGDISP` |
 | `queue_statistics` | `STATQ` |
 | `remote_queue_manager_name` | `RQMNAME` |
 | `remote_queue_name` | `RNAME` |
@@ -80,9 +80,9 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 | `ACCTQ` | `queue_accounting` |
 | `ALTDATE` | `alteration_date` |
 | `ALTTIME` | `alteration_time` |
-| `APPLDESC` | `appl_desc` |
-| `APPLTAG` | `appl_tag` |
-| `APPLTYPE` | `appl_type` |
+| `APPLDESC` | `application_desc` |
+| `APPLTAG` | `application_tag` |
+| `APPLTYPE` | `application_type` |
 | `ASID` | `as_id` |
 | `ASTATE` | `asynchronous_state` |
 | `BOQNAME` | `backout_requeue_name` |
@@ -108,15 +108,15 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 | `CURFSIZE` | `current_queue_file_size` |
 | `CURMAXFS` | `current_max_queue_file_size` |
 | `CUSTOM` | `custom` |
-| `DEFBIND` | `def_bind` |
+| `DEFBIND` | `default_bind` |
 | `DEFPRESP` | `default_put_response` |
-| `DEFPRTY` | `def_priority` |
-| `DEFPSIST` | `def_persistence` |
-| `DEFREADA` | `def_read_ahead` |
-| `DEFSOPT` | `def_input_open_option` |
+| `DEFPRTY` | `default_priority` |
+| `DEFPSIST` | `default_persistence` |
+| `DEFREADA` | `default_read_ahead` |
+| `DEFSOPT` | `default_input_open_option` |
 | `DEFTYPE` | `definition_type` |
 | `DESCR` | `description` |
-| `DISTL` | `dist_lists` |
+| `DISTL` | `distribution_lists` |
 | `GET` | `inhibit_get` |
 | `HARDENBO` | `harden_get_backout` |
 | `HSTATE` | `handle_state` |
@@ -154,8 +154,8 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 | `QDPLOEV` | `queue_depth_low_event` |
 | `QDPMAXEV` | `queue_depth_max_event` |
 | `QMID` | `queue_manager_id` |
-| `QMURID` | `queue_manager_uow_id` |
-| `QSGDISP` | `qsg_disposition` |
+| `QMURID` | `queue_manager_unit_of_work_id` |
+| `QSGDISP` | `queue_sharing_group_disposition` |
 | `QSVCINT` | `queue_service_interval` |
 | `QTIME` | `on_queue_time` |
 | `QTYPE` | `queue_type` |
@@ -180,15 +180,15 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 | `TRIGMPRI` | `trigger_message_priority` |
 | `TRIGTYPE` | `trigger_type` |
 | `UNCOM` | `uncommitted_messages` |
-| `URID` | `uow_id` |
-| `URTYPE` | `uow_type` |
+| `URID` | `unit_of_work_id` |
+| `URTYPE` | `unit_of_work_type` |
 | `USAGE` | `usage` |
 | `USERID` | `user_id` |
 | `XMITQ` | `transmission_queue_name` |
 
 ## Request value map
 
-### def_persistence
+### default_persistence
 
 | Python value | MQSC value |
 | --- | --- |

@@ -123,7 +123,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "QSGDisposition"
-    snake: "qsg_disposition"
+    snake: "queue_sharing_group_disposition"
     mqsc_commands:
       input:
         - "ALTER NAMELIST"

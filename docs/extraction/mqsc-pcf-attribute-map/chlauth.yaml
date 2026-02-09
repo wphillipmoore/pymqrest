@@ -42,7 +42,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "AddrList"
-    snake: "addr_list"
+    snake: "address_list"
     mqsc_commands:
       input:
         - "SET CHLAUTH"
@@ -86,7 +86,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "ClntUser"
-    snake: "clnt_user"
+    snake: "client_user"
     mqsc_commands:
       input:
         - "DISPLAY CHLAUTH"
@@ -169,7 +169,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "SSLCertIssuer"
-    snake: "ssl_cert_issuer"
+    snake: "ssl_certificate_issuer"
     mqsc_commands:
       input:
         - "DISPLAY CHLAUTH"
@@ -219,7 +219,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "UserSrc"
-    snake: "user_src"
+    snake: "user_source"
     mqsc_commands:
       input:
         - "SET CHLAUTH"

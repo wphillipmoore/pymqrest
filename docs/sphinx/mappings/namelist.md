@@ -14,7 +14,7 @@ Related MQSC commands: `ALTER NAMELIST`, `DEFINE NAMELIST`, `DELETE NAMELIST`, `
 | `like` | `LIKE` |
 | `namelist_type` | `NLTYPE` |
 | `names` | `NAMES` |
-| `qsg_disposition` | `QSGDISP` |
+| `queue_sharing_group_disposition` | `QSGDISP` |
 
 ## Response key map
 

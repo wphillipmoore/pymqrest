@@ -57,14 +57,14 @@ Related MQSC commands: `DISPLAY CHSTATUS`
 | `NPMSPEED` | `non_persistent_message_speed` |
 | `PORT` | `port` |
 | `QMNAME` | `queue_manager_name` |
-| `RAPPLTAG` | `remote_appl_tag` |
+| `RAPPLTAG` | `remote_application_tag` |
 | `RPRODUCT` | `remote_product` |
 | `RQMNAME` | `remote_queue_manager_name` |
 | `RVERSION` | `remote_version` |
 | `SECPROT` | `security_protocol` |
 | `SHORTRTS` | `short_retries_left` |
-| `SSLCERTI` | `ssl_cert_issuer` |
-| `SSLCERTU` | `ssl_cert_user_id` |
+| `SSLCERTI` | `ssl_certificate_issuer` |
+| `SSLCERTU` | `ssl_certificate_user_id` |
 | `SSLCIPH` | `ssl_cipher_spec` |
 | `SSLKEYDA` | `ssl_key_reset_date` |
 | `SSLKEYTI` | `ssl_key_reset_time` |

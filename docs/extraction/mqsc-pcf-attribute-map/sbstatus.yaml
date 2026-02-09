@@ -68,7 +68,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "MCastRelIndicator"
-    snake: "m_cast_rel_indicator"
+    snake: "multicast_reliability_indicator"
     mqsc_commands:
       input:
       output:

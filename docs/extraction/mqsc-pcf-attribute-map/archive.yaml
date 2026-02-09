@@ -18,7 +18,7 @@ attributes:
       - "input"
     status: "matched"
     pcf: "AllocUnits"
-    snake: "alloc_units"
+    snake: "allocation_units"
     mqsc_commands:
       input:
         - "SET ARCHIVE"
@@ -119,7 +119,7 @@ attributes:
       - "input"
     status: "override"
     pcf: "AllocPrimary"
-    snake: "alloc_primary"
+    snake: "allocation_primary"
     mqsc_commands:
       input:
         - "SET ARCHIVE"
@@ -149,7 +149,7 @@ attributes:
       - "input"
     status: "override"
     pcf: "AllocSecondary"
-    snake: "alloc_secondary"
+    snake: "allocation_secondary"
     mqsc_commands:
       input:
         - "SET ARCHIVE"

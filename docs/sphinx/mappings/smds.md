@@ -21,7 +21,7 @@ Related MQSC commands: `ALTER SMDS`, `DISPLAY SMDS`, `RESET SMDS`
 | `CFSTRUCT` | `cf_struct_name` |
 | `DSBUFS` | `data_sharing_buffers` |
 | `DSEXPAND` | `data_sharing_expand` |
-| `SMDS` | `shared_msg_dataset` |
+| `SMDS` | `shared_message_dataset` |
 
 ---
 

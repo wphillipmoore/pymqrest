@@ -9,21 +9,21 @@ Related MQSC commands: `DISPLAY CHLAUTH`, `SET CHLAUTH`
 | Python name | MQSC parameter |
 | --- | --- |
 | `action` | `ACTION` |
-| `addr_list` | `ADDRLIST` |
 | `address` | `ADDRESS` |
+| `address_list` | `ADDRLIST` |
 | `check_client` | `CHCKCLNT` |
-| `clnt_user` | `CLNTUSER` |
+| `client_user` | `CLNTUSER` |
 | `command_scope` | `CMDSCOPE` |
 | `custom` | `CUSTOM` |
 | `description` | `DESCR` |
 | `match` | `MATCH` |
 | `mca_user` | `MCAUSER` |
 | `queue_manager_name` | `QMNAME` |
-| `ssl_cert_issuer` | `SSLCERTI` |
+| `ssl_certificate_issuer` | `SSLCERTI` |
 | `ssl_peer_name` | `SSLPEER` |
 | `type` | `TYPE` |
 | `user_list` | `USERLIST` |
-| `user_src` | `USERSRC` |
+| `user_source` | `USERSRC` |
 | `warn` | `WARN` |
 
 ## Response key map
@@ -31,16 +31,16 @@ Related MQSC commands: `DISPLAY CHLAUTH`, `SET CHLAUTH`
 | MQSC parameter | Python name |
 | --- | --- |
 | `ADDRESS` | `address` |
-| `ADDRLIST` | `addr_list` |
+| `ADDRLIST` | `address_list` |
 | `ALTDATE` | `alteration_date` |
 | `ALTTIME` | `alteration_time` |
 | `CHCKCLNT` | `check_client` |
-| `CLNTUSER` | `clnt_user` |
+| `CLNTUSER` | `client_user` |
 | `CUSTOM` | `custom` |
 | `DESCR` | `description` |
 | `MCAUSER` | `mca_user` |
 | `QMNAME` | `queue_manager_name` |
-| `SSLCERTI` | `ssl_cert_issuer` |
+| `SSLCERTI` | `ssl_certificate_issuer` |
 | `SSLPEER` | `ssl_peer_name` |
 | `TYPE` | `type` |
 | `USERLIST` | `user_list` |

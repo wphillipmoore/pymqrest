@@ -22,8 +22,8 @@ Related MQSC commands: `DISPLAY TPSTATUS`
 | `CLUSTER` | `cluster_name` |
 | `COMMINFO` | `comm_info` |
 | `DEFPRESP` | `default_put_response` |
-| `DEFPRTY` | `def_priority` |
-| `DEFPSIST` | `def_persistence` |
+| `DEFPRTY` | `default_priority` |
+| `DEFPSIST` | `default_persistence` |
 | `DURABLE` | `durable` |
 | `DURSUB` | `durable_subscriptions` |
 | `LMSGDATE` | `last_message_date` |
@@ -31,7 +31,7 @@ Related MQSC commands: `DISPLAY TPSTATUS`
 | `LPUBDATE` | `last_publication_date` |
 | `LPUBTIME` | `last_publication_time` |
 | `MCAST` | `multicast` |
-| `MCASTREL` | `m_cast_rel_indicator` |
+| `MCASTREL` | `multicast_reliability_indicator` |
 | `MDURMDL` | `durable_model_queue_name` |
 | `MNDURMDL` | `non_durable_model_queue_name` |
 | `NPMSGDLV` | `non_persistent_message_delivery` |

@@ -82,7 +82,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "AuthInfoType"
-    snake: "auth_info_type"
+    snake: "authentication_info_type"
     mqsc_commands:
       input:
         - "ALTER AUTHINFO"
@@ -135,7 +135,7 @@ attributes:
       - "output"
     status: "input-only"
     pcf: "Checklocal"
-    snake: "checklocal"
+    snake: "check_local"
     mqsc_commands:
       input:
         - "ALTER AUTHINFO"
@@ -161,7 +161,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "Classuser"
-    snake: "classuser"
+    snake: "class_user"
     mqsc_commands:
       input:
         - "ALTER AUTHINFO"
@@ -324,7 +324,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QSGDisposition"
-    snake: "qsg_disposition"
+    snake: "queue_sharing_group_disposition"
     mqsc_commands:
       input:
         - "ALTER AUTHINFO"

@@ -13,7 +13,7 @@ Related MQSC commands: `ALTER STGCLASS`, `DEFINE STGCLASS`, `DELETE STGCLASS`, `
 | `like` | `LIKE` |
 | `page_set_id` | `PSID` |
 | `pass_ticket_application` | `PASSTKTA` |
-| `qsg_disposition` | `QSGDISP` |
+| `queue_sharing_group_disposition` | `QSGDISP` |
 | `xcf_group_name` | `XCFGNAME` |
 | `xcf_member_name` | `XCFMNAME` |
 

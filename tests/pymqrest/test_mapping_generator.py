@@ -50,7 +50,7 @@ def test_normalize_mapping_inverts_key_and_value_maps() -> None:
             "queue": {
                 "response_key_map": {
                     "CURDEPTH": "current_queue_depth",
-                    "DEFPSIST": "def_persistence",
+                    "DEFPSIST": "default_persistence",
                 },
                 "response_value_map": {
                     "DEFPSIST": {
@@ -66,9 +66,9 @@ def test_normalize_mapping_inverts_key_and_value_maps() -> None:
 
     assert qualifier_data["request_key_map"] == {
         "current_queue_depth": "CURDEPTH",
-        "def_persistence": "DEFPSIST",
+        "default_persistence": "DEFPSIST",
     }
-    assert qualifier_data["request_value_map"] == {"def_persistence": {"def": "DEF"}}
+    assert qualifier_data["request_value_map"] == {"default_persistence": {"def": "DEF"}}
 
 
 def test_merge_mapping_overrides_removes_entries() -> None:
@@ -81,7 +81,7 @@ def test_merge_mapping_overrides_removes_entries() -> None:
             "queue": {
                 "response_key_map": {
                     "CURDEPTH": "current_queue_depth",
-                    "DEFPSIST": "def_persistence",
+                    "DEFPSIST": "default_persistence",
                 },
             },
         },
