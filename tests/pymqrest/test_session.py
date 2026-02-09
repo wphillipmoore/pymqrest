@@ -86,6 +86,11 @@ def _build_session(
     return session, transport
 
 
+def test_qmgr_name_property_returns_configured_name() -> None:
+    session, _ = _build_session({"overallCompletionCode": 0, "overallReasonCode": 0})
+    assert session.qmgr_name == "QM1"
+
+
 def test_display_qmgr_returns_first_object() -> None:
     response_payload = {
         "commandResponse": [

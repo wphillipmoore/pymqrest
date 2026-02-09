@@ -73,6 +73,10 @@ docstring-quotes = "double"
     "D1",  # Internal tooling scripts do not require docstrings.
     "T201", # Scripts use print for user-facing output.
 ]
+"examples/**/*.py" = [
+    "INP001", # Example scripts are not a package; no __init__.py needed.
+    "T201",   # Example scripts use print for user-facing output.
+]
 "docs/sphinx/conf.py" = [
     "INP001", # Sphinx conf.py is not a package; no __init__.py needed.
 ]

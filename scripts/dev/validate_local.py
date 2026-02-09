@@ -69,8 +69,8 @@ def build_commands(base_ref: str) -> tuple[tuple[str, ...], ...]:
         ("uv", "run", "pip-audit", "-r", "requirements.txt", "-r", "requirements-dev.txt"),
         ("uv", "run", "ruff", "check"),
         ("uv", "run", "ruff", "format", "--check", "."),
-        ("uv", "run", "mypy", "src/"),
-        ("uv", "run", "ty", "check", "src"),
+        ("uv", "run", "mypy", "src/", "examples/"),
+        ("uv", "run", "ty", "check", "src", "examples"),
         (
             "uv",
             "run",

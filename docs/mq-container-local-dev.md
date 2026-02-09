@@ -23,7 +23,8 @@ real command responses.
 
 - `scripts/dev/mq/docker-compose.yml`
 - `scripts/dev/mq/mqwebuser.xml`
-- `scripts/dev/mq/seed.mqsc`
+- `scripts/dev/mq/seed-qm1.mqsc`
+- `scripts/dev/mq/seed-qm2.mqsc`
 - `scripts/dev/mq_start.sh`
 - `scripts/dev/mq_stop.sh`
 - `scripts/dev/mq_reset.sh`
@@ -38,10 +39,13 @@ real command responses.
 ## Configuration
 
 - Image: `MQ_IMAGE` (defaults to `icr.io/ibm-messaging/mq:latest`).
-- Queue manager: `QM1` (`MQ_QMGR_NAME` in `scripts/dev/mq/docker-compose.yml`).
-- Ports:
+- Queue managers: `QM1` and `QM2` on a shared Docker network (`pymqrest-net`).
+- QM1 ports:
   - `1414`: MQ listener.
   - `9443`: mqweb console + REST API.
+- QM2 ports:
+  - `1415`: MQ listener.
+  - `9444`: mqweb console + REST API.
 - Embedded web server: `MQ_ENABLE_EMBEDDED_WEB_SERVER=true` in the compose file.
 - Credentials (REST + console):
   - `mqadmin` / `mqadmin` (admin)
