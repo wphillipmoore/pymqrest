@@ -6,22 +6,28 @@ for a conceptual overview.
 
 ## Functions
 
-```{autofunction} pymqrest.mapping.map_request_attributes
+```{eval-rst}
+.. autofunction:: pymqrest.mapping.map_request_attributes
 ```
 
-```{autofunction} pymqrest.mapping.map_response_attributes
+```{eval-rst}
+.. autofunction:: pymqrest.mapping.map_response_attributes
 ```
 
-```{autofunction} pymqrest.mapping.map_response_list
+```{eval-rst}
+.. autofunction:: pymqrest.mapping.map_response_list
 ```
 
 ## Diagnostics
 
-```{autoclass} pymqrest.mapping.MappingIssue
-:members:
+```{eval-rst}
+.. autoclass:: pymqrest.mapping.MappingIssue
+   :members:
+   :exclude-members: direction, reason, attribute_name, attribute_value, object_index, qualifier
 ```
 
-```{autoclass} pymqrest.mapping.MappingError
-:members:
-:show-inheritance:
+```{eval-rst}
+.. autoclass:: pymqrest.mapping.MappingError
+   :members:
+   :show-inheritance:
 ```
