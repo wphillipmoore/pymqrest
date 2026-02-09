@@ -25,9 +25,9 @@ Related MQSC commands: `DISPLAY CFSTATUS`
 | `ENTSUSED` | `entries_used` |
 | `FAILDATE` | `fail_date` |
 | `FAILTIME` | `fail_time` |
-| `LOGS` | `log_q_mgr_names` |
+| `LOGS` | `log_queue_manager_names` |
 | `OFFLDUSE` | `offload_use` |
-| `QMNAME` | `q_mgr_name` |
+| `QMNAME` | `queue_manager_name` |
 | `RCVDATE` | `recovery_start_date` |
 | `RCVTIME` | `recovery_start_time` |
 | `SIZEMAX` | `size_max` |

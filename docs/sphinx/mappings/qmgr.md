@@ -49,9 +49,9 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `configuration_event` | `CONFIGEV` |
 | `conn_auth` | `CONNAUTH` |
 | `custom` | `CUSTOM` |
-| `dead_letter_q_name` | `DEADQ` |
+| `dead_letter_queue_name` | `DEADQ` |
 | `def_cluster_xmit_queue_type` | `DEFCLXQ` |
-| `def_xmit_q_name` | `DEFXMITQ` |
+| `def_xmit_queue_name` | `DEFXMITQ` |
 | `description` | `DESCR` |
 | `encryption_policy_suite_b` | `SUITEB` |
 | `expiry_interval` | `EXPRYINT` |
@@ -111,7 +111,7 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `repository_namelist` | `REPOSNL` |
 | `rev_dns` | `REVDNS` |
 | `security_case` | `SCYCASE` |
-| `shared_q_qmgr_name` | `SQQMNAME` |
+| `shared_queue_queue_manager_name` | `SQQMNAME` |
 | `ssl_crypto_hardware` | `SSLCRYP` |
 | `ssl_event` | `SSLEV` |
 | `ssl_fips_required` | `SSLFIPS` |
@@ -179,7 +179,7 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `CMDEV` | `command_event` |
 | `CMDLEVEL` | `command_level` |
 | `CMDSERV` | `command_server_status` |
-| `COMMANDQ` | `command_input_q_name` |
+| `COMMANDQ` | `command_input_queue_name` |
 | `CONFIGEV` | `configuration_event` |
 | `CONNAUTH` | `conn_auth` |
 | `CPILEVEL` | `cpi_level` |
@@ -190,9 +190,9 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `DATFSSZ` | `data_fs_size` |
 | `DATFSUSE` | `data_fs_use` |
 | `DATPATH` | `data_path` |
-| `DEADQ` | `dead_letter_q_name` |
+| `DEADQ` | `dead_letter_queue_name` |
 | `DEFCLXQ` | `def_cluster_xmit_queue_type` |
-| `DEFXMITQ` | `def_xmit_q_name` |
+| `DEFXMITQ` | `def_xmit_queue_name` |
 | `DESCR` | `description` |
 | `DISKLSN` | `disk_log_sequence_number` |
 | `DISTL` | `dist_lists` |
@@ -262,11 +262,11 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `PSNPRES` | `pub_sub_np_response` |
 | `PSRTYCNT` | `pub_sub_max_message_retry_count` |
 | `PSSYNCPT` | `pub_sub_sync_point` |
-| `QMFSENC` | `q_mgr_encryption` |
-| `QMFSSZ` | `q_mgr_fs_size` |
-| `QMFSUSE` | `q_mgr_fs_use` |
-| `QMID` | `q_mgr_id` |
-| `QMNAME` | `q_mgr_name` |
+| `QMFSENC` | `queue_manager_encryption` |
+| `QMFSSZ` | `queue_manager_fs_size` |
+| `QMFSUSE` | `queue_manager_fs_use` |
+| `QMID` | `queue_manager_id` |
+| `QMNAME` | `queue_manager_name` |
 | `QSGNAME` | `qsg_name` |
 | `QUORUM` | `quorum` |
 | `RCVTIME` | `receive_timeout` |
@@ -282,7 +282,7 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `SCMDSERV` | `command_server_control` |
 | `SCYCASE` | `security_case` |
 | `SPLCAP` | `security_policy_capability` |
-| `SQQMNAME` | `shared_q_qmgr_name` |
+| `SQQMNAME` | `shared_queue_queue_manager_name` |
 | `SSLCRLNL` | `sslcrl_namelist` |
 | `SSLCRYP` | `ssl_crypto_hardware` |
 | `SSLEV` | `ssl_event` |

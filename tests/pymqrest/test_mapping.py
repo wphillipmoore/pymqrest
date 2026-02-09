@@ -76,7 +76,7 @@ def test_map_response_attributes_translates_keys_and_values() -> None:
 
     assert mapped_attributes == {
         "def_persistence": "not_fixed",
-        "current_q_depth": 2,
+        "current_queue_depth": 2,
     }
 
 

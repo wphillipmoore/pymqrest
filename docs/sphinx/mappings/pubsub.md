@@ -15,7 +15,7 @@ Related MQSC commands: `DISPLAY PUBSUB`
 
 | MQSC parameter | Python name |
 | --- | --- |
-| `QMNAME` | `q_mgr_name` |
+| `QMNAME` | `queue_manager_name` |
 | `STATUS` | `status` |
 | `SUBCOUNT` | `subscription_count` |
 | `TPCOUNT` | `topic_node_count` |

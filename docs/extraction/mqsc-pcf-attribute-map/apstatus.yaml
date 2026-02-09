@@ -196,7 +196,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrId"
-    snake: "q_mgr_id"
+    snake: "queue_manager_id"
     mqsc_commands:
       input:
       output:
@@ -206,7 +206,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrName"
-    snake: "q_mgr_name"
+    snake: "queue_manager_name"
     mqsc_commands:
       input:
       output:

@@ -428,7 +428,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrName"
-    snake: "q_mgr_name"
+    snake: "queue_manager_name"
     mqsc_commands:
       input:
       output:
@@ -458,7 +458,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "RemoteQMgrName"
-    snake: "remote_q_mgr_name"
+    snake: "remote_queue_manager_name"
     mqsc_commands:
       input:
       output:
@@ -628,7 +628,7 @@ attributes:
       - "input"
     status: "override"
     pcf: "TransmissionQName"
-    snake: "transmission_q_name"
+    snake: "transmission_queue_name"
     mqsc_commands:
       input:
         - "DISPLAY CHSTATUS"

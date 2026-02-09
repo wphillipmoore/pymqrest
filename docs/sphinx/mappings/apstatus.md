@@ -26,8 +26,8 @@ Related MQSC commands: `DISPLAY APSTATUS`
 | `LMSGTIME` | `last_message_time` |
 | `MOVABLE` | `movable` |
 | `MOVCOUNT` | `movable_instance_count` |
-| `QMID` | `q_mgr_id` |
-| `QMNAME` | `q_mgr_name` |
+| `QMID` | `queue_manager_id` |
+| `QMNAME` | `queue_manager_name` |
 
 ---
 

@@ -19,12 +19,12 @@ Related MQSC commands: `DISPLAY CLUSQMGR`
 | `CLUSDATE` | `cluster_date` |
 | `CLUSTIME` | `cluster_time` |
 | `DEFTYPE` | `definition_type` |
-| `QMID` | `q_mgr_id` |
-| `QMTYPE` | `q_mgr_type` |
+| `QMID` | `queue_manager_id` |
+| `QMTYPE` | `queue_manager_type` |
 | `STATUS` | `channel_status` |
 | `SUSPEND` | `suspend` |
 | `VERSION` | `version` |
-| `XMITQ` | `transmission_q_name` |
+| `XMITQ` | `transmission_queue_name` |
 
 ---
 

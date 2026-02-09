@@ -119,7 +119,7 @@ def _lifecycle_cases() -> list[LifecycleCase]:
             define_parameters={
                 "replace": "YES",
                 "remote_queue_name": "PYMQREST.TARGET",
-                "remote_q_mgr_name": config.qmgr_name,
+                "remote_queue_manager_name": config.qmgr_name,
                 "xmit_q_name": "PYMQREST.XMITQ",
                 "description": "pymqrest test qremote",
             },

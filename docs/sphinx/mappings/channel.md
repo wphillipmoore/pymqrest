@@ -70,8 +70,8 @@ Related MQSC commands: `ALTER CHANNEL`, `DEFINE CHANNEL`, `DELETE CHANNEL`, `DIS
 | `property_control` | `PROPCTL` |
 | `protocol` | `PROTOCOL` |
 | `put_authority` | `PUTAUT` |
-| `q_mgr_name` | `QMNAME` |
 | `qsg_disposition` | `QSGDISP` |
+| `queue_manager_name` | `QMNAME` |
 | `receive_exit` | `RCVEXIT` |
 | `receive_user_data` | `RCVDATA` |
 | `security_exit` | `SCYEXIT` |
@@ -88,11 +88,11 @@ Related MQSC commands: `ALTER CHANNEL`, `DEFINE CHANNEL`, `DELETE CHANNEL`, `DIS
 | `ssl_key_repository` | `SSLKEYR` |
 | `ssl_pass_phrase` | `SSLKEYP` |
 | `ssl_peer_name` | `SSLPEER` |
-| `temporary_model_q_name` | `TMPMODEL` |
-| `temporary_q_prefix` | `TMPQPRFX` |
+| `temporary_model_queue_name` | `TMPMODEL` |
+| `temporary_queue_prefix` | `TMPQPRFX` |
 | `topic_root` | `TPROOT` |
 | `transaction_program_name` | `TPNAME` |
-| `transmission_q_name` | `XMITQ` |
+| `transmission_queue_name` | `XMITQ` |
 | `transport_type` | `TRPTYPE` |
 | `use_clt_id` | `USECLTID` |
 | `use_dead_letter_queue` | `USEDLQ` |
@@ -151,7 +151,7 @@ Related MQSC commands: `ALTER CHANNEL`, `DEFINE CHANNEL`, `DELETE CHANNEL`, `DIS
 | `PORT` | `port` |
 | `PROPCTL` | `property_control` |
 | `PUTAUT` | `put_authority` |
-| `QMNAME` | `q_mgr_name` |
+| `QMNAME` | `queue_manager_name` |
 | `RCVDATA` | `receive_user_data` |
 | `RCVEXIT` | `receive_exit` |
 | `RESETSEQ` | `reset_seq` |
@@ -174,7 +174,7 @@ Related MQSC commands: `ALTER CHANNEL`, `DEFINE CHANNEL`, `DELETE CHANNEL`, `DIS
 | `USECLTID` | `use_clt_id` |
 | `USEDLQ` | `use_dead_letter_queue` |
 | `USERID` | `user_id` |
-| `XMITQ` | `transmission_q_name` |
+| `XMITQ` | `transmission_queue_name` |
 
 ## Request key-value map
 

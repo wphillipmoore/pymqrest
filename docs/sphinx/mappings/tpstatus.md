@@ -32,8 +32,8 @@ Related MQSC commands: `DISPLAY TPSTATUS`
 | `LPUBTIME` | `last_publication_time` |
 | `MCAST` | `multicast` |
 | `MCASTREL` | `m_cast_rel_indicator` |
-| `MDURMDL` | `durable_model_q_name` |
-| `MNDURMDL` | `non_durable_model_q_name` |
+| `MDURMDL` | `durable_model_queue_name` |
+| `MNDURMDL` | `non_durable_model_queue_name` |
 | `NPMSGDLV` | `non_persistent_message_delivery` |
 | `NUMMSGS` | `number_of_messages` |
 | `NUMPUBS` | `number_of_publishes` |

@@ -219,7 +219,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrUOWId"
-    snake: "q_mgr_uow_id"
+    snake: "queue_manager_uow_id"
     mqsc_commands:
       input:
       output:

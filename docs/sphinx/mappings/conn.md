@@ -35,7 +35,7 @@ Related MQSC commands: `DISPLAY CONN`, `STOP CONN`
 | `PID` | `process_id` |
 | `PSBNAME` | `psb_name` |
 | `PSTID` | `pst_id` |
-| `QMURID` | `q_mgr_uow_id` |
+| `QMURID` | `queue_manager_uow_id` |
 | `QSGDISP` | `qsg_disposition` |
 | `READA` | `read_ahead` |
 | `SUBID` | `subscription_id` |

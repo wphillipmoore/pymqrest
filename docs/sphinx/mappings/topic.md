@@ -19,12 +19,12 @@ Related MQSC commands: `ALTER TOPIC`, `DEFINE TOPIC`, `DELETE TOPIC`, `DISPLAY T
 | `def_priority` | `DEFPRTY` |
 | `default_put_response` | `DEFPRESP` |
 | `description` | `DESCR` |
-| `durable_model_q_name` | `MDURMDL` |
+| `durable_model_queue_name` | `MDURMDL` |
 | `durable_subscriptions` | `DURSUB` |
 | `ignore_state` | `IGNSTATE` |
 | `like` | `LIKE` |
 | `multicast` | `MCAST` |
-| `non_durable_model_q_name` | `MNDURMDL` |
+| `non_durable_model_queue_name` | `MNDURMDL` |
 | `non_persistent_message_delivery` | `NPMSGDLV` |
 | `persistent_message_delivery` | `PMSGDLV` |
 | `proxy_subscriptions` | `PROXYSUB` |
@@ -54,8 +54,8 @@ Related MQSC commands: `ALTER TOPIC`, `DEFINE TOPIC`, `DELETE TOPIC`, `DISPLAY T
 | `DESCR` | `description` |
 | `DURSUB` | `durable_subscriptions` |
 | `MCAST` | `multicast` |
-| `MDURMDL` | `durable_model_q_name` |
-| `MNDURMDL` | `non_durable_model_q_name` |
+| `MDURMDL` | `durable_model_queue_name` |
+| `MNDURMDL` | `non_durable_model_queue_name` |
 | `NPMSGDLV` | `non_persistent_message_delivery` |
 | `PMSGDLV` | `persistent_message_delivery` |
 | `PROXYSUB` | `proxy_subscriptions` |

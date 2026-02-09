@@ -18,7 +18,7 @@ Related MQSC commands: `DISPLAY CHLAUTH`, `SET CHLAUTH`
 | `description` | `DESCR` |
 | `match` | `MATCH` |
 | `mca_user` | `MCAUSER` |
-| `q_mgr_name` | `QMNAME` |
+| `queue_manager_name` | `QMNAME` |
 | `ssl_cert_issuer` | `SSLCERTI` |
 | `ssl_peer_name` | `SSLPEER` |
 | `type` | `TYPE` |
@@ -39,7 +39,7 @@ Related MQSC commands: `DISPLAY CHLAUTH`, `SET CHLAUTH`
 | `CUSTOM` | `custom` |
 | `DESCR` | `description` |
 | `MCAUSER` | `mca_user` |
-| `QMNAME` | `q_mgr_name` |
+| `QMNAME` | `queue_manager_name` |
 | `SSLCERTI` | `ssl_cert_issuer` |
 | `SSLPEER` | `ssl_peer_name` |
 | `TYPE` | `type` |

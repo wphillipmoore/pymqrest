@@ -560,7 +560,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "CommandInputQName"
-    snake: "command_input_q_name"
+    snake: "command_input_queue_name"
     mqsc_commands:
       input:
       output:
@@ -677,7 +677,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DeadLetterQName"
-    snake: "dead_letter_q_name"
+    snake: "dead_letter_queue_name"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -701,7 +701,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "DefXmitQName"
-    snake: "def_xmit_q_name"
+    snake: "def_xmit_queue_name"
     mqsc_commands:
       input:
         - "ALTER QMGR"
@@ -1537,7 +1537,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrEncryption"
-    snake: "q_mgr_encryption"
+    snake: "queue_manager_encryption"
     mqsc_commands:
       input:
       output:
@@ -1547,7 +1547,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QMgrFSSize"
-    snake: "q_mgr_fs_size"
+    snake: "queue_manager_fs_size"
     mqsc_commands:
       input:
       output:
@@ -1557,7 +1557,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "QMgrFSUse"
-    snake: "q_mgr_fs_use"
+    snake: "queue_manager_fs_use"
     mqsc_commands:
       input:
       output:
@@ -1567,7 +1567,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrId"
-    snake: "q_mgr_id"
+    snake: "queue_manager_id"
     mqsc_commands:
       input:
       output:
@@ -1577,7 +1577,7 @@ attributes:
       - "output"
     status: "override"
     pcf: "QMgrName"
-    snake: "q_mgr_name"
+    snake: "queue_manager_name"
     mqsc_commands:
       input:
       output:
@@ -1761,7 +1761,7 @@ attributes:
       - "output"
     status: "matched"
     pcf: "SharedQQmgrName"
-    snake: "shared_q_qmgr_name"
+    snake: "shared_queue_queue_manager_name"
     mqsc_commands:
       input:
         - "ALTER QMGR"
