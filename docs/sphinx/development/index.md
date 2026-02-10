@@ -5,4 +5,5 @@
 
 local-mq-container
 generation-scripts
+namespace-origin
 ```

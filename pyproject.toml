@@ -46,6 +46,7 @@ pymqrest = ["py.typed"]
 line-length = 120
 target-version = "py314"
 src = ["src", "tests"]
+extend-exclude = ["docs/archive"]
 
 [tool.ruff.lint]
 select = ["ALL"]
