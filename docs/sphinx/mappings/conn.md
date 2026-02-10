@@ -17,7 +17,7 @@ Related MQSC commands: `DISPLAY CONN`, `STOP CONN`
 
 | MQSC parameter | Python name |
 | --- | --- |
-| `APPLDESC` | `application_desc` |
+| `APPLDESC` | `application_description` |
 | `APPLTAG` | `application_tag` |
 | `APPLTYPE` | `application_type` |
 | `CHANNEL` | `channel_name` |

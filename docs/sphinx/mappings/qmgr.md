@@ -166,9 +166,9 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `CHIADAPS` | `chinit_adapters` |
 | `CHIDISPS` | `chinit_dispatchers` |
 | `CHISERVP` | `chinit_service_parameter` |
-| `CHKPTCNT` | `chkpt_cnt` |
-| `CHKPTOPS` | `chkpt_ops` |
-| `CHKPTSZ` | `chkpt_sz` |
+| `CHKPTCNT` | `checkpoint_count` |
+| `CHKPTOPS` | `checkpoint_operations` |
+| `CHKPTSZ` | `checkpoint_size` |
 | `CHLAUTH` | `channel_authentication_records` |
 | `CHLEV` | `channel_event` |
 | `CLWLDATA` | `cluster_work_load_data` |
@@ -187,8 +187,8 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `CRTIME` | `creation_time` |
 | `CURRLOG` | `current_log` |
 | `CUSTOM` | `custom` |
-| `DATFSSZ` | `data_fs_size` |
-| `DATFSUSE` | `data_fs_use` |
+| `DATFSSZ` | `data_filesystem_size` |
+| `DATFSUSE` | `data_filesystem_use` |
 | `DATPATH` | `data_path` |
 | `DEADQ` | `dead_letter_queue_name` |
 | `DEFCLXQ` | `default_cluster_transmission_queue_type` |
@@ -212,7 +212,7 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `INHIBTEV` | `inhibit_event` |
 | `INITKEY` | `initial_key` |
 | `INSTANCE` | `instance` |
-| `INSTDESC` | `installation_desc` |
+| `INSTDESC` | `installation_description` |
 | `INSTNAME` | `installation_name` |
 | `INSTPATH` | `installation_path` |
 | `IPADDRV` | `ip_address_version` |
@@ -220,15 +220,15 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `LDAPCONN` | `ldap_connection_status` |
 | `LOCALEV` | `local_event` |
 | `LOGEXTSZ` | `log_ext_size` |
-| `LOGFSSZ` | `log_fs_size` |
-| `LOGFSUSE` | `log_fs_use` |
+| `LOGFSSZ` | `log_filesystem_size` |
+| `LOGFSUSE` | `log_filesystem_use` |
 | `LOGGEREV` | `logger_event` |
 | `LOGINUSE` | `log_in_use` |
 | `LOGPATH` | `log_path` |
-| `LOGPRIM` | `log_prim` |
-| `LOGSEC` | `log_sec` |
+| `LOGPRIM` | `log_primary` |
+| `LOGSEC` | `log_secondary` |
 | `LOGSTRDA` | `log_start_date` |
-| `LOGSTRL` | `log_start_lsn` |
+| `LOGSTRL` | `log_start_log_sequence_number` |
 | `LOGSTRTI` | `log_start_time` |
 | `LOGTYPE` | `log_type` |
 | `LOGUTIL` | `log_utilization` |
@@ -263,8 +263,8 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `PSRTYCNT` | `pub_sub_max_message_retry_count` |
 | `PSSYNCPT` | `pub_sub_sync_point` |
 | `QMFSENC` | `queue_manager_encryption` |
-| `QMFSSZ` | `queue_manager_fs_size` |
-| `QMFSUSE` | `queue_manager_fs_use` |
+| `QMFSSZ` | `queue_manager_filesystem_size` |
+| `QMFSUSE` | `queue_manager_filesystem_use` |
 | `QMID` | `queue_manager_id` |
 | `QMNAME` | `queue_manager_name` |
 | `QSGNAME` | `queue_sharing_group_name` |
@@ -310,9 +310,9 @@ Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING Q
 | `TRAXTBL` | `chinit_trace_table_size` |
 | `TREELIFE` | `tree_life_time` |
 | `TRIGINT` | `trigger_interval` |
-| `UNICLUS` | `uni_cluster_name` |
+| `UNICLUS` | `uniform_cluster_name` |
 | `VERSION` | `version` |
-| `XRCAP` | `xr_capability` |
+| `XRCAP` | `telemetry_capability` |
 
 ---
 
