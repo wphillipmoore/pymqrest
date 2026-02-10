@@ -5,11 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.0.1] - 2026-02-10
+
+### Bug fixes
+
+- resolve bare branch names to origin/ in commit-messages.sh (#159)
+- use full version in release branch name to avoid collisions (#161)
 
 ### Features
 
 - auto-bump patch version after publish, bump to 1.0.1 (#147)
+- add changelog with git-cliff and CI validation gate (#149)
+- add prepare_release.py to automate release preparation (#160)
 
 ## [1.0.0] - 2026-02-10
 
@@ -113,3 +120,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - expand integration display coverage
 - generalize integration display and mutating coverage
 - run integration lifecycle against local mq
+
