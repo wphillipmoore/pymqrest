@@ -11,7 +11,7 @@ from typing import Protocol, cast
 import requests
 from requests import RequestException
 
-from .auth import LTPA_COOKIE_NAME, BasicAuth, CertificateAuth, Credentials, LTPAAuth, perform_ltpa_login
+from .auth import LTPA_COOKIE_NAME, BasicAuth, CertificateAuth, Credentials, LTPAAuth, _perform_ltpa_login
 from .commands import MQRESTCommandMixin
 from .ensure import MQRESTEnsureMixin
 from .exceptions import (
@@ -244,7 +244,7 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
 
         self._ltpa_token: str | None = None
         if isinstance(credentials, LTPAAuth):
-            self._ltpa_token = perform_ltpa_login(
+            self._ltpa_token = _perform_ltpa_login(
                 self._transport,
                 self._rest_base_url,
                 credentials,

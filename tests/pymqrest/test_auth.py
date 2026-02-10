@@ -12,7 +12,7 @@ from pymqrest.auth import (
     CertificateAuth,
     LTPAAuth,
     _extract_ltpa_token,
-    perform_ltpa_login,
+    _perform_ltpa_login,
 )
 from pymqrest.exceptions import MQRESTAuthError
 from pymqrest.session import TransportResponse
@@ -94,7 +94,7 @@ def test_certificate_auth_is_frozen() -> None:
         cred.cert_path = "/other.pem"  # type: ignore[misc]
 
 
-# -- perform_ltpa_login success --
+# -- _perform_ltpa_login success --
 
 
 def test_perform_ltpa_login_success() -> None:
@@ -106,7 +106,7 @@ def test_perform_ltpa_login_success() -> None:
         ),
     )
 
-    token = perform_ltpa_login(
+    token = _perform_ltpa_login(
         transport,
         "https://example.invalid/ibmmq/rest/v2",
         LTPAAuth("user", TEST_PASSWORD),
@@ -131,7 +131,7 @@ def test_perform_ltpa_login_without_csrf_token() -> None:
         ),
     )
 
-    token = perform_ltpa_login(
+    token = _perform_ltpa_login(
         transport,
         "https://example.invalid/ibmmq/rest/v2",
         LTPAAuth("user", TEST_PASSWORD),
@@ -145,7 +145,7 @@ def test_perform_ltpa_login_without_csrf_token() -> None:
     assert "ibm-mq-rest-csrf-token" not in transport.recorded_headers
 
 
-# -- perform_ltpa_login failures --
+# -- _perform_ltpa_login failures --
 
 
 def test_perform_ltpa_login_http_error_raises() -> None:
@@ -158,7 +158,7 @@ def test_perform_ltpa_login_http_error_raises() -> None:
     )
 
     with pytest.raises(MQRESTAuthError) as excinfo:
-        perform_ltpa_login(
+        _perform_ltpa_login(
             transport,
             "https://example.invalid/ibmmq/rest/v2",
             LTPAAuth("user", TEST_PASSWORD),
@@ -181,7 +181,7 @@ def test_perform_ltpa_login_missing_token_raises() -> None:
     )
 
     with pytest.raises(MQRESTAuthError) as excinfo:
-        perform_ltpa_login(
+        _perform_ltpa_login(
             transport,
             "https://example.invalid/ibmmq/rest/v2",
             LTPAAuth("user", TEST_PASSWORD),
@@ -204,7 +204,7 @@ def test_perform_ltpa_login_no_set_cookie_raises() -> None:
     )
 
     with pytest.raises(MQRESTAuthError):
-        perform_ltpa_login(
+        _perform_ltpa_login(
             transport,
             "https://example.invalid/ibmmq/rest/v2",
             LTPAAuth("user", TEST_PASSWORD),
