@@ -14,15 +14,15 @@ Related MQSC commands: `DISPLAY ARCHIVE`, `SET ARCHIVE`
 | `archive_prefix1` | `ARCPFX1` |
 | `archive_prefix2` | `ARCPFX2` |
 | `archive_retention` | `ARCRETN` |
+| `archive_routing_code` | `ARCWRTC` |
 | `archive_unit2` | `UNIT2` |
-| `archive_wtor` | `ARCWTOR` |
+| `archive_wait_for_reply` | `ARCWTOR` |
 | `block_size` | `BLKSIZE` |
 | `catalog` | `CATALOG` |
 | `command_scope` | `CMDSCOPE` |
 | `compact` | `COMPACT` |
 | `protect` | `PROTECT` |
 | `quiesce_interval` | `QUIESCE` |
-| `routing_code` | `ARCWRTC` |
 | `time_stamp_format` | `TSTAMP` |
 
 ---

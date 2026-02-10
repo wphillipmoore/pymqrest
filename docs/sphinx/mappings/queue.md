@@ -80,10 +80,10 @@ Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE
 | `ACCTQ` | `queue_accounting` |
 | `ALTDATE` | `alteration_date` |
 | `ALTTIME` | `alteration_time` |
-| `APPLDESC` | `application_desc` |
+| `APPLDESC` | `application_description` |
 | `APPLTAG` | `application_tag` |
 | `APPLTYPE` | `application_type` |
-| `ASID` | `as_id` |
+| `ASID` | `address_space_id` |
 | `ASTATE` | `asynchronous_state` |
 | `BOQNAME` | `backout_requeue_name` |
 | `BOTHRESH` | `backout_threshold` |
