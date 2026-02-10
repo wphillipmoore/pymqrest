@@ -72,7 +72,7 @@ Credentials = BasicAuth | LTPAAuth | CertificateAuth
 """Type alias for the supported credential types."""
 
 
-def perform_ltpa_login(  # noqa: PLR0913
+def _perform_ltpa_login(  # noqa: PLR0913
     transport: MQRESTTransport,
     rest_base_url: str,
     credentials: LTPAAuth,

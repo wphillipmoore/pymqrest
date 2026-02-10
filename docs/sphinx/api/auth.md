@@ -66,9 +66,3 @@ many commands.
 ```{eval-rst}
 .. autodata:: pymqrest.auth.Credentials
 ```
-
-## LTPA Login
-
-```{eval-rst}
-.. autofunction:: pymqrest.auth.perform_ltpa_login
-```
