@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - resolve bare branch names to origin/ in commit-messages.sh (#159)
 - use full version in release branch name to avoid collisions (#161)
+- allow commits on release/* branches in pre-commit hook (#162)
+- merge main into release branch to reconcile squash-merge history (#164)
+- use conventional commit message for release merge commit (#165)
 
 ### Features
 
