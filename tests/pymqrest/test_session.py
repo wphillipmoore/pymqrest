@@ -3,9 +3,7 @@
 from __future__ import annotations
 
 import json
-import re
 from dataclasses import dataclass
-from pathlib import Path
 from typing import TYPE_CHECKING
 
 import pytest
@@ -20,6 +18,7 @@ from pymqrest.exceptions import (
     MQRESTTransportError,
 )
 from pymqrest.mapping import MappingError
+from pymqrest.mapping_data import MAPPING_DATA
 from pymqrest.session import MQRESTSession, RequestsTransport, TransportResponse
 
 if TYPE_CHECKING:
@@ -1165,28 +1164,9 @@ def test_nested_objects_non_dict_items_skipped() -> None:
 
 
 def _load_mqsc_commands() -> list[str]:
-    mapping_path = Path(__file__).resolve().parents[2] / "docs/extraction/mqsc-commands.yaml"
-    commands: list[str] = []
-    in_commands = False
-    for line in mapping_path.read_text().splitlines():
-        if line.startswith("commands:"):
-            in_commands = True
-            continue
-        if not in_commands:
-            continue
-        if line and not line.startswith(" "):
-            break
-        match = re.match(r"\s*-\s*(.+)", line)
-        if match:
-            commands.append(match.group(1).strip())
-
-    unique_commands: list[str] = []
-    seen: set[str] = set()
-    for command in commands:
-        if command not in seen:
-            seen.add(command)
-            unique_commands.append(command)
-    return unique_commands
+    commands = MAPPING_DATA.get("commands", {})
+    assert isinstance(commands, dict)
+    return sorted(commands.keys())
 
 
 def _method_name_from_mqsc(command: str) -> str:

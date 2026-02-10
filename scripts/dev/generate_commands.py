@@ -15,6 +15,7 @@ BEGIN_MARKER = "    # BEGIN GENERATED MQSC METHODS"
 END_MARKER = "    # END GENERATED MQSC METHODS"
 
 MQSC_REF_URL = "https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands"
+DOCS_BASE_URL = "https://wphillipmoore.github.io/pymqrest"
 
 # Hand-written methods that appear before the markers.
 HAND_WRITTEN_METHODS = frozenset(
@@ -117,7 +118,9 @@ def build_docstring(cmd: CommandSpec) -> str:
     lines.append(f"        See `MQSC reference <{MQSC_REF_URL}>`__")
     lines.append("        for command details.")
     if cmd.has_mapping_page:
-        lines.append(f"        See :doc:`/mappings/{cmd.qualifier}` for attribute name mappings.")
+        lines.append(
+            f"        See `{cmd.qualifier} attribute mappings <{DOCS_BASE_URL}/mappings/{cmd.qualifier}.html>`__."
+        )
     lines.append("")
     lines.extend(_build_args_section(cmd))
     lines.append("")
