@@ -15,7 +15,7 @@ errors as exceptions with full diagnostic context.
 
 All MQSC operations go through a single REST endpoint:
 
-```
+```text
 POST /ibmmq/rest/v2/admin/action/qmgr/{qmgr}/mqsc
 ```
 
