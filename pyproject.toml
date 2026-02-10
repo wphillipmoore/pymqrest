@@ -11,9 +11,26 @@ license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
 authors = [{ name = "Phillip Moore", email = "w.phillip.moore@gmail.com" }]
 requires-python = ">=3.14,<4.0"
+keywords = ["ibm", "mq", "mqsc", "rest-api", "messaging", "queue-manager"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Networking",
+    "Typing :: Typed",
+]
 dependencies = [
     "requests",
 ]
+
+[project.urls]
+Homepage = "https://github.com/wphillipmoore/pymqrest"
+Documentation = "https://wphillipmoore.github.io/pymqrest/"
+Repository = "https://github.com/wphillipmoore/pymqrest"
+Issues = "https://github.com/wphillipmoore/pymqrest/issues"
 
 [dependency-groups]
 dev = [

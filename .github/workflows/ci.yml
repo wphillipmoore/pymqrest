@@ -117,6 +117,50 @@ jobs:
       - name: Run pip-audit (fail on any vulnerability)
         run: uv run pip-audit -r requirements.txt -r requirements-dev.txt
 
+  release-gates:
+    name: release-gates
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.14
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: PyPI version gates (PRs targeting main)
+        if: github.base_ref == 'main'
+        run: |
+          python3 scripts/dev/validate_pypi_version.py --check-not-exists
+          python3 scripts/dev/validate_pypi_version.py --check-greater-than-latest
+
+      - name: Version divergence gate (PRs targeting develop)
+        if: github.base_ref == 'develop'
+        run: |
+          git fetch origin main --depth=1
+          main_version=$(python3 -c "
+          import tomllib, subprocess
+          text = subprocess.run(
+              ['git', 'show', 'origin/main:pyproject.toml'],
+              capture_output=True, text=True, check=True
+          ).stdout
+          print(tomllib.loads(text)['project']['version'])
+          ")
+          head_version=$(python3 -c "
+          import tomllib
+          from pathlib import Path
+          print(tomllib.loads(Path('pyproject.toml').read_text())['project']['version'])
+          ")
+          if [ "$main_version" = "$head_version" ]; then
+            echo "FAIL: PR version ($head_version) must differ from main ($main_version)."
+            exit 1
+          fi
+          echo "OK: PR version ($head_version) differs from main ($main_version)."
+
   test-and-validate:
     name: test-and-validate
     runs-on: ubuntu-latest
