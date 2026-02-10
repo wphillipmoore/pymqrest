@@ -120,4 +120,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - expand integration display coverage
 - generalize integration display and mutating coverage
 - run integration lifecycle against local mq
-

@@ -86,6 +86,8 @@ def generate_changelog(version: str) -> None:
     tag = f"develop-v{version}"
     print(f"Generating changelog with tag: {tag}")
     run_command(("git-cliff", "--tag", tag, "-o", "CHANGELOG.md"))
+    changelog = Path("CHANGELOG.md")
+    changelog.write_text(changelog.read_text(encoding="utf-8").rstrip() + "\n", encoding="utf-8")
 
 
 def commit_changelog(version: str) -> None:
