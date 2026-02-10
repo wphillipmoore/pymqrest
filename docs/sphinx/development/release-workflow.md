@@ -18,17 +18,29 @@ any time by changing the version to a minor or major bump instead.
 2. **Release branch** — When ready to release, create a
    `release/X.Y.x` branch from `develop`. Bump the version in
    `pyproject.toml` if not already done.
-3. **PR to main** — Open a pull request from the release branch to
-   `main`. CI validates version format, PyPI availability, and the full
-   test suite.
-4. **Squash merge** — Merge the PR into `main` using squash merge.
-5. **Automatic publish** — The `publish.yml` workflow fires on push to
+3. **Update changelog** — Run git-cliff to update `CHANGELOG.md` with
+   the new version heading:
+
+   ```bash
+   git-cliff --tag develop-vX.Y.Z -o CHANGELOG.md
+   ```
+
+   Review the generated changelog, commit it, and push to the release
+   branch. The CI changelog gate will verify that `CHANGELOG.md`
+   contains an entry matching the version in `pyproject.toml`.
+4. **PR to main** — Open a pull request from the release branch to
+   `main`. CI validates version format, PyPI availability, changelog
+   entry, and the full test suite.
+5. **Squash merge** — Merge the PR into `main` using squash merge.
+6. **Automatic publish** — The `publish.yml` workflow fires on push to
    `main` and:
    - Extracts the version from `pyproject.toml`
    - Skips if the version is already on PyPI (idempotent)
    - Builds sdist and wheel with `uv build`
    - Publishes to PyPI via OIDC trusted publishing
    - Creates an annotated git tag (`vX.Y.Z`)
+   - Creates a `develop-vX.Y.Z` lightweight tag on `develop` for
+     git-cliff boundary tracking
    - Creates a GitHub Release with install instructions and dist
      artifacts
    - Opens a PR against `develop` to bump the patch version (e.g.
@@ -47,12 +59,53 @@ development cycle — the automated PR is just a default starting point.
 The bump PR is skipped if `develop` already has the expected next
 version (e.g. if someone bumped it manually first).
 
+## Changelog
+
+The project changelog is maintained in `CHANGELOG.md` using
+[git-cliff](https://git-cliff.org/), configured via `cliff.toml` at
+the repository root.
+
+git-cliff is a local developer tool (not required in CI). Install it
+with Homebrew:
+
+```bash
+brew install git-cliff
+```
+
+### How it works
+
+git-cliff uses `develop-vX.Y.Z` lightweight tags as version boundary
+markers. These tags point to commits on `develop` and are created
+automatically by the publish workflow after each release. They allow
+git-cliff to determine which commits belong to each version when run
+on `develop` or a release branch.
+
+To regenerate the changelog from scratch:
+
+```bash
+git-cliff -o CHANGELOG.md
+```
+
+To generate the changelog with a new version heading (used during the
+release flow):
+
+```bash
+git-cliff --tag develop-vX.Y.Z -o CHANGELOG.md
+```
+
+### CI validation
+
+The `release-gates` CI job validates that `CHANGELOG.md` contains an
+entry matching the version in `pyproject.toml` for PRs targeting
+`main`. This ensures the changelog is always updated before a release.
+
 ## CI version gates
 
 Pull requests trigger additional version checks:
 
-- **PRs targeting main**: Version must not already exist on PyPI, and
-  must be greater than the latest published version.
+- **PRs targeting main**: Version must not already exist on PyPI, must
+  be greater than the latest published version, and `CHANGELOG.md`
+  must contain an entry for the version.
 - **PRs targeting develop**: Version must differ from the version on
   `main` (prevents accidental no-op releases).
 
