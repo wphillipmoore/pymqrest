@@ -72,18 +72,19 @@ def branch_exists(name: str) -> bool:
     return False
 
 
-def create_release_branch(branch: str) -> None:
-    """Create the release branch and merge main to reconcile histories."""
+def create_release_branch(branch: str, version: str) -> None:
+    """Create a release branch from main with develop's content."""
     if branch_exists(branch):
         message = f"Release branch '{branch}' already exists."
         raise SystemExit(message)
-    print(f"Creating branch: {branch}")
-    run_command(("git", "checkout", "-b", branch))
-    print("Merging origin/main to reconcile squash-merge history...")
     run_command(("git", "fetch", "origin", "main"))
-    run_command(
-        ("git", "merge", "origin/main", "--strategy=ours", "--no-edit", "-m", "chore: merge main into release branch")
-    )
+    print(f"Creating branch: {branch} (from origin/main)")
+    run_command(("git", "checkout", "-b", branch, "origin/main"))
+    print("Applying develop content to release branch...")
+    develop_tree = read_command_output(("git", "rev-parse", "develop^{tree}"))
+    commit_msg = f"chore: prepare release {version}"
+    commit_sha = read_command_output(("git", "commit-tree", develop_tree, "-p", "HEAD", "-m", commit_msg))
+    run_command(("git", "reset", "--hard", commit_sha))
 
 
 def generate_changelog(version: str) -> None:
@@ -159,7 +160,7 @@ def main() -> int:
 
     print(f"Preparing release {version}")
 
-    create_release_branch(branch)
+    create_release_branch(branch, version)
     generate_changelog(version)
     commit_changelog(version)
     push_branch(branch)
