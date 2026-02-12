@@ -103,6 +103,112 @@ session = MQRESTSession(
 )
 ```
 
+## Custom mapping overrides
+
+Sites with existing naming conventions can override individual entries in the
+built-in mapping tables without forking or replacing them entirely. Pass a
+`mapping_overrides` dict when creating the session:
+
+```python
+session = MQRESTSession(
+    rest_base_url="https://localhost:9443/ibmmq/rest/v2",
+    qmgr_name="QM1",
+    credentials=LTPAAuth("mqadmin", "mqadmin"),
+    verify_tls=False,
+    mapping_overrides={
+        "qualifiers": {
+            "queue": {
+                "response_key_map": {
+                    "CURDEPTH": "queue_depth",        # override built-in "current_queue_depth"
+                    "MAXDEPTH": "queue_max_depth",     # override built-in "max_queue_depth"
+                },
+            },
+        },
+    },
+)
+
+queues = session.display_queue(name="MY.QUEUE")
+# Returns: [{"queue_depth": 0, "queue_max_depth": 5000, ...}]
+```
+
+Overrides are **sparse** — you only specify the entries you want to change. All
+other mappings in the qualifier continue to work as normal. In the example above,
+only `CURDEPTH` and `MAXDEPTH` are remapped; every other queue attribute keeps
+its default `snake_case` name.
+
+Request-side mappings work the same way:
+
+```python
+session = MQRESTSession(
+    rest_base_url="https://localhost:9443/ibmmq/rest/v2",
+    qmgr_name="QM1",
+    credentials=LTPAAuth("mqadmin", "mqadmin"),
+    verify_tls=False,
+    mapping_overrides={
+        "qualifiers": {
+            "queue": {
+                "request_key_map": {
+                    "queue_depth": "CURDEPTH",     # use your name on the request side too
+                },
+                "response_key_map": {
+                    "CURDEPTH": "queue_depth",     # and on the response side
+                },
+            },
+        },
+    },
+)
+
+# Now "queue_depth" works in WHERE filters, response_parameters, etc.
+queues = session.display_queue(where="queue_depth GT 100")
+```
+
+Overrides support all five sub-maps per qualifier: `request_key_map`,
+`request_value_map`, `request_key_value_map`, `response_key_map`, and
+`response_value_map`. See {doc}`/mapping-pipeline` for details on how each
+sub-map is used.
+
+Invalid override structures raise `ValueError` or `TypeError` at session
+construction time, so errors are caught early.
+
+## Gateway queue manager
+
+The MQ REST API is available on all supported IBM MQ platforms (Linux, AIX,
+Windows, z/OS, and IBM i). pymqrest is developed and tested against the
+**Linux** implementation only.
+
+In enterprise environments, a **gateway queue manager** can route MQSC
+commands to remote queue managers via MQ channels — the same mechanism used
+by `runmqsc -w` and the MQ Console.
+
+To use a gateway, pass `gateway_qmgr` when creating the session. The
+`qmgr_name` parameter specifies the **target** (remote) queue manager, while
+`gateway_qmgr` names the **local** queue manager whose REST API routes the
+command:
+
+```python
+from pymqrest import MQRESTSession
+from pymqrest.auth import BasicAuth
+
+# Route commands to QM2 through QM1's REST API
+session = MQRESTSession(
+    rest_base_url="https://qm1-host:9443/ibmmq/rest/v2",
+    qmgr_name="QM2",           # target queue manager
+    credentials=BasicAuth("mqadmin", "mqadmin"),
+    gateway_qmgr="QM1",        # local gateway queue manager
+    verify_tls=False,
+)
+
+qmgr = session.display_qmgr()
+# Returns QM2's queue manager attributes, routed through QM1
+```
+
+Prerequisites:
+
+- The gateway queue manager must have a running REST API.
+- MQ channels must be configured between the gateway and target queue managers.
+- A QM alias (QREMOTE with empty RNAME) must map the target QM name to the
+  correct transmission queue on the gateway.
+
 ## Error handling
 
 `DISPLAY` commands return an empty list when no objects match. Queue manager

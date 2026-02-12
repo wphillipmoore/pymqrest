@@ -11,6 +11,13 @@ from typing import Protocol, cast
 import requests
 from requests import RequestException
 
+from ._mapping_merge import (
+    MappingOverrideMode,
+    merge_mapping_data,
+    replace_mapping_data,
+    validate_mapping_overrides,
+    validate_mapping_overrides_complete,
+)
 from .auth import LTPA_COOKIE_NAME, BasicAuth, CertificateAuth, Credentials, LTPAAuth, _perform_ltpa_login
 from .commands import MQRESTCommandMixin
 from .ensure import MQRESTEnsureMixin
@@ -21,9 +28,11 @@ from .exceptions import (
 )
 from .mapping import MappingError, MappingIssue, map_request_attributes, map_response_list
 from .mapping_data import MAPPING_DATA
+from .sync import MQRESTSyncMixin
 
 DEFAULT_RESPONSE_PARAMETERS: list[str] = ["all"]
 DEFAULT_CSRF_TOKEN = "local"  # noqa: S105
+GATEWAY_HEADER = "ibm-mq-rest-gateway-qmgr"
 ERROR_TRANSPORT_FAILURE = "Failed to reach MQ REST endpoint."
 ERROR_INVALID_JSON = "Response body was not valid JSON."
 ERROR_NON_OBJECT_RESPONSE = "Response payload was not a JSON object."
@@ -157,7 +166,7 @@ class RequestsTransport:
         )
 
 
-class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
+class MQRESTSession(MQRESTSyncMixin, MQRESTEnsureMixin, MQRESTCommandMixin):
     """Session wrapper for MQ REST admin calls.
 
     Provides MQSC command execution via the IBM MQ ``runCommandJSON``
@@ -186,10 +195,13 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
         qmgr_name: str,
         *,
         credentials: Credentials,
+        gateway_qmgr: str | None = None,
         verify_tls: bool = True,
         timeout_seconds: float | None = 30.0,
         map_attributes: bool = True,
         mapping_strict: bool = True,
+        mapping_overrides: Mapping[str, object] | None = None,
+        mapping_overrides_mode: MappingOverrideMode = MappingOverrideMode.MERGE,
         csrf_token: str | None = DEFAULT_CSRF_TOKEN,
         transport: MQRESTTransport | None = None,
     ) -> None:
@@ -202,6 +214,11 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
             credentials: A credential object (:class:`~pymqrest.auth.BasicAuth`,
                 :class:`~pymqrest.auth.LTPAAuth`, or
                 :class:`~pymqrest.auth.CertificateAuth`).
+            gateway_qmgr: Name of the gateway queue manager that routes
+                commands to *qmgr_name*. When set, the
+                ``ibm-mq-rest-gateway-qmgr`` header is included in
+                every request. When ``None`` (default), commands target
+                the queue manager directly.
             verify_tls: Whether to verify the server's TLS certificate.
                 Set to ``False`` for self-signed certificates.
             timeout_seconds: HTTP request timeout in seconds, or
@@ -213,6 +230,17 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
                 :class:`~pymqrest.mapping.MappingError` on any
                 unrecognised attribute. When ``False``, pass
                 unrecognised attributes through unchanged.
+            mapping_overrides: Optional overrides for the built-in
+                mapping data. Keys must be a subset of
+                ``{"commands", "qualifiers"}``. Behaviour depends on
+                *mapping_overrides_mode*.
+            mapping_overrides_mode: How to apply *mapping_overrides*.
+                :attr:`~MappingOverrideMode.MERGE` (default) performs a
+                sparse, additive merge.
+                :attr:`~MappingOverrideMode.REPLACE` treats the
+                overrides as a complete replacement — a ``ValueError``
+                is raised if any command or qualifier key from the
+                built-in data is missing.
             csrf_token: CSRF token value for the
                 ``ibm-mq-rest-csrf-token`` header. Defaults to
                 ``"local"``. Set to ``None`` to omit the header.
@@ -221,16 +249,28 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
 
         Raises:
             MQRESTAuthError: If LTPA login fails at construction time.
+            ValueError: If *mapping_overrides* has an invalid structure.
 
         """
         self._rest_base_url = rest_base_url.rstrip("/")
         self._qmgr_name = qmgr_name
+        self._gateway_qmgr = gateway_qmgr
         self._verify_tls = verify_tls
         self._timeout_seconds = timeout_seconds
         self._map_attributes = map_attributes
         self._mapping_strict = mapping_strict
         self._csrf_token = csrf_token
         self._credentials = credentials
+
+        if mapping_overrides is not None:
+            validate_mapping_overrides(mapping_overrides)
+            if mapping_overrides_mode is MappingOverrideMode.REPLACE:
+                validate_mapping_overrides_complete(MAPPING_DATA, mapping_overrides)
+                self._mapping_data: dict[str, object] = replace_mapping_data(mapping_overrides)
+            else:
+                self._mapping_data = merge_mapping_data(MAPPING_DATA, mapping_overrides)
+        else:
+            self._mapping_data = MAPPING_DATA
 
         if isinstance(credentials, CertificateAuth) and transport is None:
             cert = (
@@ -263,6 +303,11 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
         """The queue manager name this session targets."""
         return self._qmgr_name
 
+    @property
+    def gateway_qmgr(self) -> str | None:
+        """The gateway queue manager name, or ``None`` for direct access."""
+        return self._gateway_qmgr
+
     def _mqsc_command(  # noqa: PLR0913
         self,
         *,
@@ -288,6 +333,7 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
                 mapping_qualifier,
                 normalized_request_parameters,
                 strict=self._mapping_strict,
+                mapping_data=self._mapping_data,
             )
             normalized_response_parameters = self._map_response_parameters(
                 command_upper,
@@ -303,6 +349,7 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
                     where,
                     mapping_qualifier,
                     strict=self._mapping_strict,
+                    mapping_data=self._mapping_data,
                 )
             normalized_request_parameters["WHERE"] = mapped_where
 
@@ -345,6 +392,7 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
                 mapping_qualifier,
                 normalized_objects,
                 strict=self._mapping_strict,
+                mapping_data=self._mapping_data,
             )
         return parameter_objects
 
@@ -362,6 +410,8 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
             headers["Cookie"] = f"{LTPA_COOKIE_NAME}={self._ltpa_token}"
         if self._csrf_token is not None:
             headers["ibm-mq-rest-csrf-token"] = self._csrf_token
+        if self._gateway_qmgr is not None:
+            headers[GATEWAY_HEADER] = self._gateway_qmgr
         return headers
 
     def _map_response_parameters(
@@ -373,9 +423,13 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
     ) -> list[str]:
         if _is_all_response_parameters(response_parameters):
             return response_parameters
-        response_parameter_macros = _get_response_parameter_macros(command, mqsc_qualifier)
+        response_parameter_macros = _get_response_parameter_macros(
+            command,
+            mqsc_qualifier,
+            mapping_data=self._mapping_data,
+        )
         macro_lookup = {macro.lower(): macro for macro in response_parameter_macros}
-        qualifier_entry = _get_qualifier_entry(mapping_qualifier)
+        qualifier_entry = _get_qualifier_entry(mapping_qualifier, mapping_data=self._mapping_data)
         if qualifier_entry is None:
             if self._mapping_strict:
                 raise MappingError(_build_unknown_qualifier_issue(mapping_qualifier))
@@ -392,7 +446,7 @@ class MQRESTSession(MQRESTEnsureMixin, MQRESTCommandMixin):
         return mapped
 
     def _resolve_mapping_qualifier(self, command: str, mqsc_qualifier: str) -> str:
-        command_map = _get_command_map()
+        command_map = _get_command_map(self._mapping_data)
         command_key = f"{command} {mqsc_qualifier}"
         command_definition = command_map.get(command_key)
         if isinstance(command_definition, Mapping):
@@ -558,16 +612,21 @@ def _has_error_codes(completion_code: int | None, reason_code: int | None) -> bo
     )
 
 
-def _get_command_map() -> Mapping[str, object]:
-    commands = MAPPING_DATA.get("commands")
+def _get_command_map(mapping_data: Mapping[str, object]) -> Mapping[str, object]:
+    commands = mapping_data.get("commands")
     if isinstance(commands, Mapping):
         return cast("Mapping[str, object]", commands)
     return {}
 
 
-def _get_response_parameter_macros(command: str, mqsc_qualifier: str) -> list[str]:
+def _get_response_parameter_macros(
+    command: str,
+    mqsc_qualifier: str,
+    *,
+    mapping_data: Mapping[str, object],
+) -> list[str]:
     command_key = f"{command} {mqsc_qualifier}"
-    commands = _get_command_map()
+    commands = _get_command_map(mapping_data)
     entry = commands.get(command_key)
     if not isinstance(entry, Mapping):
         return []
@@ -608,12 +667,13 @@ def _map_where_keyword(
     mapping_qualifier: str,
     *,
     strict: bool,
+    mapping_data: Mapping[str, object],
 ) -> str:
     parts = where.strip().split(None, 1)
     keyword = parts[0]
     rest = parts[1] if len(parts) > 1 else ""
 
-    qualifier_entry = _get_qualifier_entry(mapping_qualifier)
+    qualifier_entry = _get_qualifier_entry(mapping_qualifier, mapping_data=mapping_data)
     if qualifier_entry is None:
         if strict:
             raise MappingError(_build_unknown_qualifier_issue(mapping_qualifier))
@@ -670,8 +730,12 @@ def _map_response_parameter_names(
     return mapped, issues
 
 
-def _get_qualifier_entry(qualifier: str) -> Mapping[str, object] | None:
-    qualifiers = MAPPING_DATA.get("qualifiers")
+def _get_qualifier_entry(
+    qualifier: str,
+    *,
+    mapping_data: Mapping[str, object],
+) -> Mapping[str, object] | None:
+    qualifiers = mapping_data.get("qualifiers")
     if not isinstance(qualifiers, Mapping):
         return None
     qualifier_map = cast("Mapping[str, object]", qualifiers)
@@ -687,6 +751,8 @@ _DEFAULT_MAPPING_QUALIFIERS: dict[str, str] = {
     "QREMOTE": "queue",
     "QALIAS": "queue",
     "QMODEL": "queue",
+    "QMSTATUS": "qmstatus",
+    "QSTATUS": "qstatus",
     "CHANNEL": "channel",
     "QMGR": "qmgr",
 }

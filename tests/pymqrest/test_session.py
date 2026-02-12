@@ -10,6 +10,7 @@ import pytest
 from requests import RequestException
 
 from pymqrest import session as session_module
+from pymqrest._mapping_merge import MappingOverrideMode
 from pymqrest.auth import BasicAuth, CertificateAuth, LTPAAuth
 from pymqrest.exceptions import (
     MQRESTAuthError,
@@ -19,7 +20,7 @@ from pymqrest.exceptions import (
 )
 from pymqrest.mapping import MappingError
 from pymqrest.mapping_data import MAPPING_DATA
-from pymqrest.session import MQRESTSession, RequestsTransport, TransportResponse
+from pymqrest.session import GATEWAY_HEADER, MQRESTSession, RequestsTransport, TransportResponse
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
@@ -28,6 +29,7 @@ REQUEST_EXCEPTION_MESSAGE = "boom"
 STATUS_INTERNAL_SERVER_ERROR = 500
 STATUS_CREATED = 201
 TEST_PASSWORD = "pass"
+TEST_DEPTH = 5
 
 
 @dataclass(frozen=True)
@@ -69,6 +71,9 @@ def _build_session(
     response_payload: dict[str, object],
     *,
     mapping_strict: bool | None = None,
+    mapping_overrides: dict[str, object] | None = None,
+    mapping_overrides_mode: MappingOverrideMode | None = None,
+    gateway_qmgr: str | None = None,
 ) -> tuple[MQRESTSession, FakeTransport]:
     response_text = json.dumps(response_payload)
     transport = FakeTransport(
@@ -82,6 +87,12 @@ def _build_session(
     }
     if mapping_strict is not None:
         kwargs["mapping_strict"] = mapping_strict
+    if mapping_overrides is not None:
+        kwargs["mapping_overrides"] = mapping_overrides
+    if mapping_overrides_mode is not None:
+        kwargs["mapping_overrides_mode"] = mapping_overrides_mode
+    if gateway_qmgr is not None:
+        kwargs["gateway_qmgr"] = gateway_qmgr
     session = MQRESTSession(**kwargs)  # type: ignore[arg-type]
     return session, transport
 
@@ -216,7 +227,11 @@ def test_get_response_parameter_macros_ignores_invalid_shape(
         {"DISPLAY QMGR": {"qualifier": "qmgr", "response_parameter_macros": "SYSTEM"}},
     )
 
-    macros = session_module._get_response_parameter_macros("DISPLAY", "QMGR")  # noqa: SLF001
+    macros = session_module._get_response_parameter_macros(  # noqa: SLF001
+        "DISPLAY",
+        "QMGR",
+        mapping_data=session_module.MAPPING_DATA,
+    )
 
     assert macros == []
 
@@ -230,7 +245,11 @@ def test_get_response_parameter_macros_filters_non_string(
         {"DISPLAY QMGR": {"qualifier": "qmgr", "response_parameter_macros": ["SYSTEM", 123]}},
     )
 
-    macros = session_module._get_response_parameter_macros("DISPLAY", "QMGR")  # noqa: SLF001
+    macros = session_module._get_response_parameter_macros(  # noqa: SLF001
+        "DISPLAY",
+        "QMGR",
+        mapping_data=session_module.MAPPING_DATA,
+    )
 
     assert macros == ["SYSTEM"]
 
@@ -611,7 +630,7 @@ def test_extract_optional_int_handles_non_int() -> None:
 def test_get_command_map_handles_invalid_shape(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setitem(session_module.MAPPING_DATA, "commands", [])
 
-    assert session_module._get_command_map() == {}  # noqa: SLF001
+    assert session_module._get_command_map(session_module.MAPPING_DATA) == {}  # noqa: SLF001
 
 
 def test_resolve_mapping_qualifier_handles_invalid_command_entry(
@@ -675,13 +694,13 @@ def test_requests_transport_success() -> None:
 def test_get_qualifier_entry_invalid_shape(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setitem(session_module.MAPPING_DATA, "qualifiers", "bogus")
 
-    assert session_module._get_qualifier_entry("queue") is None  # noqa: SLF001
+    assert session_module._get_qualifier_entry("queue", mapping_data=session_module.MAPPING_DATA) is None  # noqa: SLF001
 
 
 def test_get_qualifier_entry_non_mapping_entry(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setitem(session_module.MAPPING_DATA, "qualifiers", {"queue": "bogus"})
 
-    assert session_module._get_qualifier_entry("queue") is None  # noqa: SLF001
+    assert session_module._get_qualifier_entry("queue", mapping_data=session_module.MAPPING_DATA) is None  # noqa: SLF001
 
 
 def test_mqsc_command_methods_match_mapping() -> None:
@@ -873,6 +892,7 @@ def test_map_where_keyword_unknown_qualifier_strict_raises() -> None:
             "some_attr GT 5",
             "nonexistent",
             strict=True,
+            mapping_data=MAPPING_DATA,
         )
 
     issue = error_info.value.issues[0]
@@ -884,6 +904,7 @@ def test_map_where_keyword_unknown_qualifier_lenient_passes_through() -> None:
         "some_attr GT 5",
         "nonexistent",
         strict=False,
+        mapping_data=MAPPING_DATA,
     )
     assert result == "some_attr GT 5"
 
@@ -893,6 +914,7 @@ def test_map_where_keyword_keyword_only() -> None:
         "current_queue_depth",
         "queue",
         strict=False,
+        mapping_data=MAPPING_DATA,
     )
     assert result == "CURDEPTH"
 
@@ -1161,6 +1183,273 @@ def test_nested_objects_non_dict_items_skipped() -> None:
     first, second = result
     assert first == {"conn": "ABC123", "objname": "Q1"}
     assert second == {"conn": "ABC123", "objname": "Q2"}
+
+
+# -- Gateway queue manager tests --
+
+
+def test_gateway_qmgr_property_returns_none_by_default() -> None:
+    session, _ = _build_session({"overallCompletionCode": 0, "overallReasonCode": 0})
+    assert session.gateway_qmgr is None
+
+
+def test_gateway_qmgr_property_returns_configured_value() -> None:
+    session, _ = _build_session(
+        {"overallCompletionCode": 0, "overallReasonCode": 0},
+        gateway_qmgr="GWQM",
+    )
+    assert session.gateway_qmgr == "GWQM"
+
+
+def test_build_headers_includes_gateway_header_when_set() -> None:
+    session, _ = _build_session(
+        {"overallCompletionCode": 0, "overallReasonCode": 0},
+        gateway_qmgr="GWQM",
+    )
+
+    headers = session._build_headers()  # noqa: SLF001
+
+    assert headers[GATEWAY_HEADER] == "GWQM"
+
+
+def test_build_headers_excludes_gateway_header_when_none() -> None:
+    session, _ = _build_session({"overallCompletionCode": 0, "overallReasonCode": 0})
+
+    headers = session._build_headers()  # noqa: SLF001
+
+    assert GATEWAY_HEADER not in headers
+
+
+def test_gateway_session_url_uses_target_qmgr() -> None:
+    response_payload = {
+        "commandResponse": [
+            {"completionCode": 0, "reasonCode": 0, "parameters": {"QMNAME": "QM2"}},
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, transport = _build_session(response_payload, gateway_qmgr="GWQM")
+
+    session.display_qmgr()
+
+    recorded = transport.recorded_requests[0]
+    assert "/qmgr/QM1/mqsc" in recorded.url
+    assert recorded.headers[GATEWAY_HEADER] == "GWQM"
+
+
+# -- Mapping overrides tests --
+
+
+def test_mapping_overrides_none_uses_defaults() -> None:
+    response_payload = {
+        "commandResponse": [
+            {"completionCode": 0, "reasonCode": 0, "parameters": {"CURDEPTH": TEST_DEPTH}},
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, _transport = _build_session(response_payload)
+
+    result = session.display_queue()
+
+    assert result == [{"current_queue_depth": TEST_DEPTH}]
+
+
+def test_mapping_overrides_invalid_raises_at_construction() -> None:
+    with pytest.raises(ValueError, match="Invalid top-level key"):
+        MQRESTSession(
+            rest_base_url="https://example.invalid/ibmmq/rest/v2",
+            qmgr_name="QM1",
+            credentials=BasicAuth("user", TEST_PASSWORD),
+            mapping_overrides={"bogus": {}},
+        )
+
+
+def test_mapping_overrides_response_key_override() -> None:
+    response_payload = {
+        "commandResponse": [
+            {"completionCode": 0, "reasonCode": 0, "parameters": {"CURDEPTH": TEST_DEPTH}},
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, _transport = _build_session(
+        response_payload,
+        mapping_overrides={
+            "qualifiers": {
+                "queue": {
+                    "response_key_map": {"CURDEPTH": "queue_depth"},
+                },
+            },
+        },
+    )
+
+    result = session.display_queue()
+
+    assert result == [{"queue_depth": TEST_DEPTH}]
+
+
+def test_mapping_overrides_request_key_override() -> None:
+    response_payload = {
+        "commandResponse": [],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, transport = _build_session(
+        response_payload,
+        mapping_overrides={
+            "qualifiers": {
+                "queue": {
+                    "request_key_map": {"my_depth": "CURDEPTH"},
+                },
+            },
+        },
+    )
+
+    session.display_queue(request_parameters={"my_depth": TEST_DEPTH})
+
+    recorded_request = transport.recorded_requests[0]
+    assert recorded_request.payload["parameters"]["CURDEPTH"] == TEST_DEPTH
+
+
+def test_mapping_overrides_where_keyword_uses_override() -> None:
+    response_payload = {
+        "commandResponse": [],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, transport = _build_session(
+        response_payload,
+        mapping_overrides={
+            "qualifiers": {
+                "queue": {
+                    "request_key_map": {"my_depth": "CURDEPTH"},
+                },
+            },
+        },
+    )
+
+    session.display_queue(where="my_depth GT 100")
+
+    recorded_request = transport.recorded_requests[0]
+    assert recorded_request.payload["parameters"]["WHERE"] == "CURDEPTH GT 100"
+
+
+def test_mapping_overrides_replace_mode_uses_override_data() -> None:
+    base_commands = MAPPING_DATA.get("commands")
+    base_qualifiers = MAPPING_DATA.get("qualifiers")
+    assert isinstance(base_commands, dict)
+    assert isinstance(base_qualifiers, dict)
+
+    custom_qualifiers: dict[str, object] = {
+        key: dict(value) if isinstance(value, dict) else value for key, value in base_qualifiers.items()
+    }
+    custom_qualifiers["queue"] = {
+        "response_key_map": {"CURDEPTH": "my_depth"},
+    }
+
+    overrides: dict[str, object] = {
+        "commands": dict(base_commands),
+        "qualifiers": custom_qualifiers,
+    }
+
+    response_payload = {
+        "commandResponse": [
+            {"completionCode": 0, "reasonCode": 0, "parameters": {"CURDEPTH": TEST_DEPTH}},
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, _transport = _build_session(
+        response_payload,
+        mapping_overrides=overrides,
+        mapping_overrides_mode=MappingOverrideMode.REPLACE,
+        mapping_strict=False,
+    )
+
+    result = session.display_queue()
+
+    assert result == [{"my_depth": TEST_DEPTH}]
+
+
+def test_mapping_overrides_replace_mode_rejects_incomplete() -> None:
+    with pytest.raises(ValueError, match="incomplete for REPLACE"):
+        _build_session(
+            {"overallCompletionCode": 0, "overallReasonCode": 0},
+            mapping_overrides={"commands": {}, "qualifiers": {}},
+            mapping_overrides_mode=MappingOverrideMode.REPLACE,
+        )
+
+
+def test_mapping_overrides_merge_mode_is_default() -> None:
+    response_payload = {
+        "commandResponse": [
+            {"completionCode": 0, "reasonCode": 0, "parameters": {"CURDEPTH": TEST_DEPTH}},
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, _transport = _build_session(
+        response_payload,
+        mapping_overrides={
+            "qualifiers": {
+                "queue": {
+                    "response_key_map": {"CURDEPTH": "queue_depth"},
+                },
+            },
+        },
+    )
+
+    result = session.display_queue()
+
+    assert result == [{"queue_depth": TEST_DEPTH}]
+
+
+def test_mapping_overrides_mode_ignored_when_no_overrides() -> None:
+    response_payload = {
+        "commandResponse": [
+            {"completionCode": 0, "reasonCode": 0, "parameters": {"CURDEPTH": TEST_DEPTH}},
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, _transport = _build_session(
+        response_payload,
+        mapping_overrides_mode=MappingOverrideMode.REPLACE,
+    )
+
+    result = session.display_queue()
+
+    assert result == [{"current_queue_depth": TEST_DEPTH}]
+
+
+def test_mapping_overrides_does_not_affect_unmapped_keys() -> None:
+    response_payload = {
+        "commandResponse": [
+            {
+                "completionCode": 0,
+                "reasonCode": 0,
+                "parameters": {"CURDEPTH": TEST_DEPTH, "DEFPSIST": "NOTFIXED"},
+            },
+        ],
+        "overallCompletionCode": 0,
+        "overallReasonCode": 0,
+    }
+    session, _transport = _build_session(
+        response_payload,
+        mapping_overrides={
+            "qualifiers": {
+                "queue": {
+                    "response_key_map": {"CURDEPTH": "queue_depth"},
+                },
+            },
+        },
+    )
+
+    result = session.display_queue()
+
+    assert result[0]["queue_depth"] == TEST_DEPTH
+    assert result[0]["default_persistence"] == "not_fixed"
 
 
 def _load_mqsc_commands() -> list[str]:

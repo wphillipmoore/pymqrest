@@ -2,6 +2,7 @@
 
 from importlib.metadata import version
 
+from ._mapping_merge import MappingOverrideMode
 from .auth import BasicAuth, CertificateAuth, Credentials, LTPAAuth
 from .ensure import EnsureAction, EnsureResult
 from .exceptions import (
@@ -9,6 +10,7 @@ from .exceptions import (
     MQRESTCommandError,
     MQRESTError,
     MQRESTResponseError,
+    MQRESTTimeoutError,
     MQRESTTransportError,
 )
 from .mapping import (
@@ -19,6 +21,7 @@ from .mapping import (
     map_response_list,
 )
 from .session import MQRESTSession
+from .sync import SyncConfig, SyncOperation, SyncResult
 
 __version__ = version("pymqrest")
 
@@ -34,9 +37,14 @@ __all__ = [
     "MQRESTError",
     "MQRESTResponseError",
     "MQRESTSession",
+    "MQRESTTimeoutError",
     "MQRESTTransportError",
     "MappingError",
     "MappingIssue",
+    "MappingOverrideMode",
+    "SyncConfig",
+    "SyncOperation",
+    "SyncResult",
     "__version__",
     "map_request_attributes",
     "map_response_attributes",
