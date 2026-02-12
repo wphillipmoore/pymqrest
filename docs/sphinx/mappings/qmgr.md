@@ -2,7 +2,7 @@
 
 Attribute mapping reference for the `qmgr` qualifier.
 
-Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `DISPLAY QMSTATUS`, `PING QMGR`, `REFRESH QMGR`, `RESET QMGR`, `RESUME QMGR`, `START QMGR`, `STOP QMGR`, `SUSPEND QMGR`
+Related MQSC commands: `ALTER QMGR`, `DISPLAY QMGR`, `PING QMGR`, `REFRESH QMGR`, `RESET QMGR`, `RESUME QMGR`, `START QMGR`, `STOP QMGR`, `SUSPEND QMGR`
 
 ## Request key map
 

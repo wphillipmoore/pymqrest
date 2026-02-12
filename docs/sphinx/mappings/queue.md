@@ -2,7 +2,7 @@
 
 Attribute mapping reference for the `queue` qualifier.
 
-Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QSTATUS`, `DISPLAY QUEUE`, `MOVE QLOCAL`, `RESET QSTATS`
+Related MQSC commands: `CLEAR QLOCAL`, `DISPLAY QUEUE`, `MOVE QLOCAL`, `RESET QSTATS`
 
 ## Request key map
 

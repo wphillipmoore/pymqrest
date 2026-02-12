@@ -687,6 +687,8 @@ _DEFAULT_MAPPING_QUALIFIERS: dict[str, str] = {
     "QREMOTE": "queue",
     "QALIAS": "queue",
     "QMODEL": "queue",
+    "QMSTATUS": "qmstatus",
+    "QSTATUS": "qstatus",
     "CHANNEL": "channel",
     "QMGR": "qmgr",
 }

@@ -33,6 +33,8 @@ policy
 process
 pubsub
 qmgr
+qmstatus
+qstatus
 queue
 sbstatus
 security
@@ -46,22 +48,4 @@ topic
 topicstr
 tpstatus
 usage
-```
-
-## Qualifiers without attribute mappings
-
-The following qualifiers are supported by pymqrest but do not have attribute name translations: `bsds`, `buffpool`, `cmdserv`, `maxsmsgs`, `psid`, `tcluster`, `thread`, `tpipe`, `trace`.
-
-```{toctree}
-:hidden:
-
-bsds
-buffpool
-cmdserv
-maxsmsgs
-psid
-tcluster
-thread
-tpipe
-trace
 ```
