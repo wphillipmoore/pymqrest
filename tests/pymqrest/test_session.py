@@ -919,6 +919,21 @@ def test_map_where_keyword_keyword_only() -> None:
     assert result == "CURDEPTH"
 
 
+def test_build_snake_to_mqsc_map_skips_non_string_values(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setitem(
+        session_module.MAPPING_DATA,
+        "qualifiers",
+        {"queue": {"request_key_map": {"good": "GOOD", "bad": 42}, "response_key_map": {}}},
+    )
+    result = session_module._map_where_keyword(  # noqa: SLF001
+        "good",
+        "queue",
+        strict=False,
+        mapping_data=session_module.MAPPING_DATA,
+    )
+    assert result == "GOOD"
+
+
 def test_nested_objects_flattened_with_mapping() -> None:
     response_payload = {
         "commandResponse": [
