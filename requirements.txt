@@ -17,7 +17,7 @@ cyclonedx-python-lib==11.6.0
     # via pip-audit
 defusedxml==0.7.1
     # via py-serializable
-filelock==3.21.0
+filelock==3.21.2
     # via cachecontrol
 idna==3.11
     # via requests
@@ -52,7 +52,7 @@ pip-api==0.0.34
 pip-audit==2.10.0
 pip-requirements-parser==32.0.1
     # via pip-audit
-platformdirs==4.6.0
+platformdirs==4.7.0
     # via pip-audit
 pluggy==1.6.0
     # via
@@ -76,14 +76,14 @@ requests==2.32.5
     #   pymqrest
 rich==14.3.2
     # via pip-audit
-ruff==0.15.0
+ruff==0.15.1
 sortedcontainers==2.4.0
     # via cyclonedx-python-lib
 tomli==2.4.0
     # via pip-audit
 tomli-w==1.2.0
     # via pip-audit
-ty==0.0.16
+ty==0.0.17
 types-requests==2.32.4.20260107
 typing-extensions==4.15.0
     # via
