@@ -514,8 +514,7 @@ def _flatten_nested_objects(
             shared = {key: value for key, value in item.items() if key != "objects"}
             for nested_item in objects:
                 if isinstance(nested_item, Mapping):
-                    merged = dict(shared)
-                    merged.update(nested_item)
+                    merged = shared | dict(nested_item)
                     flattened.append(merged)
         else:
             flattened.append(item)
@@ -658,7 +657,9 @@ def _build_snake_to_mqsc_map(qualifier_entry: Mapping[str, object]) -> dict[str,
                 response_lookup.setdefault(snake_key, mqsc_key)
     combined_map = dict(response_lookup)
     if isinstance(request_key_map, Mapping):
-        combined_map.update({key: value for key, value in request_key_map.items() if isinstance(value, str)})
+        combined_map |= {
+            key: value for key, value in request_key_map.items() if isinstance(key, str) and isinstance(value, str)
+        }
     return combined_map
 
 
