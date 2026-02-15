@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Bug fixes
 
 - add missing MAPPING_DATA entries for integration test failures (#236)
+- allow release/* commits in library-release branching model (#244)
 
 ### Documentation
 
