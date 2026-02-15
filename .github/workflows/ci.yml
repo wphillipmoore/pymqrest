@@ -213,6 +213,38 @@ jobs:
         with:
           language: python
 
+  trivy:
+    name: trivy
+    runs-on: ubuntu-latest
+    needs: docs-only
+    if: needs.docs-only.outputs.docs-only != 'true'
+    permissions:
+      security-events: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scan
+        uses: wphillipmoore/standard-actions/actions/security/trivy@develop
+        with:
+          scan-type: fs
+
+  semgrep:
+    name: semgrep
+    runs-on: ubuntu-latest
+    needs: docs-only
+    if: needs.docs-only.outputs.docs-only != 'true'
+    permissions:
+      security-events: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep SAST scan
+        uses: wphillipmoore/standard-actions/actions/security/semgrep@develop
+        with:
+          language: python
+
   integration-test:
     name: integration-test
     runs-on: ubuntu-latest
