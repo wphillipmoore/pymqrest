@@ -139,9 +139,9 @@ shape.
 
 ## See also
 
-- {doc}`runcommand-endpoint` — general `runCommandJSON` request/response
+- [runCommandJSON endpoint](runcommand-endpoint.md) — general `runCommandJSON` request/response
   structure
-- {doc}`rationale` — overall design rationale
+- [rationale](rationale.md) — overall design rationale
 - [DISPLAY CONN](https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-display-conn) —
   IBM MQ documentation
 - [DISPLAY QSTATUS](https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-display-qstatus) —

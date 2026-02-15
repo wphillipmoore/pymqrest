@@ -21,6 +21,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Checkout mq-rest-admin-common
+        uses: actions/checkout@v4
+        with:
+          repository: wphillipmoore/mq-rest-admin-common
+          ref: develop
+          path: .mq-rest-admin-common
+
       - name: Set up Python
         uses: wphillipmoore/standard-actions/actions/python/setup@develop
         with:
@@ -30,14 +37,14 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen --group docs
 
-      - name: Build Sphinx documentation
-        run: uv run sphinx-build -b html docs/sphinx docs/sphinx/_build/html -W
+      - name: Build MkDocs site
+        run: uv run mkdocs build -f docs/site/mkdocs.yml --strict
 
       - name: Upload pages artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/sphinx/_build/html
+          path: docs/site/site
 
   deploy:
     name: deploy

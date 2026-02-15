@@ -104,7 +104,7 @@ seed test objects, then run the tests:
 PYMQREST_RUN_INTEGRATION=1 uv run pytest -m integration
 ```
 
-See {doc}`local-mq-container` for full container configuration,
+See [local MQ container](local-mq-container.md) for full container configuration,
 credentials, gateway routing, and troubleshooting.
 
 ## CI pipeline overview
