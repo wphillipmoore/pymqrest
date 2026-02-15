@@ -79,11 +79,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#chlauth" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1075,7 +1070,7 @@
   <span class="md-ellipsis">
     
   
-    Qualifier Mapping Reference
+    Index
   
 
     
@@ -1354,26 +1349,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    chlauth
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1391,47 +1366,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2783,38 +2717,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2831,157 +2733,9 @@
 
 
 
-<h1 id="chlauth">chlauth<a class="headerlink" href="#chlauth" title="Permanent link">&para;</a></h1>
-<p>Attribute mapping reference for the <code>chlauth</code> qualifier.</p>
-<p>Related MQSC commands: <code>DISPLAY CHLAUTH</code>, <code>SET CHLAUTH</code></p>
-<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Python name</th>
-<th>MQSC parameter</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>action</code></td>
-<td><code>ACTION</code></td>
-</tr>
-<tr>
-<td><code>address</code></td>
-<td><code>ADDRESS</code></td>
-</tr>
-<tr>
-<td><code>address_list</code></td>
-<td><code>ADDRLIST</code></td>
-</tr>
-<tr>
-<td><code>check_client</code></td>
-<td><code>CHCKCLNT</code></td>
-</tr>
-<tr>
-<td><code>client_user</code></td>
-<td><code>CLNTUSER</code></td>
-</tr>
-<tr>
-<td><code>command_scope</code></td>
-<td><code>CMDSCOPE</code></td>
-</tr>
-<tr>
-<td><code>custom</code></td>
-<td><code>CUSTOM</code></td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td><code>DESCR</code></td>
-</tr>
-<tr>
-<td><code>match</code></td>
-<td><code>MATCH</code></td>
-</tr>
-<tr>
-<td><code>mca_user</code></td>
-<td><code>MCAUSER</code></td>
-</tr>
-<tr>
-<td><code>queue_manager_name</code></td>
-<td><code>QMNAME</code></td>
-</tr>
-<tr>
-<td><code>ssl_certificate_issuer</code></td>
-<td><code>SSLCERTI</code></td>
-</tr>
-<tr>
-<td><code>ssl_peer_name</code></td>
-<td><code>SSLPEER</code></td>
-</tr>
-<tr>
-<td><code>type</code></td>
-<td><code>TYPE</code></td>
-</tr>
-<tr>
-<td><code>user_list</code></td>
-<td><code>USERLIST</code></td>
-</tr>
-<tr>
-<td><code>user_source</code></td>
-<td><code>USERSRC</code></td>
-</tr>
-<tr>
-<td><code>warn</code></td>
-<td><code>WARN</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>MQSC parameter</th>
-<th>Python name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ADDRESS</code></td>
-<td><code>address</code></td>
-</tr>
-<tr>
-<td><code>ADDRLIST</code></td>
-<td><code>address_list</code></td>
-</tr>
-<tr>
-<td><code>ALTDATE</code></td>
-<td><code>alteration_date</code></td>
-</tr>
-<tr>
-<td><code>ALTTIME</code></td>
-<td><code>alteration_time</code></td>
-</tr>
-<tr>
-<td><code>CHCKCLNT</code></td>
-<td><code>check_client</code></td>
-</tr>
-<tr>
-<td><code>CLNTUSER</code></td>
-<td><code>client_user</code></td>
-</tr>
-<tr>
-<td><code>CUSTOM</code></td>
-<td><code>custom</code></td>
-</tr>
-<tr>
-<td><code>DESCR</code></td>
-<td><code>description</code></td>
-</tr>
-<tr>
-<td><code>MCAUSER</code></td>
-<td><code>mca_user</code></td>
-</tr>
-<tr>
-<td><code>QMNAME</code></td>
-<td><code>queue_manager_name</code></td>
-</tr>
-<tr>
-<td><code>SSLCERTI</code></td>
-<td><code>ssl_certificate_issuer</code></td>
-</tr>
-<tr>
-<td><code>SSLPEER</code></td>
-<td><code>ssl_peer_name</code></td>
-</tr>
-<tr>
-<td><code>TYPE</code></td>
-<td><code>type</code></td>
-</tr>
-<tr>
-<td><code>USERLIST</code></td>
-<td><code>user_list</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><em>Auto-generated by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
+  <h1>chlauth</h1>
+
+
 
 
 

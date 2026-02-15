@@ -79,11 +79,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#service" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1075,7 +1070,7 @@
   <span class="md-ellipsis">
     
   
-    Qualifier Mapping Reference
+    Index
   
 
     
@@ -1970,26 +1965,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    service
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2007,86 +1982,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-value-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key-value map
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Request key-value map">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#noreplace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        noreplace
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        replace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2822,77 +2717,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-value-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key-value map
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Request key-value map">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#noreplace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        noreplace
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        replace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2909,161 +2733,9 @@
 
 
 
-<h1 id="service">service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h1>
-<p>Attribute mapping reference for the <code>service</code> qualifier.</p>
-<p>Related MQSC commands: <code>ALTER SERVICE</code>, <code>DEFINE SERVICE</code>, <code>DELETE SERVICE</code>, <code>DISPLAY SERVICE</code>, <code>START SERVICE</code>, <code>STOP SERVICE</code></p>
-<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Python name</th>
-<th>MQSC parameter</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>description</code></td>
-<td><code>DESCR</code></td>
-</tr>
-<tr>
-<td><code>ignore_state</code></td>
-<td><code>IGNSTATE</code></td>
-</tr>
-<tr>
-<td><code>like</code></td>
-<td><code>LIKE</code></td>
-</tr>
-<tr>
-<td><code>service_type</code></td>
-<td><code>SERVTYPE</code></td>
-</tr>
-<tr>
-<td><code>start_arguments</code></td>
-<td><code>STARTARG</code></td>
-</tr>
-<tr>
-<td><code>start_command</code></td>
-<td><code>STARTCMD</code></td>
-</tr>
-<tr>
-<td><code>start_mode</code></td>
-<td><code>CONTROL</code></td>
-</tr>
-<tr>
-<td><code>stderr_destination</code></td>
-<td><code>STDERR</code></td>
-</tr>
-<tr>
-<td><code>stdout_destination</code></td>
-<td><code>STDOUT</code></td>
-</tr>
-<tr>
-<td><code>stop_arguments</code></td>
-<td><code>STOPARG</code></td>
-</tr>
-<tr>
-<td><code>stop_command</code></td>
-<td><code>STOPCMD</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>MQSC parameter</th>
-<th>Python name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ALTDATE</code></td>
-<td><code>alteration_date</code></td>
-</tr>
-<tr>
-<td><code>ALTTIME</code></td>
-<td><code>alteration_time</code></td>
-</tr>
-<tr>
-<td><code>CONTROL</code></td>
-<td><code>start_mode</code></td>
-</tr>
-<tr>
-<td><code>DESCR</code></td>
-<td><code>description</code></td>
-</tr>
-<tr>
-<td><code>SERVTYPE</code></td>
-<td><code>service_type</code></td>
-</tr>
-<tr>
-<td><code>STARTARG</code></td>
-<td><code>start_arguments</code></td>
-</tr>
-<tr>
-<td><code>STARTCMD</code></td>
-<td><code>start_command</code></td>
-</tr>
-<tr>
-<td><code>STDERR</code></td>
-<td><code>stderr_destination</code></td>
-</tr>
-<tr>
-<td><code>STDOUT</code></td>
-<td><code>stdout_destination</code></td>
-</tr>
-<tr>
-<td><code>STOPARG</code></td>
-<td><code>stop_arguments</code></td>
-</tr>
-<tr>
-<td><code>STOPCMD</code></td>
-<td><code>stop_command</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="request-key-value-map">Request key-value map<a class="headerlink" href="#request-key-value-map" title="Permanent link">&para;</a></h2>
-<h3 id="noreplace">noreplace<a class="headerlink" href="#noreplace" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Python value</th>
-<th>MQSC key</th>
-<th>MQSC value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>yes</code></td>
-<td><code>REPLACE</code></td>
-<td><code>NO</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Python value</th>
-<th>MQSC key</th>
-<th>MQSC value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>no</code></td>
-<td><code>REPLACE</code></td>
-<td><code>NO</code></td>
-</tr>
-<tr>
-<td><code>yes</code></td>
-<td><code>REPLACE</code></td>
-<td><code>YES</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><em>Auto-generated by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
+  <h1>service</h1>
+
+
 
 
 

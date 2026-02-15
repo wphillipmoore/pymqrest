@@ -79,11 +79,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#listener" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1075,7 +1070,7 @@
   <span class="md-ellipsis">
     
   
-    Qualifier Mapping Reference
+    Index
   
 
     
@@ -1606,26 +1601,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    listener
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1643,86 +1618,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-value-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key-value map
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Request key-value map">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#noreplace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        noreplace
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        replace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2822,77 +2717,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-key-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response key map
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-key-value-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Request key-value map
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Request key-value map">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#noreplace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        noreplace
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        replace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2909,209 +2733,9 @@
 
 
 
-<h1 id="listener">listener<a class="headerlink" href="#listener" title="Permanent link">&para;</a></h1>
-<p>Attribute mapping reference for the <code>listener</code> qualifier.</p>
-<p>Related MQSC commands: <code>ALTER LISTENER</code>, <code>DEFINE LISTENER</code>, <code>DELETE LISTENER</code>, <code>DISPLAY LISTENER</code>, <code>START LISTENER</code>, <code>STOP LISTENER</code></p>
-<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Python name</th>
-<th>MQSC parameter</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>adapter</code></td>
-<td><code>ADAPTER</code></td>
-</tr>
-<tr>
-<td><code>backlog</code></td>
-<td><code>BACKLOG</code></td>
-</tr>
-<tr>
-<td><code>command_scope</code></td>
-<td><code>CMDSCOPE</code></td>
-</tr>
-<tr>
-<td><code>commands</code></td>
-<td><code>COMMANDS</code></td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td><code>DESCR</code></td>
-</tr>
-<tr>
-<td><code>ignore_state</code></td>
-<td><code>IGNSTATE</code></td>
-</tr>
-<tr>
-<td><code>inbound_disposition</code></td>
-<td><code>INDISP</code></td>
-</tr>
-<tr>
-<td><code>ip_address</code></td>
-<td><code>IPADDR</code></td>
-</tr>
-<tr>
-<td><code>like</code></td>
-<td><code>LIKE</code></td>
-</tr>
-<tr>
-<td><code>local_name</code></td>
-<td><code>LOCLNAME</code></td>
-</tr>
-<tr>
-<td><code>lu_name</code></td>
-<td><code>LUNAME</code></td>
-</tr>
-<tr>
-<td><code>netbios_names</code></td>
-<td><code>NTBNAMES</code></td>
-</tr>
-<tr>
-<td><code>port</code></td>
-<td><code>PORT</code></td>
-</tr>
-<tr>
-<td><code>sessions</code></td>
-<td><code>SESSIONS</code></td>
-</tr>
-<tr>
-<td><code>socket</code></td>
-<td><code>SOCKET</code></td>
-</tr>
-<tr>
-<td><code>start_mode</code></td>
-<td><code>CONTROL</code></td>
-</tr>
-<tr>
-<td><code>transaction_program_name</code></td>
-<td><code>TPNAME</code></td>
-</tr>
-<tr>
-<td><code>transport_type</code></td>
-<td><code>TRPTYPE</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>MQSC parameter</th>
-<th>Python name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ADAPTER</code></td>
-<td><code>adapter</code></td>
-</tr>
-<tr>
-<td><code>ALTDATE</code></td>
-<td><code>alteration_date</code></td>
-</tr>
-<tr>
-<td><code>ALTTIME</code></td>
-<td><code>alteration_time</code></td>
-</tr>
-<tr>
-<td><code>BACKLOG</code></td>
-<td><code>backlog</code></td>
-</tr>
-<tr>
-<td><code>COMMANDS</code></td>
-<td><code>commands</code></td>
-</tr>
-<tr>
-<td><code>CONTROL</code></td>
-<td><code>start_mode</code></td>
-</tr>
-<tr>
-<td><code>DESCR</code></td>
-<td><code>description</code></td>
-</tr>
-<tr>
-<td><code>IPADDR</code></td>
-<td><code>ip_address</code></td>
-</tr>
-<tr>
-<td><code>LISTENER</code></td>
-<td><code>listener_name</code></td>
-</tr>
-<tr>
-<td><code>LOCLNAME</code></td>
-<td><code>local_name</code></td>
-</tr>
-<tr>
-<td><code>NTBNAMES</code></td>
-<td><code>netbios_names</code></td>
-</tr>
-<tr>
-<td><code>PORT</code></td>
-<td><code>port</code></td>
-</tr>
-<tr>
-<td><code>SESSIONS</code></td>
-<td><code>sessions</code></td>
-</tr>
-<tr>
-<td><code>SOCKET</code></td>
-<td><code>socket</code></td>
-</tr>
-<tr>
-<td><code>TPNAME</code></td>
-<td><code>transaction_program_name</code></td>
-</tr>
-<tr>
-<td><code>TRPTYPE</code></td>
-<td><code>transport_type</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="request-key-value-map">Request key-value map<a class="headerlink" href="#request-key-value-map" title="Permanent link">&para;</a></h2>
-<h3 id="noreplace">noreplace<a class="headerlink" href="#noreplace" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Python value</th>
-<th>MQSC key</th>
-<th>MQSC value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>yes</code></td>
-<td><code>REPLACE</code></td>
-<td><code>NO</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Python value</th>
-<th>MQSC key</th>
-<th>MQSC value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>no</code></td>
-<td><code>REPLACE</code></td>
-<td><code>NO</code></td>
-</tr>
-<tr>
-<td><code>yes</code></td>
-<td><code>REPLACE</code></td>
-<td><code>YES</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><em>Auto-generated by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
+  <h1>listener</h1>
+
+
 
 
 
