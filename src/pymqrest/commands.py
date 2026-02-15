@@ -48,7 +48,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `qmgr attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -82,7 +82,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `qmgr attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -116,7 +116,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `cmdserv attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/cmdserv.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cmdserv.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -152,7 +152,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `queue attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -191,7 +191,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `channel attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -229,7 +229,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `queue attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name.
@@ -262,7 +262,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `queue attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name.
@@ -295,7 +295,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `queue attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name.
@@ -328,7 +328,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `queue attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name.
@@ -361,7 +361,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `queue attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name.
@@ -394,7 +394,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `channel attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -427,7 +427,7 @@ class MQRESTCommandMixin:
         <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
         See `channel attribute mappings
-        <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -459,7 +459,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `authinfo attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/authinfo.html>`__.
+        See `authinfo attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/authinfo.html>`__.
 
         Args:
             name: Object name.
@@ -490,7 +490,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `buffpool attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/buffpool.html>`__.
 
         Args:
             name: Object name.
@@ -521,7 +520,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cfstruct attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cfstruct.html>`__.
+        See `cfstruct attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cfstruct.html>`__.
 
         Args:
             name: Object name.
@@ -552,7 +551,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `channel attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        See `channel attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -583,7 +582,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `comminfo attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/comminfo.html>`__.
+        See `comminfo attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/comminfo.html>`__.
 
         Args:
             name: Object name.
@@ -614,7 +613,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `listener attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/listener.html>`__.
+        See `listener attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/listener.html>`__.
 
         Args:
             name: Object name.
@@ -645,7 +644,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `namelist attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/namelist.html>`__.
+        See `namelist attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/namelist.html>`__.
 
         Args:
             name: Object name.
@@ -676,7 +675,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `process attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/process.html>`__.
+        See `process attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/process.html>`__.
 
         Args:
             name: Object name.
@@ -707,7 +706,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `psid attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/psid.html>`__.
 
         Args:
             name: Object name.
@@ -737,7 +735,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `qmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        See `qmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -767,7 +765,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `security attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/security.html>`__.
+        See `security attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/security.html>`__.
 
         Args:
             name: Object name.
@@ -798,7 +796,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `service attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/service.html>`__.
+        See `service attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/service.html>`__.
 
         Args:
             name: Object name.
@@ -829,7 +827,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `smds attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/smds.html>`__.
+        See `smds attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/smds.html>`__.
 
         Args:
             name: Object name.
@@ -860,7 +858,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `stgclass attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/stgclass.html>`__.
+        See `stgclass attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/stgclass.html>`__.
 
         Args:
             name: Object name.
@@ -891,7 +889,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `sub attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/sub.html>`__.
+        See `sub attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/sub.html>`__.
 
         Args:
             name: Object name.
@@ -922,7 +920,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `topic attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/topic.html>`__.
+        See `topic attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/topic.html>`__.
 
         Args:
             name: Object name.
@@ -953,7 +951,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `trace attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/trace.html>`__.
 
         Args:
             name: Object name.
@@ -984,7 +981,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `log attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/log.html>`__.
+        See `log attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/log.html>`__.
 
         Args:
             name: Object name.
@@ -1015,7 +1012,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cfstruct attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cfstruct.html>`__.
+        See `cfstruct attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cfstruct.html>`__.
 
         Args:
             name: Object name.
@@ -1046,7 +1043,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `queue attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        See `queue attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name.
@@ -1077,7 +1074,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `topicstr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/topicstr.html>`__.
+        See `topicstr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/topicstr.html>`__.
 
         Args:
             name: Object name.
@@ -1108,7 +1105,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `authinfo attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/authinfo.html>`__.
+        See `authinfo attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/authinfo.html>`__.
 
         Args:
             name: Object name.
@@ -1139,7 +1136,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `buffpool attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/buffpool.html>`__.
 
         Args:
             name: Object name.
@@ -1170,7 +1166,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cfstruct attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cfstruct.html>`__.
+        See `cfstruct attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cfstruct.html>`__.
 
         Args:
             name: Object name.
@@ -1201,7 +1197,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `comminfo attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/comminfo.html>`__.
+        See `comminfo attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/comminfo.html>`__.
 
         Args:
             name: Object name.
@@ -1232,7 +1228,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `listener attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/listener.html>`__.
+        See `listener attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/listener.html>`__.
 
         Args:
             name: Object name.
@@ -1263,7 +1259,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `log attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/log.html>`__.
+        See `log attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/log.html>`__.
 
         Args:
             name: Object name.
@@ -1294,7 +1290,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `maxsmsgs attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/maxsmsgs.html>`__.
 
         Args:
             name: Object name.
@@ -1325,7 +1320,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `namelist attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/namelist.html>`__.
+        See `namelist attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/namelist.html>`__.
 
         Args:
             name: Object name.
@@ -1356,7 +1351,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `process attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/process.html>`__.
+        See `process attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/process.html>`__.
 
         Args:
             name: Object name.
@@ -1387,7 +1382,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `psid attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/psid.html>`__.
 
         Args:
             name: Object name.
@@ -1418,7 +1412,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `service attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/service.html>`__.
+        See `service attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/service.html>`__.
 
         Args:
             name: Object name.
@@ -1449,7 +1443,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `stgclass attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/stgclass.html>`__.
+        See `stgclass attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/stgclass.html>`__.
 
         Args:
             name: Object name.
@@ -1480,7 +1474,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `sub attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/sub.html>`__.
+        See `sub attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/sub.html>`__.
 
         Args:
             name: Object name.
@@ -1511,7 +1505,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `topic attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/topic.html>`__.
+        See `topic attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/topic.html>`__.
 
         Args:
             name: Object name.
@@ -1542,7 +1536,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `authinfo attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/authinfo.html>`__.
+        See `authinfo attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/authinfo.html>`__.
 
         Args:
             name: Object name.
@@ -1573,7 +1567,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `authrec attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/authrec.html>`__.
+        See `authrec attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/authrec.html>`__.
 
         Args:
             name: Object name.
@@ -1604,7 +1598,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `buffpool attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/buffpool.html>`__.
 
         Args:
             name: Object name.
@@ -1635,7 +1628,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cfstruct attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cfstruct.html>`__.
+        See `cfstruct attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cfstruct.html>`__.
 
         Args:
             name: Object name.
@@ -1666,7 +1659,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `comminfo attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/comminfo.html>`__.
+        See `comminfo attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/comminfo.html>`__.
 
         Args:
             name: Object name.
@@ -1697,7 +1690,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `listener attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/listener.html>`__.
+        See `listener attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/listener.html>`__.
 
         Args:
             name: Object name.
@@ -1728,7 +1721,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `namelist attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/namelist.html>`__.
+        See `namelist attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/namelist.html>`__.
 
         Args:
             name: Object name.
@@ -1759,7 +1752,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `policy attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/policy.html>`__.
+        See `policy attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/policy.html>`__.
 
         Args:
             name: Object name.
@@ -1790,7 +1783,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `process attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/process.html>`__.
+        See `process attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/process.html>`__.
 
         Args:
             name: Object name.
@@ -1821,7 +1814,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `psid attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/psid.html>`__.
 
         Args:
             name: Object name.
@@ -1842,6 +1834,130 @@ class MQRESTCommandMixin:
             response_parameters=response_parameters,
         )
 
+    def delete_qalias(
+        self,
+        name: str | None = None,
+        request_parameters: Mapping[str, object] | None = None,
+        response_parameters: Sequence[str] | None = None,
+    ) -> None:
+        """Execute the MQSC ``DELETE QALIAS`` command.
+
+        See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
+        for command details.
+        See `queue attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
+
+        Args:
+            name: Object name.
+            request_parameters: Request attributes as a dict. Mapped
+                from ``snake_case`` when mapping is enabled.
+            response_parameters: Response attributes to return.
+                Defaults to ``["all"]``.
+
+        Raises:
+            MQRESTCommandError: If the command fails.
+
+        """
+        self._mqsc_command(
+            command="DELETE",
+            mqsc_qualifier="QALIAS",
+            name=name,
+            request_parameters=request_parameters,
+            response_parameters=response_parameters,
+        )
+
+    def delete_qlocal(
+        self,
+        name: str | None = None,
+        request_parameters: Mapping[str, object] | None = None,
+        response_parameters: Sequence[str] | None = None,
+    ) -> None:
+        """Execute the MQSC ``DELETE QLOCAL`` command.
+
+        See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
+        for command details.
+        See `queue attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
+
+        Args:
+            name: Object name.
+            request_parameters: Request attributes as a dict. Mapped
+                from ``snake_case`` when mapping is enabled.
+            response_parameters: Response attributes to return.
+                Defaults to ``["all"]``.
+
+        Raises:
+            MQRESTCommandError: If the command fails.
+
+        """
+        self._mqsc_command(
+            command="DELETE",
+            mqsc_qualifier="QLOCAL",
+            name=name,
+            request_parameters=request_parameters,
+            response_parameters=response_parameters,
+        )
+
+    def delete_qmodel(
+        self,
+        name: str | None = None,
+        request_parameters: Mapping[str, object] | None = None,
+        response_parameters: Sequence[str] | None = None,
+    ) -> None:
+        """Execute the MQSC ``DELETE QMODEL`` command.
+
+        See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
+        for command details.
+        See `queue attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
+
+        Args:
+            name: Object name.
+            request_parameters: Request attributes as a dict. Mapped
+                from ``snake_case`` when mapping is enabled.
+            response_parameters: Response attributes to return.
+                Defaults to ``["all"]``.
+
+        Raises:
+            MQRESTCommandError: If the command fails.
+
+        """
+        self._mqsc_command(
+            command="DELETE",
+            mqsc_qualifier="QMODEL",
+            name=name,
+            request_parameters=request_parameters,
+            response_parameters=response_parameters,
+        )
+
+    def delete_qremote(
+        self,
+        name: str | None = None,
+        request_parameters: Mapping[str, object] | None = None,
+        response_parameters: Sequence[str] | None = None,
+    ) -> None:
+        """Execute the MQSC ``DELETE QREMOTE`` command.
+
+        See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
+        for command details.
+        See `queue attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
+
+        Args:
+            name: Object name.
+            request_parameters: Request attributes as a dict. Mapped
+                from ``snake_case`` when mapping is enabled.
+            response_parameters: Response attributes to return.
+                Defaults to ``["all"]``.
+
+        Raises:
+            MQRESTCommandError: If the command fails.
+
+        """
+        self._mqsc_command(
+            command="DELETE",
+            mqsc_qualifier="QREMOTE",
+            name=name,
+            request_parameters=request_parameters,
+            response_parameters=response_parameters,
+        )
+
     def delete_service(
         self,
         name: str | None = None,
@@ -1852,7 +1968,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `service attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/service.html>`__.
+        See `service attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/service.html>`__.
 
         Args:
             name: Object name.
@@ -1883,7 +1999,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `stgclass attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/stgclass.html>`__.
+        See `stgclass attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/stgclass.html>`__.
 
         Args:
             name: Object name.
@@ -1914,7 +2030,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `sub attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/sub.html>`__.
+        See `sub attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/sub.html>`__.
 
         Args:
             name: Object name.
@@ -1945,7 +2061,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `topic attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/topic.html>`__.
+        See `topic attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/topic.html>`__.
 
         Args:
             name: Object name.
@@ -1977,7 +2093,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `apstatus attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/apstatus.html>`__.
+        See `apstatus attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/apstatus.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2014,7 +2130,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `archive attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/archive.html>`__.
+        See `archive attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/archive.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2051,7 +2167,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `authinfo attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/authinfo.html>`__.
+        See `authinfo attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/authinfo.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2088,7 +2204,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `authrec attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/authrec.html>`__.
+        See `authrec attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/authrec.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2125,7 +2241,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `authserv attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/authserv.html>`__.
+        See `authserv attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/authserv.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2162,7 +2278,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cfstatus attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cfstatus.html>`__.
+        See `cfstatus attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cfstatus.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2199,7 +2315,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cfstruct attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cfstruct.html>`__.
+        See `cfstruct attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cfstruct.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2236,7 +2352,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `chinit attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/chinit.html>`__.
+        See `chinit attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/chinit.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2273,7 +2389,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `chlauth attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/chlauth.html>`__.
+        See `chlauth attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/chlauth.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2310,7 +2426,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `chstatus attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/chstatus.html>`__.
+        See `chstatus attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/chstatus.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2347,7 +2463,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `clusqmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/clusqmgr.html>`__.
+        See `clusqmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/clusqmgr.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2384,7 +2500,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `comminfo attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/comminfo.html>`__.
+        See `comminfo attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/comminfo.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2421,7 +2537,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `conn attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/conn.html>`__.
+        See `conn attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/conn.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2458,7 +2574,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `entauth attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/entauth.html>`__.
+        See `entauth attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/entauth.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2495,7 +2611,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `group attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/group.html>`__.
+        See `group attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/group.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2532,7 +2648,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `listener attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/listener.html>`__.
+        See `listener attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/listener.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2569,7 +2685,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `log attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/log.html>`__.
+        See `log attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/log.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2606,7 +2722,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `lsstatus attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/lsstatus.html>`__.
+        See `lsstatus attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/lsstatus.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2643,7 +2759,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `maxsmsgs attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/maxsmsgs.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2680,7 +2795,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `namelist attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/namelist.html>`__.
+        See `namelist attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/namelist.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2717,7 +2832,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `policy attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/policy.html>`__.
+        See `policy attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/policy.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2754,7 +2869,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `process attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/process.html>`__.
+        See `process attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/process.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2791,7 +2906,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `pubsub attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/pubsub.html>`__.
+        See `pubsub attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/pubsub.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2828,7 +2943,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `queue attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        See `qstatus attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qstatus.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2865,7 +2980,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `sbstatus attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/sbstatus.html>`__.
+        See `sbstatus attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/sbstatus.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2902,7 +3017,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `security attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/security.html>`__.
+        See `security attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/security.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2939,7 +3054,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `service attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/service.html>`__.
+        See `service attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/service.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -2976,7 +3091,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `smds attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/smds.html>`__.
+        See `smds attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/smds.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3013,7 +3128,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `smdsconn attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/smdsconn.html>`__.
+        See `smdsconn attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/smdsconn.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3050,7 +3165,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `stgclass attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/stgclass.html>`__.
+        See `stgclass attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/stgclass.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3087,7 +3202,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `sub attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/sub.html>`__.
+        See `sub attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/sub.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3124,7 +3239,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `svstatus attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/svstatus.html>`__.
+        See `svstatus attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/svstatus.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3197,7 +3312,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `tcluster attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/tcluster.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3234,7 +3348,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `thread attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/thread.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3271,7 +3384,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `topic attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/topic.html>`__.
+        See `topic attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/topic.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3308,7 +3421,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `tpstatus attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/tpstatus.html>`__.
+        See `tpstatus attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/tpstatus.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3345,7 +3458,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `trace attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/trace.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3382,7 +3494,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `usage attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/usage.html>`__.
+        See `usage attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/usage.html>`__.
 
         Args:
             name: Object name or generic pattern.
@@ -3418,7 +3530,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `queue attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        See `queue attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name.
@@ -3449,7 +3561,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `channel attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        See `channel attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -3479,7 +3591,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `qmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        See `qmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -3509,7 +3621,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `channel attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        See `channel attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -3540,7 +3652,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `bsds attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/bsds.html>`__.
 
         Args:
             name: Object name.
@@ -3571,7 +3682,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cfstruct attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cfstruct.html>`__.
+        See `cfstruct attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cfstruct.html>`__.
 
         Args:
             name: Object name.
@@ -3602,7 +3713,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cluster attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cluster.html>`__.
+        See `cluster attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cluster.html>`__.
 
         Args:
             name: Object name.
@@ -3632,7 +3743,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `qmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        See `qmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -3662,7 +3773,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `security attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/security.html>`__.
+        See `security attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/security.html>`__.
 
         Args:
             name: Object name.
@@ -3693,7 +3804,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cfstruct attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cfstruct.html>`__.
+        See `cfstruct attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cfstruct.html>`__.
 
         Args:
             name: Object name.
@@ -3724,7 +3835,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `channel attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        See `channel attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -3755,7 +3866,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cluster attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cluster.html>`__.
+        See `cluster attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/cluster.html>`__.
 
         Args:
             name: Object name.
@@ -3785,7 +3896,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `qmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        See `qmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -3815,7 +3926,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `queue attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/queue.html>`__.
+        See `queue attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/queue.html>`__.
 
         Args:
             name: Object name.
@@ -3846,7 +3957,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `smds attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/smds.html>`__.
+        See `smds attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/smds.html>`__.
 
         Args:
             name: Object name.
@@ -3877,7 +3988,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `tpipe attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/tpipe.html>`__.
 
         Args:
             name: Object name.
@@ -3908,7 +4018,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `channel attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        See `channel attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -3939,7 +4049,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `indoubt attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/indoubt.html>`__.
+        See `indoubt attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/indoubt.html>`__.
 
         Args:
             name: Object name.
@@ -3969,7 +4079,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `qmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        See `qmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -3999,7 +4109,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `security attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/security.html>`__.
+        See `security attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/security.html>`__.
 
         Args:
             name: Object name.
@@ -4030,7 +4140,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `archive attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/archive.html>`__.
+        See `archive attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/archive.html>`__.
 
         Args:
             name: Object name.
@@ -4061,7 +4171,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `authrec attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/authrec.html>`__.
+        See `authrec attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/authrec.html>`__.
 
         Args:
             name: Object name.
@@ -4092,7 +4202,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `chlauth attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/chlauth.html>`__.
+        See `chlauth attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/chlauth.html>`__.
 
         Args:
             name: Object name.
@@ -4123,7 +4233,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `log attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/log.html>`__.
+        See `log attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/log.html>`__.
 
         Args:
             name: Object name.
@@ -4154,7 +4264,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `policy attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/policy.html>`__.
+        See `policy attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/policy.html>`__.
 
         Args:
             name: Object name.
@@ -4215,7 +4325,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `channel attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        See `channel attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -4246,7 +4356,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `chinit attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/chinit.html>`__.
+        See `chinit attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/chinit.html>`__.
 
         Args:
             name: Object name.
@@ -4276,7 +4386,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cmdserv attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cmdserv.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -4306,7 +4415,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `listener attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/listener.html>`__.
+        See `listener attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/listener.html>`__.
 
         Args:
             name: Object name.
@@ -4336,7 +4445,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `qmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        See `qmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -4366,7 +4475,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `service attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/service.html>`__.
+        See `service attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/service.html>`__.
 
         Args:
             name: Object name.
@@ -4397,7 +4506,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `smdsconn attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/smdsconn.html>`__.
+        See `smdsconn attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/smdsconn.html>`__.
 
         Args:
             name: Object name.
@@ -4428,7 +4537,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `trace attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/trace.html>`__.
 
         Args:
             name: Object name.
@@ -4459,7 +4567,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `channel attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/channel.html>`__.
+        See `channel attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/channel.html>`__.
 
         Args:
             name: Object name.
@@ -4490,7 +4598,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `chinit attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/chinit.html>`__.
+        See `chinit attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/chinit.html>`__.
 
         Args:
             name: Object name.
@@ -4520,7 +4628,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `cmdserv attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/cmdserv.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -4550,7 +4657,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `conn attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/conn.html>`__.
+        See `conn attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/conn.html>`__.
 
         Args:
             name: Object name.
@@ -4581,7 +4688,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `listener attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/listener.html>`__.
+        See `listener attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/listener.html>`__.
 
         Args:
             name: Object name.
@@ -4611,7 +4718,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `qmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        See `qmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
@@ -4641,7 +4748,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `service attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/service.html>`__.
+        See `service attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/service.html>`__.
 
         Args:
             name: Object name.
@@ -4672,7 +4779,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `smdsconn attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/smdsconn.html>`__.
+        See `smdsconn attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/smdsconn.html>`__.
 
         Args:
             name: Object name.
@@ -4703,7 +4810,6 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `trace attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/trace.html>`__.
 
         Args:
             name: Object name.
@@ -4733,7 +4839,7 @@ class MQRESTCommandMixin:
 
         See `MQSC reference <https://www.ibm.com/docs/en/ibm-mq/9.4?topic=reference-mqsc-commands>`__
         for command details.
-        See `qmgr attribute mappings <https://wphillipmoore.github.io/pymqrest/mappings/qmgr.html>`__.
+        See `qmgr attribute mappings <https://wphillipmoore.github.io/mq-rest-admin-python/mappings/qmgr.html>`__.
 
         Args:
             request_parameters: Request attributes as a dict. Mapped
