@@ -14,7 +14,7 @@ Start the multi-queue-manager Docker environment and seed both queue managers:
 ```
 
 This starts two queue managers (`QM1` on port 9443, `QM2` on port 9444) on a
-shared Docker network. See {doc}`/development/local-mq-container` for details.
+shared Docker network. See [local MQ container](development/local-mq-container.md) for details.
 
 ## Running examples
 

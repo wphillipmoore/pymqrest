@@ -166,7 +166,7 @@ treated as stopped for those object types.
 ## Attribute mapping
 
 The sync methods call `_mqsc_command` internally, so they participate
-in the same {doc}`mapping pipeline </mapping-pipeline>` as all other
+in the same [mapping pipeline](mapping-pipeline.md) as all other
 command methods. The status key is checked using both the mapped
 `snake_case` name and the raw MQSC name, so polling works correctly
 regardless of whether mapping is enabled or disabled.
@@ -174,7 +174,7 @@ regardless of whether mapping is enabled or disabled.
 ## Provisioning example
 
 The sync methods pair naturally with the
-{doc}`ensure methods </ensure-methods>` for end-to-end provisioning:
+[ensure methods](ensure-methods.md) for end-to-end provisioning:
 
 ```python
 from pymqrest import SyncConfig

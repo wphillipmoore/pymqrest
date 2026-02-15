@@ -85,7 +85,7 @@ session = MQRESTSession(
 )
 ```
 
-See {doc}`/mapping-pipeline` for a detailed explanation of how mapping works.
+See [mapping pipeline](mapping-pipeline.md) for a detailed explanation of how mapping works.
 
 ## Strict vs lenient mapping
 
@@ -164,7 +164,7 @@ queues = session.display_queue(where="queue_depth GT 100")
 
 Overrides support all five sub-maps per qualifier: `request_key_map`,
 `request_value_map`, `request_key_value_map`, `response_key_map`, and
-`response_value_map`. See {doc}`/mapping-pipeline` for details on how each
+`response_value_map`. See [mapping pipeline](mapping-pipeline.md) for details on how each
 sub-map is used.
 
 Invalid override structures raise `ValueError` or `TypeError` at session

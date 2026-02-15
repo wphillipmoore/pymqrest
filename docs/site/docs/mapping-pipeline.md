@@ -32,7 +32,7 @@ queue-related commands.
 This design avoids duplicating mapping data across commands and reflects
 how MQSC attributes are shared across command verbs.
 
-See {doc}`/mappings/index` for the complete per-qualifier reference.
+See [qualifier mapping reference](mappings/index.md) for the complete per-qualifier reference.
 
 ## Request mapping flow
 

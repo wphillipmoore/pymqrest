@@ -23,20 +23,11 @@ session = MQRESTSession("https://...", "QM1", credentials=BasicAuth("user", "pas
 
 ## Credential Types
 
-```{eval-rst}
-.. autoclass:: pymqrest.auth.CertificateAuth
-   :exclude-members: cert_path, key_path
-```
+::: pymqrest.auth.CertificateAuth
 
-```{eval-rst}
-.. autoclass:: pymqrest.auth.LTPAAuth
-   :exclude-members: username, password
-```
+::: pymqrest.auth.LTPAAuth
 
-```{eval-rst}
-.. autoclass:: pymqrest.auth.BasicAuth
-   :exclude-members: username, password
-```
+::: pymqrest.auth.BasicAuth
 
 ## Choosing between LTPA and Basic authentication
 
@@ -65,6 +56,4 @@ and documentation in this project use LTPA as the default.
 
 ## Type Alias
 
-```{eval-rst}
-.. autodata:: pymqrest.auth.Credentials
-```
+::: pymqrest.auth.Credentials

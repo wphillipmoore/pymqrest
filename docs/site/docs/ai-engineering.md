@@ -22,7 +22,7 @@ names, value mappings, and command metadata for all 48 qualifiers. The
 automated output was then reviewed, customized, and rationalized by hand.
 `mapping_data.py` is now maintained directly as the sole authoritative
 source — the extraction pipeline is archived in
-`docs/archive/extraction/`. See {doc}`/development/namespace-origin` for
+`docs/archive/extraction/`. See [namespace origin](development/namespace-origin.md) for
 the full history and the strategy for future MQ versions.
 
 **Command method generation**: The ~144 MQSC command wrapper methods in

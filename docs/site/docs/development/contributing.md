@@ -16,7 +16,7 @@ All contributors follow the same branching model:
 - Feature PRs: squash merge to `develop`.
 - Release PRs: regular merge to `main` (preserves shared ancestry).
 
-See {doc}`release-workflow` for the full release process.
+See [release workflow](release-workflow.md) for the full release process.
 
 ## Code quality gates
 
@@ -53,7 +53,7 @@ uv run python3 scripts/dev/validate_docs.py
   patterns, and key design decisions. They are useful as reference
   material even when not using an AI agent.
 - After changing mapping data in `mapping_data.py`, regenerate
-  downstream artifacts. See {doc}`generation-scripts` for the
+  downstream artifacts. See [generation scripts](generation-scripts.md) for the
   regeneration workflow.
 
 ## For AI agent contributors

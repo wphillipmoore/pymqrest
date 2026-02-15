@@ -91,7 +91,7 @@ these structures so that every command returns uniform flat dicts:
 {"conn": "A1B2C3D4E5F6", "objname": "MY.QUEUE", "hstate": "ACTIVE"}
 ```
 
-See {doc}`nested-object-flattening` for the full algorithm, edge cases,
+See [nested object flattening](nested-object-flattening.md) for the full algorithm, edge cases,
 and before/after examples.
 
 ## CSRF tokens

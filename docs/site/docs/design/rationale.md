@@ -74,7 +74,7 @@ pipeline translates these to readable `snake_case` names
 The translation is not a simple case conversion. The mapping tables were
 originally bootstrapped from IBM MQ 9.4 documentation, then customized
 and rationalized. They are now maintained directly in `mapping_data.py`
-as the sole authoritative source (see {doc}`/development/namespace-origin`).
+as the sole authoritative source (see [namespace origin](../development/namespace-origin.md)).
 The tables contain:
 
 - **Key maps**: Attribute name translations (e.g. `CURDEPTH` ↔
@@ -83,7 +83,7 @@ The tables contain:
   `"yes"`, `"SVRCONN"` ↔ `"server_connection"`).
 - **Key-value maps**: Cases where both key and value change together.
 
-See {doc}`/mapping-pipeline` for full details.
+See [mapping pipeline](../mapping-pipeline.md) for full details.
 
 ## Beta status
 

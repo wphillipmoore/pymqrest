@@ -19,7 +19,7 @@
   management. Each method checks current state with DISPLAY, then
   DEFINE, ALTER, or no-ops as needed. Returns an `EnsureResult` enum.
   `ensure_qmgr()` is a special singleton variant (no name, no DEFINE).
-  See {doc}`/ensure-methods` for details.
+  See [ensure methods](ensure-methods.md) for details.
 
 **Mapping pipeline** (`mapping.py`, `mapping_data.py`)
 : Bidirectional attribute translation between Python `snake_case` names
