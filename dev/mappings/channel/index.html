@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#channel" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,7 +1075,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -1293,6 +1298,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    channel
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1310,6 +1335,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-value-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key-value map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Request key-value map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel_instance_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        channel_instance_type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noreplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        noreplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2717,6 +2833,88 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-value-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key-value map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Request key-value map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel_instance_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        channel_instance_type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noreplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        noreplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2733,9 +2931,764 @@
 
 
 
-  <h1>channel</h1>
-
-
+<h1 id="channel">channel<a class="headerlink" href="#channel" title="Permanent link">&para;</a></h1>
+<p>Attribute mapping reference for the <code>channel</code> qualifier.</p>
+<p>Related MQSC commands: <code>ALTER CHANNEL</code>, <code>DEFINE CHANNEL</code>, <code>DELETE CHANNEL</code>, <code>DISPLAY CHANNEL</code>, <code>PING CHANNEL</code>, <code>PURGE CHANNEL</code>, <code>RESET CHANNEL</code>, <code>RESOLVE CHANNEL</code>, <code>START CHANNEL</code>, <code>STOP CHANNEL</code></p>
+<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Friendly name</th>
+<th>MQSC parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>amqp_keep_alive</code></td>
+<td><code>AMQPKA</code></td>
+</tr>
+<tr>
+<td><code>backlog</code></td>
+<td><code>BACKLOG</code></td>
+</tr>
+<tr>
+<td><code>batch_data_limit</code></td>
+<td><code>BATCHLIM</code></td>
+</tr>
+<tr>
+<td><code>batch_heartbeat</code></td>
+<td><code>BATCHHB</code></td>
+</tr>
+<tr>
+<td><code>batch_interval</code></td>
+<td><code>BATCHINT</code></td>
+</tr>
+<tr>
+<td><code>batch_size</code></td>
+<td><code>BATCHSZ</code></td>
+</tr>
+<tr>
+<td><code>certificate_label</code></td>
+<td><code>CERTLABL</code></td>
+</tr>
+<tr>
+<td><code>channel_disposition</code></td>
+<td><code>CHLDISP</code></td>
+</tr>
+<tr>
+<td><code>channel_monitoring</code></td>
+<td><code>MONCHL</code></td>
+</tr>
+<tr>
+<td><code>channel_statistics</code></td>
+<td><code>STATCHL</code></td>
+</tr>
+<tr>
+<td><code>channel_status</code></td>
+<td><code>STATUS</code></td>
+</tr>
+<tr>
+<td><code>channel_table</code></td>
+<td><code>CHLTABLE</code></td>
+</tr>
+<tr>
+<td><code>channel_type</code></td>
+<td><code>CHLTYPE</code></td>
+</tr>
+<tr>
+<td><code>client_channel_weight</code></td>
+<td><code>CLNTWGHT</code></td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><code>CLIENTID</code></td>
+</tr>
+<tr>
+<td><code>cluster_name</code></td>
+<td><code>CLUSTER</code></td>
+</tr>
+<tr>
+<td><code>cluster_namelist</code></td>
+<td><code>CLUSNL</code></td>
+</tr>
+<tr>
+<td><code>cluster_workload_channel_weight</code></td>
+<td><code>CLWLWGHT</code></td>
+</tr>
+<tr>
+<td><code>cluster_workload_priority</code></td>
+<td><code>CLWLPRTY</code></td>
+</tr>
+<tr>
+<td><code>cluster_workload_rank</code></td>
+<td><code>CLWLRANK</code></td>
+</tr>
+<tr>
+<td><code>command_scope</code></td>
+<td><code>CMDSCOPE</code></td>
+</tr>
+<tr>
+<td><code>connection_affinity</code></td>
+<td><code>AFFINITY</code></td>
+</tr>
+<tr>
+<td><code>connection_name</code></td>
+<td><code>CONNAME</code></td>
+</tr>
+<tr>
+<td><code>data_conversion</code></td>
+<td><code>CONVERT</code></td>
+</tr>
+<tr>
+<td><code>data_count</code></td>
+<td><code>DATALEN</code></td>
+</tr>
+<tr>
+<td><code>default_channel_disposition</code></td>
+<td><code>DEFCDISP</code></td>
+</tr>
+<tr>
+<td><code>default_reconnect</code></td>
+<td><code>DEFRECON</code></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>DESCR</code></td>
+</tr>
+<tr>
+<td><code>disconnect_interval</code></td>
+<td><code>DISCINT</code></td>
+</tr>
+<tr>
+<td><code>header_compression</code></td>
+<td><code>COMPHDR</code></td>
+</tr>
+<tr>
+<td><code>heartbeat_interval</code></td>
+<td><code>HBINT</code></td>
+</tr>
+<tr>
+<td><code>ignore_state</code></td>
+<td><code>IGNSTATE</code></td>
+</tr>
+<tr>
+<td><code>in_doubt</code></td>
+<td><code>ACTION</code></td>
+</tr>
+<tr>
+<td><code>jaas_config</code></td>
+<td><code>JAASCFG</code></td>
+</tr>
+<tr>
+<td><code>keep_alive_interval</code></td>
+<td><code>KAINT</code></td>
+</tr>
+<tr>
+<td><code>like</code></td>
+<td><code>LIKE</code></td>
+</tr>
+<tr>
+<td><code>local_address</code></td>
+<td><code>LOCLADDR</code></td>
+</tr>
+<tr>
+<td><code>long_retry_count</code></td>
+<td><code>LONGRTY</code></td>
+</tr>
+<tr>
+<td><code>long_retry_interval</code></td>
+<td><code>LONGTMR</code></td>
+</tr>
+<tr>
+<td><code>max_instances</code></td>
+<td><code>MAXINST</code></td>
+</tr>
+<tr>
+<td><code>max_instances_per_client</code></td>
+<td><code>MAXINSTC</code></td>
+</tr>
+<tr>
+<td><code>max_message_length</code></td>
+<td><code>MAXMSGL</code></td>
+</tr>
+<tr>
+<td><code>mca_name</code></td>
+<td><code>MCANAME</code></td>
+</tr>
+<tr>
+<td><code>mca_type</code></td>
+<td><code>MCATYPE</code></td>
+</tr>
+<tr>
+<td><code>mca_user</code></td>
+<td><code>MCAUSER</code></td>
+</tr>
+<tr>
+<td><code>message_compression</code></td>
+<td><code>COMPMSG</code></td>
+</tr>
+<tr>
+<td><code>message_exit</code></td>
+<td><code>MSGEXIT</code></td>
+</tr>
+<tr>
+<td><code>message_retry_count</code></td>
+<td><code>MRRTY</code></td>
+</tr>
+<tr>
+<td><code>message_retry_exit</code></td>
+<td><code>MREXIT</code></td>
+</tr>
+<tr>
+<td><code>message_retry_interval</code></td>
+<td><code>MRTMR</code></td>
+</tr>
+<tr>
+<td><code>message_retry_user_data</code></td>
+<td><code>MRDATA</code></td>
+</tr>
+<tr>
+<td><code>message_sequence_number</code></td>
+<td><code>SEQNUM</code></td>
+</tr>
+<tr>
+<td><code>message_user_data</code></td>
+<td><code>MSGDATA</code></td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><code>MODE</code></td>
+</tr>
+<tr>
+<td><code>mode_name</code></td>
+<td><code>MODENAME</code></td>
+</tr>
+<tr>
+<td><code>network_priority</code></td>
+<td><code>NETPRTY</code></td>
+</tr>
+<tr>
+<td><code>non_persistent_message_speed</code></td>
+<td><code>NPMSPEED</code></td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>PASSWORD</code></td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>PORT</code></td>
+</tr>
+<tr>
+<td><code>property_control</code></td>
+<td><code>PROPCTL</code></td>
+</tr>
+<tr>
+<td><code>protocol</code></td>
+<td><code>PROTOCOL</code></td>
+</tr>
+<tr>
+<td><code>put_authority</code></td>
+<td><code>PUTAUT</code></td>
+</tr>
+<tr>
+<td><code>queue_manager_name</code></td>
+<td><code>QMNAME</code></td>
+</tr>
+<tr>
+<td><code>queue_sharing_group_disposition</code></td>
+<td><code>QSGDISP</code></td>
+</tr>
+<tr>
+<td><code>receive_exit</code></td>
+<td><code>RCVEXIT</code></td>
+</tr>
+<tr>
+<td><code>receive_user_data</code></td>
+<td><code>RCVDATA</code></td>
+</tr>
+<tr>
+<td><code>security_exit</code></td>
+<td><code>SCYEXIT</code></td>
+</tr>
+<tr>
+<td><code>security_policy_protection</code></td>
+<td><code>SPLPROT</code></td>
+</tr>
+<tr>
+<td><code>security_user_data</code></td>
+<td><code>SCYDATA</code></td>
+</tr>
+<tr>
+<td><code>send_exit</code></td>
+<td><code>SENDEXIT</code></td>
+</tr>
+<tr>
+<td><code>send_user_data</code></td>
+<td><code>SENDDATA</code></td>
+</tr>
+<tr>
+<td><code>sequence_number_wrap</code></td>
+<td><code>SEQWRAP</code></td>
+</tr>
+<tr>
+<td><code>sharing_conversations</code></td>
+<td><code>SHARECNV</code></td>
+</tr>
+<tr>
+<td><code>short_retry_count</code></td>
+<td><code>SHORTRTY</code></td>
+</tr>
+<tr>
+<td><code>short_retry_interval</code></td>
+<td><code>SHORTTMR</code></td>
+</tr>
+<tr>
+<td><code>ssl_cipher_spec</code></td>
+<td><code>SSLCIPH</code></td>
+</tr>
+<tr>
+<td><code>ssl_client_authentication</code></td>
+<td><code>SSLCAUTH</code></td>
+</tr>
+<tr>
+<td><code>ssl_key_repository</code></td>
+<td><code>SSLKEYR</code></td>
+</tr>
+<tr>
+<td><code>ssl_pass_phrase</code></td>
+<td><code>SSLKEYP</code></td>
+</tr>
+<tr>
+<td><code>ssl_peer_name</code></td>
+<td><code>SSLPEER</code></td>
+</tr>
+<tr>
+<td><code>temporary_model_queue_name</code></td>
+<td><code>TMPMODEL</code></td>
+</tr>
+<tr>
+<td><code>temporary_queue_prefix</code></td>
+<td><code>TMPQPRFX</code></td>
+</tr>
+<tr>
+<td><code>topic_root</code></td>
+<td><code>TPROOT</code></td>
+</tr>
+<tr>
+<td><code>transaction_program_name</code></td>
+<td><code>TPNAME</code></td>
+</tr>
+<tr>
+<td><code>transmission_queue_name</code></td>
+<td><code>XMITQ</code></td>
+</tr>
+<tr>
+<td><code>transport_type</code></td>
+<td><code>TRPTYPE</code></td>
+</tr>
+<tr>
+<td><code>use_client_id</code></td>
+<td><code>USECLTID</code></td>
+</tr>
+<tr>
+<td><code>use_dead_letter_queue</code></td>
+<td><code>USEDLQ</code></td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>USERID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>MQSC parameter</th>
+<th>Friendly name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AFFINITY</code></td>
+<td><code>connection_affinity</code></td>
+</tr>
+<tr>
+<td><code>ALTDATE</code></td>
+<td><code>alteration_date</code></td>
+</tr>
+<tr>
+<td><code>ALTTIME</code></td>
+<td><code>alteration_time</code></td>
+</tr>
+<tr>
+<td><code>AMQPKA</code></td>
+<td><code>amqp_keep_alive</code></td>
+</tr>
+<tr>
+<td><code>AUTOSTART</code></td>
+<td><code>auto_start</code></td>
+</tr>
+<tr>
+<td><code>BATCHHB</code></td>
+<td><code>batch_heartbeat</code></td>
+</tr>
+<tr>
+<td><code>BATCHINT</code></td>
+<td><code>batch_interval</code></td>
+</tr>
+<tr>
+<td><code>BATCHLIM</code></td>
+<td><code>batch_data_limit</code></td>
+</tr>
+<tr>
+<td><code>BATCHSZ</code></td>
+<td><code>batch_size</code></td>
+</tr>
+<tr>
+<td><code>CERTLABL</code></td>
+<td><code>certificate_label</code></td>
+</tr>
+<tr>
+<td><code>CHANNEL</code></td>
+<td><code>channel_name</code></td>
+</tr>
+<tr>
+<td><code>CHLTYPE</code></td>
+<td><code>channel_type</code></td>
+</tr>
+<tr>
+<td><code>CLNTWGHT</code></td>
+<td><code>client_channel_weight</code></td>
+</tr>
+<tr>
+<td><code>CLUSNL</code></td>
+<td><code>cluster_namelist</code></td>
+</tr>
+<tr>
+<td><code>CLUSTER</code></td>
+<td><code>cluster_name</code></td>
+</tr>
+<tr>
+<td><code>CLWLPRTY</code></td>
+<td><code>cluster_workload_priority</code></td>
+</tr>
+<tr>
+<td><code>CLWLRANK</code></td>
+<td><code>cluster_workload_rank</code></td>
+</tr>
+<tr>
+<td><code>CLWLWGHT</code></td>
+<td><code>cluster_workload_channel_weight</code></td>
+</tr>
+<tr>
+<td><code>COMPHDR</code></td>
+<td><code>header_compression</code></td>
+</tr>
+<tr>
+<td><code>COMPMSG</code></td>
+<td><code>message_compression</code></td>
+</tr>
+<tr>
+<td><code>CONNAME</code></td>
+<td><code>connection_name</code></td>
+</tr>
+<tr>
+<td><code>CONVERT</code></td>
+<td><code>data_conversion</code></td>
+</tr>
+<tr>
+<td><code>DEFCDISP</code></td>
+<td><code>default_channel_disposition</code></td>
+</tr>
+<tr>
+<td><code>DEFRECON</code></td>
+<td><code>default_reconnect</code></td>
+</tr>
+<tr>
+<td><code>DESCR</code></td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td><code>DISCINT</code></td>
+<td><code>disconnect_interval</code></td>
+</tr>
+<tr>
+<td><code>HBINT</code></td>
+<td><code>heartbeat_interval</code></td>
+</tr>
+<tr>
+<td><code>KAINT</code></td>
+<td><code>keep_alive_interval</code></td>
+</tr>
+<tr>
+<td><code>LOCLADDR</code></td>
+<td><code>local_address</code></td>
+</tr>
+<tr>
+<td><code>LONGRTY</code></td>
+<td><code>long_retry_count</code></td>
+</tr>
+<tr>
+<td><code>LONGTMR</code></td>
+<td><code>long_retry_interval</code></td>
+</tr>
+<tr>
+<td><code>MAXINST</code></td>
+<td><code>max_instances</code></td>
+</tr>
+<tr>
+<td><code>MAXINSTC</code></td>
+<td><code>max_instances_per_client</code></td>
+</tr>
+<tr>
+<td><code>MAXMSGL</code></td>
+<td><code>max_message_length</code></td>
+</tr>
+<tr>
+<td><code>MCANAME</code></td>
+<td><code>mca_name</code></td>
+</tr>
+<tr>
+<td><code>MCATYPE</code></td>
+<td><code>mca_type</code></td>
+</tr>
+<tr>
+<td><code>MCAUSER</code></td>
+<td><code>mca_user</code></td>
+</tr>
+<tr>
+<td><code>MODENAME</code></td>
+<td><code>mode_name</code></td>
+</tr>
+<tr>
+<td><code>MONCHL</code></td>
+<td><code>channel_monitoring</code></td>
+</tr>
+<tr>
+<td><code>MRDATA</code></td>
+<td><code>message_retry_user_data</code></td>
+</tr>
+<tr>
+<td><code>MREXIT</code></td>
+<td><code>message_retry_exit</code></td>
+</tr>
+<tr>
+<td><code>MRRTY</code></td>
+<td><code>message_retry_count</code></td>
+</tr>
+<tr>
+<td><code>MRTMR</code></td>
+<td><code>message_retry_interval</code></td>
+</tr>
+<tr>
+<td><code>MSGDATA</code></td>
+<td><code>message_user_data</code></td>
+</tr>
+<tr>
+<td><code>MSGEXIT</code></td>
+<td><code>message_exit</code></td>
+</tr>
+<tr>
+<td><code>NETPRTY</code></td>
+<td><code>network_priority</code></td>
+</tr>
+<tr>
+<td><code>NPMSPEED</code></td>
+<td><code>non_persistent_message_speed</code></td>
+</tr>
+<tr>
+<td><code>PASSWORD</code></td>
+<td><code>password</code></td>
+</tr>
+<tr>
+<td><code>PORT</code></td>
+<td><code>port</code></td>
+</tr>
+<tr>
+<td><code>PROPCTL</code></td>
+<td><code>property_control</code></td>
+</tr>
+<tr>
+<td><code>PUTAUT</code></td>
+<td><code>put_authority</code></td>
+</tr>
+<tr>
+<td><code>QMNAME</code></td>
+<td><code>queue_manager_name</code></td>
+</tr>
+<tr>
+<td><code>RCVDATA</code></td>
+<td><code>receive_user_data</code></td>
+</tr>
+<tr>
+<td><code>RCVEXIT</code></td>
+<td><code>receive_exit</code></td>
+</tr>
+<tr>
+<td><code>RESETSEQ</code></td>
+<td><code>reset_sequence</code></td>
+</tr>
+<tr>
+<td><code>SCYDATA</code></td>
+<td><code>security_user_data</code></td>
+</tr>
+<tr>
+<td><code>SCYEXIT</code></td>
+<td><code>security_exit</code></td>
+</tr>
+<tr>
+<td><code>SENDDATA</code></td>
+<td><code>send_user_data</code></td>
+</tr>
+<tr>
+<td><code>SENDEXIT</code></td>
+<td><code>send_exit</code></td>
+</tr>
+<tr>
+<td><code>SEQWRAP</code></td>
+<td><code>sequence_number_wrap</code></td>
+</tr>
+<tr>
+<td><code>SHARECNV</code></td>
+<td><code>sharing_conversations</code></td>
+</tr>
+<tr>
+<td><code>SHORTRTY</code></td>
+<td><code>short_retry_count</code></td>
+</tr>
+<tr>
+<td><code>SHORTTMR</code></td>
+<td><code>short_retry_interval</code></td>
+</tr>
+<tr>
+<td><code>SPLPROT</code></td>
+<td><code>security_policy_protection</code></td>
+</tr>
+<tr>
+<td><code>SSLCAUTH</code></td>
+<td><code>ssl_client_authentication</code></td>
+</tr>
+<tr>
+<td><code>SSLCIPH</code></td>
+<td><code>ssl_cipher_spec</code></td>
+</tr>
+<tr>
+<td><code>SSLPEER</code></td>
+<td><code>ssl_peer_name</code></td>
+</tr>
+<tr>
+<td><code>STATCHL</code></td>
+<td><code>channel_statistics</code></td>
+</tr>
+<tr>
+<td><code>TMPMODEL</code></td>
+<td><code>temporary_model_queue_name</code></td>
+</tr>
+<tr>
+<td><code>TMPQPRFX</code></td>
+<td><code>temporary_queue_prefix</code></td>
+</tr>
+<tr>
+<td><code>TPNAME</code></td>
+<td><code>transaction_program_name</code></td>
+</tr>
+<tr>
+<td><code>TPROOT</code></td>
+<td><code>topic_root</code></td>
+</tr>
+<tr>
+<td><code>TRPTYPE</code></td>
+<td><code>transport_type</code></td>
+</tr>
+<tr>
+<td><code>USECLTID</code></td>
+<td><code>use_client_id</code></td>
+</tr>
+<tr>
+<td><code>USEDLQ</code></td>
+<td><code>use_dead_letter_queue</code></td>
+</tr>
+<tr>
+<td><code>USERID</code></td>
+<td><code>user_id</code></td>
+</tr>
+<tr>
+<td><code>XMITQ</code></td>
+<td><code>transmission_queue_name</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-key-value-map">Request key-value map<a class="headerlink" href="#request-key-value-map" title="Permanent link">&para;</a></h2>
+<h3 id="channel_instance_type">channel_instance_type<a class="headerlink" href="#channel_instance_type" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Friendly value</th>
+<th>MQSC key</th>
+<th>MQSC value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>current</code></td>
+<td><code>CURRENT</code></td>
+<td><code>YES</code></td>
+</tr>
+<tr>
+<td><code>saved</code></td>
+<td><code>SAVED</code></td>
+<td><code>YES</code></td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td><code>SHORT</code></td>
+<td><code>YES</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="noreplace">noreplace<a class="headerlink" href="#noreplace" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Friendly value</th>
+<th>MQSC key</th>
+<th>MQSC value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yes</code></td>
+<td><code>REPLACE</code></td>
+<td><code>NO</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Friendly value</th>
+<th>MQSC key</th>
+<th>MQSC value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>no</code></td>
+<td><code>REPLACE</code></td>
+<td><code>NO</code></td>
+</tr>
+<tr>
+<td><code>yes</code></td>
+<td><code>REPLACE</code></td>
+<td><code>YES</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Auto-generated from <code>mapping-data.json</code> by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
 
 
 

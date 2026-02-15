@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sub" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,7 +1075,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -2077,6 +2082,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    sub
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2094,6 +2119,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-value-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key-value map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Request key-value map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noreplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        noreplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2717,6 +2822,77 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-value-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key-value map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Request key-value map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noreplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        noreplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2733,9 +2909,305 @@
 
 
 
-  <h1>sub</h1>
-
-
+<h1 id="sub">sub<a class="headerlink" href="#sub" title="Permanent link">&para;</a></h1>
+<p>Attribute mapping reference for the <code>sub</code> qualifier.</p>
+<p>Related MQSC commands: <code>ALTER SUB</code>, <code>DEFINE SUB</code>, <code>DELETE SUB</code>, <code>DISPLAY SUB</code></p>
+<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Friendly name</th>
+<th>MQSC parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alteration_date</code></td>
+<td><code>ALTDATE</code></td>
+</tr>
+<tr>
+<td><code>alteration_time</code></td>
+<td><code>ALTTIME</code></td>
+</tr>
+<tr>
+<td><code>command_scope</code></td>
+<td><code>CMDSCOPE</code></td>
+</tr>
+<tr>
+<td><code>creation_date</code></td>
+<td><code>CRDATE</code></td>
+</tr>
+<tr>
+<td><code>creation_time</code></td>
+<td><code>CRTIME</code></td>
+</tr>
+<tr>
+<td><code>destination</code></td>
+<td><code>DEST</code></td>
+</tr>
+<tr>
+<td><code>destination_class</code></td>
+<td><code>DESTCLAS</code></td>
+</tr>
+<tr>
+<td><code>destination_correlation_id</code></td>
+<td><code>DESTCORL</code></td>
+</tr>
+<tr>
+<td><code>destination_queue_manager</code></td>
+<td><code>DESTQMGR</code></td>
+</tr>
+<tr>
+<td><code>display_type</code></td>
+<td><code>DISTYPE</code></td>
+</tr>
+<tr>
+<td><code>durable</code></td>
+<td><code>DURABLE</code></td>
+</tr>
+<tr>
+<td><code>expiry</code></td>
+<td><code>EXPIRY</code></td>
+</tr>
+<tr>
+<td><code>ignore_state</code></td>
+<td><code>IGNSTATE</code></td>
+</tr>
+<tr>
+<td><code>publish_priority</code></td>
+<td><code>PUBPRTY</code></td>
+</tr>
+<tr>
+<td><code>publish_subscribe_properties</code></td>
+<td><code>PSPROP</code></td>
+</tr>
+<tr>
+<td><code>published_accounting_token</code></td>
+<td><code>PUBACCT</code></td>
+</tr>
+<tr>
+<td><code>published_application_id</code></td>
+<td><code>PUBAPPID</code></td>
+</tr>
+<tr>
+<td><code>request_only</code></td>
+<td><code>REQONLY</code></td>
+</tr>
+<tr>
+<td><code>selector</code></td>
+<td><code>SELECTOR</code></td>
+</tr>
+<tr>
+<td><code>selector_type</code></td>
+<td><code>SELTYPE</code></td>
+</tr>
+<tr>
+<td><code>subscription_id</code></td>
+<td><code>SUBID</code></td>
+</tr>
+<tr>
+<td><code>subscription_level</code></td>
+<td><code>SUBLEVEL</code></td>
+</tr>
+<tr>
+<td><code>subscription_type</code></td>
+<td><code>SUBTYPE</code></td>
+</tr>
+<tr>
+<td><code>subscription_user_id</code></td>
+<td><code>SUBUSER</code></td>
+</tr>
+<tr>
+<td><code>topic_object</code></td>
+<td><code>TOPICOBJ</code></td>
+</tr>
+<tr>
+<td><code>topic_string</code></td>
+<td><code>TOPICSTR</code></td>
+</tr>
+<tr>
+<td><code>user_data</code></td>
+<td><code>USERDATA</code></td>
+</tr>
+<tr>
+<td><code>variable_user</code></td>
+<td><code>VARUSER</code></td>
+</tr>
+<tr>
+<td><code>wildcard_schema</code></td>
+<td><code>WSCHEMA</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>MQSC parameter</th>
+<th>Friendly name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ALTDATE</code></td>
+<td><code>alteration_date</code></td>
+</tr>
+<tr>
+<td><code>ALTTIME</code></td>
+<td><code>alteration_time</code></td>
+</tr>
+<tr>
+<td><code>CMDSCOPE</code></td>
+<td><code>command_scope</code></td>
+</tr>
+<tr>
+<td><code>CRDATE</code></td>
+<td><code>creation_date</code></td>
+</tr>
+<tr>
+<td><code>CRTIME</code></td>
+<td><code>creation_time</code></td>
+</tr>
+<tr>
+<td><code>DEST</code></td>
+<td><code>destination</code></td>
+</tr>
+<tr>
+<td><code>DESTCLAS</code></td>
+<td><code>destination_class</code></td>
+</tr>
+<tr>
+<td><code>DESTCORL</code></td>
+<td><code>destination_correlation_id</code></td>
+</tr>
+<tr>
+<td><code>DESTQMGR</code></td>
+<td><code>destination_queue_manager</code></td>
+</tr>
+<tr>
+<td><code>DISTYPE</code></td>
+<td><code>display_type</code></td>
+</tr>
+<tr>
+<td><code>DURABLE</code></td>
+<td><code>durable</code></td>
+</tr>
+<tr>
+<td><code>EXPIRY</code></td>
+<td><code>expiry</code></td>
+</tr>
+<tr>
+<td><code>PSPROP</code></td>
+<td><code>publish_subscribe_properties</code></td>
+</tr>
+<tr>
+<td><code>PUBACCT</code></td>
+<td><code>published_accounting_token</code></td>
+</tr>
+<tr>
+<td><code>PUBAPPID</code></td>
+<td><code>published_application_id</code></td>
+</tr>
+<tr>
+<td><code>PUBPRTY</code></td>
+<td><code>publish_priority</code></td>
+</tr>
+<tr>
+<td><code>REQONLY</code></td>
+<td><code>request_only</code></td>
+</tr>
+<tr>
+<td><code>SELECTOR</code></td>
+<td><code>selector</code></td>
+</tr>
+<tr>
+<td><code>SELTYPE</code></td>
+<td><code>selector_type</code></td>
+</tr>
+<tr>
+<td><code>SUB</code></td>
+<td><code>subscription_name</code></td>
+</tr>
+<tr>
+<td><code>SUBID</code></td>
+<td><code>subscription_id</code></td>
+</tr>
+<tr>
+<td><code>SUBLEVEL</code></td>
+<td><code>subscription_level</code></td>
+</tr>
+<tr>
+<td><code>SUBTYPE</code></td>
+<td><code>subscription_type</code></td>
+</tr>
+<tr>
+<td><code>SUBUSER</code></td>
+<td><code>subscription_user_id</code></td>
+</tr>
+<tr>
+<td><code>TOPICOBJ</code></td>
+<td><code>topic_object</code></td>
+</tr>
+<tr>
+<td><code>TOPICSTR</code></td>
+<td><code>topic_string</code></td>
+</tr>
+<tr>
+<td><code>USERDATA</code></td>
+<td><code>user_data</code></td>
+</tr>
+<tr>
+<td><code>VARUSER</code></td>
+<td><code>variable_user</code></td>
+</tr>
+<tr>
+<td><code>WSCHEMA</code></td>
+<td><code>wildcard_schema</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-key-value-map">Request key-value map<a class="headerlink" href="#request-key-value-map" title="Permanent link">&para;</a></h2>
+<h3 id="noreplace">noreplace<a class="headerlink" href="#noreplace" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Friendly value</th>
+<th>MQSC key</th>
+<th>MQSC value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yes</code></td>
+<td><code>REPLACE</code></td>
+<td><code>NO</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Friendly value</th>
+<th>MQSC key</th>
+<th>MQSC value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>no</code></td>
+<td><code>REPLACE</code></td>
+<td><code>NO</code></td>
+</tr>
+<tr>
+<td><code>yes</code></td>
+<td><code>REPLACE</code></td>
+<td><code>YES</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Auto-generated from <code>mapping-data.json</code> by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
 
 
 

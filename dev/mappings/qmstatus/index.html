@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#qmstatus" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,7 +1075,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -1825,6 +1830,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    qmstatus
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1842,6 +1867,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2717,6 +2783,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2733,9 +2831,245 @@
 
 
 
-  <h1>qmstatus</h1>
-
-
+<h1 id="qmstatus">qmstatus<a class="headerlink" href="#qmstatus" title="Permanent link">&para;</a></h1>
+<p>Attribute mapping reference for the <code>qmstatus</code> qualifier.</p>
+<p>Related MQSC commands: <code>DISPLAY QMSTATUS</code></p>
+<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Friendly name</th>
+<th>MQSC parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>native_ha_type</code></td>
+<td><code>NHATYPE</code></td>
+</tr>
+<tr>
+<td><code>status_type</code></td>
+<td><code>TYPE</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>MQSC parameter</th>
+<th>Friendly name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ARCHLOG</code></td>
+<td><code>archive_log</code></td>
+</tr>
+<tr>
+<td><code>ARCHSZ</code></td>
+<td><code>archive_log_size</code></td>
+</tr>
+<tr>
+<td><code>AUTOCLUS</code></td>
+<td><code>auto_cluster</code></td>
+</tr>
+<tr>
+<td><code>CHINIT</code></td>
+<td><code>channel_initiator_status</code></td>
+</tr>
+<tr>
+<td><code>CHKPTCNT</code></td>
+<td><code>checkpoint_count</code></td>
+</tr>
+<tr>
+<td><code>CHKPTOPS</code></td>
+<td><code>checkpoint_operations</code></td>
+</tr>
+<tr>
+<td><code>CHKPTSZ</code></td>
+<td><code>checkpoint_size</code></td>
+</tr>
+<tr>
+<td><code>CMDSERV</code></td>
+<td><code>command_server_status</code></td>
+</tr>
+<tr>
+<td><code>CONNS</code></td>
+<td><code>connections</code></td>
+</tr>
+<tr>
+<td><code>CURRLOG</code></td>
+<td><code>current_log</code></td>
+</tr>
+<tr>
+<td><code>DATFSSZ</code></td>
+<td><code>data_filesystem_size</code></td>
+</tr>
+<tr>
+<td><code>DATFSUSE</code></td>
+<td><code>data_filesystem_use</code></td>
+</tr>
+<tr>
+<td><code>DATPATH</code></td>
+<td><code>data_path</code></td>
+</tr>
+<tr>
+<td><code>DISKLSN</code></td>
+<td><code>disk_log_sequence_number</code></td>
+</tr>
+<tr>
+<td><code>GRPLSN</code></td>
+<td><code>group_log_sequence_number</code></td>
+</tr>
+<tr>
+<td><code>GRPNAME</code></td>
+<td><code>group_name</code></td>
+</tr>
+<tr>
+<td><code>GRPROLE</code></td>
+<td><code>group_role</code></td>
+</tr>
+<tr>
+<td><code>HOSTNAME</code></td>
+<td><code>host_name</code></td>
+</tr>
+<tr>
+<td><code>INSTANCE</code></td>
+<td><code>instance</code></td>
+</tr>
+<tr>
+<td><code>INSTDESC</code></td>
+<td><code>installation_description</code></td>
+</tr>
+<tr>
+<td><code>INSTNAME</code></td>
+<td><code>installation_name</code></td>
+</tr>
+<tr>
+<td><code>INSTPATH</code></td>
+<td><code>installation_path</code></td>
+</tr>
+<tr>
+<td><code>LDAPCONN</code></td>
+<td><code>ldap_connection_status</code></td>
+</tr>
+<tr>
+<td><code>LOGEXTSZ</code></td>
+<td><code>log_ext_size</code></td>
+</tr>
+<tr>
+<td><code>LOGFSSZ</code></td>
+<td><code>log_filesystem_size</code></td>
+</tr>
+<tr>
+<td><code>LOGFSUSE</code></td>
+<td><code>log_filesystem_use</code></td>
+</tr>
+<tr>
+<td><code>LOGINUSE</code></td>
+<td><code>log_in_use</code></td>
+</tr>
+<tr>
+<td><code>LOGPATH</code></td>
+<td><code>log_path</code></td>
+</tr>
+<tr>
+<td><code>LOGPRIM</code></td>
+<td><code>log_primary</code></td>
+</tr>
+<tr>
+<td><code>LOGSEC</code></td>
+<td><code>log_secondary</code></td>
+</tr>
+<tr>
+<td><code>LOGSTRDA</code></td>
+<td><code>log_start_date</code></td>
+</tr>
+<tr>
+<td><code>LOGSTRL</code></td>
+<td><code>log_start_log_sequence_number</code></td>
+</tr>
+<tr>
+<td><code>LOGSTRTI</code></td>
+<td><code>log_start_time</code></td>
+</tr>
+<tr>
+<td><code>LOGTYPE</code></td>
+<td><code>log_type</code></td>
+</tr>
+<tr>
+<td><code>LOGUTIL</code></td>
+<td><code>log_utilization</code></td>
+</tr>
+<tr>
+<td><code>MEDIALOG</code></td>
+<td><code>media_recovery_log_extent</code></td>
+</tr>
+<tr>
+<td><code>MEDIASZ</code></td>
+<td><code>media_recovery_log_size</code></td>
+</tr>
+<tr>
+<td><code>QMFSENC</code></td>
+<td><code>queue_manager_encryption</code></td>
+</tr>
+<tr>
+<td><code>QMFSSZ</code></td>
+<td><code>queue_manager_filesystem_size</code></td>
+</tr>
+<tr>
+<td><code>QMFSUSE</code></td>
+<td><code>queue_manager_filesystem_use</code></td>
+</tr>
+<tr>
+<td><code>QMNAME</code></td>
+<td><code>queue_manager_name</code></td>
+</tr>
+<tr>
+<td><code>QUORUM</code></td>
+<td><code>quorum</code></td>
+</tr>
+<tr>
+<td><code>RECLOG</code></td>
+<td><code>recovery_log</code></td>
+</tr>
+<tr>
+<td><code>RECSZ</code></td>
+<td><code>recovery_log_size</code></td>
+</tr>
+<tr>
+<td><code>REUSESZ</code></td>
+<td><code>reusable_log_size</code></td>
+</tr>
+<tr>
+<td><code>STANDBY</code></td>
+<td><code>permit_standby</code></td>
+</tr>
+<tr>
+<td><code>STARTDA</code></td>
+<td><code>start_date</code></td>
+</tr>
+<tr>
+<td><code>STARTTI</code></td>
+<td><code>start_time</code></td>
+</tr>
+<tr>
+<td><code>STATUS</code></td>
+<td><code>ha_status</code></td>
+</tr>
+<tr>
+<td><code>TYPE</code></td>
+<td><code>status_type</code></td>
+</tr>
+<tr>
+<td><code>UNICLUS</code></td>
+<td><code>uniform_cluster_name</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Auto-generated from <code>mapping-data.json</code> by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
 
 
 

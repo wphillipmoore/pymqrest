@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#comminfo" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,7 +1075,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -1461,6 +1466,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    comminfo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1478,6 +1503,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-value-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key-value map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Request key-value map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noreplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        noreplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2717,6 +2822,77 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-value-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key-value map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Request key-value map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noreplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        noreplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2733,9 +2909,193 @@
 
 
 
-  <h1>comminfo</h1>
-
-
+<h1 id="comminfo">comminfo<a class="headerlink" href="#comminfo" title="Permanent link">&para;</a></h1>
+<p>Attribute mapping reference for the <code>comminfo</code> qualifier.</p>
+<p>Related MQSC commands: <code>ALTER COMMINFO</code>, <code>DEFINE COMMINFO</code>, <code>DELETE COMMINFO</code>, <code>DISPLAY COMMINFO</code></p>
+<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Friendly name</th>
+<th>MQSC parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bridge</code></td>
+<td><code>BRIDGE</code></td>
+</tr>
+<tr>
+<td><code>coded_character_set_id</code></td>
+<td><code>CCSID</code></td>
+</tr>
+<tr>
+<td><code>communication_event</code></td>
+<td><code>COMMEV</code></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>DESCR</code></td>
+</tr>
+<tr>
+<td><code>encoding</code></td>
+<td><code>ENCODING</code></td>
+</tr>
+<tr>
+<td><code>group_address</code></td>
+<td><code>GRPADDR</code></td>
+</tr>
+<tr>
+<td><code>ignore_state</code></td>
+<td><code>IGNSTATE</code></td>
+</tr>
+<tr>
+<td><code>like</code></td>
+<td><code>LIKE</code></td>
+</tr>
+<tr>
+<td><code>message_history</code></td>
+<td><code>MSGHIST</code></td>
+</tr>
+<tr>
+<td><code>monitor_interval</code></td>
+<td><code>MONINT</code></td>
+</tr>
+<tr>
+<td><code>multicast_heartbeat</code></td>
+<td><code>MCHBINT</code></td>
+</tr>
+<tr>
+<td><code>multicast_property_control</code></td>
+<td><code>MCPROP</code></td>
+</tr>
+<tr>
+<td><code>new_subscription_history</code></td>
+<td><code>NSUBHIST</code></td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>PORT</code></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>TYPE</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>MQSC parameter</th>
+<th>Friendly name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ALTDATE</code></td>
+<td><code>alteration_date</code></td>
+</tr>
+<tr>
+<td><code>ALTTIME</code></td>
+<td><code>alteration_time</code></td>
+</tr>
+<tr>
+<td><code>BRIDGE</code></td>
+<td><code>bridge</code></td>
+</tr>
+<tr>
+<td><code>CCSID</code></td>
+<td><code>coded_character_set_id</code></td>
+</tr>
+<tr>
+<td><code>COMMEV</code></td>
+<td><code>communication_event</code></td>
+</tr>
+<tr>
+<td><code>DESCR</code></td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td><code>ENCODING</code></td>
+<td><code>encoding</code></td>
+</tr>
+<tr>
+<td><code>GRPADDR</code></td>
+<td><code>group_address</code></td>
+</tr>
+<tr>
+<td><code>MCHBINT</code></td>
+<td><code>multicast_heartbeat</code></td>
+</tr>
+<tr>
+<td><code>MCPROP</code></td>
+<td><code>multicast_property_control</code></td>
+</tr>
+<tr>
+<td><code>MONINT</code></td>
+<td><code>monitor_interval</code></td>
+</tr>
+<tr>
+<td><code>MSGHIST</code></td>
+<td><code>message_history</code></td>
+</tr>
+<tr>
+<td><code>NSUBHIST</code></td>
+<td><code>new_subscription_history</code></td>
+</tr>
+<tr>
+<td><code>PORT</code></td>
+<td><code>port</code></td>
+</tr>
+<tr>
+<td><code>TYPE</code></td>
+<td><code>type</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-key-value-map">Request key-value map<a class="headerlink" href="#request-key-value-map" title="Permanent link">&para;</a></h2>
+<h3 id="noreplace">noreplace<a class="headerlink" href="#noreplace" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Friendly value</th>
+<th>MQSC key</th>
+<th>MQSC value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yes</code></td>
+<td><code>REPLACE</code></td>
+<td><code>NO</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Friendly value</th>
+<th>MQSC key</th>
+<th>MQSC value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>no</code></td>
+<td><code>REPLACE</code></td>
+<td><code>NO</code></td>
+</tr>
+<tr>
+<td><code>yes</code></td>
+<td><code>REPLACE</code></td>
+<td><code>YES</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Auto-generated from <code>mapping-data.json</code> by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
 
 
 

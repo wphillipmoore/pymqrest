@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#tpstatus" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,7 +1075,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -2189,6 +2194,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tpstatus
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2206,6 +2231,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2717,6 +2783,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2733,9 +2831,173 @@
 
 
 
-  <h1>tpstatus</h1>
-
-
+<h1 id="tpstatus">tpstatus<a class="headerlink" href="#tpstatus" title="Permanent link">&para;</a></h1>
+<p>Attribute mapping reference for the <code>tpstatus</code> qualifier.</p>
+<p>Related MQSC commands: <code>DISPLAY TPSTATUS</code></p>
+<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Friendly name</th>
+<th>MQSC parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command_scope</code></td>
+<td><code>CMDSCOPE</code></td>
+</tr>
+<tr>
+<td><code>status_type</code></td>
+<td><code>TYPE</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>MQSC parameter</th>
+<th>Friendly name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ACTCONN</code></td>
+<td><code>active_connection</code></td>
+</tr>
+<tr>
+<td><code>ADMIN</code></td>
+<td><code>admin_topic_name</code></td>
+</tr>
+<tr>
+<td><code>CAPEXPRY</code></td>
+<td><code>cap_expiry</code></td>
+</tr>
+<tr>
+<td><code>CLROUTE</code></td>
+<td><code>cluster_publish_route</code></td>
+</tr>
+<tr>
+<td><code>CLUSTER</code></td>
+<td><code>cluster_name</code></td>
+</tr>
+<tr>
+<td><code>COMMINFO</code></td>
+<td><code>communication_info</code></td>
+</tr>
+<tr>
+<td><code>DEFPRESP</code></td>
+<td><code>default_put_response</code></td>
+</tr>
+<tr>
+<td><code>DEFPRTY</code></td>
+<td><code>default_priority</code></td>
+</tr>
+<tr>
+<td><code>DEFPSIST</code></td>
+<td><code>default_persistence</code></td>
+</tr>
+<tr>
+<td><code>DURABLE</code></td>
+<td><code>durable</code></td>
+</tr>
+<tr>
+<td><code>DURSUB</code></td>
+<td><code>durable_subscriptions</code></td>
+</tr>
+<tr>
+<td><code>LMSGDATE</code></td>
+<td><code>last_message_date</code></td>
+</tr>
+<tr>
+<td><code>LMSGTIME</code></td>
+<td><code>last_message_time</code></td>
+</tr>
+<tr>
+<td><code>LPUBDATE</code></td>
+<td><code>last_publication_date</code></td>
+</tr>
+<tr>
+<td><code>LPUBTIME</code></td>
+<td><code>last_publication_time</code></td>
+</tr>
+<tr>
+<td><code>MCAST</code></td>
+<td><code>multicast</code></td>
+</tr>
+<tr>
+<td><code>MCASTREL</code></td>
+<td><code>multicast_reliability_indicator</code></td>
+</tr>
+<tr>
+<td><code>MDURMDL</code></td>
+<td><code>durable_model_queue_name</code></td>
+</tr>
+<tr>
+<td><code>MNDURMDL</code></td>
+<td><code>non_durable_model_queue_name</code></td>
+</tr>
+<tr>
+<td><code>NPMSGDLV</code></td>
+<td><code>non_persistent_message_delivery</code></td>
+</tr>
+<tr>
+<td><code>NUMMSGS</code></td>
+<td><code>number_of_messages</code></td>
+</tr>
+<tr>
+<td><code>NUMPUBS</code></td>
+<td><code>number_of_publishes</code></td>
+</tr>
+<tr>
+<td><code>PMSGDLV</code></td>
+<td><code>persistent_message_delivery</code></td>
+</tr>
+<tr>
+<td><code>PUBCOUNT</code></td>
+<td><code>publish_count</code></td>
+</tr>
+<tr>
+<td><code>PUBSCOPE</code></td>
+<td><code>publication_scope</code></td>
+</tr>
+<tr>
+<td><code>RESMDATE</code></td>
+<td><code>resume_date</code></td>
+</tr>
+<tr>
+<td><code>RESMTIME</code></td>
+<td><code>resume_time</code></td>
+</tr>
+<tr>
+<td><code>RETAINED</code></td>
+<td><code>retained_publication</code></td>
+</tr>
+<tr>
+<td><code>SUBCOUNT</code></td>
+<td><code>subscription_count</code></td>
+</tr>
+<tr>
+<td><code>SUBID</code></td>
+<td><code>subscription_id</code></td>
+</tr>
+<tr>
+<td><code>SUBTYPE</code></td>
+<td><code>subscription_type</code></td>
+</tr>
+<tr>
+<td><code>SUBUSER</code></td>
+<td><code>subscription_user_id</code></td>
+</tr>
+<tr>
+<td><code>USEDLQ</code></td>
+<td><code>use_dead_letter_queue</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Auto-generated from <code>mapping-data.json</code> by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
 
 
 

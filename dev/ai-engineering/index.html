@@ -1068,7 +1068,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -2730,6 +2730,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#transparency-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transparency statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transparency statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tools-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-ai-generated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was AI-generated
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-human-designed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was human-designed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality assurance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-co-authored-by-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Co-Authored-By convention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#python-specific-quality-standards" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2775,6 +2847,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#transparency-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transparency statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transparency statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tools-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-ai-generated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was AI-generated
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-human-designed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was human-designed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality assurance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-co-authored-by-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Co-Authored-By convention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#python-specific-quality-standards" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2803,6 +2947,65 @@
 
 
 <h1 id="ai-assisted-engineering">AI-assisted engineering<a class="headerlink" href="#ai-assisted-engineering" title="Permanent link">&para;</a></h1>
+<h2 id="transparency-statement">Transparency statement<a class="headerlink" href="#transparency-statement" title="Permanent link">&para;</a></h2>
+<p>The mq-rest-admin project is an AI-assisted engineering effort. Significant
+portions of each language implementation were developed collaboratively between
+a human engineer and AI coding agents. This page documents what was
+AI-generated, what was human-designed, and how quality was maintained.</p>
+<h3 id="tools-used">Tools used<a class="headerlink" href="#tools-used" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Claude Code</strong> (Anthropic) — interactive pair-programming agent</li>
+<li><strong>Codex</strong> (OpenAI) — autonomous task execution agent</li>
+</ul>
+<h2 id="what-was-ai-generated">What was AI-generated<a class="headerlink" href="#what-was-ai-generated" title="Permanent link">&para;</a></h2>
+<p><strong>Mapping data bootstrap</strong>: The canonical <code>mapping-data.json</code> was originally
+bootstrapped from IBM MQ 9.4 documentation using an AI-assisted extraction
+pipeline. The pipeline parsed MQSC and PCF command references to propose
+<code>snake_case</code> attribute names, value mappings, and command metadata for all
+48 qualifiers. The automated output was then reviewed, customized, and
+rationalized by hand. <code>mapping-data.json</code> is now maintained directly as the
+sole authoritative source — the extraction pipeline is archived in the Python
+repository at <code>docs/archive/extraction/</code>.</p>
+<p><strong>Command method generation</strong>: The ~144 MQSC command wrapper methods in each
+language implementation are generated from the command definitions in
+<code>mapping-data.json</code>. Each method is a thin wrapper with the correct verb,
+qualifier, and return type.</p>
+<p><strong>Mapping documentation</strong>: The 48 qualifier mapping pages in the documentation
+were generated from the same mapping data source.</p>
+<p><strong>Implementation code</strong>: Much of the session, mapping, transport, and test
+code was written through AI-assisted pair programming, with the AI agent
+proposing implementations and the human engineer reviewing, refining, and
+directing the design.</p>
+<h2 id="what-was-human-designed">What was human-designed<a class="headerlink" href="#what-was-human-designed" title="Permanent link">&para;</a></h2>
+<p><strong>Architecture and API design</strong>: The overall design — single-endpoint via
+<code>runCommandJSON</code>, qualifier-based mapping, method naming conventions,
+return shape rules, error handling strategy — was conceived and directed
+by the human engineer.</p>
+<p><strong>Quality standards</strong>: The requirement for comprehensive test coverage and
+the validation gate pipeline were human-defined standards. Each language
+implementation enforces its own quality tooling as a CI hard gate.</p>
+<p><strong>Design decisions</strong>: Key choices like the mapping opt-out mechanism,
+strict vs lenient modes, the transport abstraction, and error handling
+patterns were human decisions refined through discussion.</p>
+<h2 id="quality-assurance">Quality assurance<a class="headerlink" href="#quality-assurance" title="Permanent link">&para;</a></h2>
+<p>The AI-assisted development process maintains quality through:</p>
+<p><strong>Test coverage</strong>: All production code is covered by unit tests. Coverage
+is enforced as a CI hard gate in each language implementation.</p>
+<p><strong>Static analysis</strong>: Each implementation runs language-appropriate linters
+and static analysis tools as CI hard gates.</p>
+<p><strong>Validation pipeline</strong>: Each repository provides a single command that runs
+the same checks as CI, including formatting, linting, tests, and coverage.</p>
+<p><strong>Integration testing</strong>: Containerized IBM MQ queue managers provide real
+MQSC command validation. Integration tests verify that mapping assumptions
+hold against actual MQ responses.</p>
+<h2 id="the-co-authored-by-convention">The <code>Co-Authored-By</code> convention<a class="headerlink" href="#the-co-authored-by-convention" title="Permanent link">&para;</a></h2>
+<p>Commits that involved AI assistance include a <code>Co-Authored-By</code> trailer
+identifying the agent used:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Co-Authored-By: wphillipmoore-claude &lt;255925739+wphillipmoore-claude@users.noreply.github.com&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Co-Authored-By: wphillipmoore-codex &lt;255923655+wphillipmoore-codex@users.noreply.github.com&gt;
+</code></pre></div>
+<p>This provides a transparent, auditable record of AI involvement in the
+project's git history.</p>
 <h2 id="python-specific-quality-standards">Python-specific quality standards<a class="headerlink" href="#python-specific-quality-standards" title="Permanent link">&para;</a></h2>
 <p><strong>100% test coverage</strong>: Every line and branch of production code is
 covered by unit tests. Coverage is enforced as a CI hard gate.</p>

@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#conn" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,7 +1075,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -1489,6 +1494,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    conn
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1506,6 +1531,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2717,6 +2783,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2733,9 +2831,193 @@
 
 
 
-  <h1>conn</h1>
-
-
+<h1 id="conn">conn<a class="headerlink" href="#conn" title="Permanent link">&para;</a></h1>
+<p>Attribute mapping reference for the <code>conn</code> qualifier.</p>
+<p>Related MQSC commands: <code>DISPLAY CONN</code>, <code>STOP CONN</code></p>
+<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Friendly name</th>
+<th>MQSC parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command_scope</code></td>
+<td><code>CMDSCOPE</code></td>
+</tr>
+<tr>
+<td><code>connection_info_type</code></td>
+<td><code>TYPE</code></td>
+</tr>
+<tr>
+<td><code>connection_prefix</code></td>
+<td><code>EXTCONN</code></td>
+</tr>
+<tr>
+<td><code>unit_of_recovery_disposition</code></td>
+<td><code>URDISP</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>MQSC parameter</th>
+<th>Friendly name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APPLDESC</code></td>
+<td><code>application_description</code></td>
+</tr>
+<tr>
+<td><code>APPLTAG</code></td>
+<td><code>application_tag</code></td>
+</tr>
+<tr>
+<td><code>APPLTYPE</code></td>
+<td><code>application_type</code></td>
+</tr>
+<tr>
+<td><code>CHANNEL</code></td>
+<td><code>channel_name</code></td>
+</tr>
+<tr>
+<td><code>CLIENTID</code></td>
+<td><code>client_id</code></td>
+</tr>
+<tr>
+<td><code>CONNAME</code></td>
+<td><code>connection_name</code></td>
+</tr>
+<tr>
+<td><code>CONNOPTS</code></td>
+<td><code>connection_options</code></td>
+</tr>
+<tr>
+<td><code>CONNTAG</code></td>
+<td><code>connection_tag</code></td>
+</tr>
+<tr>
+<td><code>DEST</code></td>
+<td><code>destination</code></td>
+</tr>
+<tr>
+<td><code>DESTQMGR</code></td>
+<td><code>destination_queue_manager</code></td>
+</tr>
+<tr>
+<td><code>EXTURID</code></td>
+<td><code>unit_of_work_id</code></td>
+</tr>
+<tr>
+<td><code>HSTATE</code></td>
+<td><code>handle_state</code></td>
+</tr>
+<tr>
+<td><code>OBJNAME</code></td>
+<td><code>object_name</code></td>
+</tr>
+<tr>
+<td><code>OBJTYPE</code></td>
+<td><code>object_type</code></td>
+</tr>
+<tr>
+<td><code>OPENOPTS</code></td>
+<td><code>open_options</code></td>
+</tr>
+<tr>
+<td><code>PID</code></td>
+<td><code>process_id</code></td>
+</tr>
+<tr>
+<td><code>PSBNAME</code></td>
+<td><code>program_spec_block_name</code></td>
+</tr>
+<tr>
+<td><code>PSTID</code></td>
+<td><code>partition_spec_table_region_id</code></td>
+</tr>
+<tr>
+<td><code>QMURID</code></td>
+<td><code>queue_manager_unit_of_work_id</code></td>
+</tr>
+<tr>
+<td><code>QSGDISP</code></td>
+<td><code>queue_sharing_group_disposition</code></td>
+</tr>
+<tr>
+<td><code>READA</code></td>
+<td><code>read_ahead</code></td>
+</tr>
+<tr>
+<td><code>SUBID</code></td>
+<td><code>subscription_id</code></td>
+</tr>
+<tr>
+<td><code>SUBNAME</code></td>
+<td><code>subscription_name</code></td>
+</tr>
+<tr>
+<td><code>TASKNO</code></td>
+<td><code>task_number</code></td>
+</tr>
+<tr>
+<td><code>TID</code></td>
+<td><code>thread_id</code></td>
+</tr>
+<tr>
+<td><code>TOPICSTR</code></td>
+<td><code>topic_string</code></td>
+</tr>
+<tr>
+<td><code>TRANSID</code></td>
+<td><code>transaction_id</code></td>
+</tr>
+<tr>
+<td><code>TYPE</code></td>
+<td><code>connection_info_type</code></td>
+</tr>
+<tr>
+<td><code>UOWLOG</code></td>
+<td><code>start_unit_of_work_log_extent</code></td>
+</tr>
+<tr>
+<td><code>UOWLOGDA</code></td>
+<td><code>unit_of_work_log_start_date</code></td>
+</tr>
+<tr>
+<td><code>UOWLOGTI</code></td>
+<td><code>unit_of_work_log_start_time</code></td>
+</tr>
+<tr>
+<td><code>UOWSTATE</code></td>
+<td><code>unit_of_work_state</code></td>
+</tr>
+<tr>
+<td><code>UOWSTDA</code></td>
+<td><code>unit_of_work_start_date</code></td>
+</tr>
+<tr>
+<td><code>UOWSTTI</code></td>
+<td><code>unit_of_work_start_time</code></td>
+</tr>
+<tr>
+<td><code>URTYPE</code></td>
+<td><code>unit_of_work_type</code></td>
+</tr>
+<tr>
+<td><code>USERID</code></td>
+<td><code>user_id</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Auto-generated from <code>mapping-data.json</code> by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
 
 
 

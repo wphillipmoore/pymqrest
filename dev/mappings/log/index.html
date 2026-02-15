@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#log" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,7 +1075,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -1629,6 +1634,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    log
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1646,6 +1671,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2717,6 +2783,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2733,9 +2831,73 @@
 
 
 
-  <h1>log</h1>
-
-
+<h1 id="log">log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h1>
+<p>Attribute mapping reference for the <code>log</code> qualifier.</p>
+<p>Related MQSC commands: <code>ARCHIVE LOG</code>, <code>DEFINE LOG</code>, <code>DISPLAY LOG</code>, <code>SET LOG</code></p>
+<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Friendly name</th>
+<th>MQSC parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command_scope</code></td>
+<td><code>CMDSCOPE</code></td>
+</tr>
+<tr>
+<td><code>deallocate_interval</code></td>
+<td><code>DEALLCT</code></td>
+</tr>
+<tr>
+<td><code>log_compression</code></td>
+<td><code>COMPLOG</code></td>
+</tr>
+<tr>
+<td><code>max_archive_log</code></td>
+<td><code>MAXARCH</code></td>
+</tr>
+<tr>
+<td><code>max_concurrent_offloads</code></td>
+<td><code>MAXCNOFF</code></td>
+</tr>
+<tr>
+<td><code>max_read_tape_units</code></td>
+<td><code>MAXRTU</code></td>
+</tr>
+<tr>
+<td><code>output_buffer_count</code></td>
+<td><code>WRTHRSH</code></td>
+</tr>
+<tr>
+<td><code>z_hyper_link</code></td>
+<td><code>ZHYLINK</code></td>
+</tr>
+<tr>
+<td><code>z_hyper_write</code></td>
+<td><code>ZHYWRITE</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>MQSC parameter</th>
+<th>Friendly name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COMMANDS</code></td>
+<td><code>commands</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Auto-generated from <code>mapping-data.json</code> by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
 
 
 

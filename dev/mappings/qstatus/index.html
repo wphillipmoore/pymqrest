@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#qstatus" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,7 +1075,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Qualifier Mapping Reference
   
 
     
@@ -1853,6 +1858,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    qstatus
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1870,6 +1895,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2717,6 +2783,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-key-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response key map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2733,9 +2831,197 @@
 
 
 
-  <h1>qstatus</h1>
-
-
+<h1 id="qstatus">qstatus<a class="headerlink" href="#qstatus" title="Permanent link">&para;</a></h1>
+<p>Attribute mapping reference for the <code>qstatus</code> qualifier.</p>
+<p>Related MQSC commands: <code>DISPLAY QSTATUS</code></p>
+<h2 id="request-key-map">Request key map<a class="headerlink" href="#request-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Friendly name</th>
+<th>MQSC parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command_scope</code></td>
+<td><code>CMDSCOPE</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-key-map">Response key map<a class="headerlink" href="#response-key-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>MQSC parameter</th>
+<th>Friendly name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APPLDESC</code></td>
+<td><code>application_description</code></td>
+</tr>
+<tr>
+<td><code>APPLTAG</code></td>
+<td><code>application_tag</code></td>
+</tr>
+<tr>
+<td><code>APPLTYPE</code></td>
+<td><code>application_type</code></td>
+</tr>
+<tr>
+<td><code>ASID</code></td>
+<td><code>address_space_id</code></td>
+</tr>
+<tr>
+<td><code>ASTATE</code></td>
+<td><code>asynchronous_state</code></td>
+</tr>
+<tr>
+<td><code>BROWSE</code></td>
+<td><code>open_browse</code></td>
+</tr>
+<tr>
+<td><code>CHANNEL</code></td>
+<td><code>channel_name</code></td>
+</tr>
+<tr>
+<td><code>CONNAME</code></td>
+<td><code>connection_name</code></td>
+</tr>
+<tr>
+<td><code>CURDEPTH</code></td>
+<td><code>current_queue_depth</code></td>
+</tr>
+<tr>
+<td><code>CURFSIZE</code></td>
+<td><code>current_queue_file_size</code></td>
+</tr>
+<tr>
+<td><code>CURMAXFS</code></td>
+<td><code>current_max_queue_file_size</code></td>
+</tr>
+<tr>
+<td><code>HSTATE</code></td>
+<td><code>handle_state</code></td>
+</tr>
+<tr>
+<td><code>INPUT</code></td>
+<td><code>open_input</code></td>
+</tr>
+<tr>
+<td><code>INQUIRE</code></td>
+<td><code>open_inquire</code></td>
+</tr>
+<tr>
+<td><code>IPPROCS</code></td>
+<td><code>open_input_count</code></td>
+</tr>
+<tr>
+<td><code>LGETDATE</code></td>
+<td><code>last_get_date</code></td>
+</tr>
+<tr>
+<td><code>LGETTIME</code></td>
+<td><code>last_get_time</code></td>
+</tr>
+<tr>
+<td><code>LPUTDATE</code></td>
+<td><code>last_put_date</code></td>
+</tr>
+<tr>
+<td><code>LPUTTIME</code></td>
+<td><code>last_put_time</code></td>
+</tr>
+<tr>
+<td><code>MEDIALOG</code></td>
+<td><code>media_recovery_log_extent</code></td>
+</tr>
+<tr>
+<td><code>MONQ</code></td>
+<td><code>queue_monitoring</code></td>
+</tr>
+<tr>
+<td><code>MSGAGE</code></td>
+<td><code>oldest_message_age</code></td>
+</tr>
+<tr>
+<td><code>OPPROCS</code></td>
+<td><code>open_output_count</code></td>
+</tr>
+<tr>
+<td><code>OUTPUT</code></td>
+<td><code>open_output</code></td>
+</tr>
+<tr>
+<td><code>PID</code></td>
+<td><code>process_id</code></td>
+</tr>
+<tr>
+<td><code>PSBNAME</code></td>
+<td><code>program_spec_block_name</code></td>
+</tr>
+<tr>
+<td><code>PSTID</code></td>
+<td><code>partition_spec_table_region_id</code></td>
+</tr>
+<tr>
+<td><code>QMURID</code></td>
+<td><code>queue_manager_unit_of_work_id</code></td>
+</tr>
+<tr>
+<td><code>QSGDISP</code></td>
+<td><code>queue_sharing_group_disposition</code></td>
+</tr>
+<tr>
+<td><code>QTIME</code></td>
+<td><code>on_queue_time</code></td>
+</tr>
+<tr>
+<td><code>QUEUE</code></td>
+<td><code>queue_name</code></td>
+</tr>
+<tr>
+<td><code>SET</code></td>
+<td><code>open_set</code></td>
+</tr>
+<tr>
+<td><code>TASKNO</code></td>
+<td><code>task_number</code></td>
+</tr>
+<tr>
+<td><code>TID</code></td>
+<td><code>thread_id</code></td>
+</tr>
+<tr>
+<td><code>TRANSID</code></td>
+<td><code>transaction_id</code></td>
+</tr>
+<tr>
+<td><code>TYPE</code></td>
+<td><code>status_type</code></td>
+</tr>
+<tr>
+<td><code>UNCOM</code></td>
+<td><code>uncommitted_messages</code></td>
+</tr>
+<tr>
+<td><code>URID</code></td>
+<td><code>unit_of_work_id</code></td>
+</tr>
+<tr>
+<td><code>URTYPE</code></td>
+<td><code>unit_of_work_type</code></td>
+</tr>
+<tr>
+<td><code>USERID</code></td>
+<td><code>user_id</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Auto-generated from <code>mapping-data.json</code> by <code>scripts/dev/generate_mapping_docs.py</code>.</em></p>
 
 
 
