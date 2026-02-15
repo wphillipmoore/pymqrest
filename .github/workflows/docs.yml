@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
   workflow_dispatch:
 
 permissions:
@@ -47,7 +48,7 @@ jobs:
       - name: Determine version
         id: version
         run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
             VERSION=$(uv run python -c "from importlib.metadata import version; v=version('pymqrest'); print('.'.join(v.split('.')[:2]))")
             echo "version=$VERSION" >> "$GITHUB_OUTPUT"
             echo "alias=latest" >> "$GITHUB_OUTPUT"
