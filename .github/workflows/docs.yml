@@ -5,6 +5,7 @@ on:
     branches:
       - develop
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -41,14 +42,14 @@ jobs:
         run: uv run mkdocs build -f docs/site/mkdocs.yml --strict
 
       - name: Upload pages artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/develop'
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/site/site
 
   deploy:
     name: deploy
-    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/develop'
     needs: build
     runs-on: ubuntu-latest
     permissions:
