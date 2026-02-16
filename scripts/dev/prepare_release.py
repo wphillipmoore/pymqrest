@@ -22,7 +22,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 # -- helpers -----------------------------------------------------------------
 
 
@@ -78,7 +77,7 @@ def detect_go() -> str | None:
     """Return the version from **/version.go."""
     if not Path("go.mod").is_file():
         return None
-    for path in Path(".").rglob("version.go"):
+    for path in Path().rglob("version.go"):
         text = path.read_text(encoding="utf-8")
         match = re.search(r'(?:const\s+)?Version\s*=\s*"([^"]+)"', text)
         if match:
