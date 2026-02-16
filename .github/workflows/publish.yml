@@ -116,10 +116,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -d dist ]; then
-            gh release create "${{ steps.version.outputs.tag }}" \
-              --title "pymqrest ${{ steps.version.outputs.version }}" \
-              --notes "$(cat <<'EOF'
+          gh release create "${{ steps.version.outputs.tag }}" \
+            --title "pymqrest ${{ steps.version.outputs.version }}" \
+            --notes "$(cat <<'EOF'
           ## Installation
 
           ```bash
@@ -132,24 +131,7 @@ jobs:
           - [Documentation](https://wphillipmoore.github.io/mq-rest-admin-python/)
           EOF
           )" \
-              dist/*
-          else
-            gh release create "${{ steps.version.outputs.tag }}" \
-              --title "pymqrest ${{ steps.version.outputs.version }}" \
-              --notes "$(cat <<'EOF'
-          ## Installation
-
-          ```bash
-          pip install pymqrest==${{ steps.version.outputs.version }}
-          ```
-
-          ## Links
-
-          - [PyPI](https://pypi.org/project/pymqrest/${{ steps.version.outputs.version }}/)
-          - [Documentation](https://wphillipmoore.github.io/mq-rest-admin-python/)
-          EOF
-          )"
-          fi
+            dist/*
 
       - name: Compute next patch version
         id: next_version
@@ -223,9 +205,6 @@ jobs:
 
           Dependencies are refreshed to their latest compatible versions
           via `uv lock --upgrade`.
-
-
-          Ref #113
           EOF
           )"
 
