@@ -22,6 +22,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+
 # -- helpers -----------------------------------------------------------------
 
 
@@ -77,7 +78,7 @@ def detect_go() -> str | None:
     """Return the version from **/version.go."""
     if not Path("go.mod").is_file():
         return None
-    for path in Path().rglob("version.go"):
+    for path in Path(".").rglob("version.go"):
         text = path.read_text(encoding="utf-8")
         match = re.search(r'(?:const\s+)?Version\s*=\s*"([^"]+)"', text)
         if match:
@@ -161,11 +162,17 @@ def merge_main(version: str) -> None:
     """
     print("Merging main into release branch...")
     run_command(("git", "fetch", "origin", "main"))
-    run_command((
-        "git", "merge", "origin/main",
-        "-X", "ours",
-        "-m", f"chore: merge main into release/{version}",
-    ))
+    run_command(
+        (
+            "git",
+            "merge",
+            "origin/main",
+            "-X",
+            "ours",
+            "-m",
+            f"chore: merge main into release/{version}",
+        )
+    )
 
 
 def generate_changelog(version: str) -> bool:
@@ -196,18 +203,18 @@ def create_pr(version: str, issue: int) -> str:
     """Create a PR to main and return the PR URL."""
     print("Creating pull request to main...")
     title = f"release: {version}"
-    body = (
-        f"## Summary\n\n"
-        f"Release {version}\n\n"
-        f"Ref #{issue}\n\n"
-        f"Generated with `prepare_release.py`\n"
-    )
+    body = f"## Summary\n\nRelease {version}\n\nRef #{issue}\n\nGenerated with `prepare_release.py`\n"
     result = subprocess.run(  # noqa: S603
         (
-            "gh", "pr", "create",
-            "--base", "main",
-            "--title", title,
-            "--body", body,
+            "gh",
+            "pr",
+            "create",
+            "--base",
+            "main",
+            "--title",
+            title,
+            "--body",
+            body,
         ),
         check=True,
         text=True,
