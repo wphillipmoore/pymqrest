@@ -156,11 +156,14 @@ def merge_main(version: str) -> None:
     This prevents CHANGELOG.md merge conflicts by ensuring the release branch
     has main's version of the changelog before git-cliff regenerates it.
     Uses a conventional commit message to satisfy commit-msg hooks.
+    Uses ``-X ours`` to auto-resolve conflicts (only CHANGELOG.md should
+    conflict, and git-cliff regenerates it in the next step).
     """
     print("Merging main into release branch...")
     run_command(("git", "fetch", "origin", "main"))
     run_command((
         "git", "merge", "origin/main",
+        "-X", "ours",
         "-m", f"chore: merge main into release/{version}",
     ))
 
