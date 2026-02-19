@@ -140,13 +140,13 @@ The `publish.yml` workflow triggers on push to `main` and publishes to PyPI via 
 ### Local MQ Container
 
 The MQ development environment is owned by the
-[mq-dev-environment](https://github.com/wphillipmoore/mq-dev-environment)
+[mq-rest-admin-dev-environment](https://github.com/wphillipmoore/mq-rest-admin-dev-environment)
 repository. Clone it as a sibling directory before running lifecycle
 scripts:
 
 ```bash
 # Prerequisite (one-time)
-git clone https://github.com/wphillipmoore/mq-dev-environment.git ../mq-dev-environment
+git clone https://github.com/wphillipmoore/mq-rest-admin-dev-environment.git ../mq-rest-admin-dev-environment
 
 # Start the containerized MQ queue managers
 ./scripts/dev/mq_start.sh
@@ -165,7 +165,7 @@ git clone https://github.com/wphillipmoore/mq-dev-environment.git ../mq-dev-envi
 ```
 
 The lifecycle scripts are thin wrappers that delegate to
-`../mq-dev-environment`. Override the path with `MQ_DEV_ENV_PATH`.
+`../mq-rest-admin-dev-environment`. Override the path with `MQ_DEV_ENV_PATH`.
 
 Container details:
 - Queue managers: `QM1` and `QM2`
@@ -323,6 +323,39 @@ This approach ensures all AI agents (Codex, Claude, etc.) have access to the sam
 - `docs/mq-container-local-dev.md` - Local development with MQ container
 - `docs/repository-standards.md` - Project-specific standards (included from AGENTS.md)
 - `docs/standards-and-conventions.md` - Canonical standards reference (includes external repo)
+
+## Commit and PR Scripts
+
+**NEVER use raw `git commit`** — always use `scripts/dev/commit.sh`.
+**NEVER use raw `gh pr create`** — always use `scripts/dev/submit-pr.sh`.
+
+### Committing
+
+```bash
+scripts/dev/commit.sh --type feat --scope session --message "add retry logic" --agent claude
+scripts/dev/commit.sh --type fix --message "correct attribute mapping" --agent claude
+```
+
+- `--type` (required): `feat|fix|docs|style|refactor|test|chore|ci|build`
+- `--message` (required): commit description
+- `--agent` (required): `claude` or `codex` — resolves the correct `Co-Authored-By` identity
+- `--scope` (optional): conventional commit scope
+- `--body` (optional): detailed commit body
+
+### Submitting PRs
+
+```bash
+scripts/dev/submit-pr.sh --issue 42 --summary "Add retry logic to session"
+scripts/dev/submit-pr.sh --issue 42 --linkage Ref --summary "Update docs" --docs-only
+```
+
+- `--issue` (required): GitHub issue number (just the number)
+- `--summary` (required): one-line PR summary
+- `--linkage` (optional, default: `Fixes`): `Fixes|Closes|Resolves|Ref`
+- `--title` (optional): PR title (default: most recent commit subject)
+- `--notes` (optional): additional notes
+- `--docs-only` (optional): applies docs-only testing exception
+- `--dry-run` (optional): print generated PR without executing
 
 ## Key References
 
