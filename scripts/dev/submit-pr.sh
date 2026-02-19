@@ -21,7 +21,8 @@ usage() {
 Usage: scripts/dev/submit-pr.sh --issue NUMBER --summary TEXT [options]
 
 Required:
-  --issue NUMBER    GitHub issue number (just the number, no #)
+  --issue REF       Issue reference: a number (42) for same-repo, or
+                    a cross-repo ref (owner/repo#42)
   --summary TEXT    One-line PR summary (goes under ## Summary)
 
 Optional:
@@ -64,9 +65,13 @@ if [[ -z "$summary" ]]; then
   usage
 fi
 
-# Validate issue is a positive integer.
-if [[ ! "$issue" =~ ^[1-9][0-9]*$ ]]; then
-  echo "ERROR: --issue must be a positive integer, got '$issue'." >&2
+# Validate issue reference: plain number or owner/repo#number.
+if [[ "$issue" =~ ^[1-9][0-9]*$ ]]; then
+  issue_ref="#${issue}"
+elif [[ "$issue" =~ ^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+#[1-9][0-9]*$ ]]; then
+  issue_ref="${issue}"
+else
+  echo "ERROR: --issue must be a number (42) or cross-repo ref (owner/repo#42), got '$issue'." >&2
   exit 1
 fi
 
@@ -149,7 +154,7 @@ pr_body="# Pull Request
 
 ## Issue Linkage
 
-- ${linkage} #${issue}
+- ${linkage} ${issue_ref}
 
 ## Testing
 
