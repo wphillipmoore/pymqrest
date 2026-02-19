@@ -254,7 +254,7 @@ The include directives at the top of this file load the full repository standard
 
 **Python Invocation**: Always use `uv run python3 <script>`
 
-**Tooling**: `uv` version `0.9.26`
+**Tooling**: `uv` version `0.10.4`
 
 **Code Quality**: Ruff (all rules), mypy (strict), 100% test coverage, Python 3.14+
 

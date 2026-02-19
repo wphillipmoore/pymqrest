@@ -51,7 +51,7 @@
 
 Required for daily workflow:
 
-- `uv` `0.9.26` (install with `python3 -m pip install uv==0.9.26`)
+- `uv` `0.10.4` (install with `python3 -m pip install uv==0.10.4`)
 - `markdownlint` (required for docs validation and PR pre-submission)
 
 Required for integration testing:
