@@ -2,6 +2,26 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Auto-memory policy
+
+**Do NOT use MEMORY.md.** Claude Code's auto-memory feature stores behavioral
+rules outside of version control, making them invisible to code review,
+inconsistent across repos, and unreliable across sessions. All behavioral rules,
+conventions, and workflow instructions belong in managed, version-controlled
+documentation (CLAUDE.md, AGENTS.md, skills, or docs/).
+
+If you identify a pattern, convention, or rule worth preserving:
+
+1. **Stop.** Do not write to MEMORY.md.
+2. **Discuss with the user** what you want to capture and why.
+3. **Together, decide** the correct managed location (CLAUDE.md, a skill file,
+   standards docs, or a new issue to track the gap).
+
+This policy exists because MEMORY.md is per-directory and per-machine — it
+creates divergent agent behavior across the multi-repo environment this project
+operates in. Consistency requires all guidance to live in shared, reviewable
+documentation.
+
 ## Documentation Strategy
 
 This repository uses two complementary approaches for AI agent guidance:
