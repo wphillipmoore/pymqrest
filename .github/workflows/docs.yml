@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: deploy
+    name: "deploy: docs"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
