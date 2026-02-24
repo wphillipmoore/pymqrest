@@ -321,12 +321,24 @@ jobs:
           files: "coverage.lcov"
 
   integration-tests:
-    name: "test: integration"
+    name: "test: integration (${{ matrix.python-version }})"
     runs-on: ubuntu-latest
     needs: docs-only
     strategy:
       matrix:
-        python-version: ["3.12", "3.13", "3.14"]
+        include:
+          - python-version: "3.12"
+            project-suffix: "3-12"
+            qm1-rest-port: "9447"
+            qm2-rest-port: "9448"
+          - python-version: "3.13"
+            project-suffix: "3-13"
+            qm1-rest-port: "9449"
+            qm2-rest-port: "9450"
+          - python-version: "3.14"
+            project-suffix: "3-14"
+            qm1-rest-port: "9451"
+            qm2-rest-port: "9452"
 
     steps:
       - name: Docs-only short-circuit
@@ -351,10 +363,15 @@ jobs:
         if: needs.docs-only.outputs.docs-only != 'true'
         uses: wphillipmoore/mq-rest-admin-dev-environment/.github/actions/setup-mq@main
         with:
-          project-name: pymqrest
+          project-name: pymqrest-${{ matrix.project-suffix }}
+          qm1-rest-port: ${{ matrix.qm1-rest-port }}
+          qm2-rest-port: ${{ matrix.qm2-rest-port }}
 
       - name: Run integration tests
         if: needs.docs-only.outputs.docs-only != 'true'
+        env:
+          MQ_REST_BASE_URL: https://localhost:${{ matrix.qm1-rest-port }}/ibmmq/rest/v2
+          MQ_REST_BASE_URL_QM2: https://localhost:${{ matrix.qm2-rest-port }}/ibmmq/rest/v2
         run: |
           MQ_SKIP_LIFECYCLE=1 \
           PYMQREST_RUN_INTEGRATION=1 \
