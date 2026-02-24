@@ -328,12 +328,15 @@ jobs:
       matrix:
         include:
           - python-version: "3.12"
+            project-suffix: "3-12"
             qm1-rest-port: "9447"
             qm2-rest-port: "9448"
           - python-version: "3.13"
+            project-suffix: "3-13"
             qm1-rest-port: "9449"
             qm2-rest-port: "9450"
           - python-version: "3.14"
+            project-suffix: "3-14"
             qm1-rest-port: "9451"
             qm2-rest-port: "9452"
 
@@ -360,7 +363,7 @@ jobs:
         if: needs.docs-only.outputs.docs-only != 'true'
         uses: wphillipmoore/mq-rest-admin-dev-environment/.github/actions/setup-mq@main
         with:
-          project-name: pymqrest-${{ matrix.python-version }}
+          project-name: pymqrest-${{ matrix.project-suffix }}
           qm1-rest-port: ${{ matrix.qm1-rest-port }}
           qm2-rest-port: ${{ matrix.qm2-rest-port }}
 
