@@ -321,7 +321,7 @@ jobs:
           files: "coverage.lcov"
 
   integration-tests:
-    name: "test: integration"
+    name: "test: integration (${{ matrix.python-version }})"
     runs-on: ubuntu-latest
     needs: docs-only
     strategy:
