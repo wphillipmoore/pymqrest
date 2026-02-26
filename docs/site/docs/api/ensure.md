@@ -164,7 +164,7 @@ corrupting `ALTDATE`/`ALTTIME` on every run.
 ## Attribute mapping
 
 The ensure methods participate in the same
-[mapping pipeline](mapping-pipeline.md) as all other command methods.
+[mapping pipeline](../mapping-pipeline.md) as all other command methods.
 Pass `snake_case` attribute names in `request_parameters` and the
 mapping layer translates them to MQSC names for the DISPLAY, DEFINE,
 and ALTER commands automatically.
