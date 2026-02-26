@@ -142,4 +142,7 @@ nav:
       - Generation Scripts: development/generation-scripts.md
       - Namespace Origin: development/namespace-origin.md
       - Release Workflow: development/release-workflow.md
+  - Releases:
+      - Release Notes: releases/index.md
+      - Changelog: changelog.md
   - AI Engineering: ai-engineering.md
