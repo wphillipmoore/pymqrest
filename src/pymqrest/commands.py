@@ -20,7 +20,7 @@ class MQRESTCommandMixin:
     for the full IBM MQ 9.4 command reference.
     """
 
-    def _mqsc_command(  # noqa: PLR0913
+    def _mqsc_command(
         self,
         *,
         command: str,

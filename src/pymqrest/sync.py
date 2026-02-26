@@ -108,7 +108,7 @@ class MQRESTSyncMixin:
     perform a synchronous stop followed by a synchronous start.
     """
 
-    def _mqsc_command(  # noqa: PLR0913
+    def _mqsc_command(
         self,
         *,
         command: str,

@@ -95,6 +95,9 @@ docstring-quotes = "double"
     "T201",   # Example scripts use print for user-facing output.
 ]
 
+[tool.ruff.lint.pylint]
+max-args = 7
+
 [tool.ruff.format]
 quote-style = "double"
 

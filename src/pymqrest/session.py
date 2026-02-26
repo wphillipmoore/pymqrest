@@ -308,7 +308,7 @@ class MQRESTSession(MQRESTSyncMixin, MQRESTEnsureMixin, MQRESTCommandMixin):
         """The gateway queue manager name, or ``None`` for direct access."""
         return self._gateway_qmgr
 
-    def _mqsc_command(  # noqa: PLR0913
+    def _mqsc_command(
         self,
         *,
         command: str,
