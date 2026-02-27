@@ -82,12 +82,6 @@ jobs:
       - name: Run ruff format check
         run: uv run ruff format --check .
 
-      - name: Run mypy
-        run: uv run mypy src/
-
-      - name: Run ty
-        run: uv run ty check src
-
       - name: Run tests with coverage
         run: |
           uv run pytest \
@@ -95,6 +89,24 @@ jobs:
             --cov-report=term-missing \
             --cov-branch \
             --cov-fail-under=100
+
+  type-check:
+    name: "ci: type-check"
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/wphillipmoore/dev-python:3.14
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Install dependencies
+        run: uv sync --frozen --group dev
+
+      - name: Run mypy
+        run: uv run mypy src/
+
+      - name: Run ty
+        run: uv run ty check src
 
   dependency-audit:
     name: "ci: dependency-audit"
